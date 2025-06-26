@@ -223,12 +223,12 @@
       showTyping();
       
       // Appel à l'API RAG
-      fetch('/ask', {
+      fetch('/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question: text })
+        body: JSON.stringify({ message: text })
       })
       .then(response => response.json())
       .then(data => {
@@ -236,8 +236,8 @@
         const typingEl = document.querySelector('.message.ai:last-child');
         if (typingEl) typingEl.remove();
         
-        // Afficher la réponse du modèle
-        appendMessage(data.answer || "Désolé, je n'ai pas pu répondre à cette question.", 'ai');
+        // Afficher la réponse du modèle (notez la modification ici)
+        appendMessage(data.response || "Désolé, je n'ai pas pu répondre à cette question.", 'ai');
       })
       .catch(error => {
         // Supprimer l'animation de typing
