@@ -1,0 +1,8 @@
+andthedeterminationoftreatment,thismethodologyisonlyfeasibleinrelativelyshort-term
+applications. Thus, seizure monitoring at home in an ultra-long-term context, that is, over a
+periodofmultipledaysorlonger,isneeded. Patientswithepilepsytypicallykeephandwritten
+diariesoftheirseizureevents. However,thesediarieshaveprovenunreliableandincomplete,
+especiallywhenalossofconsciousnessaccompaniesepilepticseizures. Wearabledevicessuch
+assmartwatchesandfitnesstrackers,whicharereadilyavailabletoabroadaudience,mayfill
+thisgapinmonitoring. Theymayautomaticallydetectandlogseizuresofepilepsypatientsin
+their day-to-day environment and serve as an automatic alarm to potentially alert caregivers

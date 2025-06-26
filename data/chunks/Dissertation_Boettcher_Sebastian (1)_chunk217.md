@@ -1,0 +1,9 @@
+4344 CHAPTER3. METHODSANDSTUDYDESIGN
+T
+hischaptercontextualizesthethesiswithinthescopeofthedatacollectionstudiescon-
+ducted to gather wearable biosignal data from patients with epilepsy. Remote Assessment
+ofDiseaseandRelapse-CentralNervousSystemwasacollaborativeEuropeanresearchproject
+thatincluded,amongotherstudiesforotherneurologicaldisorders,severalepilepsy-centered
+datacollectionstudies. Specifically,patientswithepilepsywererecruitedattheepilepsymon-
+itoringunitsoftheUniversityMedicalCenterFreiburg(UKF)andtheKing’sCollegeHospital
+London (KCL). Both in-hospital and ambulatory data collection was implemented, however,

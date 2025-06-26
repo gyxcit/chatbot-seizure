@@ -1,0 +1,9 @@
+not have an immediately obvious direct gold standard that could be used as a ground truth.
+Forelectrodermalactivity(EDA),dryelectrodesarealreadythebestexistingmethodologyto
+recordskinconductancechanges,andthereisnoacceptedbestpracticeforotherparameters
+likethepositionoftheelectrodesonthebodyorthetypeofelectrodeandmechanicalcontact.
+Additionally, the blood volume pulse data could be validated only indirectly by estimating a
+heartrate(HR)andcomparingittoanelectrocardiography-basedHR.
+6.2.3 Detection of Non-Motor Seizures
+Inthisthesisonlyseizureswithsometypeofmovementmanifestationwereconsidered. How-
+ever,manyfocalseizuresdonotincludeepilepticmovements,butarelimitedtosymptomsof

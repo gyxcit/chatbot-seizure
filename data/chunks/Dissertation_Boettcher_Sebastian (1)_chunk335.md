@@ -1,0 +1,13 @@
+−1and1forthisplot,independentofeachother. RemasterofFigure1inBöttcheretal.[104].
+RP:recurrenceplot.
+3. FourfeaturescalculatedfromtherecurrenceplotoftheACCsignal:
+(a) Determinism,thatis,thepercentageofpointsthatformdiagonallinesofaminimal
+length.
+(b) TheShannonentropyoftheprobabilitythatalinehasacertainlength.
+(c) Theaveragediagonallinelength.
+(d) Recurrencerate,thatis,thedensityofrecurrencepoints.
+4. EDA-basedfeaturesovera5minwindow,minusthesamevalueinthe5minbeforethe
+featurewindow:
+(a) TheareaunderthecurveoftheSCLwascalculatedasthemovingmeanoftheraw
+EDAsignalovera1minwindow.
+(b) ThemaximumvalueoftheSCLcalculatedasabove.4.1. DETECTIONOFTONIC-CLONICSEIZURES 69

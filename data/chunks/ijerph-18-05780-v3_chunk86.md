@@ -1,0 +1,9 @@
+resulted in the development of computer hardware [165,166] that is expensive and not
+easilyaccessibletotheresearchers. ResearchersworkinginthefieldofepilepticseizuresInt.J.Environ.Res.PublicHealth2021,18,5780 23of33
+detection/predictiondonotalwayshaveaccesstohigh-powerhardwaretoimplement
+novelDLmodels. AlthoughpowerfulcomputingserversareavailablebyGoogle, con-
+straintssuchastheamountofdatathatcanbeuploadedtotheseserversandexecution
+timearestillthechallenges.
+7. ConclusionandFutureWorks
+Inrecentyears,alotofresearchhasbeendoneintheepilepticseizuresdetectionfield
+usingartificialintelligencemethods[167–175]. Inthispaper,acomprehensivereviewof

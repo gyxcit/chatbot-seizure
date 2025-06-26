@@ -1,0 +1,8 @@
+This study presents findings that focus on the multimodal detection of FSs from wearable
+sensor data. Data from three patients with epilepsy exhibiting different types of FSs were
+examined,showingthattheymanifestverydifferentlyinboththesensorsignalsandclassifi-
+cationperformancemeasures. Thisheterogeneitywillinherentlyhinderaccuraterecognition
+ofanyFSfromwearableassessmentdata,andneedstobetakenintoaccountwhendesigning
+alearningmodelforseizuredetection.
+While the experiments shown here are promising for further work, it is clear that this is
+onlyafirststepinbuildingasystemformultimodaldetectionofFSsusingbiosignaldatafrom

@@ -1,0 +1,8 @@
+dealingwithdigitaltechnologies. Scenarioswhereadevicehasfallenfromthepatientduringa
+seizureduetoanincorrectlyfastenedwristband,orwhereattheendoftheseizurethepatient
+is lying on the limb to which the device is attached causing abnormal measurement noise,
+mayoccur,althoughtheywerenotspecificallyobservedinthiscohort. Despitebeingpossible,
+theseeventsareprobablyinfrequent,makingthebeneficialeffectsofPIdetectiongreaterthan
+the nuisance of potential but rare false detections. ACC false detections may be mitigated by
+the simultaneous use of video and automated analysis. Video has been used as a sensitive
+waytoquantifymovement[269]andcouldenableremotedetectionofPI.However,although

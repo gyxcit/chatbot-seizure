@@ -1,0 +1,3 @@
+- Low risk – Minimum risk of seizure occurrence.
+- Medium risk – No significant risk of seizure.
+- High risk – Visual and acoustic warning signal alert.

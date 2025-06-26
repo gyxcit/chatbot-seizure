@@ -1,0 +1,9 @@
+dasiedieZahlderAnfälleinderRegelstarkunterbewerten. EswirdalsoeineAlternativefür
+dieUltra-Langzeit-Überwachungbenötigt,umdiegängigenBehandlungenzuverbessernund
+die Entwicklung neuer Therapieoptionen zu erleichtern. Diese Dissertation untersucht das
+Potenzialmultimodaler,nicht-elektroenzephalografischer,vontragbarenGerätenaufgezeich-
+neter Daten zur Anfallserkennung für automatische Anfallstagebücher. Darüber hinaus wird
+einemöglicheAnwendungderAnfallserkennungalsTeileinesautomatischenAlarmsystems
+untersucht.
+Im Rahmen dieser Arbeit wurde ein neuer Datensatz von Biosignaldaten erstellt und ver-
+wendet,aufgezeichnetinzweieuropäischenEpilepsiezentrenimRahmeneineseuropäischen

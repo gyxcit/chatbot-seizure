@@ -1,0 +1,10 @@
+modelthatcanextractthespectralandtemporalcharacteristicsofEEGsignalsandused
+themtolearnthegeneralstructureofseizures. Zuoetal.[52]developedthediagnosis
+ofhigher-frequencyoscillations(HFO)epilepsyfrom16-layer2D-CNNandEEGsignals.
+ADLframeworkcalledSeizureNetthatusesconvolutionlayerswithdenseconnections
+isproposedin[53]. AnovelDLmodelcalledthetemporalgraphconvolutionalnetwork
+(TGCN)hasbeenintroducedbyCovertetal.[54],comprisingoffivearchitectureswith
+14, 18, 22, 23, and 26 layers. Bouaziz et al. [55] split the EEG signals of CHB-MIT with
+23channelsinto2stimewindowsandthenconvertedthemintodensityimages(spatial
+representation),whichwerefedasinputstotheCNNnetwork.
+B.AlexNet

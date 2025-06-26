@@ -1,0 +1,9 @@
+timeofthevideo-electroencephalography(vEEG)systemoftheepilepsymonitoringunit. The
+appthenregularlysendsthecollecteddatatoaningest-,processing-,andstorageserver.
+1radar-base.org
+2UDOONEOall-in-oneminicomputer,orSamsungGalaxyTabA(SM-T580)tablet60 CHAPTER3. METHODSANDSTUDYDESIGN
+Theserverapplicationisdividedintomultipleconsecutiveparts. Awebserverhandlesall
+incomingrequestsordatapackets(sentovertheinternetviaHTTPS),forwardingthemtothe
+correctcomponent. Adistributedstreamprocessingplatform(ApacheKafka)ingestsnewdata
+packetsonavarietyofdatatopics,thatis,itreceivesdatainbatchesandgroupedbybiosignal
+modality, serializes and schematizes that data, and stores it for the short-term. Thereby, it

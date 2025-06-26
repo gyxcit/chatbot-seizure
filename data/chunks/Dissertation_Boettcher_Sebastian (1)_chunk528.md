@@ -1,0 +1,9 @@
+Lastly,thedataqualityduringallremainingseizureswasvisuallychecked,andspecifically
+thosewithbadEDAsignalqualitywereexcluded. ApoorEDAsignalcaneitherbeaflatzero-
+line,indicatinglossofcontactoftheelectrodeswiththeskin,ormultipleperiodsofhighrates
+of amplitude change, indicating a loosely fitting device. The BVP raw signal was specifically
+notfilteredforsignalquality,firstlybecauseitwouldfilteroutnearlyeveryremainingseizure
+due toits highsusceptibility tomotion artifacts,and secondlybecause thefeature setfor this
+evaluationindeedincludesadataqualityindexasafeatureitself.
+5.2.3 Results
+DataSetandExamples

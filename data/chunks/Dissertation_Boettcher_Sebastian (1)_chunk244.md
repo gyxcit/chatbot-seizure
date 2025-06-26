@@ -1,0 +1,8 @@
+of the vEEG system is essential for data analysis. Furthermore, depending on the specific
+deviceused,internalinaccuraciescancausesmallshiftsinthetimekeepingbetweenindividual
+biosignaldatastreams.
+Therearetwoprincipalwaysofachievingsynchronizationbetweenawearabledeviceand
+avEEGsystem. Themostaccurateandtechnicallymoreadvancedwayistodirectlyandpre-
+ciselyadjusttheon-devicetimekeepingofthewearablestothetimeusedintheclinicalvEEG
+system,forexample,bysomewirelessconnection. Thiswillgivemillisecondsynchronization
+between the two time bases, but may require some technical set-up beforehand, and it might

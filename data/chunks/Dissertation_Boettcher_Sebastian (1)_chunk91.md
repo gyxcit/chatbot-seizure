@@ -1,0 +1,8 @@
+somemeta-methodologiesconcernedwithimprovingpredictiveperformancebycreatingen-
+semblesofindividualmodels. Adetaileddescriptionofeachofthesupervisedmachinelearn-
+ingmethodologiesisbeyondthescopeofthisintroduction,butthefollowingwillgiveabrief
+overview of some major types of algorithms. See relevant introductory literature for more
+in-depthdescriptionsofthesemachinelearningtechniques[77,84–86].
+DecisionTrees: Adecisiontreeisamachinelearningmodelthatconsistsofseveralchained
+binary decisions that can be arranged in a tree-like structure. Each decision node splits
+accordingtoalogicappliedtoaninputvariable,andeachleafnoderepresentsapossible

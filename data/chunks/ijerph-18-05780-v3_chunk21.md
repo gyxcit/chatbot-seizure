@@ -1,0 +1,10 @@
+eitherintracranialorfromthescalpofhumansoranimals.
+2.1.1. Fribourg
+TheEEGdatasetcontainsinvasiveEEGsignalsfrom21patientssufferingfromre-
+fractoryfocalepilepsywhichwererecordedduringpre-surgicalepilepsymonitoringat
+theepilepsycenteroftheUniversityHospitalFribourg. Toprovidedirectrecordingfrom
+focal area, reduction of artifacts and achieving higher Signal to Noise Ratio (SNR), the
+in-tra-corticalgrid,strip,anddepthelectrodeswereused. TheEEGsignalswererecorded
+using128-channelNeurofileNTsystemwith6contactselectrodes(threefocalandthree
+extrafocal)anddigitizedbya16bitsA/Dwithsamplerateof256Hz. Foreachpatient,
+thereareictalandinterictaldata,theformercontainsseizureswithatleast50minutes’of

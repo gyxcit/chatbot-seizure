@@ -1,0 +1,8 @@
+Screeningtechniquesinthediagnosisofepilepticseizurescomprisetwoimportant
+categoriesoffunctionalandstructuralneuroimagingmodalities[4–9]. Thefunctionalneu-
+roimagingmodalityprovidesimportantinformationaboutbrainfunctionduringepileptic
+seizure occurrence for physicians and neurologists [4–9]. The structural neuroimaging
+modalitiesprovidephysicianswithsubstantialinformationaboutthebrainstructureof
+individualswithepilepticseizures[4–9].Themostimportantfunctionalneuroimagingtech-
+niquesareEEG[5],magnetoencephalography(MEG)[6],positronemissiontomography
+(PET)[7],single-photonemissioncomputedtomography(SPECT)[7,10],functionalMRI

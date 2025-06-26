@@ -1549,6 +1549,8 @@
         |-- Survey on Non-EEG seizure detection_chunk1.md
         |-- Survey on Non-EEG seizure detection_chunk2.md
         |-- Survey on Non-EEG seizure detection_chunk3.md
+    |-- csv
+        |-- validation_template.csv
     |-- data.md
     |-- image
         |-- image.png
@@ -1586,16 +1588,21 @@
         |-- Survey on Non-EEG seizure detection (5).txt
         |-- Survey on Non-EEG seizure detection (6).txt
         |-- Survey on Non-EEG seizure detection.txt
+    |-- validation_template.csv
 |-- Dockerfile
+|-- experimentation.ipynb
 |-- README.md
 |-- requirements.txt
 |-- src
     |-- clean_and_segment.py
     |-- extract_txt.py
     |-- index.py
+    |-- q_a_dataset.py
     |-- rag_mistral.py
+    |-- retrieval_experiment.ipynb
     |-- test_llm.py
     |-- __pycache__
         |-- rag_mistral.cpython-310.pyc
 |-- templates
     |-- index.html
+|-- ToDo.md

@@ -1,0 +1,9 @@
+ityandoptimalcombinationsofbio-signalsobtainedfromnon-electroencephalography(EEG)
+wearablesensors,forthedetectionofconvulsivetonic-clonicseizuresandfocalseizureswith
+motor and/or autonomic features, as compared with video-electroencephalography (vEEG)
+ground truth. Further aims were the assessment of patients’ acceptance towards wearing the
+devicesandthetechnicalfeasibilityofconductingstudieswithremotemeasurementtechnol-
+ogyincohortsofepilepsypatients.
+PoliciesandAgreements
+Theprocesstoobtainethicalapprovalfromaninstitutionalreviewboardorethicscommittee
+(EC)maybetime-consumingandrequirescarefulplanning. Essentialstepsincludedelineating

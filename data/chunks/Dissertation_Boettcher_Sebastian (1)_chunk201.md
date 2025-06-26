@@ -1,0 +1,8 @@
+long-termintracranialEEGdatarecordedwithelectrodesimplantedonthesurfaceofthebrain
+weresuccessfullyusedtoestimateseizurelikelihoodinasmallcohortofpatients[54]. Inan-
+otherstudyusingintracranialEEGrecordedinthehospitalenvironment,earlydatauntilupto
+10secondsafterseizureonsetcouldinfertheseizuretypeoftheongoingseizure[251]. While
+not strictly seizure prediction, this result may still provide value towards early warning and
+intervention systems, specifically in those seizures where clinical symptom onset is delayed
+afterEEGonset. Someresearchhasalsoinvestigatedthefeasibilityofseizurepredictorsfrom
+metadatasuchasmanualseizurediarieskeptbythepatients[252].

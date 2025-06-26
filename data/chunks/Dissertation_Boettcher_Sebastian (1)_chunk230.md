@@ -1,0 +1,8 @@
+andthisgeneratesdisparitiesinhowdevicescanbetestedandscientificdataacquired. Inthis
+thesis,thedeviceusedfordatacollectionalreadyhadaCEmarkasamedicaldevice,andthus
+thestudieswerenotconsideredasclinicaltrials.
+Another important consideration is the security rules governing the computer network
+infrastructureinthehospitalenvironment. Hospitalsregulateandlimitaccesstointernalnet-
+workstoprotectsensitivedata,andspecificapprovalsareoftenrequiredtouseexistingwire-
+less connections or create new networks. Data safety and protection are important consider-
+ations, especially with the European Union (EU) General Data Protection Regulation (GDPR)

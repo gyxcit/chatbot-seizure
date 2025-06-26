@@ -1,0 +1,9 @@
+thereareictalandinterictaldata,theformercontainsseizureswithatleast50minutes’of
+thepre-ictalregionandthelattercontainsabout24hofEEGdatawithoutseizure[34].
+2.1.2. CHB-MIT
+The database comprises 844 h of continuous recording of scalp EEG signals with
+163seizuresfrom23children,recordedaccordingtointentional10–20standardelectrode
+positionsandsampledat256samplespersecond. Theinter-ictalregionisdefinedasthe
+periodbetweenatleast4hbeforetheonsetseizureand4haftertheseizureended. There
+aretwotypesofseizures,calledcombinedandmainseizures,availableinthisdatabase.
+The former are multiple seizures close to each other, while the later are great seizures

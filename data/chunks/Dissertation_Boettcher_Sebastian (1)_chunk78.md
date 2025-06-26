@@ -1,0 +1,9 @@
+as a product of PPG. These modalities were recorded by the wrist-worn wearable (Empatica
+E4,seeSection3.2.1)employedinthedatacollectionstudiesrelevanttothisthesis. Whilethe
+devicealsorecordedtheTMPmodality,thesedatawerenotincludedintheanalysespresented
+here,astheeffectsofthermoregulationinepilepsyarenotyetwellunderstoodandthequality
+of the sensor data is questionable (see Section 2.2.4). Furthermore, a different device worn by
+a small subset of study participants also recorded the electrographic modalities, which were
+notincludedherefortheabove-mentioneddisadvantagesdevicesmeasuringthesemodalities
+have.
+ACCcapturesanymovementthewearerofthedevicemakeswiththebodypartthewear-

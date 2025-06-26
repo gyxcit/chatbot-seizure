@@ -1,0 +1,10 @@
+timestampmarkedbytheblackline.
+5.1.2 Related Work
+Thissectiononresearchworkinthedetectionofepilepticseizuresisstructuredalongthetwo
+maintypesofseizures,GTCSsandFSs,asmostresearchtodatehasexplicitlyfocusedonone
+or the other. Monitoring these two types of seizures has also shown to require very different
+modalities. RefertoChapter2foramoreextensivelookatrelatedworkinthefieldofwearable
+biosignalmonitoringandepilepsy.
+Due to the severe manifestation in body and especially limb movements, GTCSs are rela-
+tively straightforward to detect using standard wearable biosignals like ACC or EMG. More-
+over,GTCSsareasignificantriskfactorinsuddenunexpecteddeathinepilepsy,raisinginter-

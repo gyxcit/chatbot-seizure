@@ -1,0 +1,9 @@
+on automated seizure alarm systems has used wearable systems, and some products on the
+marketalreadyofferthisfunctionality,albeitonlyunderspecificconditionsandforconvulsive
+seizures.
+Furthermore,whileseveralstudieshaveemployedat-homevideo-electroencephalography
+systemssimilartothoseusedinepilepsymonitoringunits[56,100,101],severalfundamental
+challengescurrentlylimittheirfeasibilityandthustheiradoptioningeneralclinicalpractice.
+Theyarelimitedtoafewdaysofrecordingtime,areimpracticaltosetup,presentconsiderable
+overhead concerning integration with in-hospital services, and pose regulatory challenges to
+overcome[100].

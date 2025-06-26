@@ -1,0 +1,9 @@
+Insummary,thisthesispresentsresearchregardingthedetectionofepilepticseizureswith
+multimodalnon-EEGdatafromwearables. Specifically,thoseseizureswithmanifestationsin-
+cludingmovementsofthelimbswereinvestigated,anddetectionsystemsbasedonsupervised
+ensemblemachinelearningusingphysiologicalbiosignaldatawerefoundtobefeasible.
+The remaining sections of this final chapter will compile some additional lessons learned
+from the experiences made during the work on this thesis, and give an outlook on several
+aspectsandissuestobetackledinthefieldofseizuredetectionwithwearabledevices.
+6.1 Practical Lessons Learned
+During the course of working on this thesis several worthwhile experiences were made with

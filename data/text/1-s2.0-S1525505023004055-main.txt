@@ -1,0 +1,473 @@
+Epilepsy&Behavior148(2023)109486
+ContentslistsavailableatScienceDirect
+Epilepsy & Behavior
+journal homepage: www.elsevier.com/locate/yebeh
+Perspective
+Non-electroencephalogram-based seizure detection devices: State of the
+art and future perspectives
+Pirgit Meritam Larsena,1, Sándor Beniczkya,b,1,⇑
+aDepartmentofClinicalNeurophysiology,DanishEpilepsyCentre,VisbysAllé5,4293Dianalund,Denmark
+bDepartmentofClinicalNeurophysiology,AarhusUniversityHospital,andDepartmentofClinicalMedicine,AarhusUniversity,PalleJuul-JensensBoulevard165,
+8200Aarhus,Denmark
+a r t i c l e i n f o a b s t r a c t
+Articlehistory: Introductionandpurpose: Thecontinuouslyexpandingresearchanddevelopmentofwearabledevicesfor
+Revised6October2023 automated seizure detection in epilepsy uses mostlynon-invasivetechnology. Real-time alarms, trig-
+Accepted7October2023 geredbyseizuredetectiondevices,areneededforsafetyandpreventiontodecreaseseizure-relatedmor-
+Availableonline17October2023
+bidityandmortality,aswellasobjectivequantificationofseizurefrequencyandseverity.Ourreview
+strivestoprovideastate-of-the-artonautomatedseizuredetectionusingnon-invasivewearabledevices
+Keywords: inanambulatory(home)environmentandtohighlighttheprospectsforfutureresearch.
+Seizuredetection
+Methods: AjointworkinggroupoftheInternationalLeagueAgainstEpilepsy(ILAE)andtheInternational
+Wearabledevices
+FederationofClinicalNeurophysiology(IFCN)recentlypublishedaclinicalpracticeguidelineonauto-
+Epilepsy
+matedseizuredetectionusingwearabledevices.Weupdatedthesystematicliteraturesearchfortheper-
+iodsincethelastsearchbythejointworkinggroup.Weselectedstudiesqualifyingminimallyasphase-2
+clinical validation trials, in accordance with standards for testing and validation of seizure detection
+devices.
+Results: High-levelevidence(phases3and4)isavailableonlyforthedetectionoftonic-clonicseizures
+andmajormotorseizureswhenusingwearabledevicesbasedonaccelerometry,surfaceelectromyogra-
+phy(EMG),oramultimodaldevicecombiningaccelerometryandheartrate.Thereportedsensitivityof
+thesedevicesis79.4–96%,withafalsealarmrateof0.20–1.92per24hours(0–0.03pernight).Asingle
+phase-3studyvalidatedthedetectionofabsenceseizuresusingasingle-channelwearableEEGdevice.
+Twophase-4studiesshowedoverall usersatisfaction withwearableseizure detectiondevices, which
+helpeddecreaseinjuriesrelatedtotonic-clonicseizures.Overallsatisfaction,perceivedsensitivity,and
+improvementinquality-of-lifeweresignificantlyhigherforvalidateddevices.
+Conclusions: Amongthevastnumberofstudiespublishedonseizuredetectiondevices,mostarestrongly
+affectedbypotentialbias,providingatoo-optimisticperspective.Byapplyingthestandardsforclinical
+validationstudies,potentialbiascanbereduced,andthequalityofacontinuouslygrowingnumberof
+studiesinthisfieldcanbeassessedandcompared.TheILAE-IFCNclinicalpracticeguidelineonauto-
+matedseizuredetectionusingwearabledevicesrecommendsusingclinicallyvalidatedwearabledevices
+forautomateddetectionoftonic-clonicseizureswhensignificantsafetyconcernsexist.Thestudiespub-
+lishedaftertheguidelinewasissuedonlyprovideincrementalknowledgeandwouldnotchangethecur-
+rentrecommendations.
+(cid:1)2023TheAuthor(s).PublishedbyElsevierInc.ThisisanopenaccessarticleundertheCCBY-NC-ND
+license(http://creativecommons.org/licenses/by-nc-nd/4.0/).
+1.Introductionandpurpose aspectsofourdailyactivities,fromnavigationandcommunication
+to education and entertainment. This technical revolution has
+Mobile technology and smart wearable devices have changed reached health applications and medicine, including neurology
+the way we live and have become indispensable tools in many [1–3]. Inthe fieldof epilepsy,most researchand development of
+wearableshasbeenfocusedonautomatedseizuredetectionusing
+non-invasive devices. Numerous survey studies have demon-
+⇑ Correspondingauthorat:VisbysAllé5,4293Dianalund,Denmark. stratedthatpeoplewithepilepsy,aswellastheircaregivers,need
+E-mail addresses: pmer@filadelfia.dk (P. Meritam Larsen), sbz@filadelfia.dk such devices [4–8], for preventing or reducing morbidity and
+(S.Beniczky).
+1 MembersoftheEuropeanReferenceNetworkEpiCare.
+https://doi.org/10.1016/j.yebeh.2023.109486
+1525-5050/(cid:1)2023TheAuthor(s).PublishedbyElsevierInc.
+ThisisanopenaccessarticleundertheCCBY-NC-NDlicense(http://creativecommons.org/licenses/by-nc-nd/4.0/).P.MeritamLarsenandSándorBeniczky Epilepsy&Behavior148(2023)109486
+mortalityassociatedwithseizures,andforobjectivequantification validation of seizure detection devices [20]. By adapting the key
+ofseizurefrequencyandseverity[9–11]. domains of the QUADAS-2 tool (quality assessment of diagnostic
+Real-time alarms, triggered by seizure detection devices, are accuracystudies)[21]tothespecificapplicationofseizuredetec-
+neededforsafetyandpreventiontodecreaseseizure-relatedmor- tion devices, standards for clinical validation studies have been
+bidityandmortality.Thisisespeciallythecasefortonic-clonicsei- proposed [20]. The key features are as follows: patient selection
+zures (generalized tonic-clonic seizures and focal-to-bilateral (subjects),recordingdevices,flowofanalysisandalarms,andref-
+tonic-clonic seizures). More than half of the patients with tonic- erence standard. For each of these features, study designs with
+clonic seizures experience yearly accidental injuries related to decreasing levels of potential bias have been listed. Using these
+theirseizures,and25%ofthemexperienceaseriousinjuryrequir- features,fivephases(0–4)havebeenproposed,similartodrugtri-
+inghospitalization,surgicalintervention,orresultinginincapaci- als,wherephase-3studiesprovidecompellingevidenceaboutthe
+tation [12]. The odds ratio for injuries is 3.5 times higher in accuracyof the seizuredetectiondevice,and phase-4 studiesare
+patientswithfiveormoretonic-clonicseizuresperyear,compared open-label, in-field studies, in the home environment of the
+withpatientswhoonlyhaveoneseizureperyear[12].Tonic-clonic patients [20]. To qualify for phase 3, the clinical validationstudy
+seizures constitute the major risk factor for Sudden Unexpected must be prospective, multicenter, enrolling at least 20 patients
+DeathinEpilepsyPatients(SUDEP).AllSUDEPcasesdocumented with at least 30 seizures (assuming a detection sensitivity over
+withvideo-EEGoccurredafteratonic-clonicseizure[13].Experi- 95%),usingapre-definedalgorithmanddetection-threshold,con-
+encingtonic-clonicseizuresduringtheprecedingyearwasassoci- tinuouslyrunningin real-timeonthededicatedwearable device,
+ated with a 27-fold increase in the risk of SUDEP, while no and comparing the detections with the reference standard from
+increased risk was found in patients with other seizure types videoorvideo-EEGrecordings[20].Therequirementsforphase2
+[14]. Patients withatleast onetonic-clonicseizureper yearwho studiesarelessstrict,buttheuseofadedicatedseizuredetection
+do not share a bedroom have a 67-fold increased risk of SUDEP deviceisneeded,anditssafetyhastobeaddressed.Retrospective
+[14],theriskincreasingwiththefrequencyoftonic-clonicseizures analysisandusingthesamedatasetfortrainingandvalidationare
+[15]. still allowed at this phase. The number of patients with seizures
+Patientsareoftenunabletorecalltheirseizures,andthedegree needstobetenormore,includingatleast15seizuresintheanal-
+ofrecallcanshowstrongintra-individualvarianceovertime[16]. ysis.Thereisastrictneedforareferencestandard[20].
+Bothunder-andover-reportingmayoccur,andtheinaccuratedoc- Phases3and4studieswerepreviouslycategorizedbytheILAE-
+umentation of seizure frequency affects therapeutic decisions in IFCN guidelineworking group as ‘‘high level” evidence in GRADE
+dailyclinicalpractice,questioningthereliabilityoflargedrugstud- terms, while phase 2 studies were categorized as ‘‘moderate evi-
+ies, which are typically based on patient-reported seizure fre- dence”.Inthisreviewpaper,wefollowedthesameprinciples. In
+quency [9]. Studies in the Epilepsy Monitoring Units (EMU), thisreviewpaper,wesummarizeandciteallphases3and4stud-
+wherethegoldstandardforseizurefrequencywasavailablefrom iespublishedsincetheclinicalpracticeguideline.Phase-2studies,
+video-electroencephalogram(EEG)recordings,showedthatfewer per definition, would not change the recommendation in the
+than half of the patients provided complete seizure reports, and guideline,andthedetaileddescriptionofallphase-2studieswas
+fewerthanhalfofallobjectivelydetectedseizureswerereported beyond the limitations of this paper. However, we describe
+[9].Thiswasmainlythecaseforfocalimpairedawarenessseizures selectedphase-2studies,which,inouropinion,arelikelytolead
+(73%unreported)andtonic-clonicseizures(42%unreported)[17]. to further significant development in the future. Phase-2 studies
+Impairedrecallofseizureswasmainlyfoundfornocturnalseizures addressingmodalitiesanddetectionstrategiesthatwerereported
+(86%)butoccurredevenindaytimeseizures(32%)[17].Anobjec- in phase-3 studies were not described in this paper to avoid
+tivequantificationofseizurefrequencyandseverityisneededfor redundancy.
+fine-tuning medication tailored to the individual patient and for
+reliableevaluationoftherapeuticinterventions[9,11].
+Theaimofourreviewistoprovideastate-of-the-artonauto- 3.Results
+mated seizure detection using non-invasive wearable devices in
+anambulatory(home)environmentandtohighlighttheprospects The ILAE-IFCN joint working group´s search in October 2019
+forfutureresearch. gave1,750studies,ofwhichonly28werephases2–4.High-level
+evidence(phases3and4)wasonlyavailableforthedetectionof
+tonic-clonicseizuresusingwearabledevicesbasedonaccelerome-
+2.Methods try,surfaceelectromyography(EMG),oramultimodaldevicecom-
+bining accelerometry and heart rate (Table-1). The sensitivity of
+AjointworkinggroupoftheInternationalLeagueAgainstEpi- these devices for detecting tonic-clonic seizures was between
+lepsy (ILAE) and the International Federation of Clinical Neuro- 90% and 96%, with a false alarm rate of 0.20–0.67 per 24 hours
+physiology (IFCN) has recently published a clinical practice (0–0.03pernight).Aphase-4studyshowedthattheuseofawear-
+guidelineonautomatedseizuredetectionusingwearabledevices able device in the home environment of the patients helped
+[18,19].Thejointworkinggroupdidasystematicreviewoftheevi- decrease injuries related to tonic-clonic seizures in 44% of the
+dence,includingpaperspublishedbeforeOctober16,2019(dateof patients,alertingforseizuresthatotherwisewouldhaveremained
+lastsearch). unnoticedin55%ofthepatients[22].Forotherseizuretypes,only
+HereweupdatedthesystematicliteraturesearchinPubMedfor phase2studieswerefound:usingnoninvasivedevices,sensitivity
+theperiodsincethelastsearchbythejointworkinggroup,includ- >90% was achieved using heart rate and heart rate variability
+ing articles published from October 2019 until August 2023, by [23,24].Thehighsensitivitywasatthecostoffrequentfalsealarms
+using the same search string as used by the ILAE-IFCN working (upto500falsealarmsperday).
+group: ((automated detection) OR (algorithm AND detection) OR ByupdatingthesystematicliteraturesearchfromOctober2019
+(wearableANDdetection))AND(epilepsyORseizure). untilAugust2023,wefurtherfoundtwophase-4studiesassessing
+Similarly, for the joint working group, we did a systematic theperformanceofwearableseizuredetectiondevicesinahome
+reviewoftheupdatedevidenceandselectedstudiespublishedin setting [32,33]. Westrhenen et al., 2023 [32] demonstrated high
+peer-reviewed journals, qualifying minimally as phase 2 clinical sensitivity (100% median per participant) with a false alarm rate
+validation trials, in accordance with standards for testing and at 0.04 per h (median per patient) for nocturnal motor seizures
+2P.MeritamLarsenandSándorBeniczky Epilepsy&Behavior148(2023)109486
+in children, using a multimodal device including accelerometry alarmrate(0.53perh),themajorityofpatientsdidnotexperience
+and heart rate detection (NightWatch), reducing caregiver stress anyfalsealarmsatall.
+butnotshowingasignificanteffectonthequalityoflife(QoL)or Even though most studies published on seizure detection
+sleepofthecaregivers.Hadadyetal.,2022[33]basedtheirstudy devices do not fulfill the criteria for phase 3 or 4 studies, there
+onanonlinequestionnaireincludingahighnumberofuserswho areseveralthatshowpromisingresultsusingvariousmodalities:
+had real-world experiencewith using wearable seizure detection accelerometry combination with either photoplethysmography
+devicesintheirhomeenvironment.Thisstudyshowedoveralluser [36] or electrodermal activity [37], photoplethysmography alone
+satisfaction with their respective wearable device (different [38], ECG [39–41], heart rate variability [42,43], behind-the-ears
+devices),aswellasimprovedQoL.Mostusersexperiencedseizure EEG alone [44,45] and in combined with ECG [46,47], and auto-
+detection sensitivity that was close to what previous validation matedvideoanalysis[48,49].Phase-2studiesaddressedthequan-
+studies had shown, as well as a relatively low false alarm rate tificationofseizureburdenusinganautomatedapproachbasedon
+(0–0.43 per day). Overall satisfaction, perceived sensitivity, and EMG combined with accelerometry in patients with progressive
+improvement in QoL were significantly higher amongst partici- myoclonicepilepsy[50]andasemiautomatedmethodforquanti-
+pants using validated devices (Empatica, Epi-Care, and Night- fying the burden of absence seizures using behind-the-ears EEG
+Watch). Most of the patients wearing a device had tonic-clonic [51]. An algorithm based on heart rate and oxygen saturation
+seizures (87%). One-third of people with epilepsy experienced achievedgoodresults(sensitivityof87%)[52].However,theinput
+fewer seizure-related injuries, and two-thirds experienced was based on conventional measurements and not a dedicated
+improvementsintheaccuracyofseizurediariesasaresultofusing wearabledevice.AstudybyFrankeletal.,2021[53]showspoten-
+adetectiondevice.Besidestheaforementionedstudies,wefound tial for identifying focal-onset seizures, with experts blindly
+two other studies [34,35] addressing device performance and/or reviewing data collected from a miniature, wireless, wearable
+user satisfaction in the home environment, though they did not EEG sensor. Furthermore, a unique study by Chen et al., 2023
+fulfillthecriteriaforaphase4study.Maceaetal.,2023[34]eval- [54]showedamorefavorableperformanceofamultimodaldetec-
+uated focal seizure detection based on behind-the-ear EEG, with tion platform in detecting neonatal seizures by combining data
+lowsensitivity(23%)andhighfalsealarmrates(7.8%perh),ona from the ECG, respiration, and accelerometer than compared to
+relatively small number of patients (n = 16), thus not qualifying data from a single modality. Unfortunately, the number of neo-
+as a phase 4 study. The in-hospital part of the study qualifies as nates experiencing seizures was small (4 patients, 30 seizures),
+aphase2study(16patients,21seizures),alsopresentinglowsen- whichmighthaveresultedinalowsensitivityvalue(40%).Another
+sitivity(52%),and highfalse alarmrates (7%perh). Accordingto noteworthyproof-of-conceptstudybyJeppesenetal.,2023(phase
+user evaluation, the likelihood of using the device in 6 months’ 1 study) [55] presents an automated seizure detection method
+time was 62%, mostly due to side effects and low performance. usingasubcutaneouslyimplantablecardiacmonitor.Theydemon-
+Engelgeeretal.,2022[35]presentedaneconomicevaluationofa strate a high sensitivity (92.6%) in detecting focal seizures with
+multimodal seizure detection device (NightWatch), showing that autonomic ictal changes. One recent pilot study [56] assessed
+deviceusagesavescostsandreducesstress,suggestingthisdevice out-of-hospital detection of focal impaired awareness seizures
+is a cost-effective addition to current standard care for children with a motor component using a multimodal approach (ECG,
+withrefractoryepilepsylivingathome.Thisstudyhadaprimarily accelerometry, and behind-the-ear EEG). The study included 17
+economic focus and did not assess device performance regarding patients with focal impaired awareness motor seizures, with
+seizurequantificationorotheraspectsofutilityandusability,thus results showing sensitivity at 91% but a high false alarm rate of
+notqualifyingasaphase4study. 18/24h.Anotherstudyevaluatedhowdifferentmodalitiescorre-
+We found four phase-3 studies and 24 phase-2 studies, pub- latewithdifferenttypesofseizures[57].Clusteranalysisshowed
+lishedaftertheprevioussystematicreviewbytheILAE-IFCNwork- trends of greatest elevation of heart rate (HR) and accelerometry
+ing group. All phase-3studies (Table 1) have comparable results. (ACC) in bilateral tonic-clonic seizures (BTCs), compared to non-
+Onephase-3studyincludedalargenumberofpatients(n=152; BTCsandisolatedauras.HRandACCwereindependentpredictors
+85pediatric,67adults)anddetectedtonic-clonicseizuresusinga for overall seizure types (BTCs and non-BTCs), whereas only HR
+multimodal device, combining accelerometry with electrodermal wasapredictorforisolatedauras.Diagnosticperformance,includ-
+activity [28]. Lazeron et al., 2022 [30] used a multimodal device ing sensitivity, specificity, and area under the receiver operating
+withheartratedetectionandaccelerometrytoassessthedetection characteristic(ROC)curveofthepredictivemodelforoverallsei-
+of nocturnal major motor seizures in children with epilepsy and zures, was 77.78%, 60%, and 0.696 (95% confidence interval = 0.6
+intellectual disability. The high false alarm rate seen in children 28–0.764), respectively. A study by Halimeh et al., 2023 [58]
+in their study, as well as in a previous study [26], was largely showed that using prolonged postictal data (increased levels of
+duetotheheartratepartofthealgorithm.Byoptimizingthealgo- electrodermalactivityandheartratelongafterseizureEEGonset)
+rithm(thealarmwastriggeredonlywhenthepatientwasinahor- segmentsforseizureloggingcancontributetoalgorithmexplain-
+izontal position), theysucceededin reducingthefalse alarmrate ability and point to influencing factors such as high antiseizure
+by60%(from0.2perhto0.08perh),butnotattheexpenseofsen- medication(ASM)doseandshortseizureduration.
+sitivity,whichremainedroughlythesameandcomparabletothat
+validatedintheadultpopulation[26].Anotherphase3study[31] 4.Discussion
+usedaudio–videoanalysisforautomatedreal-timeseizuredetec-
+tionandshowedhighsensitivity(93.7%)fornocturnalmajormotor Morethantwelvethousandpapershavebeenpublishedonsei-
+seizures, especially tonic-clonic seizures (100%), which makes it zure detection. However, most of them are strongly affected by
+suitable for nocturnal surveillance, allowing rapid intervention. numeroussourcesofpotentialbias,providingatoo-optimisticper-
+While the majority ofphase-3 trials have investigatedthe detec- spective, which has caused much confusion in this field. In part,
+tion of major motor seizures, there was one prospective phase-3 this was due to a lack of standards for clinical validation studies
+studythatassessedthedetectionofabsenceseizureswithawear- ofseizuredetectiondevices.Byapplyingthestandardsforclinical
+able, single-channel EEG headband, including automated behav- validationstudies[20],potentialbiascanbereduced,andthequal-
+ioral testing [29]. Their results show an average sensitivity of ityofthecontinuouslygrowingnumberofstudiesinthisfieldcan
+78.8%(median92.9%),andalthoughtheysawarelativelyhighfalse beassessedandcompared.
+3P.MeritamLarsenandSándorBeniczky Epilepsy&Behavior148(2023)109486
+Table1
+Seizuredetectiondevicesvalidatedinphase-3clinicalstudies.
+Study Modality Numberofpatients/ Sensitivity FAR Detection
+numberofseizures latency
+Beniczkyetal.,2013[25] Accelerometry 73/39 90%forTCS 0.2/day 55seconds
+Arendsetal.,2018[26] Accelerometry&heartrate 28/377 81%forTCS 0.03/night Notdetermined
+Beniczkyetal.,2018 Surfaceelectromyography 71/32 94%forTCS 0.7/day(0.01/night) 9seconds
+[27]
+Onoratietal.,2021* Accelerometry& 152/36 Children:92% Children:1.26/day 37seconds
+[28] electrodermalactivity Adults:94%,forTCS. Adults:0.57/day.
+Noneduringrestperiods.
+Japaridzeetal.,2022* WearableEEG-headband 39/364absenceseizures average78.8% 0.53/h 5seconds
+[29] median92.9%,for
+absenceseizures
+Lazeronetal.,2022* Accelerometry&heartrate 23/1710 Beforeadjustment:79.9% Beforeadjustment:0.2/h 7seconds
+[30] After:79.4%forTCS After:0.08/h
+ArmandLarsenetal.,2022* Audio-videosystem 191/16majormotorsz TCS100% 0.16/h Notreported
+[31] +336minormotorsz HMS80%
+MMS8.3%
+*PublishedaftertheILAE-IFCNguideline.TCS–tonic-clonicseizures(incl.generalizedandfocaltobilateral);HMS–hypermotorseizures;MMS–minormotorseizures.
+Whereasreal-timealarmsareneededforsafetyindications(im- andsomeofthealgorithmsmayneedtobefine-tunedforindivid-
+mediateinterventiontodecreasemorbidityandmortalityassoci- ual patients, recording the patient´s habitual seizures might be
+ated with seizures), offline (post hoc) analysis or a semi- neededinthefuturetotailorseizuredetectionfortheindividual
+automatedapproachcanbeusedforseizureburdenquantification patient.Selectingandfine-tuningtheseizuredetectiondevicefor
+[28,51,59,60]. This means that the intent of use of the seizure theindividualpatientmightbeanewtypeofindicationfordoing
+detection device defines its mode of operation (real-time alarm video-EEGrecordinginthefuture.
+vs.offlineprocessing). Objective seizure quantification is challenging because it
+UsingtheGRADEmethod[61,62],theILAE-IFCNworkinggroup requires a high precision of seizure identification. This has not
+developedaclinicalpracticeguidelineonautomatedseizuredetec- yet been achieved with the currently available devices: although
+tion using wearable devices, which has been endorsed by both they have high sensitivity (for detecting tonic-clonic seizures),
+societies[18,19].Itrecommends‘‘usingclinicallyvalidatedwear- the relatively high number of false alarms precludes using them
+abledevicesforautomateddetectionoftonic-clonicseizureswhen forseizurequantification.Therefore,newstrategieshavebeencon-
+significant safety concerns exist, especially in unsupervised sidered.Asopposedtoseizurealarms,quantificationdoesnotneed
+patientswhodonotshareabedroombutwherealarmscanresult real-time analysis. Off-line (post hoc) analysis allows the use of
+inrapidinterventionwithin5minutes”. powerful cloud computing and artificial intelligence [59], and
+The recommendation was conditional, restricted to a single alternative detection-threshold values (different from alarm
+indication(safety),andonlyfortonic-clonicseizures.Theworking thresholds) [28], which can potentially increase precision. It also
+groupconsideredthatthepublishedevidencedidnotjustifyposi- allows the use of a hybrid (semi-automated) approach, where
+tive recommendations for other indications (such as objective experts review the epochs marked as potential seizures by the
+quantificationoftheseizureburden)andotherseizuretypes.The algorithm [51,60]. This way, experts ensure high accuracy, and
+guideline is expected to be updated every two years. Since then, algorithmsminimizetheworkload.
+twophase-4studies,fourphase-3studies,and24phase-2studies Inconclusion,atpresent,thepublishedliteraturesupportsthe
+have been published, but they only provide incremental knowl- useofwearabledevicesforautomatedseizuredetectioninpatients
+edge and would not change the current recommendations. The withtonic-clonicseizuresforsafetyindications,asspecifiedinthe
+onlyareawherenewapplicationsseemtobejustifiedisthequan- clinical practice guidelines issued by the ILAE and IFCN. Further
+tification of absence seizures using wearable single-channel EEG. researchanddevelopmentareneededforotherseizuretypesand
+However, only a single phase-3 study [29] supports this applica- indications.
+tion, and the clinical utility of the information provided by the
+devicesstillneedstobeconfirmed.
+There is a need for further research and development in this Funding
+field.Severalnewapproacheshavethepotentialtosolvethecur-
+rentimpediments,namelyextendingtheapplicabilityofwearable This study was supported by a grant from the Independent
+devices to detecting non-convulsive seizures [63] and providing ResearchFundDenmark(grantnumber0134-00400B).
+objective seizure quantification and characterization [11].
+Although compelling evidence is not yet available for these
+approaches, they deserve more attention as they may provide Declarationofcompetinginterest
+breakthroughresults.
+Wearable EEG devices record probably the best signal type in Theauthorsdeclarethattheyhavenoknowncompetingfinan-
+the detection of non-convulsive seizures, yet they must be con- cial interests or personal relationships that could have appeared
+cealedtoavoidstigma.ThisispossibleusingportableEEGdevices toinfluencetheworkreportedinthispaper.
+with non-invasive (behind-the-ear) [29,44,45,51] or minimally
+invasive (subcutaneous) electrodes [64–67]. Modalities based on
+ictal autonomic changes (heart rate variability, electrodermal AppendixA.Supplementarydata
+activity)maydetectnon-convulsiveseizures,aloneorincombina-
+tion(multimodaldevices)[24,43,55,68].Aspatientsmayneeddif- Supplementary data to this article can be found online at
+ferentdevicesdependingontheirseizuretypesandcharacteristics, https://doi.org/10.1016/j.yebeh.2023.109486.
+4P.MeritamLarsenandSándorBeniczky Epilepsy&Behavior148(2023)109486
+References [24] JeppesenJ,Fuglsang-FrederiksenA,JohansenP,ChristensenJ,WüstenhagenS,
+Tankisi H, et al. Seizure detection based on heart rate variability using a
+wearableelectrocardiographydevice.Epilepsia2019;60(10):2105–13.https://
+[1] Hampton T. Recent advances in mobile technology benefit global health,
+doi.org/10.1111/epi.16343[Epub2019Sep20PMID:31538347].
+research, and care. J Am Med Assoc 2012;307(19):2013–4. https://doi.org/
+[25] BeniczkyS,PolsterT,KjaerTW,HjalgrimH.Detectionofgeneralizedtonic-
+10.1001/jama.2012.4465.
+clonicseizuresbyawirelesswristaccelerometer:aprospective,multicenter
+[2] Lassalle-Lagadec S, Allard M, Dilharreguy B, Schweitzer P, Swendsen J,
+study.Epilepsia2013;54(4):e58–61.
+Sibon I. Linking MRI to daily life experience: the example of poststroke
+[26] Arends J, Thijs RD, Gutter T, Ungureanu C, Cluitmans P, Van Dijk J, et al.
+depression. Neurology 2012;78(5):322–5. https://doi.org/10.1212/WNL.
+Multimodalnocturnalseizuredetectioninaresidentialcaresetting:along-
+0b013e31824528b2.
+term prospective trial. Neurology. 2018;91(21):e2010–9. https://doi.org/
+[3] AbbasiJ.Mobiledeviceapphelpsdistinguishtoddlerswithautism.JAmMed
+10.1212/WNL.0000000000006545 [Epub 2018 Oct 24. PMID: 30355702;
+Assoc2021;325(22):2243.https://doi.org/10.1001/jama.2021.8627.
+PMCID:PMC6260200].
+[4] HoppeC,FeldmannM,BlachutB,SurgesR,ElgerCE,HelmstaedterC.Novel
+[27] BeniczkyS,ConradsenI,HenningO,FabriciusM,WolfP.Automatedreal-time
+techniques for automated seizure registration: patients’ wants and needs.
+detectionoftonic-clonicseizuresusing awearable EMGdevice. Neurology
+EpilepsyBehav2015;52:1–7.https://doi.org/10.1016/j.yebeh.2015.08.006.
+2018;90(5):e428–34.
+[5] VandeVelA,SmetsK,WoutersK,CeulemansB.Automatednon-EEGbased
+[28] Onorati F, Regalia G, Caborni C, LaFrance Jr WC, Blum AS, Bidwell J, et al.
+seizure detection: do users have a say? Epilepsy Behav 2016;62:121–8.
+Prospective study of a multimodal convulsive seizure detection wearable
+https://doi.org/10.1016/j.yebeh.2016.06.029.
+systemonpediatricandadultpatientsintheepilepsymonitoringunit.Front
+[6] TovarQuirogaDF,BrittonJW,WirrellEC.Patientandcaregiverviewonseizure
+Neurol2021;18(12):.https://doi.org/10.3389/fneur.2021.724904724904.
+detection devices: a survey study. Seizure 2016;41:179–81. https://doi.org/
+[29] JaparidzeG,LoeckxD,BuckinxT,ArmandLarsenS,ProostR,JansenK,etal.
+10.1016/j.seizure.2016.08.004.
+Automated detection of absence seizures using a wearable
+[7] PatelAD,MossR,RustSW,Patterson J,StrouseR,Gedela S,etal.Patient-
+electroencephalographicdevice:aphase3validationstudyandfeasibilityof
+centereddesigncriteriaforwearableseizuredetectiondevices.EpilepsyBehav
+automated behavioral testing. Epilepsia 2022. https://doi.org/10.1111/
+2016;64:116–21.https://doi.org/10.1016/j.yebeh.2016.09.012.
+epi.17200[Epubaheadofprint.PMID:35176173].
+[8] Bruno E, Simblett S, Lang A, Biondi A, Odoi C, Schulze-Bonhage A, et al.
+[30] Lazeron RHC, Thijs RD, Arends J, Gutter T, Cluitmans P, Van Dijk J, et al.
+Wearable technology in epilepsy: the views of patients, caregivers, and
+Multimodalnocturnalseizuredetection:doweneedtoadaptalgorithmsfor
+healthcareprofessionals.EpilepsyBehav.2018;85:141-149.https://doi.org/
+children? Epilepsia Open 2022;7(3):406–13. https://doi.org/10.1002/
+10.1016/j.yebeh.2018.05.044[Epub2018Jun23.PMID:29940377].
+epi4.12618[Epub2022Jul21.PMID:35666848;PMCID:PMC9436288].
+[9] ElgerCE,HoppeC.Diagnosticchallengesinepilepsy:seizureunder-reporting
+[31] ArmandLarsenS,TerneyD,ØsterkjerhuusT,VindingMerinderT,AnnalaK,
+andseizuredetection.LancetNeurol2018;17(3):279–88.
+KnightA,etal. Automated detectionofnocturnalmotorseizures usingan
+[10] RyvlinP,CiumasC,WisniewskiI,BeniczkyS.Wearabledevicesforsudden
+audio-video system. Brain Behav 2022;12(9). https://doi.org/10.1002/
+unexpecteddeathinepilepsyprevention.Epilepsia2018;59(Suppl1):61–6.
+brb3.2737[Epub2022Aug8.PMID:35939047;PMCID:PMC9480955].
+https://doi.org/10.1111/epi.14054.
+[32] van Westrhenen A, Lazeron RHC, van Dijk JP, Leijten FSS, Thijs RD, Dutch
+[11] BeniczkyS,ArbuneAA,JeppesenJ,RyvlinP.Biomarkersofseizureseverity
+TeleEpilepsyConsortium.Multimodalnocturnalseizuredetectioninchildren
+derivedfromwearabledevices.Epilepsia2020;61(Suppl1):S61–6.https://doi.
+withepilepsy:aprospective,multicenter,long-term,in-hometrial.Epilepsia.
+org/10.1111/epi.16492.
+2023. https://doi.org/10.1111/epi.17654 [Epub ahead of print. PMID:
+[12] Salas-PuigX,IniestaM,AbrairaL,PuigJ.QUIN-GTCstudygroup.Accidental
+37195144].
+injuries in patients with generalized tonic-clonic seizures. A multicenter,
+[33] HadadyL,KlivényiP,FabóD,BeniczkyS.Real-worlduserexperiencewith
+observational, cross-sectional study (QUIN-GTC study). Epilepsy Behav
+seizuredetectionwearabledevicesinthehomeenvironment.Epilepsia2022.
+2019;92:135–9.https://doi.org/10.1016/j.yebeh.2018.10.043 [Epub2019Jan
+https://doi.org/10.1111/epi.17189[Epubaheadofprint.PMID:35195898].
+15.PMID:30658321].
+[34] MaceaJ,BhagubaiM,BrouxV,DeVosM,VanPaesschenW.In-hospitaland
+[13] RyvlinP,NashefL,LhatooSD,BatemanLM,BirdJ,BleaselA,etal.Incidence
+home-based long-term monitoring of focal epilepsy with a wearable
+and mechanisms of cardiorespiratory arrests in epilepsy monitoring units
+electroencephalographic device: diagnostic yield and user experience.
+(MORTEMUS): a retrospective study. Lancet Neurol 2013;12(10):966–77.
+Epilepsia 2023;64(4):937–50. https://doi.org/10.1111/epi.17517 [Epub 2023
+https://doi.org/10.1016/S1474-4422(13)70214-X [Epub 2013 Sep 4 PMID:
+Feb3PMID:36681896].
+24012372].
+[35] EngelgeerA,vanWestrhenenA,ThijsRD,EversSMAA.Aneconomicevaluation
+[14] Sveinsson O, Andersson T, Mattsson P, Carlsson S, Tomson T. Clinical risk
+oftheNightWatchforchildrenwithrefractoryepilepsy:insightintothecost-
+factors in SUDEP: a nationwide population-based case-control study.
+effectiveness and cost-utility. Seizure 2022;101:156–61. https://doi.org/
+Neurology. 2020;94(4):e419–29. https://doi.org/10.1212/
+10.1016/j.seizure.2022.08.003.Epub2022Aug17PMID:36030593.
+WNL.0000000000008741 [Epub 2019 Dec 12. Erratum in:Neurology. 2020
+[36] TangJ,ElAtracheR,YuS,AsifU,JacksonM,RoyS,etal.Seizuredetectionusing
+Mar10;94(10):459.PMID:31831600;PMCID:PMC7079690].
+wearable sensors and machine learning: setting a benchmark. Epilepsia
+[15] HardenC,TomsonT,GlossD,BuchhalterJ,CrossJH,DonnerE,etal.Epilepsy
+2021;62(8):1807–19.https://doi.org/10.1111/epi.16967.
+Curr 2017;17(3):180–7. https://doi.org/10.5698/1535-7511.17.3.180 [PMID:
+[37] BöttcherS,BrunoE,ManyakovNV,EpitashviliN,ClaesK,GlasstetterM,etal.
+28684957;PMCID:PMC5486432].
+Detectingtonic-clonicseizuresinmultimodalbiosignaldatafromwearables:
+[16] Cook MJ, O’Brien TJ, Berkovic SF, Murphy M, Morokoff A, Fabinyi G, et al.
+methodology design and validation. JMIR Mhealth Uhealth 2021;9(11):
+Predictionofseizurelikelihoodwithalong-term,implantedseizureadvisory
+e27674. https://doi.org/10.2196/27674 [PMID: 34806993; PMCID:
+systeminpatientswithdrug-resistantepilepsy:afirst-in-manstudy.Lancet
+PMC8663471].
+Neurol 2013;12(6):563–71. https://doi.org/10.1016/S1474-4422(13)70075-9
+[38] GlasstetterM,BöttcherS,ZablerN,EpitashviliN,DümpelmannM,Richardson
+[Epub2013May2PMID:23642342].
+MP,etal.Identificationofictaltachycardiainfocalmotor-andnon-motor
+[17] HoppeC,PoepelA,ElgerCE.Epilepsy:accuracyofpatientseizurecounts.Arch
+seizures by means of a wearable PPG sensor. Sensors (Basel) 2021;21
+Neurol2007;64(11):1595–9.
+(18):6017. https://doi.org/10.3390/s21186017 [PMID: 34577222; PMCID:
+[18] Beniczky S, Wiebe S, Jeppesen J, Tatum WO, Brazdil M, Wang Y, et al.
+PMC8470979].
+Automated seizure detection using wearable devices: a clinical practice
+[39] Jahanbekam A, Baumann J, Nass RD, Bauckhage C, Hill H, Elger CE, et al.
+guidelineoftheInternationalLeagueAgainstEpilepsyandtheInternational
+PerformanceofECG-basedseizuredetectionalgorithmsstronglydependson
+FederationofClinicalNeurophysiology.Epilepsia2021;62(3):632–46.https://
+trainingandtestconditions.EpilepsiaOpen2021;6(3):597–606.https://doi.
+doi.org/10.1111/epi.16818.
+org/10.1002/epi4.12520.
+[19] Beniczky S, Wiebe S, Jeppesen J, Tatum WO, Brazdil M, Wang Y, et al.
+[40] Hegarty-CraverM,KronerBL,BumbutA,DeFilippSJ,GaillardWD,GilchristKH.
+Automated seizure detection using wearable devices: a clinical practice
+Cardiac-baseddetectionofseizuresinchildrenwithepilepsy.EpilepsyBehav
+guidelineoftheInternationalLeagueAgainstEpilepsyandtheInternational
+2021;122:.https://doi.org/10.1016/j.yebeh.2021.108129108129.
+Federation of Clinical Neurophysiology. Clin Neurophysiol 2021;132
+[41] DeCoomanT,VandecasteeleK,VaronC,HunyadiB,CleerenE,VanPaesschen
+(5):1173–84.https://doi.org/10.1016/j.clinph.2020.12.009[Epub2021Mar5].
+W,et al.Personalizing heart rate-based seizure detection usingsupervised
+[20] BeniczkyS,RyvlinP.Standardsfortestingandclinicalvalidationofseizure
+SVMtransferlearning.FrontNeurol2020;26(11):145.https://doi.org/10.3389/
+detectiondevices.Epilepsia2018;59(Suppl1):9–13.https://doi.org/10.1111/
+fneur.2020.00145.
+epi.14049.
+[42] JeppesenJ,Fuglsang-FrederiksenA,JohansenP,ChristensenJ,WüstenhagenS,
+[21] WhitingPF,RutjesAWS,WestwoodME,MallettS,DeeksJJ,ReitsmaJB,etal.
+TankisiH,etal.Seizuredetectionusingheartratevariability:aprospective
+QUADAS-2:arevisedtoolforthequalityassessmentofdiagnosticaccuracy
+validationstudy.Epilepsia2020;61(Suppl1):S41–6.https://doi.org/10.1111/
+studies.AnnInternMed2011;155(8):529.
+epi.16511.
+[22] MeritamP,RyvlinP,BeniczkyS.User-basedevaluationofapplicabilityand
+[43] Jeppesen J, Christensen J, Johansen P, Beniczky S. Personalized seizure
+usability of a wearable accelerometer device for detecting bilateral tonic-
+detectionusinglogisticregressionmachinelearningbasedonwearableECG-
+clonicseizures:afieldstudy.Epilepsia2018;59(Suppl1):48–52.https://doi.
+monitoring device. Seizure 2023;107:155–61. https://doi.org/10.1016/
+org/10.1111/epi.14051.
+j.seizure.2023.04.012[Epub2023Apr13PMID:37068328].
+[23] BoonP,VonckK,vanRijckevorselK,ElTahryR,ElgerCE,MullattiN,etal.A
+[44] VandecasteeleK,DeCoomanT,DanJ,CleerenE,VanHuffelS,HunyadiB,etal.
+prospective,multicenterstudyofcardiac-basedseizuredetectiontoactivate
+Visualseizureannotationandautomatedseizuredetectionusingbehind-the-
+vagus nerve stimulation. Seizure 2015;32:52–61. https://doi.org/10.1016/
+earelectroencephalographicchannels.Epilepsia2020;61(4):766–75.https://
+j.seizure.2015.08.011[Epub2015Sep21PMID:26552564].
+doi.org/10.1111/epi.16470.
+5P.MeritamLarsenandSándorBeniczky Epilepsy&Behavior148(2023)109486
+[45] YouS,ChoBH,YookS,KimJY,ShonYM,SeoDW,etal.Unsupervisedautomatic [56] Nielsen JM, Kristinsdóttir ÁE, Zibrandtsen IC, Masulli P, Ballegaard M,
+seizuredetectionforfocal-onsetseizuresrecordedwithbehind-the-earEEG Andersen TS, et al. Out-of-hospital multimodal seizure detection: a pilot
+using an anomaly-detecting generative adversarial network. Comput study.BMJNeurolOpen2023;5(2):e000442.https://doi.org/10.1136/bmjno-
+Methods Programs Biomed 2020;193:. https://doi.org/10.1016/j.cmpb.2020. 2023-000442[PMID:37547054;PMCID:PMC10401242].
+105472105472. [57] Pipatpratarnporn W, Muangthong W, Jirasakuldej S, Limotai C. Wrist-worn
+[46] VandecasteeleK,DeCoomanT,ChatzichristosC,CleerenE,SwinnenL,Macea smartwatchandpredictivemodels forseizures.Epilepsia2023.https://doi.
+Ortiz J, et al. The power of ECG in multimodal patient-specific seizure org/10.1111/epi.17729[Epubaheadofprint.PMID:37505115].
+monitoring: added value to an EEG-based detector using limited channels. [58] HalimehM,JacksonM,VielufS,LoddenkemperT,MeiselC.ExplainableAIfor
+Epilepsia2021.https://doi.org/10.1111/epi.16990. wearableseizurelogging:impactofdataquality,patientage,andantiseizure
+[47] BhagubaiM,VandecasteeleK,SwinnenL,MaceaJ,ChatzichristosC,DeVosM, medication on performance. Seizure 2023;110:99–108. https://doi.org/
+etal.ThepowerofECGinsemi-automatedseizuredetectioninadditionto 10.1016/j.seizure.2023.06.002[Epub2023Jun8PMID:37336056].
+two-channel behind-the-ear EEG. Bioengineering (Basel) 2023;10(4):491. [59] BeniczkyS,KarolyP,NurseE,RyvlinP,CookM.Machinelearningandwearable
+https://doi.org/10.3390/bioengineering10040491 [PMID: 37106678; PMCID: devicesofthefuture.Epilepsia2020.https://doi.org/10.1111/epi.16555.
+PMC10136326]. [60] Husain AM, Towne AR, Chen DK, Whitmire LE, Voyles SR, Cardenas DP.
+[48] vanWestrhenenA,PetkovG,KalitzinSN,LazeronRHC,ThijsRD.Automated Differentiation of epileptic and psychogenic nonepileptic seizures using
+video-based detection of nocturnal motor seizures in children. Epilepsia single-channelsurfaceelectromyography.JClinNeurophysiol2020.https://
+2020;61(Suppl1):S36–40.https://doi.org/10.1111/epi.16504. doi.org/10.1097/WNP.0000000000000703.
+[49] BasnyatP,MäkinenJ,SaarinenJT,PeltolaJ.Clinicalutilityofavideo/audio- [61] GuyattGH,OxmanAD,VistGE,KunzR,Falck-YtterY,Alonso-CoelloP,etal.
+basedepilepsymonitoringsystemNelli.EpilepsyBehav2022;133:.https:// GRADE:anemergingconsensusonratingqualityofevidenceandstrengthof
+doi.org/10.1016/j.yebeh.2022.108804. Epub 2022 Jun 23 PMID: recommendations.ChinJEvid-BasedMedBMJ2009;9:8–11.
+35753111108804. [62] Handbook for grading the quality of evidence and the strength of the
+[50] RissanenSM,HyppönenJ,SilvennoinenK,SäisänenL,KarjalainenPA,Mervaala recommendations using the GRADE approach [Internet]. 2013. https://
+E, et al. Wearable monitoring of positive and negative myoclonus in gdt.gradepro.org/app/handbook/handbook.html.Accessedon27May2020.
+progressive myoclonic epilepsy type 1. Clin Neurophysiol 2021;132 [63] RyvlinP,CammounL,HubbardI,RaveyF,BeniczkyS,AtienzaD.Noninvasive
+(10):2464–72. https://doi.org/10.1016/j.clinph.2021.06.026 [Online ahead of detectionoffocalseizuresinambulatorypatients.Epilepsia2020;61(Suppl1):
+print]. S47–54.https://doi.org/10.1111/epi.16538.
+[51] SwinnenL,ChatzichristosC,JansenK,LagaeL,DepondtC,SeynaeveL,etal. [64] WeisdorfS,Duun-HenriksenJ,KjeldsenMJ,PoulsenFR,GangstadSW,Kjaer
+Accuratedetectionoftypicalabsenceseizuresinadultsandchildrenusinga TW.Ultra-long-termsubcutaneoushomemonitoringofepilepsy-490daysof
+two-channel electroencephalographic wearable behind the ears. Epilepsia EEG from nine patients. Epilepsia 2019;60(11):2204–14. https://doi.org/
+2021.https://doi.org/10.1111/epi.17061. 10.1111/epi.16360.
+[52] BrotherstoneR,McLellanA,GrahamC,FisherK.Aclinicalevaluationofanovel [65] WeisdorfS,ZibrandtsenIC,KjaerTW.SubcutaneousEEGmonitoringreveals
+algorithm in the reliable detection of epileptic seizures. Seizure AED response and breakthrough seizures. Case Rep Neurol Med 2020;28
+2020;82:109–17.https://doi.org/10.1016/j.seizure.2020.09.017. (2020):8756917.https://doi.org/10.1155/2020/8756917.
+[53] FrankelMA, LehmkuhleMJ, Spitz MC,Newman BJ,Richards SV,Arain AM. [66] Duun-HenriksenJ,BaudM,RichardsonMP,CookM,KouvasG,HeasmanJM,
+Wearablereduced-channelEEGsystemforremoteseizuremonitoring.Front etal.Anewerainelectroencephalographicmonitoring?Subscalpdevicesfor
+Neurol 2021;18(12):. https://doi.org/10.3389/fneur.2021.728484 [PMID: ultra-long-term recordings. Epilepsia 2020;61(9):1805–17. https://doi.org/
+34733229;PMCID:PMC8558398]728484. 10.1111/epi.16630.
+[54] ChenH,WangZ,LuC,ShuF,ChenC,WangL,etal.Neonatalseizuredetection [67] VianaPF,RemvigLS,Duun-HenriksenJ,GlasstetterM,DümpelmannM,Nurse
+usingawearablemulti-sensorsystem.Bioengineering(Basel)2023;10(6):658. ES,etal.Signalqualityandpowerspectrumanalysisofremoteultralong-term
+https://doi.org/10.3390/bioengineering10060658 [PMID: 37370589; PMCID: subcutaneous EEG. Epilepsia 2021;62(8):1820–8. https://doi.org/10.1111/
+PMC10294985]. epi.16969.
+[55] JeppesenJ,ChristensenJ,MølgaardH,BeniczkyS.Automateddetectionoffocal [68] VielufS,Amengual-GualM,ZhangB,ElAtracheR,UfongeneC,JacksonMC,
+seizuresusingsubcutaneouslyimplantedelectrocardiographicdevice:aproof- et al. Twenty-four-hour patterns in electrodermal activity recordings of
+of-concept study. Epilepsia 2023. https://doi.org/10.1111/epi.17612 [Epub patients with and without epileptic seizures. Epilepsia 2021;62(4):960–72.
+aheadofprint.PMID:37029748]. https://doi.org/10.1111/epi.16843.
+6

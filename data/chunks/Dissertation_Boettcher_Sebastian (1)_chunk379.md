@@ -1,0 +1,8 @@
+FPdetectionsacrossalmostallofthe12includedpatients,showingageneraltrendtowardFP
+detectionsindependentofpatientselection,whereasthemodelevaluatedherecouldachievea
+generallylowerFPrateonboththetrainingandtestsets,alsorevealingcertainpatientswith
+adisproportionateFAR.
+Arendsetal.[226]usedtheLivAssuredNightWatchwearabledeviceinalargeambulatory
+long-term monitoring study, collecting 908 convulsive seizures from 28 patients over more
+than 1800 nights. The device collects ACC and PPG signals from the patients’ upper arm,
+specifically during the night. Their thresholding algorithm could detect 86% of the recorded

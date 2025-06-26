@@ -1,0 +1,10 @@
+published. Thesestudiesprimarilyfocusedonevaluatingseizuredetectionmethodologieson
+the collected data, including seizures with movement symptoms of varying severity. For this
+purpose,multimodalnon-electroencephalographybiosignaldatawerecollectedwithawrist-
+wornresearch-gradewearabledevice. Thefollowingchapterintroducesthebasicsofepilepsy,
+wearabledatarecording,andseizuredetectionandgivesthisthesis’smotivationandessential
+contributions.1.1. FUNDAMENTALSOFEPILEPSY 3
+1.1 Fundamentals of Epilepsy
+«Thehistoryofepilepsycanbesummarisedas4000yearsofignorance,supersti-
+tion,andstigmafollowedby100yearsofknowledge,superstition,andstigma.»
+—RajendraKale,1997[1]

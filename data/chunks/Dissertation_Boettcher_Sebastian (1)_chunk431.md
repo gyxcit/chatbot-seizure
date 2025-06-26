@@ -1,0 +1,8 @@
+amplitudeandhigh-frequencymovementsarerepresentedinaccelerometry(ACC)signalsas
+oscillationsinallthreeaxeswiththeselfsamecharacteristics. Changesoftheautonomousner-
+vous system that frequently occur peri-ictally in these seizures are reproduced in the traces
+ofelectrodermalactivity(EDA)andbloodvolumepulsesignals,althoughthelatterarerarely
+usableasthestrongmotionofthebodyduringtonic-clonicseizures(TCSs)alsoinducesheavy
+artifactingintherawphotoplethysmographysensorsignal.
+The first part of the chapter presents a convulsive seizure detection pipeline, employing
+an ensemble machine learning model (gradient boosted decision trees) trained with features

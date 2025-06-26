@@ -1,0 +1,245 @@
+Project 1
+Project title: Benchmarking Medical Language Models for analysing Electronic Health
+Records
+Supervisor: Anuradha Kar
+Brief description The integration of artificial intelligence (AI) in healthcare is
+transforming the way medical information is processed, analyzed, and utilized. Among
+the various AI applications, medical language models (MLMs) have emerged as critical
+tools for understanding and interpreting electronic health records (EHRs). These
+records, comprising unstructured clinical notes, laboratory results, prescriptions, and
+imaging reports, offer valuable insights but pose significant challenges due to their
+complexity, variability, and sensitivity. This project focuses on benchmarking medical
+language models tailored for EHRs to evaluate their performance, reliability, and
+applicability in clinical settings. The benchmarking process will involve the following key
+components:
+1. Steps:
+○ Identifying state-of-the-art MLMs, such as Med-BERT, ClinicalBERT, or
+BioGPT.
+○ Curating EHR datasets representative of real-world clinical environments.
+○ Evaluating models based on accuracy, interpretability, efficiency, and
+generalization across tasks like information extraction, clinical entity
+recognition, and note summarization.
+○ Assessing use cases such as decision support, risk prediction, and patient
+stratification.
+● Expected outcomes: The project aims to identify strengths and limitations of
+existing MLMs, providing guidance for their optimization and deployment in
+healthcare systems. By establishing standardized benchmarks, the project will
+facilitate the development of more reliable, efficient, and interpretable models
+that align with the specific demands of EHRs. This research will significantly
+contribute to improving clinical workflows, enabling personalized medicine, and
+enhancing patient care.
+● Required skills or prerequisites (if any): Python, LLM, HuggingfaceProject 2
+Project title: Multimodal AI for indoor monitoring for Parkinson's disease patients
+Supervisor: Anuradha Kar
+Brief description : This project leverages multimodal AI to improve the quality of life
+and clinical outcomes for Parkinson’s disease (PD) patients through continuous,
+non-invasive indoor monitoring. Parkinson’s disease is a progressive neurological
+disorder that impairs motor functions, balance, and speech, requiring tailored
+interventions. Monitoring these patients in real-world environments can offer critical
+insights into disease progression and treatment efficacy.
+The system integrates data from one or more cameras and wearable sensors, to
+provide a holistic view of the patient’s condition. Advanced machine learning models
+analyze multimodal inputs to track symptoms such as tremors, gait disturbances, and
+freezing episodes. It also evaluates non-motor symptoms like sleep disturbances and
+cognitive decline.
+This project emphasizes interpretability of the used models ensuring that AI-generated
+insights are transparent and actionable for healthcare providers. The system is
+designed to support early intervention by identifying patterns indicative of symptom
+aggravation, enabling personalized care plans.
+Expected outcomes: The goal is to create a reliable continuous monitoring solution
+that enhances clinical decision-making while promoting the patient’s autonomy and
+safety within their living environment. This will also foster collaborations with clinicians,
+patients, and caregivers to drive the design and implementation of this AI-driven
+healthcare innovation.
+Required skills or prerequisites (if any): Python, LLM, Huggingface, data analysisProject 3
+Project title Small language models for medical image analysis
+Supervisor: Anuradha Kar
+Brief description: This project explores the application of compact and efficient
+language models to medical image analysis, addressing the growing need for
+resource-effective AI solutions in healthcare. While large language models (LLMs) have
+demonstrated exceptional performance in interpreting medical data, their computational
+requirements often limit deployment in clinical environments. Small language models
+(SLMs), with fewer parameters and lower resource demands, offer a promising
+alternative for real-time, scalable, and interpretable medical applications.
+The project focuses on integrating SLMs with multimodal data, particularly medical
+images and accompanying textual data such as radiology reports, pathology notes, or
+electronic health records. Tasks include image captioning, report generation, disease
+classification, and anomaly detection. By leveraging pre-trained SLMs fine-tuned on
+medical datasets, the approach ensures domain-specific accuracy while maintaining
+computational efficiency.
+Key objectives include evaluating the performance of SLMs against LLMs in medical
+imaging tasks using benchmarks like accuracy, specificity, sensitivity, and inference
+time. The study also emphasizes interpretability, ensuring clinicians can trust and
+understand model outputs.
+This work aims to make advanced AI tools accessible for diverse healthcare settings,
+from well-equipped hospitals to low-resource clinics, democratizing AI-driven medical
+diagnostics and improving patient outcomes.
+● Expected outcomes: A framework with small language models trained for a
+medical image (CT/MRI/Xray) analysis task, comparison of multiple models for
+the task
+● Required skills or prerequisites (if any) Python, LLM, Huggingface, data
+analysisProject 4
+Project Title: Preprocessing Radiology Imaging for Veterinary Diagnostics Using Large
+Language Models
+Supervisor: Doreid Ammar, Anuradha Kar
+Brief description: This project focuses on enhancing diagnostic capabilities in
+veterinary medicine by combining advanced image preprocessing techniques with a
+Large Language Model (LLM) to generate detailed medical reports from radiology
+images. The initiative addresses the need for accurate and efficient analysis of pet
+radiology images to support veterinarians in diagnosing and managing animal health
+conditions.
+The project involves designing a robust preprocessing pipeline to optimize radiology
+images, ensuring high-quality input for the LLM. Tasks include noise reduction,
+normalization, segmentation, and feature enhancement, tailored to the unique
+anatomical characteristics of different animals. The processed images are then
+integrated into the LLM, which has been fine-tuned on veterinary-specific datasets, to
+produce comprehensive, contextually relevant diagnostic reports.
+The aim is to improve the accuracy, efficiency, and interpretability of the LLM in
+analyzing radiology data, enabling it to identify subtle abnormalities and suggest
+possible diagnoses. The outcome will be a streamlined diagnostic tool that provides
+veterinarians with actionable insights, improving patient outcomes and advancing
+animal healthcare.
+By leveraging the power of AI, this project aspires to bridge gaps in veterinary
+diagnostics, offering accessible and reliable solutions to enhance the health and welfare
+of pets.
+● Expected outcomes: A framework with small language models trained for a
+medical image (CT/MRI/Xray) analysis task, comparison of multiple models for
+the task
+● Required skills or prerequisites (if any) Python, LLM, Huggingface, computer
+visionProject 5
+Project Title: Enhanced X-ray Image Diagnostics with state of the art computer vision
+models
+Supervisor: Doreid Ammar, Anuradha Kar
+Brief description: This project explores the application of advanced deep learning
+techniques in analyzing X-ray images for improved medical diagnosis. The goal is to
+develop and optimize deep learning models that can automatically detect and classify
+abnormalities in X-ray images, aiding radiologists in making more accurate and efficient
+diagnoses.
+The project employs cutting-edge architectures, such as Convolutional Neural Networks
+(CNNs) and Transformer-based models, to enhance image quality, segment key
+features, and identify a wide range of conditions, from bone fractures and tumors to lung
+diseases like pneumonia or tuberculosis. By training these models on large, annotated
+X-ray datasets, the system learns to recognize patterns and anomalies that may be
+missed by the human eye.
+Key objectives include improving the model’s diagnostic accuracy, reducing false
+positives/negatives, and ensuring interpretability to gain the trust of healthcare
+professionals. The system also aims to support real-time analysis of X-ray images,
+making it a valuable tool in busy clinical settings.
+● Expected outcomes: The expected outcomes of this project include the
+development of a deep learning-based X-ray analysis system capable of
+accurately detecting and classifying abnormalities such as fractures, tumors, and
+lung diseases. The system is expected to significantly reduce diagnostic time and
+enhance the accuracy of interpretations, minimizing false positives and
+negatives. It will also provide interpretable results, offering insights that
+radiologists can trust.
+● Required skills or prerequisites (if any): Python, LLM, Huggingface, computer
+visionProject 6
+Project title: Predictive Modeling for Human Activities Using FutureGAN
+Supervisor: Nasreddine Menacer
+Project description: This project focuses on predictive models which can be used to
+forecast the next action or activity of a person in a normal-life scenario using historical
+data. The goal is to enhance understanding of human behavior in everyday
+environments, leveraging temporal data such as videos of prior activities or trajectories
+of movement. By integrating historical activity patterns, the project aims to enable
+accurate predictions of future actions, a capability with applications in areas like
+healthcare, smart homes, and human-computer interaction.
+The study involves a benchmarking exercise to evaluate state-of-the-art predictive
+models, with a particular emphasis on FutureGAN, a generative adversarial network
+designed for future action prediction. FutureGAN operates by learning spatiotemporal
+dependencies in historical data to predict plausible future actions or trajectories. The
+generative model is trained adversarially against a discriminator, ensuring predictions
+are both realistic and contextually consistent.
+Key tasks include identifying relevant datasets for training and testing, such as activity
+recognition or trajectory datasets, and evaluating model performance using metrics like
+prediction accuracy, F1-score, and temporal coherence. The benchmarking study will
+compare FutureGAN’s performance to other models, analyzing its advantages in terms
+of robustness and applicability in real-world scenarios. This study contributes to
+advancing predictive modeling for human activity forecasting.
+● Expected outcomes: Collection of models and datasets for activity prediction
+and comparison report with respect to FutureGAN
+● Required skills or prerequisites (if any): Python, deep learning, GANProject 7
+Project title: Benchmarking ResNet and YOLO for Real-Time Object, Scene, and
+Human Detection in Ambient Environments
+Supervisor: Nasreddine Menacer
+Project description: This project aims to compare and evaluate the performance of
+two prominent deep learning architectures, ResNet and YOLO, for detecting objects,
+scenes, and humans in real-time video streams from ambient environments. The
+objective is to achieve a system capable of generating contextualized outputs like
+"working in kitchen," "2 humans at a table," or "bottle of water on the table," by labeling
+multiple objects and recognizing activities within a scene.
+The study involves designing a comprehensive benchmarking framework to test both
+models under various conditions, including different lighting, object arrangements, and
+activity scenarios. ResNet, a convolutional neural network (CNN), can be evaluated for
+its ability to extract hierarchical features and classify objects and scenes. YOLO (You
+Only Look Once), a real-time object detection model, will be assessed for its speed and
+accuracy in detecting multiple objects and human presence in dynamic scenes.
+Performance metrics such as detection accuracy, precision, recall, inference time, and
+computational efficiency will be analyzed. Additionally, the models’ ability to provide
+context-aware scene descriptions by integrating object and human detection outputs will
+be assessed.
+● Expected outcomes:The outcome of the project is a detailed comparison
+highlighting the strengths and limitations of each model for real-time applications.
+This will help inform the selection of the most suitable model for tasks requiring
+detailed scene understanding in domains like smart homes, surveillance, and
+human-computer interaction..
+● Required skills or prerequisites (if any): Python, deep learning, object
+detectionProject 8
+Project title:AI Ethics and Compliance Chatbot Development
+Supervisor: Nathalie Devillier, Anuradha Kar
+Project description: This project aims to design and develop an intelligent chatbot to
+provide accessible, real-time guidance on AI ethics, regulations, and compliance. As
+organizations increasingly adopt AI technologies, navigating the complex landscape of
+ethical considerations and regulatory frameworks becomes critical. This chatbot will act
+as a knowledge hub, offering accurate and contextual insights to developers,
+policymakers, and business leaders.
+The chatbot will leverage a fine-tuned language model trained on a curated dataset of
+global AI regulations (e.g., EU AI Act, GDPR), ethical principles (e.g., fairness,
+transparency, accountability), and industry compliance standards. It will be capable of
+answering queries on topics such as ethical AI design, risk mitigation, bias detection,
+data privacy, and compliance audits.
+Key features include natural language understanding for context-aware conversations,
+dynamic updates to reflect evolving regulations, and tailored advice based on
+user-specific scenarios. The chatbot will also provide links to relevant resources, case
+studies, and best practices.
+By integrating advanced AI and domain expertise, this tool aims to democratize
+knowledge, empowering organizations to build AI systems that are not only innovative
+but also responsible and legally compliant. The project’s outcome will support ethical
+decision-making and foster trust in AI technologies across industries.
+● Expected outcomes:The outcome of the project is a detailed comparison
+highlighting the strengths and limitations of each model for real-time applications.
+This will help inform the selection of the most suitable model for tasks requiring
+detailed scene understanding in domains like smart homes, surveillance, and
+human-computer interaction..
+● Required skills or prerequisites (if any): Python, deep learning, object
+detectionProject 9
+Project title: Data Processing Pipelines for Seizure Detection: A Comprehensive
+State-of-the-Art Review and comparison of existing methodologies
+Supervisor: Anuradha Kar
+Project description: This project focuses on designing an efficient data processing
+pipeline for seizure detection in epilepsy, incorporating a comprehensive survey of
+state-of-the-art methods for anomaly detection in epilepsy. The pipeline will handle raw
+physiological and motion data from sensors, ensuring efficient preprocessing, feature
+extraction, and integration with machine learning models for real-time seizure detection.
+The survey will explore cutting-edge techniques, including time-series analysis, deep
+learning approaches like convolutional and recurrent neural networks, and hybrid
+models combining physiological and movement data. It will evaluate the strengths and
+limitations of existing systems, emphasizing scalability, sensitivity, and specificity. The
+pipeline aims to standardize the data handling process, from noise reduction to feature
+engineering, and integrate with advanced detection algorithms. This dual focus will
+advance understanding of epilepsy-related anomalies, contribute to the development of
+reliable seizure monitoring systems, and support improved patient care and timely
+intervention strategies.
+Project objectives:
+Design a robust pipeline for managing raw physiological and motion data, ensuring
+efficient preprocessing, feature extraction, and integration with machine learning
+models.
+Perform a detailed review of current techniques in anomaly detection for epilepsy,
+focusing on time-series analysis, deep learning models, and hybrid approaches.
+Establish a standardized framework for handling epilepsy-related data, from noise
+reduction to feature engineering, to improve reproducibility and accuracy in seizure
+detection.
+● Expected outcomes: A survey of state of the art in methods for anomaly
+detection from epilepsy datasets. A data processing pipeline for epilepsy data
+analysis.
+● Required skills or prerequisites (if any): - Python – Scikit-Learn - Git - Bash
+-SQL

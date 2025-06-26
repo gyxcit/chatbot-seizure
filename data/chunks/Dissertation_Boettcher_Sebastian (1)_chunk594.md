@@ -1,0 +1,8 @@
+Theextremeheterogeneityofepilepticseizures,especiallythoseoffocalonsetwithoutgener-
+alization,hasbeendiscussedinthisthesisonvariousoccasions. Oneaspectthathasnotbeen
+discussedfurther,however,istheclinicalclassificationofepilepticseizuresthatispresentedin
+Fisher et al. [27]. While this newest practical classification of seizures has made great strides
+inremovingambiguityinthenamingofseizuretypesinaclinicalcontext,thereisstillalack
+ofcompatibilitywithrespecttotheclassificationfromnon-electroencephalographywearable
+data. Of course, that was not the purpose of this terminology (re-)assessment, but it brings
+uptheissueofwhetherasupplementarytaxonomyofseizuresbytheirphysiologicalsemiol-

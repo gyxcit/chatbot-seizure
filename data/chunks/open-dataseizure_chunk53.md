@@ -1,0 +1,16 @@
+c18 FalseAlarm Sorting 5 47 1363 01:53:35
+c23 FalseAlarm Unknown 18 46 1334 01:51:10
+c10 FalseAlarm MotorVehicle 8 44 1276 01:46:20
+c16 FalseAlarm Sleeping 7 39 1092 01:31:00
+c20 FalseAlarm Talking 9 33 957 01:20:30
+c24 FalseAlarm WashingUp 4 28 812 01:07:40
+c7 FalseAlarm Gaming 8 28 784 01:05:35
+c2 Seizure Aura/Focal 3 27 899 01:15:55
+c6 FalseAlarm Fidgeting 3 23 667 00:55:35
+c1 Seizure Atonic/Fall 6 22 464 00:39:40
+c3 FalseAlarm BrushingTeeth 8 18 504 00:42:00
+c19 FalseAlarm Standing 3 16 464 00:37:20
+c13 FalseAlarm Scratching 3 5 145 00:12:05
+c12 FalseAlarm PushingPram 1 5 116 00:09:40
+c5 FalseAlarm Cycling 1 4 116 00:09:40
+c22 FalseAlarm Typing 1 4 116 00:09:40

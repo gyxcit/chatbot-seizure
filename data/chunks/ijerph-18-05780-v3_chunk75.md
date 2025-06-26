@@ -1,0 +1,10 @@
+authors[143]designedDeepIEDbasedonDLandEEG-fMRIscansforepilepsypatients,
+combining the general linear model with EEG-fMRI techniques to estimate the epilep-
+togeniczone. Hosseinietal.[144]proposedanedgecomputingautonomicframework
+forevaluation,regulation,andmonitoringofepilepticbrain. Theepileptogenicnetwork
+estimated the epilepsy using rs-fMRI and EEG. Shiri et al. [148] presented a technique
+fordirectattenuationcorrectionofPETimagesbyapplyingemissiondataviaCNN-AE.
+Nineteenradiomicfeaturesfrom83brainregionswereevaluatedforimagequantification
+viaHammersmithatlas.Finally,thesummaryofrelatedworksdoneusingmedicalimaging
+methodsandDLisshowninTable8.
+3.2. OtherNeuroimagingModalities

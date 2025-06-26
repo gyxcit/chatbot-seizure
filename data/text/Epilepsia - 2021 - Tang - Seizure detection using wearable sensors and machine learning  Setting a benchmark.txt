@@ -1,0 +1,1054 @@
+Received: 5 November 2020 | Revised: 2 June 2021 | Accepted: 2 June 2021
+DOI: 10.1111/epi.16967
+FULL- LENGTH ORIGINAL RESEARCH
+Seizure detection using wearable sensors and machine learning:
+Setting a benchmark
+Jianbin Tang 1 | Rima El Atrache 2 | Shuang Yu 1 | Umar Asif 1 |
+Michele Jackson 2 | Subhrajit Roy 1,3 | Mahtab Mirmomeni 1 | Sarah Cantley 2 |
+Theodore Sheehan 2 | Sarah Schubach 2 | Claire Ufongene 2 | Solveig Vieluf 2 |
+Christian Meisel 4,5 | Stefan Harrer 1,6 | Tobias Loddenkemper 2
+1IBM Research Australia, Melbourne,
+Victoria, Australia Abstract
+2Boston Children's Hospital and Harvard Objective: Tracking seizures is crucial for epilepsy monitoring and treatment evalu-
+Medical School, Boston, Massachusetts, ation. Current epilepsy care relies on caretaker seizure diaries, but clinical seizure
+USA
+monitoring may miss seizures. Wearable devices may be better tolerated and more
+3Google Brain, London, UK
+suitable for long- term ambulatory monitoring. This study evaluates the seizure de-
+4Department of Neurology, Charité-
+tection performance of custom- developed machine learning (ML) algorithms across
+Universitätsmedizin Berlin, Berlin,
+Germany a broad spectrum of epileptic seizures utilizing wrist- and ankle-w orn multisignal
+5Berlin Institute of Health, Berlin, biosensors.
+Germany
+Methods: We enrolled patients admitted to the epilepsy monitoring unit and asked
+6Digital Health Cooperative Research
+them to wear a wearable sensor on either their wrists or ankles. The sensor recorded
+Centre, Melbourne, Victoria, Australia
+body temperature, electrodermal activity, accelerometry (ACC), and photoplethys-
+Correspondence mography, which provides blood volume pulse (BVP). We used electroencephalo-
+Jianbin Tang, IBM Research Australia,
+graphic seizure onset and offset as determined by a board- certified epileptologist as
+Level 23, IBM Tower, 60 City Road,
+Southbank, 3006, Melbourne, VIC, a standard comparison. We trained and validated ML for two different algorithms:
+Australia.
+Algorithm 1, ML methods for developing seizure type- specific detection models for
+Email: jbtang@au1.ibm.com
+nine individual seizure types; and Algorithm 2, ML methods for building general
+Funding information seizure type- agnostic detection, lumping together all seizure types.
+Epilepsy Research Fund
+Results: We included 94 patients (57.4% female, median age = 9.9 years) and 548
+epileptic seizures (11 066 h of sensor data) for a total of 930 seizures and nine seizure
+types. Algorithm 1 detected eight of nine seizure types better than chance (area under
+the receiver operating characteristic curve [AUC-R OC] = .648–. 976). Algorithm 2
+detected all nine seizure types better than chance (AUC-R OC = .642–. 995); a fusion
+of ACC and BVP modalities achieved the best AUC-R OC (.752) when combining all
+seizure types together.
+Significance: Automatic seizure detection using ML from multimodal wearable sen-
+sor data is feasible across a broad spectrum of epileptic seizures. Preliminary results
+Jianbin Tang, Rima El Atrache, Stefan Harrer, and Tobias Loddenkemper contributed equally to this study.
+This is an open access article under the terms of the Creat ive Commo ns Attri bution-NonCo mmercial License, which permits use, distribution and reproduction in any medium,
+provided the original work is properly cited and is not used for commercial purposes.
+© 2021 The Authors. Epilepsia published by Wiley Periodicals LLC on behalf of International League Against Epilepsy
+Epilepsia. 2021;62:1807–1819. wileyonlinelibrary.com/journal/epi | 18071808 | TANG eT Al.
+show better than chance seizure detection. The next steps include validation of our
+results in larger datasets, evaluation of the detection utility tool for additional clinical
+seizure types, and integration of additional clinical information.
+KEYWORDS
+deep learning, epilepsy, machine learning, multisensor recordings, wearable devices
+1 | INTRODUCTION
+Key Points
+Epilepsy is a common cause of morbidity and mortality, es-
+• We evaluated the seizure detection performance
+pecially among children, despite advances in management
+regimens.1,2 Accurate monitoring and tracking of seizures of custom- developed machine learning algorithms
+across a spectrum of nine epileptic seizure types
+are important to evaluate seizure burden, recurrence risk, and
+• We analyzed electrodermal activity, accelerome-
+response to treatment. Outside the hospital, seizure track-
+try, and photoplethysmography recorded by wrist-
+ing relies on patients' and families' self-r eporting, which is
+and ankle- worn wearable devices
+often unreliable due to underreporting, seizures missed by
+caregivers, and patients' difficulties recalling seizures.3– 6 • ACC and BVP data fusion with CNN algorithms
+outperformed single data modality, with an over-
+Although long-t erm video- electroencephalography (EEG)
+all AUC- ROC of .752 when applied to the com-
+in the epilepsy monitoring unit (EMU) is the gold standard
+for accurately diagnosing and evaluating epilepsy,7 it is also plete dataset
+• Machine learning models trained using all seizures
+time- consuming and costly, can be perceived as stigmatizing,
+regardless of their type performed better overall
+and places a greater burden on patients and caregivers than
+than models trained on specific seizure types
+seizure monitoring with wearable devices. Based on prior
+• Automatic epileptic seizure detection using ma-
+studies, there exists a large clinical gap and urgent medi-
+chine learning and wearable device data is feasible
+cal need to detect a broad range of seizures, beyond focal
+across a broad spectrum of motor and nonmotor
+to bilateral tonic–c lonic seizures (FBTCSs) and generalized
+tonic– clonic seizures (GTCSs), with wearable devices.3,8– 10 seizures
+Recent advances in the use and development of non-E EG-
+based seizure detection devices utilizing a variety of sensors
+and modalities provided innovative opportunities to fill this
+gap and to monitor patients continuously in the outpatient with wearable devices for a broad spectrum of epileptic sei-
+setting. Examples include wrist-w orn or arm- worn devices, zures. We hypothesized that detection of a variety of seizure
+devices worn on the chest, and mattresses,11– 19 which, among types solely based on wrist- and ankle- worn sensor data is
+others, are less stigmatizing and better tolerated by patients feasible, utilizing EEG seizure onset and offset annotations
+during extended use.11,20– 23 Furthermore, analyzing signal as a gold standard comparison.
+recordings using artificial intelligence learning algorithms
+led to improved performance of seizure detection systems.
+Machine learning (ML) algorithms are trained to au- 2 | MATERIALS AND METHODS
+tomatically detect signal patterns of epileptic seizures.
+Previous studies have demonstrated the feasibility of using We obtained approval from the institutional review board of
+ML, and in particular deep learning models, to automati- Boston Children's Hospital before enrollment and data ac-
+cally detect seizures and classify seizure types based on quisition. We prospectively enrolled patients admitted to the
+EEG data.24,25 Although similar ML approaches applied to Boston Children's Hospital EMU between February 2015 and
+monitoring data from mobile devices can detect generalized November 2017. We asked participants to wear sensors (E4;
+tonic and tonic– clonic seizures,26 detection of other seizure Empatica) on either the left or right wrist or ankle for long-
+types using data from wearable devices is limited. There term recording during their admission. The wearable devices
+exists a critical need for reliable, automatic, nonintrusive recorded body temperature (TEMP), electrodermal activity
+methods to detect additional clinical seizure types. Based (EDA), accelerometry (ACC), and photoplethysmography to
+on the analysis of a large clinical seizure dataset of wrist- provide blood volume pulse (BVP; Figure S1a). We obtained
+and ankle- worn wearable device data confirmed by time- written informed consent or assent from all participants or
+synchronized EEG, we aimed to evaluate seizure detection their guardians.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseTANG eT Al. | 1809
+2.1 | Patient and seizure selection criteria Figure 1B shows the timing drift of the Empatica E4 for 11
+different devices at different time points, confirming device-
+We extracted clinical data from the electronic medical re- agnostic frequency stability of 1 ppm12 and a constant timing
+cords with a standardized data collection tool in Microsoft drift of 13 s in 24 h. These observations allowed us to derive
+Excel and REDCap (Research Electronic Data Capture; the following three-s tep timing error compensation scheme:
+Vanderbilt University), a secure web-b ased application that (1) 13- s offline timing drift compensation was added to the
+facilitates data acquisition and storage. We collected demo- signal data; (2) the start timing error was calculated (Figure
+graphic data, clinical patient data, and seizure characteristics. S1b), and labels were adjusted accordingly; and (3) 20- s pre-
+Epileptic seizure semiology and etiology were classified ac- seizure and 20- s postseizure end windows were added. In a
+cording to the International League Against Epilepsy crite- final step, we added verified seizure annotations to the signal
+ria,27 and patients with a high hourly frequency of seizures data.
+or clusters of four or more seizures in 15-m in time windows
+were excluded.
+2.4 | Data quality check
+2.2 | Seizure data collection We downloaded EEGs and wearable sensor device data sepa-
+rately and manually labeled each dataset. Subsequently, we
+This study utilized the conventional 10– 20 electrode scalp reviewed data for possible missing or incorrect annotations,
+EEG system during video-E EG monitoring.28 Video- EEG recording failures, or missing data by running seizure an-
+review by a board-c ertified clinical epileptologist confirmed notations and wearable sensor device data through custom-
+electrographic seizure onset and offset annotations as well as developed quality check processes (Figure S2).
+semiology of seizure types. Patients occasionally removed wristbands. In this study,
+we used TEMP sensor data to detect whether the wristband
+had been removed. We used a 10- min moving average to
+2.3 | Synchronization of EEG and wearable smoothen the TEMP recordings. For temperature values
+device clocks higher than 45° or lower than 27°, we added 10- min safety
+windows to both ends of the segment, and we excluded this
+The wearable device and EEG monitor record with independ- time window from the study.
+ent clocks. To compensate for the time drift between the de-
+vice and EEG clocks, we synchronized the device clocks at
+the start of the device recording. After we turned on the re- 2.5 | Data analysis
+cording device, we simultaneously pressed the device button
+and EEG event marker button. This created a time tag on both 2.5.1 | ML techniques
+the device and EEG recordings. When we placed two weara-
+ble devices on the patient, the button press was done simulta- We used a convolutional neural network (CNN) to classify
+neously for both. We recorded a video of the syncing process raw time series data and applied random undersampling to
+and used video timestamps to verify device placement times balance the raw data. We first trained different detection
+in cases where we could not find EEG event markers due models separately on individual ACC, EDA, and BVP data.
+to button press failures. When patients agreed to wear the Then we serially trialed different combinations of sensor mo-
+recording device again on a second day or in another admis- dalities, including ACC and EDA, ACC and BVP, EDA and
+sion, they were enrolled again, and the process was repeated. BVP, and ACC, BVP, and EDA. The entire ML framework
+We defined the start timing error between the wristband and the architectures and functionalities of the developed
+and EEG clock as the time difference between the wristband CNN models are shown in Figure 2.
+and EEG clock at the beginning of the experiment (Figure Our CNN model consists of two convolutional layers.
+S1b). Figure 1A shows the distribution of start timing errors Convolutional Layer 1 is followed by Rectified Linear Unit
+observed in our study; absolute errors follow approximately (ReLU) and dropout operations. Convolutional Layer 2 is fol-
+a Gaussian distribution and are predominantly shorter than lowed by ReLU and max pooling. The final layer is a global
+20 s. average pooling29 layer. The network outputs are probabilis-
+The wearable devices also have button press failures, tic distributions related to the target classes.
+which are indicated by a large start timing error. We set the In Poh et al.,30 data reduction and support vector machines
+start timing error to 0 when there is a button press failure. (SVMs) were used to detect secondarily generalized tonic–
+To ensure the seizure segment is within the annotation, we clonic seizures with 94% sensitivity and a .74/24-h false
+added 20- s preseizure and 20-s postseizure end windows. alarm rate (FAR). We applied this method to tonic– clonic
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License1810 | TANG eT Al.
+FIGURE 1 Wristband and electroencephalographic (EEG) monitor clocks show different drift rates over time. For seizure detection with
+seconds- level accuracy, the timing error must be measured and compensated to enable consistent data labeling and analysis consistent with video-
+EEG recordings. (A) Relative start timing error distribution between the wristband and EEG monitor. (B) Timing drift of the wristband mapped
+over 24 h is plotted. STD, standard deviation
+seizure data in our dataset and compared the performance to For validating the general seizure detection method
+that of our CNN model for the same data. (Scenario 2), we applied 10-f old cross- validation to evaluate
+the performance of the developed ML models for all patients
+and seizure types. For each fold, the patients in the validation
+2.5.2 | Seizure detection scenarios dataset are excluded from the training dataset.
+The majority of patients in our cohort wore two func-
+We trained and validated ML methods for two different sce- tioning sensor devices on opposite sides of the body on their
+narios: (1) ML methods for developing seizure type-s pecific wrists and/or ankles. For some patients, one device stopped
+detection models for nine individual seizure types; and (2) working during the study due to battery life limitations.
+ML methods for building general type-a gnostic seizure de- Additionally, some patients chose to wear only one device.
+tection models, in which case seizures from different seizure We treated each wearable sensor device recording of a sei-
+types were lumped together. zure as an individual sample during training, which allowed
+To ensure the availability of sufficient data to train the us to maximize the amount of training data. During testing,
+seizure type- specific ML models (Scenario 1), we chose to we used only one wristband recording for those seizures with
+apply leave- one- subject- out cross- validation to those seizure two simultaneous wristband recordings. We strictly excluded
+types for which datasets contained more than five patients all seizure samples contained in the training dataset from the
+and in total 10 seizures. This allowed us to test the perfor- respective test dataset at all times, and therefore model per-
+mance of the developed ML models for nine seizure types formance was never tested on any data that had been used for
+(Table 1). training such models.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseTANG eT Al. | 1811
+FIGURE 2 FIGURE (A) Machine learning (ML) framework for computing seizure detection baseline performance. The full pipeline
+depicted columnwise from left to right consists of the following modules: (1) individual sensor modalities generating raw time series data, (2)
+modality fusion techniques, (3) data sampling methods to compensate for data imbalance, and (4) ML techniques adapted to raw time series. (B)
+A convolutional neural network (Conv: Convolutional, ReLU: Rectified Linear Unit) is used to analyze raw time series data. ACC, accelerometry;
+BVP, blood volume pulse; EDA, electrodermal activity
+2.6 | Statistical methods true positive rate (also known as sensitivity) against the FAR
+at various threshold settings. AUC is the area under the ROC
+Previous studies26,31 utilized custom-d efined seizurewise curve. The higher the AUC, the better the model is at distin-
+performance metrics to account for specific experimen- guishing seizures from nonseizure events.
+tal scenarios, data formats, and clinical use cases. We also For leave- one- subject- out cross- validation, we calculated
+custom- defined and applied seizurewise performance met- sensitivity, FAR, detection delay, and AUC-R OC by combin-
+rics. We added 1- min preictal and postictal buffers before ing all subjects' prediction results. For leave- one- subject- out
+and after each ictal segment. We consider a seizure detected cross- validation, we calculated sensitivity, FAR, detection
+if it is correctly labeled within the preictal, ictal, and postictal delay, and AUC- ROC by combining all folds' prediction
+windows. results.
+We divide the interictal period into nonoverlapping 1- min
+intervals. If multiple false alarms occurred within a single
+1- min interval, they are reported as one single false alarm. 3 | RESULTS
+The sensitivity measures apply to the proportion of cor-
+rectly identified seizures. FAR is the number of incorrectly We included 94 patients who met our inclusion criteria (me-
+detected seizures over 24 h. We defined detection delay as the dian age = 9.9 years, range = 27.2, interquartile range = 9.2;
+difference between the seizure onset and detector recognition 54 [57.4%] males; Table 1, Figure S3), and 548 seizures. For
+of seizure activity. training purposes, we had seizure onset and offset annotations
+We calculated seizurewise area under the curve (AUC)– for 930 seizures captured by both left and right sensor devices.
+receiver operating characteristic (ROC) value, sensitivity, The dataset is highly imbalanced, containing 153 h of ictal and
+and FAR per 24 h. The ROC curve is created by plotting the 10 913 h of normal interictal brain activity signals.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License1812 | TANG eT Al.
+TABLE 1 Demographic and clinical characteristics for patients TABLE 1 (Continued)
+with seizures during enrollment (N = 94 patients, n = 548 seizuresa)
+Demographic and clinical characteristics Value
+Demographic and clinical characteristics Value
+Nonmotor 10 (20)
+Age at first enrollment, median years (range, IQR) 9.9 (27.2, 9.2) Behavior arreste 10 (16)
+Male, n (%) 54 (57.4) Cognitive 1 (4)
+Ethnicity, n (%) Unclassified awareness 22 (145)
+Not Hispanic or Latino 71 (75.5) Motor 16 (78)
+Unknown 9 (9.6) Tonice 6 (47)
+Not reported 8 (8.5) Automatismse 3 (4)
+Hispanic or Latino 6 (6.4) Hyperkinetic 3 (3)
+Race, n (%) Myoclonic 3 (14)
+White 64 (68.1) Clonice 2 (5)
+Unknown 17 (18.1) Atonic 1 (5)
+Black or African American 6 (6.4) Nonmotor 5 (57)
+Not reported 6 (6.4) Behavior arreste 3 (5)
+Asian 1 (1.1) Autonomic 1 (50)
+History of clinical epilepsy characteristics Unclassified 1 (1)
+Diagnosis of epilepsy, n (%) 92 (97.9) Sensory 1 (1)
+Age at first seizure, median years (range, IQR) 1.8 (16.0, 6.6) Unclassified movement 5 (10)
+Seizure frequency [n = 82], median 32.2 (2880.0, Generalized onset 35 (213)
+seizures/30 days (range, IQR)b 119.2)
+Subclinical 2 (2)
+Epilepsy etiology [n = 92], n (%) Motor semiology unavailable 4 (5)
+Unknown 39 (42.4)
+Motor 30 (174)
+Structural 34 (37.0) Tonice 15 (90)
+Genetic 13 (14.1) Epileptic spasmse 8 (47)
+Infectious 3 (3.3) Tonic– clonice 6 (15)
+Metabolic 2 (2.2)
+Myoclonic 3 (9)
+Immune 1 (1.1)
+Clonic 2 (7)
+2017 ILAE seizure semiology, n patients (n
+Atonic 2 (5)
+seizures)c
+Unclassified 1 (1)
+Focal onset 62 (548)
+Nonmotor 2 (16)
+Focal to bilateral tonic–c lonice 21 (38)
+Typical absence 2 (16)
+Subclinicale 14 (66)
+Unclassified movement 6 (16)
+Awareness and motor semiology unavailable 6 (7)
+Unknown onset/unclassified movement 1 (1)
+Aware 6 (9)
+Wristband location, n patientsc,d
+Motor 4 (4)
+Left wrist 35
+Tonice 2 (2)
+Right wrist 40
+Clonice 1 (1)
+Left ankle 94 Automatismse 1 (1)
+Right ankle 59
+Nonmotor 2 (5)
+Abbreviations: ILAE, International League Against Epilepsy; IQR, interquartile
+Sensory 2 (5)
+range.
+Impaired awareness 28 (69) aIn total, 930 seizures were captured when seizures from both left and right
+Motor 21 (49) sensor devices are combined.
+Automatismse 10 (21) bMedian number of seizures in 30 days before first enrollment.
+Tonice 7 (18) cPatients may be represented in more than one category.
+dWristband location may change over the course of an enrollment period.
+Hyperkinetic 4 (6)
+eSeizure type included in the seizure-s pecific analysis.
+Clonice 4 (4)
+(Continues)
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by the
+applicable
+Creative
+Commons
+LicenseTANG eT Al. | 1813
+In Algorithm 1, we trained seizure- type specific detection 3.2 | Algorithm 2: Generalized ML model
+models for nine seizure types based on the following inclu- for all seizure types
+sion criteria: FBTCSs, GTCSs, focal tonic seizures, focal
+subclinical seizures, focal automatisms, focal behavior arrest, We trained a model with all 94 patients and 548 seizures with
+focal clonic seizures, generalized tonic seizures, and general- 10- fold cross-v alidation, shown in Table 3. Except for EDA,
+ized epileptic spasms (Table 2). We found better than chance the overall AUC-R OC performance was greater than .6 for
+detection for eight of nine seizure types. all modalities, yielding better than chance detection perfor-
+In Algorithm 2, we lumped all seizures from different mance. ACC and BVP modalities reached AUC-R OC values
+seizure types together to build a general type- agnostic sei- of .72 and .744, respectively, and ACC + BVP data fusion
+zure detection system. For this scenario, we also display reached the highest overall AUC-R OC of .752.
+individual seizure type- specific detection performance
+and compare it to Algorithm 1 (Table 3). We found bet-
+ter than chance detection potential for all nine seizure 3.3 | Comparison of Algorithms 1 and 2
+types, including seizures with and without robust motor
+components. We calculated the AUC- ROC performance comparison be-
+tween Algorithm 1 (type-s pecific ML model for individual
+seizure types) and Algorithm 2 (type- agnostic generalized
+3.1 | Algorithm 1: Specific ML model for ML model) for all seizure types (Figure 3). For all three
+individual seizure types sensors, the averaged results show that the generalized ML
+model for all seizure types performs better than the specific
+We trained a specific model for each seizure type with leave- ML model for individual seizure types.
+one- subject-o ut cross- validation (Table 2). ACC performed
+best for focal tonic seizures and BVP for focal behavior arrest
+and generalized tonic seizures. ACC + BVP data fusion pro- 3.4 | Impact on EDA shift
+vided the best averaged AUC- ROC performance. The model
+detected GTCSs and FBTCSs with an AUC-R OC of .976 and We visualized seizure annotations and sensor data. EDA
+.932, respectively. The algorithm detected focal tonic sei- shows a delayed response time. Figure S4a shows two ex-
+zures, focal automatisms, focal behavior arrest, generalized amples of EDA increasing after a seizure. We compared the
+tonic seizures, and focal clonic seizures with an AUC-R OC performance of the EDA sensor without shifting and with
+of more than .6, suggesting better than chance detection. shifting 120 s ahead. Figure S4b shows AUC-R OC for dif-
+AUC- ROC for focal subclinical seizures was less than .6, in- ferent seizure types, and EDA shifting shows an AUC-R OC
+dicating a poor, close to chance detection performance of our improvement for FBTCSs (.716 vs. .516) and GTCSs (.830
+algorithm for this seizure type. vs. .519) without a major impact on other seizure types.
+TABLE 2 Leave- one- subject- out performance
+ACC + ACC + BVP + ACC + EDA
+Seizure type ACC EDA BVP BVP EDA EDA + BVP
+Focal to bilateral tonic–c lonic .921 .712 .888 .921 .932 .876 .910
+Focal tonic .786 .570 .751 .776 .671 .603 .754
+Focal subclinical .548 .550 .496 .528 .488 .537 .504
+Focal automatisms .688 .728 .682 .750 .743 .806 .795
+Focal behavior arrest .635 .415 .706 .678 .557 .619 .594
+Focal clonic .516 .268 .648 .534 .420 .534 .396
+Generalized epileptic spasms .594 .480 .627 .633 .507 .617 .583
+Generalized tonic .588 .507 .814 .770 .519 .741 .687
+Generalized tonic– clonic .975 .830 .904 .945 .976 .933 .965
+All nine seizure types .673 .559 .716 .721 .613 .679 .682
+Note: Leave- one- subject- out performance of detection models trained on individual modality data (Columns 1– 3) and multimodality data fusion (Columns 4– 7). In
+each row the best AUR- ROC value is highlighted in bold. An AUC- ROC less than .6 is not significantly better than random guess. Although ACC and BVP modalities
+performed best for some specific seizure types, in general, ACC + BVP data fusion provided the best averaged AUC-R OC performance.
+Abbreviations: ACC, accelerometry; AUC-R OC, area under the receiver operating characteristic curve; BVP, blood volume pulse; EDA, electrodermal activity.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License1814 | TANG eT Al.
+TABLE 3 10- fold cross- validation performance
+ACC + ACC + BVP + ACC + EDA
+Seizure type ACC EDA BVP BVP EDA EDA + BVP
+Focal to bilateral tonic–c lonic .919 .662 .886 .910 .905 .862 .890
+Focal tonic .812 .624 .736 .772 .789 .719 .758
+Focal subclinical .555 .429 .642 .623 .520 .603 .568
+Focal automatisms .541 .699 .811 .761 .772 .807 .780
+Focal behavior arrest .765 .532 .693 .713 .730 .593 .737
+Focal clonic .564 .588 .830 .762 .593 .758 .668
+Generalized epileptic spasms .840 .450 .711 .831 .796 .632 .789
+Generalized tonic .662 .565 .779 .746 .698 .661 .704
+Generalized tonic– clonic .995 .802 .889 .992 .987 .939 .990
+All nine seizure types .720 .549 .744 .752 .695 .672 .705
+Note: 10- fold cross-v alidation performance of detection models trained on individual modality data (Columns 1– 3) and multimodality data fusion (Columns 4– 7). In
+each row the best AUR- ROC value is highlighted in bold. An AUC- ROC less than .6 is not significantly better than random guess. Although ACC and BVP performed
+best for selected seizure types, in general, ACC + BVP data fusion provided the best overall AUC-R OC performance, as shown in the last row.
+Abbreviations: ACC, accelerometry; AUC-R OC, area under the receiver operating characteristic curve; BVP, blood volume pulse; EDA, electrodermal activity.
+We applied EDA shifting for 120 s to all fusions of sensor 4.2 | Performance comparison for GTCSs
+modalities.
+We compared a previously utilized detection method30 with a
+CNN to detect GTCSs. In the previous study, the authors ex-
+4 | DISCUSSION tracted 19 features from ACC and EDA, then applied SVM,
+and reached an AUC- ROC of .896, a sensitivity of 73%, and
+4.1 | Summary a FAR of 12.52/24 h. Our CNN reached an AUC-R OC of
+.957, a sensitivity of 80%, and a FAR of 13.63/24 h. The
+In our study, we used a seizure- level evaluation for seizure CNN performed better than Poh et al.'s method, as shown
+detection and found that fusing ACC and BVP data modali- by the 5.9% higher AUC- ROC value. However, the perfor-
+ties achieved the best AUC- ROC of .752 applied to all sei- mance of the CNN is lower than the SVM reported in the
+zure samples lumped together across all seizure types when mentioned study30 (94% sensitivity and .74/24h FAR). One
+we trained one generalized model with all seizure types. main reason could be that our dataset contains mainly chil-
+Results show the feasibility of seizure detection across a dren, a cohort that tends to exhibit pronounced movement
+broad spectrum of seizure types, including but not limited to activity during seizure- free times. Additionally, the study
+GTCSs, with wrist-w orn wearable sensors in a large cohort reported a median electrographic latency of 42.95 s. In our
+of patients. Our study expands current literature by demon- study, the average latency is 51.67 s. Onorati et al.26 included
+strating that noninvasive, wrist- and ankle- worn sensors and 55 convulsive epileptic seizures (six focal tonic– clonic sei-
+custom- developed deep learning techniques can automati- zures and 49 FBTCSs) from 22 patients and achieved 83.6%
+cally detect a variety of epileptic seizure types. sensitivity and .29/24h FAR. Their study26 included 24 chil-
+Numerous previous studies have shown the feasibility of dren and 45 adults, with an age range of 4–1 8 and 19– 60
+using ML and, in particular, deep learning models to auto- years, respectively, including patients who did not experi-
+matically detect,24 classify,25 and predict5,32 epileptic seizure ence seizures during the experiment. In comparison, our
+episodes in EEG signals. Initial studies using electrodes im- patients are children, with only three patients older than 20
+planted in the brain have increasingly been followed with less years. Once monitoring data from children and adolescents
+intrusive systems measuring scalp EEG data.33 The advent are included in a dataset, seizure detection may become more
+of commercially available medical-g rade wearable sensors challenging. The algorithm in Onorati et al.26 failed to detect
+and mobile smart devices, such as smartwatches, provided all three seizures of a 4- year- old child.
+an opportunity to assess the suitability of other data modal-
+ities for seizure detection.8 Some of these explorations have
+shown promise for detecting GTCSs,23,26,31,34 and based 4.3 | Effect of detection modality
+thereon smartwatches have first received US Food and Drug
+Administration approval and medical clearance for use as ep- We expected that models trained on specific seizure types
+ilepsy monitoring devices.35,36 would perform better than models trained on the combined
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseTANG eT Al. | 1815
+FIGURE 3 Area under the receiver operating characteristic curve (AUC- ROC) performance comparisons between a generalized type- agnostic
+machine learning (ML) model for all seizure types and a type- specific ML model for individual seizure types. An AUC-R OC less than .6 is not
+significant compared to random guess. For AUC- ROC levels greater than .6, accelerometry (ACC) performed similarly for focal to bilateral
+tonic– clonic seizures (FBTCSs), focal tonic seizures, generalized tonic seizures, and generalized tonic–c lonic seizures (GTCSs); blood volume
+pulse (BVP) performed similarly for FBTCSs, focal tonic seizures, focal behavior arrest, generalized tonic seizures, and GTCSs; electrodermal
+activity (EDA) performed similarly for FBTCSs, focal automatisms, and GTCSs. For all three sensors, the average performance of the generalized
+ML model for all seizure types is better than the performance of the specific ML model for individual seizure types
+data of all seizure types, but the results show the contrary. applied to the entire dataset consisting of all seizure sam-
+The main reasons for this are that (1) we have lower patient ples lumped together from all nine seizure types. All nine
+and seizure numbers per seizure type for each type compared clinical seizure types performed better than chance, with an
+to the lumped dataset; these lower sample numbers may not AUC- ROC ranging from .648 to .995. ACC sensors achieve
+be enough to train a high-p erformance ML model; and (2) the best performance for most seizure types, similar to other
+different sensor modalities may perform similarly across dif- studies that employ commercial smartwatches37 using the
+ferent seizure types. standard ACC sensors and running the developed analyti-
+We found better than chance detection potential for all cal models, showing utility in detecting seizures with motor
+nine studied seizure types, including focal and general- components, especially GTCSs.14,15 BVP performed best for
+ized seizures. ACC and BVP performed better than chance, some seizure types, namely focal motor seizures with au-
+with an AUC- ROC of .72 and .744, respectively; ACC and tomatisms and subclinical seizures. Given the sensitivity of
+BVP data fusion achieved the best AUC- ROC of .752 when BVP to motion, which may result in artifactual signals,34,38
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License1816 | TANG eT Al.
+the seizure detection performance of BVP may improve in seizure detection systems are aimed at seizure detection and
+seizures with a limited motor component. BVP may there- prediction to provide early warnings to control or prevent sei-
+fore assist in the detection of the peri- ictal period of tonic– zures.8,11 Modalities with slower time to detection, such as
+clonic seizures and focal unaware seizures.39,40 EDA with or EDA in our study, may be more suitable for seizure diary pur-
+without ACC has shown promise in the evaluation of con- poses or clinical trials looking at seizure frequency and recur-
+vulsive seizures,26,30,41 and may also be able to detect focal rence assessment with greater sensitivity and specificity. Our
+seizures.41 In our study, EDA's overall AUC-R OC of .549 results suggest that wrist-w orn and commercially available
+is not significantly better than chance, but EDA AUC- ROC sensors, running advanced deep learning models and data
+values reached .802, .699, and .662 for GTCSs, focal autom- preprocessing techniques, could be a feasible out- of- the- box
+atisms, and FBTCSs. Although adding EDA to data fusions starting alternative to custom-d eveloped monitoring devices.
+yielded an overall decreasing performance of all combina- Our results also suggest that individualized customization of
+tions (ACC + EDA, BVP + EDA, ACC + BVP + EDA), the detection modalities based on clinical features, including sei-
+detection performance for some seizure types increased when zure semiology, may improve detection performance in se-
+EDA was included. For example, in focal automatisms, the lected patients.
+performance of ACC + EDA is better than ACC only (.772
+vs. .541). Shifting EDA by 120 s showed significant improve-
+ment, especially for GTCSs and FBTCSs. Because the delay 4.5 | Challenges
+of EDA can vary for different seizures, applying an adaptive
+detection model may further improve its performance. We need to interpret our results in the setting of data acquisi-
+Whereas we used the same types of analytical models and tion. Specifically, we included pediatric patients admitted for
+data processing methods for all data modalities and fusion in- hospital long-t erm EEG monitoring; activities and behav-
+datasets in this study, future work will focus on developing iors may differ from those at home and manifest differently
+advanced deep learning architectures and data preprocessing in wearable device signals. Although the patients were ad-
+schemes individually for each data modality and integrating mitted to the hospital, they were free to move around and per-
+additional clinical features. We expect that this will allow us form certain activities such as playing video games, drawing,
+to leverage clinical and data modality-r elated features, thus pedaling, and watching TV as feasible in this setting. Longer
+further improving detection performance and cross- patient recordings over several days may help account for daily pat-
+generalizability of detection models. terns and variations of seizure characteristics. We collected
+signals from one or two devices, depending on availability,
+placed on the left or right wrist or ankle. This may interfere
+4.4 | Individualized seizure detection with the consistency of the signals, as different parts and
+sides of the body may generate signals that differ in quality
+Seizures are associated with altered autonomic nervous and characteristics. We included various seizure types in our
+system activity, manifesting as system changes, including analysis, yet there are additional seizure types that we have
+changes in heart rate, blood pressure, respiration, and sweat- not investigated.
+ing responses.42 Monitoring of such physiologic signals may During the data collection phase, EEG labels were manu-
+allow for tracking of seizure-r elated autonomic changes and ally inputted into the annotation system, and wearable signal
+seizure detection, and ultimately also provide information re- data were manually downloaded and saved. Performed man-
+garding sudden unexpected death in epilepsy (SUDEP) risk ually, these processes are prone to human error. Furthermore,
+and seizure severity.41 In particular, multimodal signal analy- signal segments may be compromised by switched- off wear-
+sis has shown promise in this area.43– 47 Findings may also able devices and battery failures. To account for these short-
+complement the detection of nonconvulsive seizures, which comings, we ran a stepwise quality check process (Figure
+are harder to monitor and detect with non-E EG devices.8 S2).
+Tracking seizures and evaluating the seizure burden re- EEG monitors and wearable devices run on independent
+mains challenging, as these tasks rely heavily on patient or clocks. Hence, we synchronized EEG and wearable device
+caregiver reporting that may be incomplete.3,6 Proper track- times at the start of each recording and accounted for possible
+ing of seizures, on an individual level, is crucial for disease time drift between the clocks.
+management, improving outcomes, injury prevention, and
+potentially decreasing the risk of SUDEP. A user- friendly,
+portable, noninvasive, nonstigmatizing tool that reliably de- 4.6 | Conclusions
+tects seizures can improve patients' quality of life and their
+health outcomes and may improve the evaluation of treatment Automatic epileptic seizure detection of a broad variety
+outcomes based on seizure frequency.11,45,47– 49 Closed- loop of seizure types using ML and wearable data is feasible.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseTANG eT Al. | 1817
+Preliminary results show better than chance seizure detec- national societies, including the AAN, AES, and ACNS,
+tion across a range of nine seizure types. Future improve- and grand rounds at various academic centers. His wife, Dr.
+ments may consider clinical chronoepileptological variables, Karen Stannard, is a pediatric neurologist. She performs
+such as seizure duration and etiology or syndrome, as well as video- electroencephalographic long-t erm and ICU monitor-
+alternative data balancing, pre- and postprocessing, fusion, ing, electroencephalograms, and other electrophysiological
+and ensemble learning methods. Thus, although our findings studies and bills for these procedures, and she evaluates pedi-
+suggest feasibility, future adjustments may further improve atric neurology patients and bills for clinical care. C.M. is
+detection performance. part of patent applications covering technology for detecting
+and predicting clinical outcomes and for managing, diagnos-
+ACKNOWLEDGMENTS ing, and treating neurological conditions. S.H., J.T., U.A.,
+This study was funded in part by the Epilepsy Research Fund. and S.R. are part of patent applications describing technol-
+S.V. was supported by the German Research Foundation ogy to detect and classify epileptic seizures using EEG data
+under the grant VI 1088/1- 1. We thank Rahul Herur and and video data. S.V. is part of a patent application covering
+Sarah Salzman for clinical data collection and assistance with technology for seizure forecasting. In support of two studies
+demographics tables, S. M. Shariar for assistance with the investigating the use of artificial intelligence technology for
+semiology table, Dr. Xiaofan Wang for data cleaning, Dr. Bo epileptic seizure detection S.H. serves as a scientific consult-
+Zhang for his expert advice on statistical methods, and Drs. ant for Massachusetts General Hospital and as a member of
+Stefan Maetschke and Fatemeh Jalali for their advice in de- the scientific advisory board of NeuroPace. None of the other
+veloping ML methods. authors have any conflict of interest to disclose. We confirm
+that we have read the Journal's position on issues involved
+CONFLICT OF INTEREST in ethical publication and affirm that this report is consistent
+T.L. serves on the Council of the American Clinical with those guidelines.
+Neurophysiology Society, on the American Board of Clinical
+Neurophysiology, as founder and consortium principal in- ORCID
+vestigator of pSERG (Pediatric Status Epilepticus Research Jianbin Tang https://orcid.org/0000-0001-5440-0796
+Group), as an associate editor for Wyllie's Treatment of Rima El Atrache https://orcid.org/0000-0002-5600-1120
+Epilepsy 6th and 7th editions, and as a member of the Shuang Yu https://orcid.org/0000-0001-7428-2600
+NORSE Institute, PACS1 Foundation, and CCEMRC. He Umar Asif https://orcid.org/0000-0001-5209-7084
+served as associate editor of Seizure and served on the Michele Jackson https://orcid.org/0000-0001-9869-7333
+Laboratory Accreditation Board for Long Term (Epilepsy Subhrajit Roy https://orcid.org/0000-0002-6072-5500
+and Intensive Care Unit) Monitoring in the past. He is part Mahtab Mirmomeni https://orcid.org/0000-0002-0192-995X
+of patent applications to detect and predict clinical outcomes Sarah Cantley https://orcid.org/0000-0001-9786-0960
+and to manage, diagnose, and treat neurological conditions, Theodore Sheehan https://orcid.org/0000-0002-8059-9388
+epilepsy, and seizures. T.L. is coinventor of the TriVox Sarah Schubach https://orcid.org/0000-0002-6329-5761
+Health technology, and T.L. and Boston Children's Hospital Solveig Vieluf https://orcid.org/0000-0002-5532-8690
+might receive financial benefits from this technology in the Christian Meisel https://orcid.org/0000-0003-2984-5480
+form of compensation in the future. He has received research Stefan Harrer https://orcid.org/0000-0001-7947-330X
+support from the Epilepsy Research Fund, the National Tobias Loddenkemper https://orcid.
+Institutes of Health, the Epilepsy Foundation of America, org/0000-0003-2074-0674
+the Epilepsy Therapy Project, and the Pediatric Epilepsy
+Research Foundation, and has received research grants from REFERENCES
+Lundbeck, Eisai, Upsher-S mith, Mallinckrodt, Sunovion, 1. Beghi E. The epidemiology of epilepsy. Neuroepidemiology.
+Sage, Empatica, and Pfizer, including past device donations 2020;54(2):185– 91.
+from various companies, including Empatica, SmartWatch, 2. Sander JW. The epidemiology of epilepsy revisited. Curr Opin
+Neurol. 2003;16(2):165– 70. and Neuro- electrics. In the past, he served as a consult-
+3. Elger CE, Hoppe C. Diagnostic challenges in epilepsy: sei-
+ant for Zogenix, Upsher-S mith, Amzell, Engage, Elsevier,
+zure under- reporting and seizure detection. Lancet Neurol.
+UCB, Grand Rounds, Advance Medical, and Sunovion. He
+2018;17(3):279– 88.
+performs video-e lectroencephalographic long-t erm and in-
+4. Hoppe C, Poepel A, Elger CE. Epilepsy: accuracy of patient sei-
+tensive care unit (ICU) monitoring, electroencephalograms, zure counts. Arch Neurol. 2007;64(11):1595– 9.
+and other electrophysiological studies at Boston Children's 5. Cook MJ, O'Brien TJ, Berkovic SF, Murphy M, Morokoff A,
+Hospital and affiliated hospitals and bills for these proce- Fabinyi G, et al. Prediction of seizure likelihood with a long-t erm,
+dures, and he evaluates pediatric neurology patients and bills implanted seizure advisory system in patients with drug-r esistant
+epilepsy: a first- in- man study. Lancet Neurol. 2013;12(6):563– 71.
+for clinical care. He has received speaker honorariums from
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License1818 | TANG eT Al.
+6. Blachut B, Hoppe C, Surges R, Elger C, Helmstaedter C. Subjective 23. Beniczky S, Karoly P, Nurse E, Ryvlin P, Cook M. Machine learning
+seizure counts by epilepsy clinical drug trial participants are not and wearable devices of the future. Epilepsia. 2021;62(S2):e16555.
+reliable. Epilepsy Behav. 2017;67:122–7 . 24. Saab K, Dunnmon J, Ré C, Rubin D, Lee-M esser C. Weak super-
+7. Shih JJ, Fountain NB, Herman ST, Bagic A, Lado F, vision as an efficient approach for automated seizure detection in
+Arnold S, et al. Indications and methodology for video- electroencephalography. NPJ Digital Med. 2020;3(1):59.
+electroencephalographic studies in the epilepsy monitoring unit. 25. Asif U, Roy S, Tang J, Harrer S. SeizureNet: Multi-s pectral deep
+Epilepsia. 2018;59(1):27– 36. feature learning for seizure type classification. In: Machine learn-
+8. Ulate- Campos A, Coughlin F, Gaínza-L ein M, Fernández IS, ing in clinical neuroimaging and radiogenomics in neuro- oncology.
+Pearl Pl, Loddenkemper T. Automated seizure detection sys- Cham: Springer; 2020; p. 77- 87.
+tems and their effectiveness for each type of seizure. Seizure. 26. Onorati F, Regalia G, Caborni C, Migliorini M, Bender D,
+2016;40:88– 101. Poh MZ, et al. Multicenter clinical assessment of improved
+9. Verdru J, Van Paesschen W. Wearable seizure detection devices in wearable multimodal convulsive seizure detectors. Epilepsia.
+refractory epilepsy. Acta Neurol Belg. 2020;120(6):1271– 81. 2017;58(11):1870– 9.
+10. Leijten FSS. Multimodal seizure detection: a review. Epilepsia. 27. Fisher RS, Cross JH, D'Souza C, French JA, Haut SR, Higurashi N,
+2018;59(Suppl 1):42– 7. et al. Instruction manual for the ILAE 2017 operational classifica-
+11. Ramgopal S, Thome- Souza S, Jackson M, Kadish NE, Sánchez tion of seizure types. Epilepsia. 2017;58(4):531– 42.
+Fernández I, Klehm J, et al. Seizure detection, seizure prediction, 28. Acharya JN, Hani A, Cheek J, Thirumala P, Tsuchida TN. American
+and closed- loop warning systems in epilepsy. Epilepsy Behav. Clinical Neurophysiology Society Guideline 2: guidelines for
+2014;37:291– 307. standard electrode position nomenclature. J Clin Neurophysiol.
+12. Garbarino M, Lai M, Bender D, Picard RW, Tognetti S. Empatica 2016;33(4):308– 11.
+E3— A wearable wireless multi-s ensor device for real- time 29. Lin M, Chen Q, Yan S. Network in network. arXiv preprint. 2013;
+computerized biofeedback and data acquisition. In 2014 4th arXiv:1312.4400.
+International Conference on Wireless Mobile Communication 30. Poh MZ, Loddenkemper T, Reinsberger C, Swenson NC, Goyal S,
+and Healthcare- Transforming Healthcare Through Innovations Sabtala MC, et al. Convulsive seizure detection using a wrist- worn
+in Mobile and Wireless Technologies (MOBIHEALTH). IEEE. electrodermal activity and accelerometry biosensor. Epilepsia.
+2014; p. 39–4 2. 2012;53(5):e93– 7.
+13. Poh MZ, Swenson NC, Picard RW. A wearable sensor for unobtru- 31. Heldberg BE, Kautz T, Leutheuser H, Hopfengartner R, Kasper BS,
+sive, long- term assessment of electrodermal activity. IEEE Trans Eskofier BM. Using wearable sensors for semiology- independent
+Biomed Eng. 2010;57(5):1243– 52. seizure detection—t owards ambulatory monitoring of epilepsy.
+14. Beniczky S, Polster T, Kjaer TW, Hjalgrim H. Detection of gen- Conf Proc IEEE Eng Med Biol Soc. 2015;2015:5593– 6.
+eralized tonic-c lonic seizures by a wireless wrist accelerometer: a 32. Kiral- Kornek I, Roy S, Nurse E, Mashford B, Karoly P, Carroll T,
+prospective, multicenter study. Epilepsia. 2013;54(4):e58– 61. et al. Epileptic seizure prediction using big data and deep learning:
+15. Lockman J, Fisher RS, Olson DM. Detection of seizure-l ike toward a mobile system. EBioMedicine. 2018;27:103– 11.
+movements using a wrist accelerometer. Epilepsy Behav. 33. Loeckx D, Buckinx T. In- field validation of epihunter for the de-
+2011;20(4):638– 41. tection of absence seizures using wearable EEG. Paper presented
+16. Rajan S, Leonard N, Fletcher R, Casarjian B, Casarjian R, Cisse at 2nd International Congress on Mobile Devices and Seizure
+C, et al. Ambulatory autonomic activity monitoring among at- risk Detection in Epilepsy. Lausanne, Switzerland; September 6– 7,
+adolescent mothers. J Mobile Technol Med. 2012;1(3):25– 31. 2019.
+17. Beniczky S, Conradsen I, Henning O, Fabricius M, Wolf P. 34. Vandecasteele K, De Cooman T, Gu Y, Cleeren E, Claes K,
+Automated real-t ime detection of tonic- clonic seizures using a Paesschen W, et al. Automated epileptic seizure detection based
+wearable EMG device. Neurology. 2018;90(5):e428– 34. on wearable ECG and PPG in a hospital environment. Sensors
+18. Nijsen TM, Cluitmans PJ, Arends JB, Griep PAM. Detection of sub- (Basel). 2017;17(10):2338.
+tle nocturnal motor activity from 3- D accelerometry recordings in 35. Voelker R. Smart watch detects seizures. JAMA.
+epilepsy patients. IEEE Trans Biomed Eng. 2007;54(11):2073– 81. 2018;319(11):1086.
+19. Narechania AP, Garic II, Sen-G upta I, Macken MP, Gerard EE, 36. Drug and device news. P T. 2019;44(3):95– 107.
+Schuele SU. Assessment of a quasi-p iezoelectric mattress monitor 37. Harrer S, Shah P, Antony B, Hu J. Artificial intelligence for clini-
+as a detection system for generalized convulsions. Epilepsy Behav. cal trial design. Trends Pharmacol Sci. 2019;40(8):577– 91.
+2013;28(2):172– 6. 38. Allen J. Photoplethysmography and its application in clinical phys-
+20. Bruno E, Simblett S, Lang A, Biondi A, Odoi C, Schulze- iological measurement. Physiol Meas. 2007;28(3):R1– 39.
+Bonhage A, et al. Wearable technology in epilepsy: the views of 39. El Atrache R, Tamilia E, Mohammadpour Touserkani F, Hammond
+patients, caregivers, and healthcare professionals. Epilepsy Behav. S, Papadelis C, Kapur K, et al. Photoplethysmography: a measure
+2018;85:141– 9. for the function of the autonomic nervous system in focal impaired
+21. Ulate- Campos A, Coughlin F, Gainza-L ein M, Fernández IS, awareness seizures. Epilepsia. 2020;61(8):1617– 26.
+Pearl Pl, Loddenkemper T. Automated seizure detection sys- 40. Mohammadpour Touserkani F, Tamilia E, Coughlin F, Hammond
+tems and their effectiveness for each type of seizure. Seizure. S, El Atrache R, Jackson M, et al. Photoplethysmographic
+2016;40:88– 101. evaluation of generalized tonic- clonic seizures. Epilepsia.
+22. Simblett SK, Biondi A, Bruno E, Ballard D, Stoneman A, Lees 2020;61(8):1606– 16.
+S, et al. Patients' experience of wearing multimodal sensor de- 41. Poh MZ, Loddenkemper T, Reinsberger C, Swenson NC, Goyal S,
+vices intended to detect epileptic seizures: a qualitative analysis. Madsen JR, et al. Autonomic changes with seizures correlate with
+Epilepsy Behav. 2020;102:e106717. postictal EEG suppression. Neurology. 2012;78(23):1868– 76.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+LicenseTANG eT Al. | 1819
+42. Devinsky O. Effects of seizures on autonomic and cardiovascular 48. Thompson ME, Langer J, Kinfe M. Seizure detection watch im-
+function. Epilepsy Curr. 2004;4(2):43–6 . proves quality of life for adolescents and their families. Epilepsy
+43. Vieluf S, El Atrache R, Hammond S, Touserkani FM, Behav. 2019;98(Pt A):188– 94.
+Loddenkemper T, Reinsberger C. Peripheral multimodal mon- 49. Gutierrez EG, Crone NE, Kang JY, Carmenate YI, Krauss GL.
+itoring of ANS changes related to epilepsy. Epilepsy Behav. Strategies for non-E EG seizure detection and timing for alert-
+2019;96:69– 79. ing and interventions with tonic-c lonic seizures. Epilepsia.
+44. Vieluf S, Reinsberger C, El Atrache R, Jackson M, Schubach S, 2018;59(Suppl 1):36– 41.
+Ufongene C, et al. Autonomic nervous system changes detected
+with peripheral sensors in the setting of epileptic seizures. Sci Rep.
+SUPPORTING INFORMATION
+2020;10(1):11560.
+Additional supporting information may be found online in
+45. Van de Vel A, Cuppens K, Bonroy B, Milosevic M, Jansen K, Van
+the Supporting Information section.
+Huffel S, et al. Non- EEG seizure detection systems and potential
+SUDEP prevention: state of the art: review and update. Seizure.
+2016;41:141– 53.
+46. van Westrhenen A, De Cooman T, Lazeron RHC, Van Huffel S, How to cite this article: Tang J, El Atrache R, Yu S,
+Thijs RD. Ictal autonomic changes as a tool for seizure detection: a Asif U, Jackson M, Roy S, et al. Seizure detection using
+systematic review. Clin Auton Res. 2019;29(2):161– 81. wearable sensors and machine learning: Setting a
+47. Amengual-G ual M, Ulate- Campos A, Loddenkemper T. Status benchmark. Epilepsia. 2021;62:1807–1 819. https://doi.
+epilepticus prevention, ambulatory monitoring, early seizure
+org/10.1111/epi.16967
+detection and prediction in at-r isk patients. Seizure. 2019;68:
+31– 7.
+15281167,
+2021,
+8,
+Downloaded
+from
+https://onlinelibrary.wiley.com/doi/10.1111/epi.16967
+by
+Cochrane
+France,
+Wiley
+Online
+Library
+on
+[06/03/2025].
+See
+the
+Terms
+and
+Conditions
+(https://onlinelibrary.wiley.com/terms-and-conditions)
+on
+Wiley
+Online
+Library
+for
+rules
+of
+use;
+OA
+articles
+are
+governed
+by
+the
+applicable
+Creative
+Commons
+License

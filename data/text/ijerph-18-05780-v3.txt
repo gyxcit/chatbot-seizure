@@ -1,0 +1,1481 @@
+International Journal of
+Environmental Research
+and Public Health
+Review
+Epileptic Seizures Detection Using Deep Learning Techniques:
+A Review
+AfshinShoeibi1,2,* ,MarjaneKhodatars3,NavidGhassemi1,2,MahboobehJafari4,ParisaMoridian5,
+RoohallahAlizadehsani6 ,MaryamPanahiazar7,FahimeKhozeimeh6,AssefZare8,HosseinHosseini-Nejad9,
+AbbasKhosravi6,AmirF.Atiya10,DibaAminshahidi2,SadiqHussain11 ,ModjtabaRouhani2,
+SaeidNahavandi6 andUdyavaraRajendraAcharya12,13,14
+1 FacultyofElectricalEngineering,BiomedicalDataAcquisitionLab(BDAL),K.N.ToosiUniversityof
+Technology,Tehran1631714191,Iran;navidghassemi@mail.um.ac.ir
+2 ComputerEngineeringDepartment,FerdowsiUniversityofMashhad,Mashhad9177948974,Iran;
+d.aminshahidi@mail.um.ac.ir(D.A.);rouhani@um.ac.ir(M.R.)
+3 MashhadBranch,IslamicAzadUniversity,Mashhad91735413,Iran;khodatars1marjane@gmail.com
+4 ElectricalandComputerEngineeringFaculty,SemnanUniversity,Semnan3513119111,Iran;
+mahbube.jafari@yahoo.com
+5 FacultyofEngineering,ScienceandResearchBranch,IslamicAzadUniversity,Tehran1477893855,Iran;
+parisamoridian@yahoo.com
+6 InstituteforIntelligentSystemsResearchandInnovation(IISRI),DeakinUniversity,
+WaurnPonds,VIC3217,Australia;ralizadehsani@deakin.edu.au(R.A.);khozeimeh@mums.ac.ir(F.K.);
+abbas.khosravi@deakin.edu.au(A.K.);Saeid.nahavandi@deakin.edu.au(S.N.)
+7 InstituteforComputationalHealthSciences,SchoolofMedicine,UniversityofCalifornia,
+SanFrancisco,CA94143,USA;Maryam.Panahiazar@ucsf.edu
+(cid:1)(cid:2)(cid:3)(cid:1)(cid:4)(cid:5)(cid:6)(cid:7)(cid:8)(cid:1) 8 FacultyofElectricalEngineering,GonabadBranch,IslamicAzadUniversity,Gonabad6518115743,Iran;
+(cid:1)(cid:2)(cid:3)(cid:4)(cid:5)(cid:6)(cid:7)
+assefzare@gmail.com
+9 FacultyofElectricalandComputerEngineering,K.N.ToosiUniversityofTechnology,
+Citation: Shoeibi,A.;Khodatars,M.;
+Tehran1631714191,Iran;hosseini_nezhad@eetd.kntu.ac.ir
+Ghassemi,N.;Jafari,M.;Moridian,P.; 10 DepartmentofComputerEngineering,FacultyofEngineering,CairoUniversity,Cairo12613,Egypt;
+Alizadehsani,R.;Panahiazar,M.; atiya@cario.edu
+Khozeimeh,F.;Zare,A.; 11 SystemAdministratoratDibrugarhUniversity,Assam786004,India;sadiq@dibru.ac.in
+Hosseini-Nejad,H.;etal.Epileptic 12 DepartmentofBiomedicalEngineering,SchoolofScienceandTechnology,SingaporeUniversityofSocial
+SeizuresDetectionUsingDeep Sciences,Singapore599494,Singapore;aru@np.edu.sg
+LearningTechniques:AReview.Int. 13 DepartmentofElectronicsandComputerEngineering,NgeeAnnPolytechnic,Singapore599489,Singapore
+14 DepartmentofBioinformaticsandMedicalEngineering,TaichungCity41354,Taiwan
+J.Environ.Res.PublicHealth2021,18,
+* Correspondence:Afshin.shoeibi@gmail.com
+5780. https://doi.org/10.3390/
+ijerph18115780
+Abstract: A variety ofscreening approaches havebeen proposedto diagnose epileptic seizures,
+Received:21April2021 usingelectroencephalography(EEG)andmagneticresonanceimaging(MRI)modalities.Artificial
+Accepted:15May2021 intelligenceencompassesavarietyofareas,andoneofitsbranchesisdeeplearning(DL).Beforethe
+Published:27May2021 riseofDL,conventionalmachinelearningalgorithmsinvolvingfeatureextractionwereperformed.
+Thislimitedtheirperformancetotheabilityofthosehandcraftingthefeatures.However,inDL,the
+Publisher’sNote:MDPIstaysneutral extractionoffeaturesandclassificationareentirelyautomated. Theadventofthesetechniquesin
+withregardtojurisdictionalclaimsin manyareasofmedicine,suchasinthediagnosisofepilepticseizures,hasmadesignificantadvances.
+publishedmapsandinstitutionalaffil- Inthisstudy,acomprehensiveoverviewofworksfocusedonautomatedepilepticseizuredetection
+iations.
+using DL techniques and neuroimaging modalities is presented. Various methods proposed to
+diagnoseepilepticseizuresautomaticallyusingEEGandMRImodalitiesaredescribed.Inaddition,
+rehabilitationsystemsdevelopedforepilepticseizuresusingDLhavebeenanalyzed,andasummary
+isprovided. Therehabilitationtoolsincludecloudcomputingtechniquesandhardwarerequired
+Copyright: © 2021 by the authors. forimplementationofDLalgorithms.Theimportantchallengesinaccuratedetectionofautomated
+Licensee MDPI, Basel, Switzerland.
+epileptic seizures using DL with EEG and MRI modalities are discussed. The advantages and
+This article is an open access article
+limitationsinemployingDL-basedtechniquesforepilepticseizuresdiagnosisarepresented.Finally,
+distributed under the terms and
+themostpromisingDLmodelsproposedandpossiblefutureworksonautomatedepilepticseizure
+conditionsoftheCreativeCommons
+detectionaredelineated.
+Attribution(CCBY)license(https://
+creativecommons.org/licenses/by/
+Keywords:epilepticseizures;diagnosis;EEG;MRI;featureextraction;classification;deeplearning
+4.0/).
+Int.J.Environ.Res.PublicHealth2021,18,5780.https://doi.org/10.3390/ijerph18115780 https://www.mdpi.com/journal/ijerphInt.J.Environ.Res.PublicHealth2021,18,5780 2of33
+1. Introduction
+Epilepsyisanoncommunicablediseaseandoneofthemostcommonneurological
+disordersofhumans,usuallyassociatedwithsuddenattacks[1].Suddenattacksofseizures
+areaswiftandearlyabnormalityintheelectricalactivityofthebrainthatdisruptsthepart
+orwholebody[2].Variouskindsofepilepticseizuresareaffectingaround60millionpeople
+worldwide[3].Theseattacksoccasionallyprovokecognitivedisordersthatcancausesevere
+physicalinjurytothepatient. Moreover,peoplewithepilepticseizuressometimessuffer
+emotional distress due to embarrassment and lack of appropriate social status. Hence,
+earlydetectionofepilepticseizurescanhelpthepatientsandimprovetheirqualityoflife.
+Screeningtechniquesinthediagnosisofepilepticseizurescomprisetwoimportant
+categoriesoffunctionalandstructuralneuroimagingmodalities[4–9]. Thefunctionalneu-
+roimagingmodalityprovidesimportantinformationaboutbrainfunctionduringepileptic
+seizure occurrence for physicians and neurologists [4–9]. The structural neuroimaging
+modalitiesprovidephysicianswithsubstantialinformationaboutthebrainstructureof
+individualswithepilepticseizures[4–9].Themostimportantfunctionalneuroimagingtech-
+niquesareEEG[5],magnetoencephalography(MEG)[6],positronemissiontomography
+(PET)[7],single-photonemissioncomputedtomography(SPECT)[7,10],functionalMRI
+(fMRI)[4,11],electrocorticography(ECoG)[12],andfunctionalnear-infraredspectroscopy
+(fNIRS)[13]. Incontrast,structuralMRI(sMRI)anddiffusiontensorimaging(DTI)are
+amongthemostsignificantstructuralneuroimagingtechniques[4,14]. Inthediagnosisof
+epilepticseizures,functionalneuroimagingmodalitiesaremorecommonlyappliedthan
+structuralmodalities[4–9]. Researchonthediagnosisofepilepticseizureshasindicated
+thatEEGmodalitiesarethemostpopularamongphysicians.
+The EEG signals are widely preferred as they are economical, portable, and show
+clear rhythms in the frequency domain [8,9]. The EEG provides the voltage variations
+producedbytheioniccurrentofneuronsinthebrain,whichindicatethebrain’sbioelectric
+activity[15]. Theyneedtoberecordedforalongperiodoftimetodetectepilepticseizures.
+Inaddition,thesesignalsarerecordedinmultiplechannels,makingtheanalysiscomplex.
+The EEG signals are also prone to artifacts generated by main power supply, electrode
+movement,andmuscletremor[16]. Thiswillposechallengestothephysicianstodiagnose
+epilepticseizuresusingnoisyEEGsignals. Toresolvethesedifficulties,muchresearchis
+beingcarriedouttodiagnoseandpredictepilepticseizuresbasedonEEGmodalitiesand
+othertechniquessuchasMRIcoupledwithAItechniques[17,18]. AItechniquesinthe
+fieldofepilepticseizuresdiagnosishaveemployedconventionalmachinelearningandDL
+methods[19–22].
+Manymachinelearningalgorithmshavebeendevelopedusingstatistical,time,frequency,
+time-frequency domain and nonlinear parameters to detect epileptic seizures[23,24]. In
+conventionalmachinelearningtechniques,theselectionoffeaturesandclassifiersisdone
+bytrial-and-errormethod[25,26].Oneneedstohavesoundknowledgeofsignalprocessing
+anddataminingtechniquestodevelopanaccuratemodel. Suchmodelsperformwellfor
+limiteddata. Nowadays,withtheincreaseintheavailabilityofdata,machinelearning
+techniquesmaynotperformverywell. Hence,theDLtechniques,whicharethestate-of-art
+methods,havebeenemployed[27,28]. DLmodels,unlikeconventionalmachinelearning
+techniques, require huge data in the training phase [29]. This is because these models
+havealargenumberoffeaturespaces,andincaseoflackofdata,theyfacetheproblemof
+overfitting[29].
+Inconventionalmachinelearningalgorithms,mostsimulationswereexecutedinthe
+Matlab software environment, but the DL models are usually developed using Python
+programminglanguagewithnumerousopen-sourcetoolboxes. Thepythonlanguagewith
+morefreelyavailableDLtoolboxeshashelpedtheresearcherstodevelopnovelautomated
+systems,andthereisgreateraccessibilityofcomputationresourcetoeveryonethanksto
+cloudcomputing. Figure1showsthattheTensorFlowandoneofitshigh-levelAPIs,Keras,Int.J.Environ.Res.PublicHealth2021,18,5780 3of33
+arewidelyusedforepilepticseizuredetectionusingDLinreviewedworksduetotheir
+versatilityandapplicability.
+Figure1. NumberoftimeseachDLtoolwasusedforautomateddetectionofepilepticseizureby
+variousstudies.
+Since2016,substantialresearchhasbeendonetodetectepilepsyusingDLmodels
+suchasconvolutionalneuralnetworks(CNNs),recurrentneuralnetworks(RNNs),deep
+beliefnetworks(DBNs),Autoencoders(AEs),CNN-RNNs,andCNN-AEs[30–33]. The
+numberofstudiesinthisareausingDLisgrowingasnewefficientmodelsareproposed.
+Figure2providestheoverviewofnumberofstudiesconductedusingvariousDLmodels
+from2014to2021indetectingepilepticseizures.
+Figure2.NumberofstudiesconductedusingvariousDLmodelsfrom2014untilnow(2021).
+It can be noted from Figure 2 that various DL models have been exploited in the
+diagnosisofepilepticseizures. ComparedtootherDLtechniques,2D-CNNand1D-CNN
+modelsarethemostwidelyusedinepilepticseizuresdetection. Researchershavemostly
+employed2D-CNNmodelstodiagnoseepilepsy. InthediagnosisofepilepticseizuresInt.J.Environ.Res.PublicHealth2021,18,5780 4of33
+using2D-CNNmodels,EEGsignalsarefirstconvertedintotwo-dimensional(2D)images
+usingpreprocessingmethodssuchasshort-timeFouriertransform(STFT).Next, these
+imagesareappliedto2D-CNNnetworks. Thesecondcategorycomprises1D-CNNmodels,
+whichhaveachievedaspecialplaceamongresearchersforepilepticseizuresdetection. In
+thiswork,EEGsignalsarefirstpreprocessed(noiseremovalandnormalization)andthen
+appliedto1D-CNNnetworks. Simpleimplementationandhighefficiencyareamongthe
+mostimportantadvantagesofthistypeofnetwork.
+Thekeywords“EEG”,“MRI”,“Epilepsy”,“EpilepticSeizures”,and“DeepLearning”
+wereusedtosearcharticles. Thesekeywordsweresearchedinvariouscitationdatabases
+suchasIEEE,Elsevier,Springer,Wiley,andArXiv. GoogleScholarwasalsousedtosearch
+further. Figure 3 shows the number of accepted papers in each citation database. It is
+observedthattheIEEEcitationdatabasecontainsthemostacceptedarticles.
+Figure3.Searchstrategyused.
+Themainaimsofthisstudyareasfollows:
+• ProvidinginformationonavailableEEGdatasets;
+• ReviewingworksdoneusingvariousDLmodelsforautomateddetectionofepileptic
+seizureswithvariousmodalitysignals;
+• Introducingfuturechallengesonthedetectionofepilepticseizures;
+• Analyzingthebestperformingmodelforvariousmodalitiesofdata.
+EpilepticseizuresdetectionusingDLisdiscussedinSection2. Section3describesthe
+non-EEG-basedepilepticseizuredetection. Hardwareusedforepilepticseizuresdetection
+isprovidedinSection4. DiscussiononthepaperisoutlinedinSection5. Thechallenges
+facedbyemployingDLmethodsforepilepticseizuredetectionaresummarizedinSection6.
+Finally,theconclusionandfutureworkaredelineatedinSection7.
+2. EpilepticSeizuresDetectionBasedonDLTechniques
+Figure4illustratestheworkingofacomputer-aideddiagnosissystem(CADS)for
+epilepticseizuresusingDLarchitectures. TheinputtotheDLmodelcanbeEEG,MEG,
+ECoG,fNIRS,PET,SPECT,andMRI.Then, thesignalissubjectedtothepreprocessing
+toremovethenoise. TheseeliminatedsignalsareusedtodeveloptheDLmodels. The
+performanceofthemodelisevaluatedusingaccuracy,sensitivity,andspecificity. Addi-
+tionally,atablecombiningalltheworksconductedonepilepticseizuredetectionusingDL
+ispresentedinthetableforminAppendixAofthepaper.Int.J.Environ.Res.PublicHealth2021,18,5780 5of33
+Figure4.BlockdiagramofaDL-basedCADsystemforepilepticseizures.
+2.1. Dataset
+DatasetsplayanimportantroleindevelopingaccurateandrobustCADS.Multiple
+EEGdatasets,namely,Freiburg[34],CHB-MIT[35],Kaggle[36],Bonn[37],Flint-Hills[26],
+Bern-Barcelona[38],HauzKhas[26],andZenodo[39],areavailabletodeveloptheauto-
+matedepilepticseizuredetectionsystems. Thesignalsfromthesedatasetsarerecorded
+eitherintracranialorfromthescalpofhumansoranimals.
+2.1.1. Fribourg
+TheEEGdatasetcontainsinvasiveEEGsignalsfrom21patientssufferingfromre-
+fractoryfocalepilepsywhichwererecordedduringpre-surgicalepilepsymonitoringat
+theepilepsycenteroftheUniversityHospitalFribourg. Toprovidedirectrecordingfrom
+focal area, reduction of artifacts and achieving higher Signal to Noise Ratio (SNR), the
+in-tra-corticalgrid,strip,anddepthelectrodeswereused. TheEEGsignalswererecorded
+using128-channelNeurofileNTsystemwith6contactselectrodes(threefocalandthree
+extrafocal)anddigitizedbya16bitsA/Dwithsamplerateof256Hz. Foreachpatient,
+thereareictalandinterictaldata,theformercontainsseizureswithatleast50minutes’of
+thepre-ictalregionandthelattercontainsabout24hofEEGdatawithoutseizure[34].
+2.1.2. CHB-MIT
+The database comprises 844 h of continuous recording of scalp EEG signals with
+163seizuresfrom23children,recordedaccordingtointentional10–20standardelectrode
+positionsandsampledat256samplespersecond. Theinter-ictalregionisdefinedasthe
+periodbetweenatleast4hbeforetheonsetseizureand4haftertheseizureended. There
+aretwotypesofseizures,calledcombinedandmainseizures,availableinthisdatabase.
+The former are multiple seizures close to each other, while the later are great seizures
+consideredforprediction. Generally,thepredictionismeaningfulforpatientshavingless
+than10seizuresperday. Inthisdatabase,therearesufficientdataavailable(atleastthree
+mainseizuresand3hinter-ictalrecording)from13patients[35].Int.J.Environ.Res.PublicHealth2021,18,5780 6of33
+2.1.3. Kaggle
+ThedatabaseistheepilepticseizurespredictionchallengeoftheAmericanEpilepsy
+Society and contains intracranial EEG signals from five dogs and two patients with 48
+seizuresand627htotalduration. TheEEGsignalsofdogswereacquiredby16implantable
+electrodes, which were sampled at 400 KHz, while the EEG signals from patient 1 and
+patient 2 were recorded using 15 deep and 24 subdural electrodes, respectively, with
+samplerateof5KHz. Inthisdatabase,10minsegmentsofpre-ictalandinter-ictaldata
+areavailable,andforeachseizure,sixpre-ictalsegments(with10sdistance)uptofive
+minutesbeforeseizureonsetareaccessible. Theinter-ictalsegmentsareselectedrandomly
+atleastoneweekbeforeeachseizure[36].
+2.1.4. Bonn
+Bonndatabaseconsistsoffivedatasets,A,B,C,D,andE,eachcontaining100single-
+channelEEGsignalsof23.6sduration. TheEEGsignalsweredigitizedatasamplerate
+of173.61Hzby12-bitA/Dconverter. DatasetsAandBhavethenormalsignalsoffive
+volunteerswitheyesopenedandclosedstates,respectively. TheEEGsignalsofdatasetsC
+andDarerelatedtopre-ictalregionandwererecordedfromepileptogenicandleftareaof
+hippocampus,respectively. TheEEGsignalsofEdatasetarerelatedtoictalregion. Signals
+ofdatasetsAandBwererecordedusing10–20scalpEEGstandard,whilethesignalsofC
+andDwereintracranialEEGrecordedusingdepthelectrodes,andthesignalsofEwere
+providedusingbothdepthandstripelectrodes.Depthelectrodesarelocatedsymmetrically
+on hippocampus, while strip electrodes are located on lateral and base sections of neo
+cortex[37].
+2.1.5. Flint-Hills
+Thedatabasepresentselectrocardiographysignalswithtotaldurationof1419hand
+samplerateof249Hz. Inaddition,metainformationabout59seizuresandinformation
+related to the position of electrodes are presented. The signals of this database were
+obtainedusing48to64electrodesforeachpatient[26].
+2.1.6. BernBarcelona
+Barcelona database was collected from the brain department of Bern Hospital of
+Barcelona and contains intracranial EEG of patients with focal epilepsy. Subjects were
+monitoredforseveraldays,andnoantiepilepticdrugswereusedtodetermineseizures
+andpossiblesurgery. ThesignalswereacquiredusingAD-Techintracorticalelectrodes,
+andoneextrareferenceelectrodebasedon10–20standardbetweenPZandFZpositions
+wasused. ThedatabasecontainedtwotypesofEEGsignals: focalandextrafocalEEG
+signals. Everydatasetcontained3750pairsofsimultaneousrecordedsignalswithduration
+of20sandsamplerateof512Hz. Thedatabaseconsistsoftotal83hEEGdatafromfive
+patientswithdifferentages[38].
+2.1.7. HauzKhas
+ThedatabasewascollectedatabraincenterinDelhi,Indiaandcomprisesofscalp
+EEGsignalsof10patients,recordedwithAS40systemandsampledatarateof200Hzin
+HauzKhasneurons. Thesignalswerefilteredusingband-passfilterwithpassfrequencyof
+0.5–70Hzandclassifiedaspre-ictal,inter-ictal,andictalclassesbyneurologistexperts[26].
+2.1.8. Zenodo
+ThisdatasetcontainsmultichannelEEGrecordingsof79humanneonatescollected
+inHelsinkiUniversityHospital,withthemedianrecordingdurationof74min. TheEEG
+datawereannotatedbythreeexperts,andeveryexperthasannotatedabout460seizures,
+39neonateshadseizureand22neonateswereseizure-freeinconsensus[26].
+ThesupplementaryinformationoneachdatasetislistedinTable1. Figure5showsthe
+numberoftimeseachdatasetemployedepilepticseizuresdetectionusingDLtechniques.Int.J.Environ.Res.PublicHealth2021,18,5780 7of33
+ItcanbeobservedthattheBonndatasetismostwidelyusedforautomateddetectionof
+seizureusingDLmethods.
+Table1.ReviewofpopularandavailableEEGdatasetsforepilepticseizuresdetection.
+Numberof Numberof Sampling
+Dataset Recording Times
+Patients Seizures Frequency
+Continuesintracranial
+Flint-Hills[26] 10 59 1419 249
+lingtermECoG
+HauzKhas[26] 10 NA ScalpEEG NA 200
+Freiburg[34] 21 87 IEEG 708 256
+CHB-MIT[35] 22 163 ScalpEEG 844 256
+5dogs 400
+Kaggle[36] 48 IEEG 627
+2patients 5KHz
+Bonn[37] 10 NA SurfaceandIEEG 39m 173.61
+BernBarcelona[38] 5 3750 IEEG 83 512
+Zenodo[39] 79neonatal 460 SclapEEG 74m 256
+Figure 5. Usage of various datasets for automated detection of seizure using DL techniques by
+variousstudies.
+2.2. Preprocessing
+IndevelopingCADSusingDLmodelswithEEGsignals,thepreprocessinginvolves
+threesteps: noiseremoval,normalization,andsignalpreparationforDLnetworkapplica-
+tions[29,40]. Inthenoiseremovalstep,finiteimpulseresponse(FIR)orinfiniteimpulse
+response(IIR)filtersareusuallyusedtoeliminateextrasignalnoise. Normalizationisthen
+performedusingvariousschemessuchasthez-scoretechnique. Finally, differenttime
+domain,frequency,andtime–frequencymethodsareemployedtopreparethesignalsfor
+thedeploymentofdeepnetworks.
+2.3. ReviewofDeepLearningTechniques
+In contrast to conventional neural networks, or so-called shallow networks, deep
+neural networks are structures with more than two hidden layers. This increase in theInt.J.Environ.Res.PublicHealth2021,18,5780 8of33
+sizeofthenetworksresultsinamassiveriseinthenumberofparametersofthenetwork,
+requiring appropriate methods for learning, and also measures to avoid overfitting of
+thelearnednetwork. Convolutionalnetworksusefiltersconvolvedwithinputpatterns
+insteadofmultiplyingaweightvector(matrix),whichreducesthenumberoftrainable
+parametersdramatically.
+Furthermore,othermethodsaresuggestedtohelpthenetworktolearn,aswell[41].
+Poolinglayersreducethesizeoftheinputpatterntothenextconvolutionallayer. Batch
+normalization,dropout,earlystopping,unsupervisedorsemiunsupervisedlearning,and
+regularizationtechniquespreventthelearnednetworkfromoverfittingandincreasethe
+learningabilityandspeed. TheAEandDBNareemployedasunsupervisedlearningand
+then fine-tuned to avoid overfitting for limited labeled data. Long short-term memory
+(LSTM)andgatedrecurrentunits(GRU)areRNNscapableofrevealingthelong-termtime
+dependenciesofdatasamples.
+2.3.1. ConvolutionalNeuralNetworks(CNNs)
+CNNsareoneclassofthemostpopularDLnetworkstowhichmostoftheresearches
+in machine learning have been devoted [30]. They were initially presented for image-
+processing applications, but have recently been adopted to one- and two-dimensional
+architecturesfordiagnosisandpredictionofdiseasesusingbiologicalsignals[42]. This
+classofDLnetworksiswidelyusedforthedetectionofepilepticseizuresusingEEGsignals.
+Intwo-dimensionalconvolutionalneuralnetworks(2D-CNN),theone-dimensional(1D)
+EEGsignalsarefirsttransformedintotwo-dimensionalplotsbyemployingvisualization
+methods such as spectrogram [43], higher-order bispectrum [44,45], and wavelet trans-
+forms,andarethenappliedtotheinputoftheconvolutionalnetwork. In1Darchitectures,
+the EEG signals are applied in the one-dimensional form to the input of convolutional
+networks. Inthesenetworks,changesaremadetothecorearchitectureof2D-CNNthat
+makes it capable of processing the 1D-EEG signals. Therefore, since both 2D and one-
+dimensionalconvolutionalneuralnetworks(1D-CNNs)areusedinthefieldofepileptic
+seizuresdetection,theyareinvestigatedseparately.
+A.2DConvolutionalNeuralNetworks(2D-CNNs)
+Nowadays, deep 2D networks are used for various medical applications such as
+diagnosisofCOVID-19inCTandX-ray[46,47],andautismspectrumdisordersfromMRI
+modalities[48]. First,in2012,Krizovskyetal.[49]suggestedthisnetworktosolveimage
+classificationproblems,andthenquicklyusedsimilarnetworksfordifferenttaskssuchas
+medicalimageclassification,inanefforttoobviatethedifficultiesofpreviousnetworks
+andsolvemoreintricateproblemswithbetterperformance. Figure6showsageneralform
+ofa2D-CNNusedforepilepticseizuredetection. Theapplicationof2D-CNNarchitectures
+is arguably the most important architecture in the deep neural nets. More information
+aboutvisualizationandpreprocessingmethodcanbefoundinAppendixA.
+Figure6.Atypical2D-CNNforepilepticseizuredetection.Int.J.Environ.Res.PublicHealth2021,18,5780 9of33
+In one study [50], the SeizNet 16-layer convolutional network is introduced, with
+additionaldropoutlayersandbatchnormalization(BN)behindeachconvolutionallayer
+havingastructuresimilartothatofVGG-Net.Theauthorsin[51]presentedanew2D-CNN
+modelthatcanextractthespectralandtemporalcharacteristicsofEEGsignalsandused
+themtolearnthegeneralstructureofseizures. Zuoetal.[52]developedthediagnosis
+ofhigher-frequencyoscillations(HFO)epilepsyfrom16-layer2D-CNNandEEGsignals.
+ADLframeworkcalledSeizureNetthatusesconvolutionlayerswithdenseconnections
+isproposedin[53]. AnovelDLmodelcalledthetemporalgraphconvolutionalnetwork
+(TGCN)hasbeenintroducedbyCovertetal.[54],comprisingoffivearchitectureswith
+14, 18, 22, 23, and 26 layers. Bouaziz et al. [55] split the EEG signals of CHB-MIT with
+23channelsinto2stimewindowsandthenconvertedthemintodensityimages(spatial
+representation),whichwerefedasinputstotheCNNnetwork.
+B.AlexNet
+FeiFeiLi,ProfessorofStanfordUniversity,createdadatasetoflabeledimagesofreal-
+worldobjectsandtermedherprojectasImageNet[56]. ImageNetorganizesacomputer
+visioncompetitioncalledILSVRCannuallytosolvetheimageclassificationproblems. Alex
+Krizhevsky revolutionized the image classification world with his algorithm, AlexNet,
+which won the 2012 ImageNet challenge and started the whole DL era [49]. AlexNet
+wonthecompetitionbyachievingthetop-5testaccuracyof84.6%. Taqietal.[57]used
+theAlexNetnetworktodiagnosefocalepilepticseizures. Thisproposednetworkused
+thefeatureextractionapproachandeventuallyappliedtheSoftmaxlayerforclassifica-
+tionpurposesandachieved100%accuracy. Inanotherstudy,theAlexNetnetworkwas
+employed[58]. Theytransformedthe1Dsignalto2DimagebypassingthroughtheSig-
+nal2Image(S2I)module.Theseveralmethodsusedinthisaresignalasimage,spectrogram,
+one-layer1D-CNN,andtwo-layer1D-CNN.
+C.VGG
+A research team at Oxford proposed the visual geometry group (VGG) model in
+2014[59]. Theyconfiguredvariousmodels,andonesuchmodelwasVGG-16,whichwas
+submittedtotheILSVRC2014competition. TheVCG-16comprises16layersanddelivered
+anexcellentperformanceforimageclassificationproblems. Ahmedt-Aristizabaletal.[60]
+performedVGG-16architecturetodiagnoseepilepsyfromfacialimages. Theirproposed
+approachattemptedtoextractandclassifysemiologicalpatternsoffacialstatesautomati-
+cally. Afterrecordingtheimages,theproposedVGGarchitectureistrainedprimarilyby
+well-knowndatasets,followedbyvariousnetworkssuchas1D-CNNandLSTMinthelast
+fewlayers. In[58],theVGGnetworkusedone-dimensionalandtwo-dimensionalsignals.
+Totrainthemodels,Adam’soptimizerandacross-entropyerrorfunctionwereused. They
+usedthebatchsizeandnumberofepochsas20and100,respectively. Theideaofdetecting
+epileptic seizures on the sEEG signal plots was examined by Emami et al. [61]. In the
+preprocessingstep,thesignalsweresegmentedintodifferenttimewindowsandVGG-16
+wasusedforclassification,usingsmall(3×3)convolutionfilterstoefficientlydetectsmall
+EEGsignalchanges. Thisarchitecturewaspre-trainedbyapplyinganImageNetdatasetto
+differentiate1000classes,andthelasttwolayershad4096and1000dimensionalvectors.
+Theymodifiedtheselasttwolayerstohave32and2dimensions,respectively,todetect
+seizureandnon-seizureclasses.
+D.GoogleNet
+GoogLeNetwonthe2014ImageNetcompetitionwith93.3%top-5testaccuracy[62].
+This22-layernetworkwascalledGoogLeNettohonorYannLecun,whodesignedLeNet.
+BeforetheintroductionofGoogLeNet,itwasstatedthatbygoingdeep,onecouldachieve
+betteraccuracyandresults. Nevertheless,thegoogleteamproposedanarchitecturecalled
+inception,whichachievedbetterperformancebynotgoingdeepbutbybetterdesign. It
+representedarobustdesignbyusingfiltersofdifferentsizesonthesameimage. IntheInt.J.Environ.Res.PublicHealth2021,18,5780 10of33
+fieldofEEGsignalprocessingtodiagnoseepilepticseizures,thisarchitecturehasrecently
+receivedtheattentionofresearchers. Taqietal.[57]usedthisnetworkintheirpreliminary
+studiestodiagnoseepilepticseizures. Theirmodelwasusedtoextractfeaturesfromthe
+Bern-Barcelonadatasetandachievedexcellentresults.
+E.ResNet
+Microsoft’sResNetwontheImageNetchallengewith96.4%accuracybyapplying
+a152-layernetworkthatutilizedaResNetmodule[63]. Inthisnetwork,residualblocks
+capableoftrainingdeeparchitecturewereintroducedbyusingskipconnectionsthatcopied
+inputsofeachlayertothenextlayer. Theideawastolearnsomethingdifferentandnew
+in the next layer. So far, little research has been accomplished on the implementation
+ofResNetnetworkstodiagnoseepilepsy,butthismaygrowsignificantlyinthecoming
+days. Bizopoulosetal.[58]introducedtwoResNetandDenseNetarchitecturestodiagnose
+epilepticseizuresandattainedgoodresults. TheyshowedthatS2I-DenseNetbasedmodel
+withanaverageof70epochswassufficienttogainthebestaccuracyof85.3%. Asummary
+ofrelatedworksdoneusing2D-CNNsisshowninTable2. Asketchofaccuracyaccuracy
+(%)obtainedbyvariousauthorsisshowninFigure7.
+Table2.Summaryofrelatedworksdoneusing2D-CNNs.
+Works Networks NumberofLayers Classifier Accuracy(%)
+[50] SeizNet 16 NA NA
+[51] 2D-CNN 9 Softmax 98.05
+[52] 2D-CNN 16 Softmax NA
+[53] SeizureNet 133 Softmax NA
+14
+18
+[54] TGCN 22 Sigmoid NA
+22
+26
+[55] 2D-CNN 8 Softmax 99.48
+GoogleNet
+[57] AlexNet StandardNetworks Softmax 100
+LeNet
+[58] DifferentPreTrainNetworks StandardNetworks Softmax 85.30
+VGG-16
+[60] 2D-CNN SVM 95.19
+VGG-8
+3
+[64] 2D-CNN LogisticRegression(LR) 87.51
+4
+[65] 2D-CNN 9 Softmax NA
+Combination1DCNN
+[66] 11 Sigmoid 90.58
+and2D-CNN
+[67] 2D-CNN 18 Softmax NA
+[68] 2D-CNN/MLPhybrid 11 Sigmoid NA
+[69] 2D-CNN 9 Softmax 86.31
+2D-CNNwith
+[70] 12 Softmax NA
+1D-CNN
+[71] 2D-CNN 6 Softmax 74.00Int.J.Environ.Res.PublicHealth2021,18,5780 11of33
+Table2.Cont.
+Works Networks NumberofLayers Classifier Accuracy(%)
+[72] 2D-CNN 12 SoftmaxandSigmoid 99.50
+[73] 2D-CNN 16 91.80
+[74] 2D-CNN 23 Softmax 100
+[75] 2D-CNN 5 Softmax 100
+[76] 2D-CNN 14 Softmax 98.30
+7
+2D-CNN
+[77] 5 MV-TSK-FS 98.33
+3D-CNN 8
+23 Sigmoid
+[78] 2D-CNN NA
+18 RF
+[79] 2D-CNN 7 KELM 99.33
+[61] 2D-CNN VGG-16 Softmax NA
+Figure7. Sketchofaccuracy(%)obtainedbyvariousauthorsusing2D-CNNmodelsforseizure
+detection.
+F.1D—ConvolutionalNeuralNetwork(1D-CNN)
+1D-CNNsareintrinsicallysuitableforprocessingofbiologicalsignalssuchasEEG
+for epileptic seizures detection [2]. These architectures present a more straightforward
+structure,andasinglepassofthemisfasterascomparedwithCNNwith2Darchitecture,
+duetofewerparameters. Themostimportantsuperiorityof1Dto2Darchitecturesisthe
+possibilityofemployingpoolingandconvolutionallayerswithalargersize. Inaddition
+tothat,signalsare1Dinnature,andusingpreprocessingmethodstotransformthemto
+2Dmayleadtoinformationloss. Figure8showsageneralformofa1D-CNNusedfor
+epilepticseizuredetection.Int.J.Environ.Res.PublicHealth2021,18,5780 12of33
+Figure8.Typicalsketchofthe1D-CNNmodelthatcanbeusedforepilepticseizuredetection.
+Theauthorsin[58]conductedexperimentsusing1D-LeNet,AlexNet,VGGnet,ResNet,
+andDenseNetarchitectures,andappliedwell-known2Darchitecturesin1Dspaceinthe
+first study in this section. In [80], 1D-CNN was used for feature extraction procedure.
+Theresearchersin[81]used1D-CNNforotherwork. TheyusedaCHB-MITdataset,and
+thesignalsfromeachchannelweresegmentedinto4sintervals;overlappingsegments
+were also accepted to increase the data and accuracy. Combining CNNs with conven-
+tional feature extraction methods was explored in [82]; they used the empirical mode
+decomposition(EMD)methodforfeatureextraction,andCNNwasusedtoacquirehigh
+accuracyinthemulticlassclassificationtasks. In[83],aframeworkforthediagnosisof
+epilepticseizuresispresentedthatcombinedthecapabilityofinterpretingprobabilistic
+graphicalmodels(PGMs)withadvancesinDL.Theauthorsin[84]submitteda1D-CNN
+architecture-definedCNN-BP(standingforCNNbipolar). Inthiswork,theyusedthedata
+frompatientsmonitoredwithcombinedforamenovale(FO)electrodesandEEGsurface
+electrodes. AnewschemetoclassifyEEGsignalsbasedontemporalconvolutionneural
+networks(TCNN)wasintroducedbyZhangetal.[85]. Table3showsthesummaryof
+relatedworksdoneusing1D-CNNs. Figure9showsthesketchofaccuracy(%)obtained
+byvariousauthorsusing1D-CNNmodelsforepilepticseizuresdetection.
+Figure9.Sketchofaccuracy(%)versusauthorsobtainedusing1D-CNNmodelsforseizuredetection.Int.J.Environ.Res.PublicHealth2021,18,5780 13of33
+Table3.Summaryofrelatedworksdoneusing1D-CNNs.
+Works Networks NumberofLayers Classifier Accuracy(%)
+VGG-16,19
+[58] 1D-CNN StandardPreTrainNets 83.30
+DenseNet161
+[69] 1D-CNN 7 Softmax 82.04
+[80] 1D-CNN 5 Softmax,SVM 86.86
+[81] 1D-CNN 33 NA 99.07
+[82] 1D-CNN 12 Softmax 98.60
+[83] PGM-CNN 10 Softmax NA
+[84] 1D-CNN-BP 14 Sigmoid NA
+[85] 1D-TCNN NA NA 100
+[86] P-1D-CNN 14 Softmax 99.10
+[87] 1D-CNN 13 Softmax 88.67
+[88] MPCNN 11 Softmax NA
+[89] 1D-FCNN 11 Softmax NA
+[90] 1D-CNN 5 BinaryLR NA
+[91] 1D-CNN 23 Softmax 79.34
+[92] 1D-CNN 4 Sigmoid 97.27
+[93] 1D-CNN 13 NA 82.90
+99.00
+1D-CNNwith
+[94] 17 Softmax
+residualconnections 91.80
+[95] 1D-CNN 15 Softmax 84.00
+[96] 1D-CNN 10 Sigmoid 86.29
+[97] 1D-CNN 13 Softmax NA
+[98] 1D-CNN 9 Sigmoid NA
+[99] 1D-CNN 8 NA 99.28
+[100] 1D-CNN 15 Softmax 98.67
+[101] DeepConvNet 14 Softmax 80.00
+2.3.2. RecurrentNeuralNetworks(RNNs)
+Sequentialdatasuchastext,signals,andvideosshowcharacteristicssuchasvariable
+andgreatlength,whichmakesthemnotsuitableforsimpleDLmethods[41]. However,
+thesedataformasignificantpartoftheinformationintheworld, compellingtheneed
+forDL-basedschemestoprocessthesetypesofdata. RNNsarethesolutionsuggested
+to overcome the mentioned challenges, and are widely used for physiological signals.
+Figure 10 shows a general form of RNN used for epileptic seizure detection. In the
+followingsection,anoverviewofpopularRNNmodelsarepresentedinadditiontothe
+reviewedpapers.
+A.LongShort-TermMemory(LSTM)
+The main problem of a simple RNN is short-term memory. RNN may leave out
+key information as it has a hard time transporting information from earlier time steps
+to the next steps in long-sequence data. Another drawback of RNN is the vanishing
+gradientproblem[30–33]. Theproblemarisesbecauseoftheshrinkingofgradientsasit
+back-propagates. Tosolvetheshort-termmemoryproblem,LSTMgateswerecreated[30].
+Theflowofinformationcanberegulatedthroughgates. ThegatescanpreservethelongInt.J.Environ.Res.PublicHealth2021,18,5780 14of33
+sequenceofnecessarydata,andthrowawaytheundesiredones. Thebuildingblockof
+LSTMisthecellstateanditsgates.
+Figure10.SampleRNNmodelthatcanbeusedforseizuredetection.
+In this section, Golmohammadi et al. [68] evaluated two LSTM architectures with
+three and four layers together with the Softmax classifier in their investigation and ob-
+tainedsatisfactoryresults. In[92],three-layerLSTMsareusedforfeatureextractionand
+classification. Thesigmoidactivefunctionisusedinthelastfullyconnected(FC)layerfor
+classification. Accordingtodirectedexperimentsin[98],theyemployedtwoarchitectures:
+LSTMandGRU.TheLSTMGRUmodelarchitectureiscomposedofalayerofReshape,
+fourlayersofLSTM/GRUwiththeactivator,andonelayerofFCwithsigmoidactivator.
+Inanotherwork,Yaoetal.[102]practicedtendifferentandindependentlyameliorated
+RNN(IndRNN)architecturesandachievedthebestaccuracyusingDenseIndRNNwith
+attention(DIndRNN)with31layers.
+B.GatedRecurrentUnit(GRU)
+OnevariationofLSTMisGRU,whichcombinestheinputandforgetsgatesintoone
+update gate [30–33]. It merges the input and forgets gates and also makes some other
+modifications. Thegatingsignalsaredecreasedtotwo. Oneistheresetgate,andanother
+istheupdatinggate. Thesetwogatesdecidewhichinformationisnecessarytopasstothe
+output. Inoneexperiment,Chenetal.[92]usedathree-layerGRUnetworkwithsigmoid
+classifierandyielded96.67%accuracy. Talathietal. haveusedanewCADSbasedonGRU
+forepilepticseizuredetection[103]. Intheproposedmethod,duringthepreprocessing,the
+inputsignalsaresplitintotimewindowsandspectrogramareobtainedfromthem. Then,
+theseplotsarefedtoafour-layerGRUnetworkwithaSoftmaxFClayerintheclassification
+stage;98%accuracywasachieved. Inanotherstudy,Royetal.[104]employedafive-layer
+GRUnetworkwithSoftmaxclassifierandachievedremarkableresults. Table4provides
+thesummaryofrelatedworksdoneusingRNNs. Figure11showsthesketchofaccuracy
+(%)obtainedbyvariousauthorsusingRNNmodelsforseizuredetection.Int.J.Environ.Res.PublicHealth2021,18,5780 15of33
+Table4.SummaryofrelatedworksdoneusingRNNs.
+Works Networks NumberofLayers Classifier Accuracy(%)
+3
+[68] LSTM Sigmoid NA
+4
+LSTM 96.67
+[92] 3 Sigmoid
+GRU 96.82
+IndRNN 48 87.00
+[93] NA
+LSTM 4 84.35
+LSTM
+[98] 6 Sigmoid NA
+GRU
+[102] ADIndRNN 31 NA 88.70
+[103] GRU 4 LR 98.00
+[104] GRU 5 Softmax NA
+[105] RNN NA MLP NA
+[106] LSTM 4 Softmax 100
+2
+[107] LSTM Sigmoid 95.54
+5
+[108] LSTM 4 Softmax 100
+[109] LSTM 3 Softmax 97.75
+[110] LSTM 4 Softmax 100
+[111] GRU 3 LR 98.50
+[112] BiLSTM OneBiLSTM Softmax 98.91
+Figure11.Sketchofaccuracy(%)obtainedbyauthorsusingRNNmodelsforseizuredetection.
+2.3.3. Autoencoders(AEs)
+AEisanunsupervisedmachinelearningmodelforwhichtheinputisthesameas
+output[30–33]. Inputiscompressedtoalatent-spacerepresentation,andthentheoutput
+isobtainedfromtherepresentation. Therefore,inAE,thecompressionanddecompression
+functionsarecoupledwiththeneuralnetwork.AEconsistsofthreeparts,i.e.,encoder,code,
+anddecoder.AEnetworksaremostcommonlyusedforfeatureextractionordimensionality
+reductioninthebrainsignalprocessing. Figure12showsageneralformofanAEusedInt.J.Environ.Res.PublicHealth2021,18,5780 16of33
+forepilepticseizuresdetection. Asthefirstresearchinthissection,Rajaguruetal.[113]
+separatelysurveyedthemultilayerAE(MAE)andexpectation-maximizationwithprincipal
+componentanalysis(EM-PCA)methodstodiminishtherepresentationdimensionsand
+thenemployedtheGAforclassification. Theyobtainedanaverageclassificationaccuracy
+of93.78%whenMAEswereappliedfordimensionalityreductionandcombinedwithGA
+asclassifier. Inanotherwork,itwasproposedtodesignanautomatedsystembasedon
+AEsforthediagnosisofepilepsyusingtheEEGsignals[114]. First,Harmonicwavelet
+packettransform(HWPT)wasusedtodecomposethesignalintofrequencysub-bands,
+andthenfractalfeatures,includingbox-counting(BC),multiresolutionBC(MRBC),and
+Katzfractaldimension(KFD),wereextractedfromeachofthesub-bands.
+Figure12.SampleAEnetworkthatmaybeusedforseizuredetection.
+A.OtherTypesofAEs
+Tocreateamorerobustrepresentation,anumberofschemessuchasdenoisingAE
+(DAE)(whichtriestorecreateinputfromacorruptedformofit)[41],stackedAE(SAE)
+(stackingafewAEsontopofeachothertogodeeper)[41],andsparseAEs(SpAE)(which
+attemptstoharnessfromsparserepresentations)[41]havebeenapplied. Thesemethods
+mightpursueotherobjectivesaswell,forexample,theDAEcanbeusedtorecoverthe
+corruptedinput.
+WorksinthissectionbeginwithGolmohammadietal.[68],whopresentedvarious
+deepnetworks,oneofwhichisstackeddenoisingAE(SDAE).Theirarchitectureinthis
+sectionconsistsofthreelayers,andthefinalresultsdemonstratedgoodperformanceof
+theirapproach. Qiuetal.[115]exertedthewindowedsignal,z-scorenormalizationstepof
+preprocessingEEGsignalsandimportedpreprocesseddataintothedenoisingsparseAE
+(DSpAE)network. Intheirexperiment,theyachievedanoutstandingperformanceof100%
+accuracy. In[116],ahigh-performanceautomatedEEGanalysissystembasedonprinciples
+ofmachinelearningandbigdataispresented,whichconsistsofseveralparts. Atfirst,the
+signalfeaturesareextractedbylinearpredictivecepstralcoefficients(LPCC)coefficients,
+thenthreepathsareappliedforprecisedetection. Thefirstpassissequentialdecoding
+using hidden Markov models (HMMs), the second pass is composed of both temporal
+andspatialcontextanalysisbasedonDL,andinthethirdpass,aprobabilisticgrammar
+isemployed.
+In another study, Yan et al. [117] proposed a feature extraction and classification
+methodbasedonSpAEandsupportvectormachine(SVM).Inthisapproach, first, the
+featureextractionoftheinputEEGsignalsisperformedusingSAE,and,finally,theclassifi-
+cationisperformedbySVM.AnotherSAEarchitecturewasproposedbyYuanetal.[118],
+whichisnamedWave2Vec. Inthepreprocessingstage,thesignalswerefirstframed,and
+inthedeepnetworksegment,theSAEwithSoftmaxwasappliedandachieved93.92%
+accuracy. FollowingtheexperimentsofYuanetal.,in[119],differentstackedsparsede-Int.J.Environ.Res.PublicHealth2021,18,5780 17of33
+noisingAE(SSpDAE)architectureshavebeentestedandcompared. Inthiswork,feature
+extractionisaccomplishedbytheSSpDAEnetworkandfinallyclassificationbySoftmax.
+Theyobtainedanaccuracyof93.64%. Table5providesthesummaryofrelatedworksdone
+using AEs. In addition, Figure 13 shows the comparison of the accuracies obtained by
+differentresearchers.
+Table5.SummaryofrelatedworksdoneusingAEs.
+Works Networks NumberofLayers Classifier Accuracy(%)
+[68] SDAE 3 NA NA
+[113] MAE NA GA 93.92
+[114] AE 3 Softmax 98.67
+[115] DSpAE 3 LR 100
+SPSW-SDA
+EachModelhas3
+[116] 6W-SDA LR NA
+hiddenlayers
+EYEM-SDA
+[117] SpAE Single-LayerSpAE SVM 100
+Wave2Vec NA 93.92
+[118] Softmax
+SSpDAE 2 93.64
+[119] SAE 3 Softmax 96.10
+[120] AE OneLayer Sigmoid NA
+[121] SSpDAE 8 Softmax 93.82
+[122] SSpAE 3 Softmax 100
+[123] SAE 3 Softmax 86.50
+[124] SSpAE 3 Softmax 100.00
+[125] SpAE 3 Softmax 100.00
+[126] SAE 3 Softmax 96.00
+[127] SSpAE 3 Softmax 94.00
+[128] SAE 3 Softmax 88.80
+Figure13.Sketchofaccuracy(%)versusauthorsobtainedusingAEmodelsforseizuredetection.
+2.3.4. DeepBeliefNetworks(DBNs)
+RestrictedBoltzmannmachines(RBM)isavariantofdeepBoltzmannmachines(DBM)
+andanundirectedgraphicalmodel[30]. TheunrestrictedBoltzmannmachinesmayalsoInt.J.Environ.Res.PublicHealth2021,18,5780 18of33
+have connections between the hidden units. Stacking the RBMs forms a DBN; RBM is
+thebuildingblockofDBN.DBNsareunsupervisedprobabilistichybridgenerativeDL
+modelscomprisinglatentandstochasticvariablesinmultiplelayers[30–33]. Furthermore,
+avariationofDBNiscalledconvolutionalDBN(CDBN),whichcouldsuccessfullyscale
+thehigh-dimensionalmodelandusesthespatialinformationofthenearbypixels[30–33].
+DBNsareprobabilistic,generative,unsupervisedDLmodelswhichcontainvisibleand
+multiplelayersofhiddenunits[30–33]. Xuyenetal.[129]usedDBNtoidentifyepileptic
+spikesinEEGdata. Theproposedarchitectureintheirstudyconsistedofthreehidden
+layersandachievedanaccuracyof96.87%. Inanotherstudy,Turneretal.[130]appliedthe
+DBNnetworktodiagnoseepilepsyandfoundpromisingresults.
+2.3.5. ConvolutionalRecurrentNeuralNetworks(CNN-RNNs)
+ThehighlyefficientcombinationofDLnetworksusedtopredictanddetectepileptic
+seizuresfromEEGsignalsistheCNN-RNNarchitecture. Addingconvolutionallayers
+toRNNhelpstofindspatiallynearbypatternseffectivelyasRNNcharacteristicismore
+suitablefortime-seriesdata. In[68],theyappliednumerouspreprocessingschemes;then,a
+modifiedCNN-LSTMarchitecturewasproposedcomprising13layersandthesigmoidwas
+usedforthelastlayer. Finally,theproposedapproachdemonstratedbetterperformance.
+Royetal.[69]useddifferentCNN-RNNhybridarchitecturestoimprovetheexperi-
+mentalresults. Theirfirstnetworkcomprisedaone-dimensionalseven-layerCNN-GRU
+convolutionarchitecture,andthesecondoneisathree-dimensional(3D)CNN-GRUnet-
+work. In another work, Roy et al. [104] concentrated on natural and abnormal brain
+activitiesandsuggestedfourdifferentDLarchitectures. TheproposedChronoNetmodel
+wasdevelopedusingpreviousmodels. Itachieved90.60%and86.57%trainingandtest
+accuracies,respectively.
+Fangetal.[131]usedtheInception-V3network. Attheoutset,apreliminarytrain-
+ingwasusedonthisnetwork. Then, tofine-tunethisarchitecture, anRNN-basednet-
+workcalledspatialtemporalGRU(ST-GRU)wasapplied,andachieved77.30%accuracy.
+Choietal.[132] proposed a multiscale 3D-CNN with RNN model for the detection of
+epilepticseizures. TheCNNmoduleoutputisappliedastheinputoftheRNNmodule.
+The RNN module consists of a unilateral GRU layer that extracts the temporal feature
+of epileptic seizures, which are finally classified using an FC layer. At the end of this
+section,generalizedinformationfromtheCNN-RNNresearchispresentedinTable6and
+Figure14,respectively.
+Figure14.Sketchofaccuracy(%)versusdifferentresearchersobtainedusingCNN-RNNmodelsfor
+seizuredetection.Int.J.Environ.Res.PublicHealth2021,18,5780 19of33
+Table6.SummaryofrelatedworksdoneusingCNN-RNNs.
+Works Networks NumberofLayers Classifier Accuracy(%)
+[60] 2DCNN-LSTM VGG-16 Sigmoid 95.19
+[68] 2D-CNNBiLSTM 13 Sigmoid NA
+1DCNN-GRU 7 99.16
+[69] Softmax
+TCNN-RNN 10 95.22
+C-RNN 8 83.58
+IC-RNN 14 86.90
+[104] Softmax
+C-DRNN 8 87.20
+ChronoNet 14 90.60
+[131] ST-GRUConvNets Inception-V3+GRU NA 77.30
+[132] 3D-CNNBiGRU NA NA 99.40
+[133] 2DCNN-LSTM 8 NA NA
+[134] 2DCNN-LSTM 18 Softmax 99.00
+7
+[135] 1DCNN-LSTM Sigmoid 89.73
+8
+2.3.6. ConvolutionalAutoencoders(CNN-AEs)
+Inadditiontofindingnearbypatterns,convolutionallayerscanreducethenumber
+of parameters in structures such as AEs. These two reasons make their combination
+suitable for many tasks such as unsupervised feature extraction for epileptic seizure
+detection. AnovelapproachbasedonCNN-AEwaspresentedbyYuanetal.[136]. At
+thefeatureextractionstage,twodeepapproaches,AEand2D-CNN,wereusedtoextract
+thesupervisedandunsupervisedfeatures,respectively. Theunsupervisedfeatureswere
+obtaineddirectlyfromtheinputsignals,andthesupervisedfeatureswereacquiredfrom
+thespectrogramofthesignals. Finally,theSoftmaxclassifierwasutilizedforclassification
+and achieved 94.37% accuracy. In another investigation, Yuan et al. [137] proposed an
+approachcalleddeepfusionalattentionnetwork(DFAN),whichcanextractchannel-aware
+representations from multichannel EEG signals. They developed a fusional attention
+layerthatutilizedafusionalgatetofullyintegratemultiviewinformationtoquantifythe
+contributionofeachbiomedicalchanneldynamically. Amultiviewconvolutionencoding
+layer, in combination with CNN, has also been used to train the integrated DL model.
+Table7providesthesummaryofrelatedworksdoneusingCNN-AEs,andFigure15shows
+theaccuracies(%)obtainedbydifferentresearchers.
+Table7.SummaryofrelatedworksdoneusingCNN-AEs.
+Works Networks NumberofLayers Classifier Accuracy(%)
+[136] CNN-AE 10 Softmax 94.37
+[137] CNN-AE NA Softmax 96.22
+Different
+[138] CNN-AE 15 92.00
+Classifiers
+[139] 1D-CNN-AE 16 Sigmoid 100
+CNN-ASAE 8 66.00
+[140] LR
+CNN-AAE 7 68.00Int.J.Environ.Res.PublicHealth2021,18,5780 20of33
+Figure 15. Sketch of accuracy (%) versus authors obtained using CNN-AE models for
+seizuredetection.
+3. Non-EEG-BasedEpilepticSeizuresDetection
+3.1. MedicalImaging
+VariousDLmodelsweredevelopedtodetectepilepticseizureusingsMRI,fMRI,and
+PETscanswithorwithoutEEGsignals[141–148]. Thesemodelsoutperformedtheconven-
+tionalmodelsintermsofautomaticdetectionandmonitoringofthedisease. However,due
+tothenatureanddifficultiesinusingimagingmethods,thesemodelsaremostlypracticed
+forlocalizationanddetectionofseizure.
+Theauthorsof[141]proposedautomaticlocalizationanddetectionoffocalcortical
+dysplasia(FCD)fromtheMRImodalityusingaCNNmodel. ThediagnosisofFCDrateis
+only50%despitetheprogressintheanalyticsofMRImodalities. Gilletal.[142]proposed
+aCNN-basedalgorithmwithfeaturelearningcapabilitytodetectFCDautomatically. The
+authors[143]designedDeepIEDbasedonDLandEEG-fMRIscansforepilepsypatients,
+combining the general linear model with EEG-fMRI techniques to estimate the epilep-
+togeniczone. Hosseinietal.[144]proposedanedgecomputingautonomicframework
+forevaluation,regulation,andmonitoringofepilepticbrain. Theepileptogenicnetwork
+estimated the epilepsy using rs-fMRI and EEG. Shiri et al. [148] presented a technique
+fordirectattenuationcorrectionofPETimagesbyapplyingemissiondataviaCNN-AE.
+Nineteenradiomicfeaturesfrom83brainregionswereevaluatedforimagequantification
+viaHammersmithatlas.Finally,thesummaryofrelatedworksdoneusingmedicalimaging
+methodsandDLisshowninTable8.
+3.2. OtherNeuroimagingModalities
+RaviPrakashetal.[135]introducedanalgorithmbasedonDLforECoG-basedfunc-
+tional mapping (ECoG-FM) for eloquent language cortex identification. However, the
+successrateofECoG-FMislowascomparedwithelectro-corticalstimulationmapping
+(ESM). In another work, Rosas-Romero et al. [149] have used fNIRS to detect epileptic
+seizureandobtainedbetterperformancethanachievedusingconventionalEEGsignals.Int.J.Environ.Res.PublicHealth2021,18,5780 21of33
+Table8.SummaryofrelatedworksdoneusingMRImodalitiesandDL.
+Works Networks NumberofLayers Classifier Accuracy(%)
+[141] 2D-CNN 30 sigmoid 82.50
+[142] 2D-CNN 11 Softmax NA
+Softmax
+[143] ResNet 31 NA
+Triplet
+[144] 2D-CNN NA SVM NA
+2D-CNN 89.80
+[145] 11 Softmax
+3D-CNN 82.50
+[146] 2D-CNN NA NA NA
+ResNet
+[147] VGGNet 14 sigmoid 98.22
+Inception-V3
+SVGG-C3D
+DeepDirectAttenuationCorrection
+[148] 44 Tanh NA
+(Deep-DAC)
+4. RehabilitationSystemsforEpilepticSeizuresDetection
+ThehighperformanceandrobustnesstonoisehavemadetheDLtechniquessuitable
+forcommercialproducts. Nowadaysvariouscommercialproductshavebeendeveloped
+inthefieldofDL,oneofwhichisDLapplicationsandhardwarefordiagnosingepileptic
+seizures. Inthefirststudyinvestigated,thebrain–computerinterface(BCI)systemwas
+developedusinganAEforepilepticseizuredetectionbyHosseinietal.[127]. Inanother
+study,Singhetal.[128]indicatedautilitarianproductforthediagnosisofepilepticseizures,
+which comprised the user segment and the cloud segment. The block diagram of the
+proposedsystempresentedbySinghetal. isshowninFigure16.
+Figure16. BlockdiagramofproposedepilepticseizuredetectionsystemusingDLmethodswith
+EEGsignals.
+Kiral-Korneketal.[150]demonstratedthatDLincombinationwithneuromorphic
+hardware could help in developing a wearable, real-time, always-on, patient-specific
+seizurewarningsystemwithlowpowerconsumptionandreliablelong-termperformance.Int.J.Environ.Res.PublicHealth2021,18,5780 22of33
+5. Discussion
+Nowadays,manypeopleworldwidehaveepilepticseizuresandsufferfromthese
+neurologicaldisorders. Earlydetectionofepilepticseizuresisofsubstantialimportance
+becauseitdirectlyaffectsthepatients’qualityoflifeandcanenhancetheirself-confidenceat
+allstagesoflife.Sofar,muchresearchhasbeenaccomplishedtodiagnoseepilepticseizures
+using AI techniques. The objective of these studies is to assist physicians in accurate
+epilepticseizuresdiagnosis. AIresearchinvolvesconventionalmachinelearning[151]and
+DL[152–156]scopes. Untilrecently,manymachinelearningmethodsthatwereadopted
+to automatically detect seizures could not be seriously used for a variety of real-time
+diagnosticaidtoolsforepilepticseizuresduetotheirdisadvantages. DLisoneofthestate-
+of-the-artfieldsofepilepticseizuredetectionthathasbeenemployedforepilepticseizure
+detectionsince2016. Inrecentyears,theresearchgrowthinepilepticseizurediagnosis
+usingDLisproceedingrapidlyduetothesimultaneousdevelopmentofDLtoolboxesas
+wellasgraphicsprocessingunits(GPUs). ApplyingDLtechniquestodiagnoseepileptic
+seizuresgivesdoctorshopethatinthenot-too-distantfutureavarietyofrehabilitation
+tools will be developed for patients with epileptic seizures. Table A1 in the Appendix
+shows the overview of works done in this area. It also shows the type of dataset used,
+implementationtool,preprocessing,DLnetwork,andevaluationmethodsutilized.
+Asshowninthisstudy,variousDLstructuresareappliedforepilepticseizuredetec-
+tion,yetnoneofthemhassuperiorityoverothers. Thebeststructureshouldbechosen
+carefullybasedonthedatasetandproblemcharacteristics,suchastheneedforreal-time
+detectionorminimumacceptableaccuracyoreventheuseofpre-trainedmodels. There
+aremanydatabasesavailablewithdifferentmodels. Hence,itisdifficulttocomparethem
+astheyhavebeendevelopedusingdifferentdatasetsandmodels. Overall,oneofthemost
+importantadvantagesofDLalgorithmsistheirhighperformance. Hence,suchmodels
+havebeenwidelyusedformanyapplications. AnotheradvantageofDLmethodsisthat
+theyarerobusttonoise. Therefore,noiseremovalcanbeomittedinmanyapplications.
+However,theyneedmoredatatotrain,andtrainingtakestime. Developingarobustmodel
+istimeconsumingandrequireshugedata.
+6. Challenges
+There are several challenges in diagnosing epileptic seizures using neuroimaging
+modalitiesandDLprocedures. Inaccessibilityofdatasetswithhighregistrationtimeisthe
+firstchallengeinthisarea. Thedatasetsavailablefordiagnosingepilepticseizureshavea
+finiteregistrationtime(orrecording),makingitdifficulttoconductserious(orimportant)
+researchinthefieldofepilepticseizures. Thecompletedatasetsarenotsharedinthepublic
+domain,onlyaportionofthedatamaybeavailable. Hence,real-timediagnosisofepileptic
+seizuresisstillchallenging. However,researchinthefieldofreal-timeepilepticseizures
+diagnosishasbeenperformed,usingclinicaldata[157–159].
+Duetothelackofaccessibledatasets,researchershavenotyetbeenabletopresenta
+DL-basedCADSfordiagnosingepilepticseizureswithoptimumperformance. Addition-
+ally,itisnotpossibletocombinetheavailableEEGdatasetstoenhancetheefficiencyofDL
+networks. Thisisbecauseeachofthedatasetspresentedpossessesdifferentsamplingfre-
+quencies,andinordertoachievehigherdetectionaccuracy,itisnotpragmatictointegrate
+themtofeedtoDLnetworks.
+Table1showsallavailableEEGdatasetsusedforepilepticseizuredetection. However,
+other neuroimaging modalities such as MRI are used for epileptic seizures detection.
+In [141–148], MRI modalities coupled with DL methods have been used to diagnose
+epilepticseizures. Datasetswithnon-MRImodalitiesarenotavailable,andthishasled
+tolimitedresearchinthisarea. Therefore,providingdatasetsfromotherneuroimaging
+modalitiesisimportanttoconductresearch.
+Nowadays,DLmodelshavemadeconsiderableadvancements[160–164]. Thishas
+resulted in the development of computer hardware [165,166] that is expensive and not
+easilyaccessibletotheresearchers. ResearchersworkinginthefieldofepilepticseizuresInt.J.Environ.Res.PublicHealth2021,18,5780 23of33
+detection/predictiondonotalwayshaveaccesstohigh-powerhardwaretoimplement
+novelDLmodels. AlthoughpowerfulcomputingserversareavailablebyGoogle, con-
+straintssuchastheamountofdatathatcanbeuploadedtotheseserversandexecution
+timearestillthechallenges.
+7. ConclusionandFutureWorks
+Inrecentyears,alotofresearchhasbeendoneintheepilepticseizuresdetectionfield
+usingartificialintelligencemethods[167–175]. Inthispaper,acomprehensivereviewof
+worksdoneinthefieldofepilepticseizuredetectionusingvariousDLtechniquessuch
+asCNNs,RNNs,andAEsispresented. Variousscreeningmethodshavebeendeveloped
+usingEEGandMRImodalities. Wehaveinvestigatedtheepilepticseizuresdetectionusing
+DL-basedpracticalandappliedhardwaremethods. Itisveryencouragingthatmuchofthe
+futureresearchwillconcentrateonhardware—practicalapplicationsaidintheaccurate
+detectionofsuchdiseases. Thefunctionalhardwarehasalsobeenutilizedtoboostthe
+performanceofdetectionstrategies. Furthermore,themodelscanbeplacedinthecloudby
+hospitals. Therefore,handheldapplications,mobileorwearabledevices,maybeequipped
+withsuchmodels,andcloudserverswillperformthecomputations;bytakingbenefitfrom
+predictivemodels,thesedevicescanbeusedtoavertpatientsinatimelymanner. Alert
+messagesmaybegeneratedtothefamily,relatives,theconcernedhospital,anddoctorin
+thedetectionofepilepticseizuresthroughthehandhelddevicesorwearables,andthus
+the patient can be provided with proper treatment in time. Moreover, a cap with EEG
+electrodesinitcanobtaintheEEGsignals,whichcanbesenttothemodelkeptinthecloud
+toachievereal-timedetection. Additionally,ifwecandetectearlystageofseizureusing
+interictalperiodsofEEGsignals,thepatientcantakemedicationimmediatelyandprevent
+seizure. Thisfieldofresearchrequiresmoreresearchthatcombinesdifferentscreening
+methodsformorepreciseandfastdetectionofepilepticseizuresandalsoappliessemi
+supervisedandunsupervisedmethodstofurtherovercomethedatasetsizelimits. Finally,
+havingpubliclyavailablecomprehensivedatasetscanhelptodevelopanaccurateand
+robustmodelthatcandetecttheseizureintheearlystage.
+AuthorContributions:Contributedtopreparethefirstdraft:A.S.,M.K.,N.G.,M.J.,R.A.,P.M.,F.K.,
+D.A.,H.H.-N.,A.Z.,M.R.,andS.H.;contributedtoeditingthefinaldraft: S.N.,M.P.,A.F.A.,A.K.,
+A.S.,andU.R.A.;contributedtoallanalysisofthedataandproducedtheresultsaccordingly:A.S.,
+M.J.,M.K.,R.A.,P.M.,A.Z.,andN.G.;searchedforpapersandthenextracteddata:S.H.,A.S.,M.K.,
+andF.K.;Providedoverallguidanceandmanagedtheproject: S.N.,M.P.,A.F.A.,A.K.,A.S.,and
+U.R.A.Allauthorshavereadandagreedtothepublishedversionofthemanuscript.
+Funding:Thisresearchreceivednoexternalfunding.
+InformedConsentStatement:Notapplicable.
+DataAvailabilityStatement:Notapplicable.
+ConflictsofInterest:Theauthorsdeclarenoconflictofinterest.
+AppendixA
+Table A1 shows the detailed summary of DL methods employed for automated
+detectionofepilepticseizures.Int.J.Environ.Res.PublicHealth2021,18,5780 24of33
+TableA1.SummaryofDLmethodsemployedforautomateddetectionofepilepticseizures.
+Work Dataset Preprocessing DLToolbox DLNetwork K-Fold Classifier Accuracy(%)
+Down-Sampling,
+[50] Clinical Normalization,Data Keras SeizNet – – –
+Augmentation
+[51] CHB-MIT Visualization PyTorch 2D-CNN – Softmax 98.05
+Filtering,Normalization,
+[52] Clinical NA 2D-CNN 10 Softmax NA
+Visualization
+[53] TUH DivSpec PyTorch SeizureNet 5 Softmax NA
+[54] Clinical STFT NA TGCN – Sigmoid NA
+[55] CHB-MIT SpatialRepresentation NA 2D-CNN – Softmax 99.48
+[61] Clinical Filtering,Visualization Chainer 2D-CNN – Softmax NA
+[64] Clinical Spectrogram NA 2D-CNN – LR 87.51
+[65] Clinical Normalization Matlab 2D-CNN – Softmax NA
+[66] Clinical Filtering NA 1D-CNNwith – Sigmoid 90.50
+CHB-MIT 2D-CNN 85.60
+Octave
+[67] Clinical Filtering,Down-Sampling Keras 2D-CNN – Softmax NA
+Theano
+[68] TUH Filtering NA CNN-RNN – Different NA
+Clinical Methods
+[69] TUH DifferentMethods NA 1D-CNN-GRU – Softmax 99.16
+1D-CNN
+[70] Clinical Normalization,STFT PyTorch – Softmax –
+2D-CNN
+[71] TUH FeatureExtraction TensorFlow 2D-CNN 10 Softmax 74.00
+Clinical Filtering,EMD, Octave Sigmoid
+[72] 2D-CNN 4 99.50
+BernBarcelona DWT,Fourier Keras Softmax
+[73] BernBarcelona Normalization,STFT TensorFlow 2D-CNN 10 Softmax 91.80
+[74] Bonn DWT NA 2D-CNN 10 Softmax 100
+[75] Bonn CWT Keras 2D-CNN 10 Softmax 100
+99.60
+[76] Bonn Filtering Matlab 2D-CNN – Softmax
+90.10
+TensorFlow 2D-CNN
+[77] CHB-MIT FFT,WPD 5 MV-TSK-FS 98.35
+Matlab 3D-CNN
+Sigmoid
+[78] Clinical DifferentMethods Matlab 2D-CNN 10 NA
+RF
+CHB-MIT
+[79] MAS NA 2D-CNN 5 KELM 99.33
+Clinical
+Softmax
+[80] Clinical Filtering,Down-Sampling TensorFlow 1D-CNN 4 83.86
+SVM
+Caffe FRCNNwith
+2D-CNN SVM
+[60] Clinical DifferentTechniques Keras 5 95.19
+FRCNNwith
+2D-CNN-LSTM
+Theano Sigmoid
+Pre-Train
+[57] BernBarcelona NA Caffe – Softmax 100
+Methods
+[58] UCI Signal2Image PyTorch 1D-CNN – DenseNet 85.30
+Majority
+[86] Bonn DA TensorFlow P-1D-CNN 10 99.10
+Voting
+[87] Bonn Normalization Matlab 1D-CNN 10 Softmax 86.67
+[88] CHB-MIT Filtering,DA NA MPCNN – Softmax NA
+[89] Clinical Down-Sampling,Filtering Keras 1D-FCNN 5 Softmax NA
+[91] TUH Normalization Keras 1D-CNN – Softmax 79.34
+Theano
+[90] Clinical Filtering 1D-CNN – BinaryLR NA
+LasagneInt.J.Environ.Res.PublicHealth2021,18,5780 25of33
+TableA1.Cont.
+Work Dataset Preprocessing DLToolbox DLNetwork K-Fold Classifier Accuracy(%)
+DWT,FeatureExtraction,
+[81] CHB-MIT NA 1D-CNN 10 – 99.07
+Normalization
+[92] Bonn DWT,Normalization NA 1D-CNN 5 Sigmoid 97.27
+[85] Bonn Normalization NA 1D-TCNN NA NA 100
+[82] Bonn EMD,MPF NA 1D-CNN 10 Softmax 98.60
+[93] CHB-MIT Windowing NA IndRNN 10 NA 87.00
+91.80
+BernBarcelona
+[94] Filtering,Normalization TensorFlow 1D-CNN – Softmax 99.00
+Bonn
+CHB-MIT
+[83] Filtering PyTorch 1D-PCM-CNN 5 Softmax NA
+Clinical
+[95] CHB-MIT MIDS,WGAN NA 1D-CNN – Softmax 84.00
+Down-Sampling,
+[96] Clinical NA 1D-CNN 4 Sigmoid 86.29
+PSD,FFT
+[97] CHB-MIT Filtering TensorFlow 1D-CNN 4 Softmax NA
+[99] BernBarcelona Filtering,DA NA 1D-CNN 10 NA 89.28
+Keras
+[100] Bonn Normalization 1D-CNN 10 Softmax 98.67
+TensorFlow
+Filtering,Normalization,
+[101] Clinical Segmentation,resampling NA DeepConvNet 10 Softmax 80.00
+strategies
+Keras
+Down-Sampling,
+[84] Clinical Filtering,DA TensorFlow CNN-BP 5 Sigmoid NA
+Matlab
+1D-CNN Sigmoid
+[98] Clinical Filtering,DWT NA LSTM – RF NA
+GRU SVM
+Filtering,Montage
+[105] CHB-MIT Matlab DRNN – MLP NA
+Mapping
+[110] Bonn Filtering NA LSTM – Softmax 100
+Keras 3
+[106] Bonn Filtering TensorFlow LSTM 5 Softmax 100
+Matlab 10
+[107] Bonn Windowing Keras LSTM 10 Sigmoid 91.25
+Keras 3
+[108] Bonn Filtering TensorFlow LSTM 5 Softmax 100
+Matlab 10
+[109] Freiburg Filtering,Normalization NA LSTM 5 Softmax 97.75
+CHB-MIT
+[102] Windowing NA ADIndRNN 10 NA 88.70
+Bonn
+[103] Bonn Autocorrelation Keras GRU – LR 98.00
+[111] Bonn DWT Keras RNN – LR 98.50
+[112] Freiburg Segmentation,DA, Matlab Bi-LSTM – Softmax 98.91
+StockwellTransform TensorFlow
+[104] TUH TCP NA ChronoNet – Softmax 90.60
+AEwith
+[113] Clinical Windowing NA – GA 93.92
+EM-PCA
+[114] Bonn Filtering,HWPT,FD Matlab AE – Softmax 98.67
+Down-Sampling,
+[120] Clinical TensorFlow AE – Sigmoid NA
+Filtering,Normalization
+[121] CHB-MIT STFT NA SSDA – Softmax 93.82
+[115] Bonn Normalization Matlab DSAE – LR 100Int.J.Environ.Res.PublicHealth2021,18,5780 26of33
+TableA1.Cont.
+Work Dataset Preprocessing DLToolbox DLNetwork K-Fold Classifier Accuracy(%)
+Toolkits
+[116] TUH DifferentMethods SDA – LR NA
+Theano
+[117] Bonn Filtering NA SAE – SVM 100
+[122] Bonn Normalization NA SSAE – Softmax 100
+[118] CHB-MIT Scalogram Theano Wave2Vec – Softmax 93.92
+[136] CHB-MIT DA,STFT PyTorch CNN-AE 5 Softmax 94.37
+Filtering,CWT,
+[123] Clinical NA SAE – Softmax 86.50
+FeatureExtraction
+[124] Bonn TaguchiMethod NA SSAE – Softmax 100
+DimensionReduction,
+[125] Clinical NA DeSAE – Softmax 100
+ESD
+[126] Bonn DWT NA SAE – Softmax 96.00
+[119] CHB-MIT DifferentMethods NA mSSDA – Softmax 96.61
+[127] Clinical PCA,I-ICA Matlab SSAE – Softmax 94.00
+[128] Bonn Windowing Matlab SAE – Softmax 88.80
+[129] Clinical DWT Matlab DBN – – 96.87
+LR
+[130] Clinical Normalization,Feature Theano DBN – SVM NA
+Extraction
+KNN
+ImageBased
+[133] CHB-MIT NA 2D-CNN-LSTM – – –
+Representation
+ST-GRU
+[131] Clinical Filtering TensorFlow – – 77.30
+ConNets
+[132] CHB-MIT STFT,2D-Mapping NA 3D-CNNwith – – 99.40
+Clinical BiGRU
+[134] CHB-MIT Visualization NA 2D-CNN-LSTM – Softmax 99.00
+[135] ClinicalECoG Filtering NA 1D-CNN-LSTM 5 Sigmoid 89.73
+CHB-MIT 5 Different
+[138] ChannelSelection NA CNN-AE 92.00
+Bonn 10 Methods
+[139] Bonn Windowing NA 1D-CNNwith – Softmax 99.33
+BiLSTM Sigmoid 100
+ASAE-CNN
+[140] Clinical Mapping Theano – LR 68.00
+AAE-CNN
+[137] CHB-MIT STFT PyTorch CNN-AE 5 Softmax 96.22
+Noisereductionwith Keras
+[141] SCTIMST BM3D,Skullstripping, 2D-CNN 5 Sigmoid NA
+Segmentation, TensorFlow
+[142] ClinicalMRI DifferentTechniques NA 2D-CNN 5 Softmax NA
+[143] ClinicalMRI Filtering,ICA,BCG,GLM, NA ResNet – Softmax NA
+MCS
+Triplet
+[144] ClinicalDatasets DifferentMethods NA 2D-CNN – SVM NA
+[145] ClinicalMRI ScalingDown NA 3D-CNN 5 Softmax 89.80
+ConnectivityFeature
+[146] ClinicalMRI NA 2D-CNN – – –
+extraction
+2D-ResNet
+Kaggle
+ROI,Normalization,AAL, 2D-VGG
+[147] CNNI,Down-sampling, TensorFlow – Sigmoid 98.22
+NNI(3Dimages) 2D-InceptionV3
+ClinicalMRI
+3D-SVGG-C3D
+[148] ClinicalMRI OSEM,DA TensorFlow DAC – Tanh NAInt.J.Environ.Res.PublicHealth2021,18,5780 27of33
+References
+1. Ghassemi,N.;Shoeibi,A.;Rouhani,M.;Hosseini-Nejad,H.EpilepticseizuresdetectioninEEGsignalsusingTQWTandensemble
+learning.InProceedingsofthe20199thInternationalConferenceonComputerandKnowledgeEngineering(ICCKE),Mashhad,
+Iran,24–25October2019;pp.403–408.
+2. Shoeibi,A.;Ghassemi,N.;Alizadehsani,R.;Rouhani,M.;Hosseini-Nejad,H.;Khosravi,A.;Panahiazar,M.;Nahavandi,S.A
+comprehensivecomparisonofhandcraftedfeaturesandconvolutionalautoencodersforepilepticseizuresdetectioninEEG
+signals.ExpertSyst.Appl.2021,163,113788.[CrossRef]
+3. Bhattacharyya,A.;Pachori,R.B.;Upadhyay,A.;Acharya,U.R.Tunable-Qwavelettransformbasedmultiscaleentropymeasure
+forautomatedclassificationofepilepticEEGsignals.Appl.Sci.2017,7,385.[CrossRef]
+4. Kulaseharan,S.;Aminpour,A.;Ebrahimi,M.;Widjaja,E.Identifyinglesionsinpaediatricepilepsyusingmorphometricand
+texturalanalysisofmagneticresonanceimages.Clin.NeuroImage2019,21,101663.[CrossRef]
+5. Zazzaro,G.;Cuomo,S.;Martone,A.;Montaquila,R.V.;Toraldo,G.;Pavone,L.Eegsignalanalysisforepilepticseizuresdetection
+byapplyingdataminingtechniques.InternetThings2019,100048.[CrossRef]
+6. vanKlink,N.;Mooij,A.;Huiskamp,G.;Ferrier,C.;Braun,K.;Hillebrand,A.;Zijlmans,M.SimultaneousMEGandEEGtodetect
+ripplesinpeoplewithfocalepilepsy.Clin.Neurophysiol.2019,130,1175–1183.[CrossRef][PubMed]
+7. Pianou,N.;Chatziioannou,S.ImagingwithPET/CTinPatientswithEpilepsy. InEpilepsySurgeryandIntrinsicBrainTumor
+Surgery;Springer:Cham,Switzerland,2019;pp.45–50.
+8. Subasi,A.;Kevric,J.;Canbaz,M.A.Epilepticseizuredetectionusinghybridmachinelearningmethods.NeuralComput.Appl.
+2019,31,317–325.[CrossRef]
+9. Acharya,U.R.;Oh,S.L.;Hagiwara,Y.;Tan,J.H.;Adeli,H.;Subha,D.P.AutomatedEEG-basedscreeningofdepressionusingdeep
+convolutionalneuralnetwork.Comput.MethodsProgramsBiomed.2018,161,103–113.[CrossRef]
+10. Lauretani, F.; Longobucco, Y.; Ravazzoni, G.; Gallini, E.; Salvi, M.; Maggio, M. Imaging the Functional Neuroanatomy of
+Parkinson’sDisease:ClinicalApplicationsandFutureDirections.Int.J.Environ.Res.PublicHealth2021,18,2356.[CrossRef]
+11. Carbó-Carreté,M.;Cañete-Massé,C.;Figueroa-Jiménez,M.D.;Peró-Cebollero,M.;Guàrdia-Olmos,J.Relationshipbetween
+QualityofLifeandtheComplexityofDefaultModeNetworkinRestingStateFunctionalMagneticResonanceImageinDown
+Syndrome.Int.J.Environ.Res.PublicHealth2020,17,7127.[CrossRef]
+12. MoralesChacón,L.M.; GonzálezGonzález,J.; RíosCastillo,M.; BerrilloBatista,S.; BatistaGarcía-Ramo,K.; SantosSantos,
+A.; Cordero Quintanal, N.; Zaldívar Bermúdez, M.; Garbey Fernández, R.; Estupiñan Díaz, B.; et al. Surgical Outcome in
+ExtratemporalEpilepsiesBasedonMultimodalPre-SurgicalEvaluationandSequentialIntraoperativeElectrocorticography.
+Behav.Sci.2021,11,30.[CrossRef]
+13. Takagi, S.; Sakuma, S.; Morita, I.; Sugimoto, E.; Yamaguchi, Y.; Higuchi, N.; Inamoto, K.; Ariji, Y.; Ariji, E.; Murakami, H.
+ApplicationofDeepLearningintheIdentificationofCerebralHemodynamicsDataObtainedfromFunctionalNear-Infrared
+Spectroscopy:APreliminaryStudyofPre-andPost-ToothClenchingAssessment.J.Clin.Med.2020,9,3475.[CrossRef]
+14. Ronan,L.;Alhusaini,S.;Scanlon,C.;Doherty,C.P.;Delanty,N.;Fitzsimons,M.Widespreadcorticalmorphologicchangesin
+juvenilemyoclonicepilepsy:EvidencefromstructuralMRI.Epilepsia2012,53,651–658.[CrossRef]
+15. Sharma,R.;Pachori,R.B.ClassificationofepilepticseizuresinEEGsignalsbasedonphasespacerepresentationofintrinsicmode
+functions.ExpertSyst.Appl.2015,42,1106–1117.[CrossRef]
+16. Sheoran,M.;Kumar,S.;Chawla,S.Methodsofdenoisingofelectroencephalogramsignal:Areview.Int.J.Biomed.Eng.Technol.
+2015,18,385.[CrossRef]
+17. Romaine,J.;Martín,M.P.;Ortiz,J.S.;Crespo,J.M.EEG—Single-ChannelEnvelopeSynchronisationandClassificationforSeizure
+DetectionandPrediction.BrainSci.2021,11,516.[CrossRef]
+18. Perez-Sanchez,A.V.;Perez-Ramirez,C.A.;Valtierra-Rodriguez,M.;Dominguez-Gonzalez,A.;Amezquita-Sanchez,J.P.Wavelet
+Transform-Statistical Time Features-Based Methodology for Epileptic Seizure Prediction Using Electrocardiogram Signals.
+Mathematics2020,8,2125.[CrossRef]
+19. Raschka,S.; Mirjalili,V.PythonMachineLearning: MachineLearningandDeepLearningwithPython. InScikit-Learnand
+TensorFlow,2nded.;PacktPublishingLtd.:Birmingham,UK,2017.
+20. Bonaccorso,G.MachineLearningAlgorithms;PacktPublishingLtd.:Birmingham,UK,2017.
+21. Gulli,A.;Pal,S.DeepLearningwithKERAS;PacktPublishingLtd.:Birmingham,UK,2017.
+22. Tang,X.;Zhang,X.ConditionaladversarialdomainadaptationneuralnetworkformotorimageryEEGdecoding.Entropy2020,
+22,96.[CrossRef]
+23. Alickovic,E.;Kevric,J.;Subasi,A.Performanceevaluationofempiricalmodedecomposition,discretewavelettransform,and
+waveletpackeddecompositionforautomatedepilepticseizuredetectionandprediction.Biomed.SignalProcess.Control2018,39,
+94–102.[CrossRef]
+24. Sharma, M.; Bhurane,A.A.; Acharya, U.R.MMSFL-OWFB:Anovelclassoforthogonalwaveletfiltersforepilepticseizure
+detection.Knowl.BasedSyst.2018,160,265–277.[CrossRef]
+25. Mohammadpoor,M.;Shoeibi,A.;Shojaee,H.Ahierarchicalclassificationmethodforbreasttumordetection.Iran.J.Med.Phys.
+2016,13,261–268.
+26. Assi,E.B.;Nguyen,D.K.;Rihana,S.;Sawan,M.Towardsaccuratepredictionofepilepticseizures:Areview.Biomed.SignalProcess.
+Control.2017,34,144–157.[CrossRef]Int.J.Environ.Res.PublicHealth2021,18,5780 28of33
+27. Khodatars,M.;Shoeibi,A.;Ghassemi,N.;Jafari,M.;Khadem,A.;Sadeghi,D.;Moridian,P.;Hussain,S.;Alizadehsani,R.;ZARE,
+A.;etal.DeepLearningforNeuroimaging-basedDiagnosisandRehabilitationofAutismSpectrumDisorder:AReview.arXiv
+2020,arXiv:2007.01285.
+28. Sadeghi,D.;Shoeibi,A.;Ghassemi,N.;Moridian,P.;Khadem,A.;Alizadehsani,R.;Teshnehlab,M.;Gorriz,J.M.;Nahavandi,
+S.AnOverviewonArtificialIntelligenceTechniquesforDiagnosisofSchizophreniaBasedonMagneticResonanceImaging
+Modalities:Methods,Challenges,andFutureWorks.arXiv2021,arXiv:2103.03081.
+29. Craik,A.;He,Y.;Contreras-Vidal,J.L.Deeplearningforelectroencephalogram(EEG)classificationtasks:Areview.J.NeuralEng.
+2019,16,031001.[CrossRef]
+30. Ghassemi,N.;Shoeibi,A.;Khodatars,M.;Heras,J.;Rahimi,A.;Zare,A.;Pachori,R.B.;Gorriz,J.M.AutomaticDiagnosisof
+COVID-19fromCTImagesusingCycleGANandTransferLearning.arXiv2021,arXiv:2104.11949.
+31. Sharifrazi,D.;Alizadehsani,R.;HassannatajJoloudari,J.;Shamshirband,S.;Hussain,S.;AlizadehSani,Z.;Hasanzadeh,F.;
+Shoaibi,A.;Dehzangi,A.;Alinejad-Rokny,H.CNN-KCL:AutomaticMyocarditisDiagnosisusingConvolutionalNeuralNetwork
+CombinedwithK-meansClustering.Preprints2020,2020070650.[CrossRef]
+32. Srivastava,N.;Salakhutdinov,R.MultimodalLearningwithDeepBoltzmannMachines.NIPS2012,1,2.
+33. Yu,D.;Deng,L.DeepLearningandItsApplicationstoSignalandInformationProcessingExploratoryDSP.IEEESignalProcess.
+Mag.2011,28,145–154.[CrossRef]
+34. Ihle,M.;Feldwisch-Drentrup,H.;Teixeira,C.A.;Witon,A.;Schelter,B.;Timmer,J.;Schulze-Bonhage,A.EPILEPSIAE–AEuropean
+epilepsydatabase.Comput.MethodsProgramsBiomed.2012,106,127–138.[CrossRef]
+35. Shoeb,A.H.ApplicationofMachineLearningtoEpilepticSeizureonsetDetectionandTreatment;MassachusettsInstituteofTechnology:
+Cambridge,MA,USA,2009.
+36. SeizurePredictionChallenge.Availableonline:https://www.kaggle.com/c/seizure-prediction(accessedon15May2021).
+37. Andrzejak,R.G.;Lehnertz,K.;Mormann,F.;Rieke,C.;David,P.;Elger,C.E.Indicationsofnonlineardeterministicandfinite-
+dimensionalstructuresintimeseriesofbrainelectricalactivity:Dependenceonrecordingregionandbrainstate.Phys.Rev.E
+2001,64,061907.[CrossRef]
+38. Andrzejak,R.G.;Schindler,K.;Rummel,C.Nonrandomness,nonlineardependence,andnonstationarityofelec-troencephalographic
+recordingsfromepilepsypatients.Phys.Rev.E2012,86,046206.[CrossRef][PubMed]
+39. Stevenson,N.J.;Tapani,K.;Lauronen,L.;Vanhatalo,S.AdatasetofneonatalEEGrecordingswithseizureannotations.Sci.Data
+2019,6,1–8.[CrossRef][PubMed]
+40. Sharma,R.;Sircar,P.;Pachori,R.B.Computer-aideddiagnosisofepilepsyusingbispectrumofEEGsignals. InApplicationof
+BiomedicalEngineeringinNeuroscience;Springer:Singapore,2019;pp.197–220.
+41. Goodfellow,I.;Bengio,Y.;Courville,A.;Bengio,Y.DeepLearning;MITPress:Cambridge,UK,2016;Volume1,p.2.
+42. Faust,O.;Hagiwara,Y.;Hong,T.J.;Lih,O.S.;Acharya,U.R.Deeplearningforhealthcareapplicationsbasedonphysiological
+signals:Areview.Comput.MethodsProgramsBiomed.2018,161,1–13.[CrossRef][PubMed]
+43. Yildirim,O.;Talo,M.;Ay,B.;Baloglu,U.B.;Aydin,G.;Acharya,U.R.Automateddetectionofdiabeticsubjectusingpre-trained
+2D-CNNmodelswithfrequencyspectrumimagesextractedfromheartratesignals. Comput. Biol. Med. 2019, 113, 103387.
+[CrossRef]
+44. Martis,R.J.;Acharya,U.R.;Lim,C.M.;Mandana,K.M.;Ray,A.K.;Chakraborty,C.Applicationofhigherordercumulantfeatures
+forcardiachealthdiagnosisusingECGsignals.Int.J.NeuralSyst.2013,23,1350014.[CrossRef]
+45. Pham,T.-H.;Vicnesh,J.;Wei,J.K.E.;Oh,S.L.;Arunkumar,N.;Abdulhay,E.W.;Ciaccio,E.J.;Acharya,U.R.AutismSpectrum
+DisorderDiagnosticSystemUsingHOSBispectrumwithEEGSignals.Int.J.Environ.Res.PublicHealth2020,17,971.[CrossRef]
+46. Alizadehsani,R.;Roshanzamir,M.;Hussain,S.;Khosravi,A.;Koohestani,A.;Zangooei,M.H.;Abdar,M.;Beykikhoshk,A.;
+Shoeibi,A.;Zare,A.;etal.Handlingofuncertaintyinmedicaldatausingmachinelearningandprobabilitytheorytechniques:A
+reviewof30years(1991–2020).Ann.Oper.Res.2021,1–42.[CrossRef]
+47. Alizadehsani,R.;Sharifrazi,D.;Izadi,N.H.;Joloudari,J.H.;Shoeibi,A.;Gorriz,J.M.;Hussain,S.;Arco,J.E.;Sani,Z.A.;Khozeimeh,
+F.;etal.Uncertainty-AwareSemi-supervisedMethodusingLargeUnlabelledandLimitedLabeledCOVID-19Data.arXiv2021,
+arXiv:2102.06388.
+48. Shoeibi,A.;Khodatars,M.;Alizadehsani,R.;Ghassemi,N.;Jafari,M.;Moridian,P.;Khadem,A.;Sadehi,D.;Hussain,S.;Zare,A.;
+etal.Automateddetectionandforecastingofcovid-19usingdeeplearningtechniques:Areview.arXiv2020,arXiv:2007.10785.
+49. Krizhevsky,A.;Sutskever,I.;Hinton,G.E.Imagenetclassificationwithdeepconvolutionalneuralnetworks.Commun.ACM2012,
+60,1097–1105.[CrossRef]
+50. Avcu, M.T.; Zhang, Z.; Chan, D.W.S.Seizuredetectionusingleasteegchannelsbydeepconvolutionalneuralnetwork. In
+ProceedingsoftheICASSP2019-2019IEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing,Brighton,UK,
+12–17May2019;pp.1120–1124.
+51. Hossain,M.S.;Amin,S.U.;Alsulaiman,M.;Muhammad,G.ApplyingDeepLearningforEpilepsySeizureDetectionandBrain
+MappingVisualization.ACMTrans.Multim.Comput.Commun.Appl.2019,15,1–17.
+52. Zuo, R.; Wei, J.; Li, X.; Li, C.; Zhao, C.; Ren, Z.; Liang, Y.; Geng, X.; Jiang, C.; Yang, X.; et al. Automated Detection of
+High-FrequencyOscillationsinEpilepsyBasedonaConvolutionalNeuralNetwork. Front. Comput. Neurosci. 2019, 13, 6.
+[CrossRef]Int.J.Environ.Res.PublicHealth2021,18,5780 29of33
+53. Asif,U.;Roy,S.;Tang,J.;Harrer,S.SeizureNet:Multi-SpectralDeepFeatureLearningforSeizureTypeClassification.InMachine
+LearninginClinicalNeuroimagingandRadiogenomicsinNeuro-Oncology;SpringerInternationalPublishing:Cham,Switzerland,
+2020;pp.77–87.
+54. Covert,I.C.;Krishnan,B.;Najm,I.;Zhan,J.;Shore,M.;Hixson,J.;Po,M.J.Temporalgraphconvolutionalnetworksforautomatic
+seizuredetection.InProceedingsoftheMachineLearningforHealthcareConference,Online,6–7August2021;pp.160–180.
+55. Bouaziz, B.; Chaari, L.; Batatia, H.; Quintero-Rincón, A. Epileptic seizure detection using a convolutional neural network.
+InDigitalHealthApproachforPredictive,Preventive,PersonalisedandParticipatoryMedicine;Springer: Cham,Switzerland,2019;
+pp.79–86.
+56. Deng,J.;Dong,W.;Socher,R.;Li,L.J.;Li,K.;Li,F.F.Imagenet:ALarge-ScaleHierarchicalImageDatabase.InProceedingsofthe
+2009IEEEConferenceonComputerVisionandPatternRecognition,Miami,FL,USA,20–25June2009;pp.248–255.
+57. Taqi,A.M.;Al-Azzo,F.;Mariofanna,M.;Al-Saadi,J.M.Classificationanddiscriminationoffocalandnon-focalEEGsignalsbased
+ondeepneuralnetwork. InProceedingsofthe2017InternationalConferenceonCurrentResearchinComputerScienceand
+InformationTechnology(ICCIT),Sulaymaniyah,Iraq,26–27April2017;pp.86–92.
+58. Bizopoulos,P.;Lambrou,G.I.;Koutsouris,D.Signal2imagemodulesindeepneuralnetworksforeegclassification.InProceedings
+ofthe201941stAnnualInternationalConferenceoftheIEEEEngineeringinMedicineandBiologySociety(EMBC),Berlin,
+Germany,23–27July2019;pp.702–705.
+59. Simonyan,K.;Zisserman,A.Verydeepconvolutionalnetworksforlarge-scaleimagerecognition.arXiv2014,arXiv:1409.1556.
+60. Ahmedt-Aristizabal,D.;Fookes,C.;Nguyen,K.;Denman,S.;Sridharan,S.;Dionisio,S.Deepfacialanalysis: AnewphaseI
+epilepsyevaluationusingcomputervision.EpilepsyBehav.2018,82,17–24.[CrossRef]
+61. Emami,A.;Kunii,N.;Matsuo,T.;Shinozaki,T.;Kawai,K.;Takahashi,H.Seizuredetectionbyconvolutionalneuralnetwork-based
+analysisofscalpelectroencephalographyplotimages.NeuroImageClin.2019,22,101684.[CrossRef]
+62. Szegedy,C.;Liu,W.;Jia,Y.;Sermanet,P.;Reed,S.;Anguelov,D.;Erhan,D.;Vanhoucke,V.;Rabinovich,A.Goingdeeperwith
+convolutions.InProceedingsoftheIEEEConferenceonComputerVisionandPatternRecognition,Boston,MA,USA,7–15June
+2015;pp.1–9.
+63. Ayoobi,N.;Sharifrazi,D.;Alizadehsani,R.;Shoeibi,A.;Gorriz,J.M.;Moosaei,H.;Khosravi,H.;Nahavandi,S.;Chofreh,A.G.;
+Goni,F.A.TimeSeriesForecastingofNewCasesandNewDeathsRateforCOVID-19usingDeepLearningMethods.arXiv2021,
+arXiv:2104.15007.
+64. Antoniades,A.;Spyrou,L.;Took,C.C.;Sanei,S.DeeplearningforepilepticintracranialEEGdata.InProceedingsofthe2016
+IEEE26thInternationalWorkshoponMachineLearningforSignalProcessing(MLSP),VietrisulMare,Italy,13–16September
+2016;pp.1–6.
+65. Achilles,F.;Tombari,F.;Belagiannis,V.;Loesch,A.M.;Noachtar,S.;Navab,N.Convolutionalneuralnetworksforreal-time
+epilepticseizuredetection.Comput.MethodsBiomech.Biomed.Eng.ImagingVis.2016,6,264–269.[CrossRef]
+66. Park,C.;Choi,G.;Kim,J.;Kim,S.;Kim,T.J.;Min,K.;Jung,K.-Y.;Chong,J.Epilepticseizuredetectionformulti-channelEEG
+withdeepconvolutionalneuralnetwork.InProceedingsofthe2018InternationalConferenceonElectronics,Information,and
+Communication(ICEIC),Honolulu,HI,USA,24–27January2018;pp.1–5.
+67. Tjepkema-Cloostermans,M.C.;deCarvalho,R.C.;vanPutten,M.J.Deeplearningfordetectionoffocalepileptiformdischarges
+fromscalpEEGrecordings.Clin.Neurophysiol.2018,129,2191–2196.[CrossRef]
+68. Golmohammadi,M.;Ziyabari,S.;Shah,V.;deDiego,S.L.;Obeid,I.;Picone,J.Deeparchitecturesforautomatedseizuredetection
+inscalpEEGs.arXiv2017,arXiv:1712.09776.
+69. Roy,S.;Kiral-Kornek,I.;Harrer,S.DeeplearningenabledautomaticabnormalEEGidentification.InProceedingsofthe201840th
+AnnualInternationalConferenceoftheIEEEEngineeringinMedicineandBiologySociety(EMBC),Honolulu,HI,USA,18–21
+July2018;pp.2756–2759.
+70. Nejedly,P.;Kremen,V.;Sladky,V.;Nasseri,M.;Guragain,H.;Klimes,P.;Cimbalnik,J.;Varatharajah,Y.;Brinkmann,B.H.;Worrell,
+G.A.Deep-learningforseizureforecastingincanineswithepilepsy.J.NeuralEng.2019,16,036031.[CrossRef]
+71. Iešmantas,T.;Alzbutas,R.Convolutionalneuralnetworkfordetectionandclassificationofseizuresinclinicaldata.Med.Biol.
+Eng.Comput.2020,58,1919–1932.[CrossRef]
+72. San-Segundo,R.; Gil-Martín,M.; D’Haro-Enríquez,L.F.; Pardo,J.M.ClassificationofepilepticEEGrecordingsusingsignal
+transformsandconvolutionalneuralnetworks.Comput.Biol.Med.2019,109,148–158.[CrossRef]
+73. Sui,L.;Zhao,X.;Zhao,Q.;Tanaka,T.;Cao,J.LocalizationofEpilepticFocibyUsingConvolutionalNeuralNetworkBasedon
+iEEG.InIFIPInternationalConferenceonArtificialIntelligenceApplicationsandInnovations;Springer: Cham,Switzerland,2019;
+pp.331–339.
+74. Akut,R.Waveletbaseddeeplearningapproachforepilepsydetection.HealthInf.Sci.Syst.2019,7,1–9.[CrossRef]
+75. Türk,Ö.;Özerdem,M.S.EpilepsyDetectionbyUsingScalogramBasedConvolutionalNeuralNetworkfromEEGSignals.Brain
+Sci.2019,9,115.[CrossRef]
+76. Liu,J.;Woodson,B.Deeplearningclassificationforepilepsydetectionusingasinglechannelelectroencephalography(EEG).In
+Proceedingsofthe20193rdInternationalConferenceonDeepLearningTechnologies,Xiamen,China,5–7July2019;pp.23–26.
+77. Tian,X.;Deng,Z.;Ying,W.;Choi,K.-S.;Wu,D.;Qin,B.;Wang,J.;Shen,H.;Wang,S.DeepMulti-ViewFeatureLearningfor
+EEG-BasedEpilepticSeizureDetection.IEEETrans.NeuralSyst.Rehabil.Eng.2019,27,1962–1972.[CrossRef]Int.J.Environ.Res.PublicHealth2021,18,5780 30of33
+78. Ansari, A.H.; Cherian, P.J.; Caicedo, A.; Naulaers, G.; De Vos, M.; Van Huffel, S. Neonatal Seizure Detection Using Deep
+ConvolutionalNeuralNetworks.Int.J.NeuralSyst.2019,29,1850011.[CrossRef]
+79. Cao,J.;Zhu,J.;Hu,W.;Kummert,A.EpilepticSignalClassificationwithDeepEEGFeaturesbyStackedCNNs.IEEETrans.Cogn.
+Dev.Syst.2020,12,709–722.[CrossRef]
+80. Thomas,J.;Comoretto,L.;Jin,J.;Dauwels,J.;Cash,S.S.;Westover,M.B.EEGCLassificationViaConvolutionalNeuralNetwork-
+BasedInterictalEpileptiformEventDetection.InProceedingsofthe201840thAnnualInternationalConferenceoftheIEEEEngineering
+inMedicineandBiologySociety(EMBC),Honolulu,HI,USA,18–21July2018;InstituteofElectricalandElectronicsEngineers(IEEE):
+NewYork,NY,USA;pp.3148–3151.
+81. Boonyakitanont,P.;Lek-uthai,A.;Chomtho,K.;Songsiri,J.AComparisonofDeepNeuralNetworksforSeizureDetectionin
+EEGSignals.bioRxiv2019,702654.[CrossRef]
+82. Daoud,H.G.;Abdelhameed,A.M.;Bayoumi,M.Automaticepilepticseizuredetectionbasedonempiricalmodedecomposition
+anddeepneuralnetwork. InProceedingsofthe2018IEEE14thInternationalColloquiumonSignalProcessing&ItsApplications
+(CSPA);Penang,Malaysia,9–10March2018,InstituteofElectricalandElectronicsEngineers(IEEE):LosAlamitos,CA,USA,2018;
+pp.182–186.
+83. Craley,J.;Johnson,E.;Venkataraman,A.Integratingconvolutionalneuralnetworksandprobabilisticgraphicalmodelingfor
+epilepticseizuredetectioninmultichannelEEG.InInternationalConferenceonInformationProcessinginMedicalImaging;Springer:
+Cham,Switzerland,2019;pp.291–303.
+84. Jaoude,M.A.;Jing,J.;Sun,H.;Jacobs,C.S.;Pellerin,K.R.;Westover,M.B.;Cash,S.S.;Lam,A.D.Detectionofmesialtemporallobe
+epileptiformdischargesonintracranialelectrodesusingdeeplearning.Clin.Neurophysiol.2020,131,133–141.[CrossRef]
+85. Zhang,J.;Wu,H.;Su,W.;Wang,X.;Yang,M.;Wu,J.ANewApproachforClassificationofEpilepsyEEGSignalsBasedon
+TemporalConvolutionalNeuralNetworks.InProceedingsofthe201811thInternationalSymposiumonComputationalIntelligenceand
+Design(ISCID),Hangzhou,China,8–9December2018;InstituteofElectricalandElectronicsEngineers(IEEE):NewYork,NY,USA;
+Volume2,pp.80–84.
+86. Ullah,I.;Hussain,M.;Qazi,E.-U.-H.;Aboalsamh,H.AnautomatedsystemforepilepsydetectionusingEEGbrainsignalsbased
+ondeeplearningapproach.ExpertSyst.Appl.2018,107,61–71.[CrossRef]
+87. Acharya,U.R.;Oh,S.L.;Hagiwara,Y.;Tan,J.H.;Adeli,H.Deepconvolutionalneuralnetworkfortheautomateddetectionand
+diagnosisofseizureusingEEGsignals.Comput.Biol.Med.2018,100,270–278.[CrossRef][PubMed]
+88. Page,A.;Shea,C.;Mohsenin,T.Wearableseizuredetectionusingconvolutionalneuralnetworkswithtransferlearning. In
+Proceedingsofthe2016IEEEInternationalSymposiumonCircuitsandSystems(ISCAS),Montreal,QC,Canada,22–25May2016;
+pp.1086–1089.
+89. O’Shea,A.;Lightbody,G.;Boylan,G.;Temko,A.Neonatalseizuredetectionusingconvolutionalneuralnetworks.InProceedings
+ofthe2017IEEE27thInternationalWorkshoponMachineLearningforSignalProcessing(MLSP),Tokyo,Japan,25–28September
+2017;pp.1–6.
+90. Johansen,A.R.;Jin,J.;Maszczyk,T.;Dauwels,J.;Cash,S.S.;Westover,M.B.Epileptiformspikedetectionviaconvolutionalneural
+networks. InProceedingsofthe2016IEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP),
+Shanghai,China,20–25March2016;pp.754–758.
+91. Yıldırım,Ö.;Baloglu,U.B.;Acharya,U.R.Adeepconvolutionalneuralnetworkmodelforautomatedidentificationofabnormal
+EEGsignals.NeuralComput.Appl.2018,32,1–12.[CrossRef]
+92. Chen, X.; Ji, J.; Ji, T.; Li, P. Cost-Sensitive Deep Active Learning for Epileptic Seizure Detection. In Proceedings of the 2018
+ACMInternationalConferenceonBioinformatics,ComputationalBiologyandHealthInformatics,Washington,DC,USA,2–4May2018;
+AssociationforComputingMachinery(ACM):NewYork,NY,USA;pp.226–235.
+93. Yao,X.;Cheng,Q.;Zhang,G.Q.AnovelindependentRNNapproachtoclassificationofseizuresagainstnon-seizures.arXiv2019,
+arXiv:1903.09326.
+94. Lu,D.;Triesch,J.Residualdeepconvolutionalneuralnetworkforeegsignalclassificationinepilepsy.arXiv2019,arXiv:1903.08100.
+95. Wei,Z.;Zou,J.;Zhang,J.;Xu,J.AutomaticepilepticEEGdetectionusingconvolutionalneuralnetworkwithimprovementsin
+time-domain.Biomed.SignalProcess.Control2019,53,101551.[CrossRef]
+96. Meisel,C.;Atrache,R.E.;Jackson,M.;Schubach,S.;Ufongene,C.;Loddenkemper,T.Deeplearningfromwristbandsensordata:
+Towardswearable,non-invasiveseizureforecasting.arXiv2019,arXiv:1906.00511.
+97. Yuvaraj,R.;Thomas,J.;Kluge,T.;Dauwels,J.AdeepLearningSchemeforAutomaticSeizureDetectionfromLong-TermScalp
+EEG.InProceedingsofthe201852ndAsilomarConferenceonSignals,Systems,andComputers,PacificGrove,CA,USA,28–31
+October2018;pp.368–372.
+98. Fukumori,K.;Nguyen,H.T.T.;Yoshida,N.;Tanaka,T.FullyData-drivenConvolutionalFilterswithDeepLearningModelsfor
+EpilepticSpikeDetection. InProceedingsoftheICASSP2019-2019IEEEInternationalConferenceonAcoustics,Speechand
+SignalProcessing(ICASSP),Brighton,UK,12–17May2019;pp.2772–2776.
+99. Zhao,X.;Solé-Casals,J.;Li,B.;Huang,Z.;Wang,A.;Cao,J.;Tanaka,T.;Zhao,Q.ClassificationofEpilepticIEEGSignalsbyCNN
+andDataAugmentation.InProceedingsoftheICASSP2020-2020IEEEInternationalConferenceonAcoustics,SpeechandSignal
+Processing(ICASSP),Barcelona,Spain,4–8May2020;pp.926–930.
+100. Abiyev,R.;Arslan,M.;Idoko,J.B.;Sekeroglu,B.;Ilhan,A.Identificationofepilepticeegsignalsusingconvolutionalneural
+networks.Appl.Sci.2020,10,4089.[CrossRef]Int.J.Environ.Res.PublicHealth2021,18,5780 31of33
+101. Lin,L.-C.;Ouyang,C.-S.;Wu,R.-C.;Yang,R.-C.;Chiang,C.-T.AlternativeDiagnosisofEpilepsyinChildrenwithoutEpileptiform
+DischargesUsingDeepConvolutionalNeuralNetworks.Int.J.NeuralSyst.2019,30,1850060.[CrossRef]
+102. Yao,X.;Cheng,Q.;Zhang,G.Q.AutomatedClassificationofSeizuresagainstNonseizures:ADeepLearningApproach.arXiv
+2019,arXiv:1906.02745.
+103. Talathi, S.S. Deep Recurrent Neural Networks for seizure detection and early seizure detection systems. arXiv 2017,
+arXiv:1706.03283.
+104. Roy,S.;Kiral-Kornek,I.;Harrer,S.ChronoNet:AdeeprecurrentneuralnetworkforabnormalEEGidentification.InConference
+onArtificialIntelligenceinMedicineinEurope;Springer:Cham,Switzerland,2019;pp.47–56.
+105. Vidyaratne,L.;Glandon,A.;Alam,M.;Iftekharuddin,K.M.Deeprecurrentneuralnetworkforseizuredetection.InProceedings
+ofthe2016InternationalJointConferenceonNeuralNetworks(IJCNN),Vancouver,BC,Canada,24–29July2016;pp.1202–1207.
+106. Hussein,R.;Palangi,H.;Ward,R.;Wang,Z.J.Epilepticseizuredetection:Adeeplearningapproach.arXiv2018,arXiv:1803.09848.
+107. Ahmedt-Aristizabal,D.;Fookes,C.;Nguyen,K.;Sridharan,S.DeepClassificationofEpilepticSignals.InProceedingsofthe2018
+40thAnnualInternationalConferenceoftheIEEEEngineeringinMedicineandBiologySociety(EMBC),Honolulu,HI,USA,
+18–21July2018;pp.332–335.
+108. Hussein,R.;Palangi,H.;Ward,R.K.;Wang,Z.J.Optimizeddeepneuralnetworkarchitectureforrobustdetectionofepileptic
+seizuresusingEEGsignals.Clin.Neurophysiol.2019,130,25–37.[CrossRef]
+109. Jaafar,S.T.;Mohammadi,M.EpilepticSeizureDetectionusingDeepLearningApproach. UHDJ.Sci. Technol. 2019,3,41–50.
+[CrossRef]
+110. Hussein,R.;Palangi,H.;Wang,Z.J.;Ward,R.Robustdetectionofepilepticseizuresusingdeepneuralnetworks.InProceedings
+ofthe2018IEEEInternationalConferenceonAcoustics,SpeechandSignalProcessing(ICASSP),Calgary,AB,Canada,15–20
+April2018;pp.2546–2550.
+111. Verma,A.;Janghel,R.R.EpilepticSeizureDetectionUsingDeepRecurrentNeuralNetworksinEEGSignals. InAdvancesin
+BiomedicalEngineeringandTechnology;Springer:Singapore,2021;pp.189–198.
+112. Geng,M.;Zhou,W.;Liu,G.;Li,C.;Zhang,Y.EpilepticSeizureDetectionBasedonStockwellTransformandBidirectionalLong
+Short-TermMemory.IEEETrans.NeuralSyst.Rehabil.Eng.2020,28,573–580.[CrossRef]
+113. Rajaguru,H.;Prabhakar,S.K.MultilayerAutoencodersandEM-PCAwithGeneticAlgorithmforEpilepsyClassificationfrom
+EEG.InProceedingsofthe2018SecondInternationalConferenceonElectronics,CommunicationandAerospaceTechnology(ICECA),
+Coimbatore,India,29–31March2018;InstituteofElectricalandElectronicsEngineers(IEEE):NewYork,NY,USA,2018;pp.353–358.
+114. Sharathappriyaa,V.;Gautham,S.;Lavanya,R.Auto-encoderBasedAutomatedEpilepsyDiagnosis.InProceedingsofthe2018
+InternationalConferenceonAdvancesinComputing,CommunicationsandInformatics(ICACCI),Bangalore,India,19–22September2018;
+InstituteofElectricalandElectronicsEngineers(IEEE):NewYork,NY,USA,2018;pp.976–982.
+115. Qiu,Y.;Zhou,W.;Yu,N.;Du,P.DenoisingSparseAutoencoderBasedIctalEEGClassification.IEEETrans.NeuralSyst.Rehabil.
+Eng.2018,26,1717–1726.[CrossRef]
+116. Golmohammadi,M.;Torbati,A.H.H.N.;DeDiego,S.L.;Obeid,I.;Picone,J.AutomaticAnalysisofEEGsUsingBigDataand
+HybridDeepLearningArchitectures.Front.Hum.Neurosci.2019,13,76.[CrossRef]
+117. Yan,B.;Wang,Y.;Li,Y.;Gong,Y.;Guan,L.;Yu,S.AnEEGsignalclassificationmethodbasedonsparseauto-encodersandsupport
+vectormachine.InProceedingsofthe2016IEEE/CICInternationalConferenceonCommunicationsinChina(ICCC),Chengdu,
+China,27–29July2016;pp.1–6.
+118. Yuan,Y.;Xun,G.;Suo,Q.;Jia,K.;Zhang,A.Wave2Vec:Deeprepresentationlearningforclinicaltemporaldata.Neurocomputing
+2019,324,31–42.[CrossRef]
+119. Yuan,Y.;Xun,G.;Ma,F.;Suo,Q.;Xue,H.;Jia,K.;Zhang,A.Anovelchannel-awareattentionframeworkformulti-channelEEG
+seizuredetectionviamulti-viewdeeplearning. InProceedingsofthe2018IEEEEMBSInternationalConferenceonBiomedical&
+HealthInformatics,LasVegas,NV,USA,4–7March2018;InstituteofElectricalandElectronicsEngineers(IEEE):NewYork,NY,
+USA,2018;pp.206–209.
+120. Emami,A.;Kunii,N.;Matsuo,T.;Shinozaki,T.;Kawai,K.;Takahashi,H.Autoencodingoflong-termscalpelectroencephalogram
+todetectepilepticseizurefordiagnosissupportsystem.Comput.Biol.Med.2019,110,227–233.[CrossRef]
+121. Yuan,Y.;Xun,G.;Jia,K.;Zhang,A.Amulti-viewdeeplearningmethodforepilepticseizuredetectionusingshort-timefourier
+transform. InProceedingsofthe8thACMInternationalConferenceonBioinformatics,ComputationalBiologyandHealth
+Informatics,Boston,MA,USA,20–23August2017;pp.213–222.
+122. Lin,Q.;Ye,S.Q.;Huang,X.M.;Li,S.Y.;Zhang,M.Z.;Xue,Y.;Chen,W.S.ClassificationofepilepticEEGsignalswithstacked
+sparseautoencoderbasedondeeplearning.InInternationalConferenceonIntelligentComputing;Springer:Cham,Switzerland,
+2016;pp.802–810.
+123. Gasparini,S.; Campolo,M.; Ieracitano,C.; Mammone,N.; Ferlazzo,E.; Sueri,C.; Tripodi,G.G.; Aguglia,U.; Morabito,F.C.
+InformationTheoretic-BasedInterpretationofaDeepNeuralNetworkApproachinDiagnosingPsychogenicNon-Epileptic
+Seizures.Entropy2018,20,43.[CrossRef]
+124. Karim,A.M.;Güzel,M.S.;Tolun,M.R.;Kaya,H.;Çelebi,F.V.Anewgeneralizeddeeplearningframeworkcombiningsparse
+autoencoderandTaguchimethodfornoveldataclassificationandprocessing.Math.Probl.Eng.2018.[CrossRef]
+125. Karim,A.M.;Güzel,M.S.;Tolun,M.R.;Kaya,H.;Çelebi,F.V.Anewframeworkusingdeepauto-encoderandenergyspectral
+densityformedicalwaveformdataclassificationandprocessing.Biocybern.Biomed.Eng.2019,39,148–159.[CrossRef]Int.J.Environ.Res.PublicHealth2021,18,5780 32of33
+126. Karim,A.M.;Karal,Ö.;Çelebi,F.V.Anewautomaticepilepsyseriousdetectionmethodbyusingdeeplearningbasedondiscrete
+wavelettransform.2018;Volume4,15–18.
+127. Hosseini,M.P.;Soltanian-Zadeh,H.;Elisevich,K.;Pompili,D.Cloud-baseddeeplearningofbigEEGdataforepilepticseizure
+prediction.InProceedingsofthe2016IEEEGlobalConferenceonSignalandInformationProcessing(GlobalSIP),Washington,
+DC,USA,7–9December2016;pp.1151–1155.
+128. Singh, K.; Malhotra, J. Stacked autoencoders based deep learning approach for automatic epileptic seizure detection. In
+Proceedingsofthe2018FirstInternationalConferenceonSecureCyberComputingandCommunication(ICSCCC),Jalandhar,
+India,15–17December2018;pp.249–254.
+129. Le,T.X.;Le,T.T.;Dinh,V.V.;Tran,Q.L.;Nguyen,L.T.;Nguyen,D.T.Deeplearningforepilepticspikedetection. VNUJ.Sci.
+Comput.Sci.Commun.Eng.2018,33,1–13.
+130. Turner,J.T.;Page,A.;Mohsenin,T.;Oates,T.Deepbeliefnetworksusedonhighresolutionmultichannelelectroencephalography
+dataforseizuredetection.arXiv2017,arXiv:1708.08430.
+131. Fang, Z.; Leung, H.; Choy, C.S. Spatial temporal GRU convnets for vision-based real time epileptic seizure detection. In
+Proceedingsofthe2018IEEE15thInternationalSymposiumonBiomedicalImaging(ISBI2018),Washington,DC,USA,4–7April
+2018;pp.1026–1029.
+132. Choi, G.; Park, C.; Kim, J.; Cho, K.; Kim, T.-J.; Bae, H.; Min, K.; Jung, K.-Y.; Chong, J. A Novel Multi-scale 3D CNN with
+DeepNeuralNetworkforEpilepticSeizureDetection.InProceedingsofthe2019IEEEInternationalConferenceonConsumer
+Electronics(ICCE),LasVegas,NV,USA,11–13January2019;pp.1–2.
+133. Thodoroff,P.;Pineau,J.;Lim,A.Learningrobustfeaturesusingdeeplearningforautomaticseizuredetection. Mach. Learn.
+Healthc.Conf.2016,56,178–190.
+134. Liang,W.;Pei,H.;Cai,Q.;Wang,Y.ScalpEEGepileptogeniczonerecognitionandlocalizationbasedonlong-termrecurrent
+convolutionalnetwork.Neurocomputing2020,396,569–576.[CrossRef]
+135. RaviPrakash,H.;Korostenskaja,M.;Castillo,E.M.;Lee,K.H.;Salinas,C.M.;Baumgartner,J.;Anwar,S.M.;Spampinato,C.;Bagci,
+U.DeepLearningprovidesexceptionalaccuracytoECoG-basedFunctionalLanguageMappingforepilepsysurgery. Front.
+Neurosci.2020,14,409.[CrossRef]
+136. Yuan,Y.;Xun,G.;Jia,K.;Zhang,A.AMulti-ViewDeepLearningFrameworkforEEGSeizureDetection.IEEEJ.Biomed.Health
+Inform.2018,23,83–94.[CrossRef]
+137. Yuan,Y.;Jia,K.FusionAtt: DeepFusionalAttentionNetworksforMulti-ChannelBiomedicalSignals. Sensors2019,19,2429.
+[CrossRef]
+138. Wen,T.;Zhang,Z.DeepConvolutionNeuralNetworkandAutoencoders-BasedUnsupervisedFeatureLearningofEEGSignals.
+IEEEAccess2018,6,25399–25410.[CrossRef]
+139. Abdelhameed, A.M.; Daoud, H.G.; Bayoumi, M. Epileptic Seizure Detection using Deep Convolutional Autoencoder. In
+Proceedingsofthe2018IEEEInternationalWorkshoponSignalProcessingSystems(SiPS),LosAlamitos,CA,USA,21–24October
+2018;InstituteofElectricalandElectronicsEngineers(IEEE):NewYork,NY,USA,2018;pp.223–228.
+140. Antoniades, A.; Spyrou, L.; Martin-Lopez, D.; Valentin, A.; Alarcon, G.; Sanei, S.; Took, C.C.Deepneuralarchitecturesfor
+mappingscalptointracranialEEG.Int.J.NeuralSyst.2018,28,1850009.[CrossRef]
+141. Dev,K.B.;Jogi,P.S.;Niyas,S.;Vinayagamani,S.;Kesavadas,C.;Rajan,J.AutomaticdetectionandlocalizationofFocalCortical
+DysplasialesionsinMRIusingfullyconvolutionalneuralnetwork.Biomed.SignalProcess.Control.2019,52,218–225.
+142. Gill, R.S.; Hong, S.J.; Fadaie, F.; Caldairou, B.; Bernhardt, B.C.; Barba, C.; Brandt, A.; Coelho, V.C.; d’Incerti, L.; Lenge, M.
+Deepconvolutionalnetworksforautomateddetectionofepileptogenicbrainmalformations. InProceedingsoftheInterna-
+tionalConferenceonMedicalImageComputingandComputer-AssistedIntervention,Granada,Spain,16–20September2018;
+pp.490–497.
+143. Hao,Y.;Khoo,H.M.;vonEllenrieder,N.;Zazubovits,N.;Gotman,J.DeepIED:AnepilepticdischargedetectorforEEG-fMRI
+basedondeeplearning.NeuroImageClin.2018,17,962–975.[CrossRef][PubMed]
+144. Hosseini,M.P.;Tran,T.X.;Pompili,D.;Elisevich,K.;Soltanian-Zadeh,H.Deeplearningwithedgecomputingforlocalization
+ofepileptogenicityusingmultimodalrs-fMRIandEEGbigdata.InProceedingsofthe2017IEEEinternationalconferenceon
+autonomiccomputing(ICAC),Columbus,OH,USA,17–21July2017;pp.83–92.
+145. Yan,M.;Liu,L.;Chen,S.;Pan,Y.Adeeplearningmethodforpredictionofbenignepilepsywithcentrotemporalspikes. In
+InternationalSymposiumonBioinformaticsResearchandApplications;Springer:Cham,Switzerland,2018;pp.253–258.
+146. Gleichgerrcht,E.;Munsell,B.;Bhatia,S.;Vandergrift,W.A.,III;Rorden,C.;McDonald,C.;Edwards,J.;Kuzniecy,R.;Bonilha,
+L.Deeplearningappliedtowhole-brainconnectometodetermineseizurecontrolafterepilepsysurgery. Epilepsia2018,59,
+1643–1654.[CrossRef][PubMed]
+147. Jiang,H.; Gao,F.; Duan,X.; Bai,Z.; Wang,Z.; Ma,X.; Chen,Y.W.TransferLearningandFusionModelforClassificationof
+EpilepticPETImages.InInnovationinMedicineandHealthcareSystems,andMultimedia;Springer:Singapore,2019;pp.71–79.
+148. Shiri,I.;Ghafarian,P.;Geramifar,P.;Leung,K.H.-Y.;Ghelichoghli,M.;Oveisi,M.;Rahmim,A.;Ay,M.R.Directattenuation
+correctionofbrainPETimagesusingonlyemissiondataviaadeepconvolutionalencoder-decoder(Deep-DAC).Eur.Radiol.
+2019,29,6867–6879.[CrossRef]Int.J.Environ.Res.PublicHealth2021,18,5780 33of33
+149. Rosas-Romero,R.;Guevara,E.;Peng,K.;Nguyen,D.K.;Lesage,F.;Pouliot,P.;Lima-Saad,W.E.Predictionofepilepticseizures
+withconvolutionalneuralnetworksandfunctionalnear-infraredspectroscopysignals. Comput. Biol. Med. 2019,111,103355.
+[CrossRef]
+150. Kiral-Kornek,I.;Roy,S.;Nurse,E.;Mashford,B.;Karoly,P.;Carroll,T.;Payne,D.;Saha,S.;Baldassano,S.;O’Brien,T.;etal.
+EpilepticSeizurePredictionUsingBigDataandDeepLearning: TowardaMobileSystem. EBioMedicine2018, 27, 103–111.
+[CrossRef]
+151. Alizadehsani,R.;Khosravi,A.;Roshanzamir,M.;Abdar,M.;Sarrafzadegan,N.;Shafie,D.;Khozeimeh,F.;Shoeibi,A.;Nahavandi,
+S.; Panahiazar, M.; et al. Coronary Artery Disease Detection Using Artificial Intelligence Techniques: A Survey of Trends,
+GeographicalDifferencesandDiagnosticFeatures1991–2020.Comput.Biol.Med.2020,128,104095.[CrossRef]
+152. Khozeimeh,F.;Sharifrazi,D.;Izadi,N.H.;Joloudari,J.H.;Shoeibi,A.;Alizadehsani,R.;Gorriz,J.M.;Hussain,S.;Sani,Z.A.;
+Moosaei,H.CNNAE:ConvolutionNeuralNetworkcombinedwithAutoencoderapproachtodetectsurvivalchanceofCOVID
+19patients.arXiv2021,arXiv:2104.08954.
+153. Ghassemi,N.;Shoeibi,A.;Rouhani,M.Deepneuralnetworkwithgenerativeadversarialnetworkspre-trainingforbraintumor
+classificationbasedonMRimages.Biomed.SignalProcess.Control2020,57,101678.[CrossRef]
+154. Ghassemi,N.;Mahami,H.;Darbandi,M.T.;Shoeibi,A.;Hussain,S.;Nasirzadeh,F.;Alizadehsani,R.;Nahabandi,D.;Khos-
+ravi,A.;Nahavandi,S.MaterialRecognitionforAutomatedProgressMonitoringusingDeepLearningMethods. arXiv2020,
+arXiv:2006.16344.
+155. Yildirim,O.;Baloglu,U.B.;Acharya,U.R.ADeepLearningModelforAutomatedSleepStagesClassificationUsingPSGSignals.
+Int.J.Environ.Res.PublicHealth2019,16,599.[CrossRef]
+156. Kim,S.;Kim,J.;Chun,H.-W.Wave2Vec:VectorizingElectroencephalographyBio-SignalforPredictionofBrainDisease.Int.J.
+Environ.Res.PublicHealth2018,15,1750.[CrossRef]
+157. Saric´,R.;Jokic´,D.;Beganovic´,N.;Pokvic´,L.G.;Badnjevic´,A.FPGA-basedreal-timeepilepticseizureclassificationusingArtificial
+NeuralNetwork.Biomed.SignalProcess.Control2020,62,102106.[CrossRef]
+158. Saidi,A.; Othman,S.B.; Kacem,W.; Saoud,S.B.FPGAImplementationofEEGSignalAnalysisSystemfortheDetectionof
+epilepticseizure.InProceedingsofthe2018InternationalConferenceonAdvancedSystemsandElectricTechnologies(IC_ASET),
+Hammamet,Tunisia,22–25March2018;pp.415–420.
+159. Feng,L.;Li,Z.;Wang,Y.VLSIDesignofSVM-BasedSeizureDetectionSystemwithOn-ChipLearningCapability.IEEETrans.
+Biomed.CircuitsSyst.2017,12,171–181.[CrossRef]
+160. Craley,J.;Johnson,E.;Jouny,C.;Venkataraman,A.Automatedinter-patientseizuredetectionusingmultichannelConvolutional
+andRecurrentNeuralNetworks.Biomed.SignalProcess.Control2021,64,102360.[CrossRef]
+161. Martínez-Rodrigo,A.;García-Martínez,B.;Huerta,Álvaro;Alcaraz,R.DetectionofNegativeStressthroughSpectralFeaturesof
+ElectroencephalographicRecordingsandaConvolutionalNeuralNetwork.Sensors2021,21,3050.[CrossRef]
+162. Moore,J.L.;Carvalho,D.Z.;Louis,E.K.S.;Bazil,C.Sleepandepilepsy:Afocusedreviewofpathophysiology,clinicalsyndromes,
+co-morbiditiesandtherapy.Neurotherapeutics2021,18,1–11.
+163. Shoeibi,A.;Khodatars,M.;Jafari,M.;Moridian,P.;Rezaei,M.;Alizadehsani,R.;Khozeimeh,F.;Gorriz,J.M.;Heras,J.;Acharya,
+U.R.;etal.ApplicationsofDeepLearningTechniquesforAutomatedMultipleSclerosisDetectionUsingMagneticResonance
+Imaging:AReview.arXiv2021,arXiv:2105.04881.
+164. Rim,B.;Sung,N.J.;Min,S.;Hong,M.Deeplearninginphysiologicalsignaldata:Asurvey.Sensors2020,20,969.[CrossRef]
+165. LeCun,Y.1.1deeplearninghardware:Pastpresentandfuture.InProceedingsofthe2019IEEEInternationalSolid-StateCircuits
+Conference-(ISSCC),SanFrancisco,CA,USA,17–21February2019;pp.12–19.
+166. Haensch,W.;Gokmen,T.;Puri,R.Thenextgenerationofdeeplearninghardware: Analogcomputing. Proc. IEEE2018,107,
+108–122.[CrossRef]
+167. Tzallas,A.T.;Tsipouras,M.G.;Tsalikakis,D.G.;Karvounis,E.C.;Astrakas,L.;Konitsiotis,S.;Tzaphlidou,M.Automatedepileptic
+seizuredetectionmethods:Areviewstudy.Epilepsy-Histol.Electroencephalogr.Psychol.Asp.2012,4,75–98.
+168. Paul,Y.Variousepilepticseizuredetectiontechniquesusingbiomedicalsignals:Areview.BrainInform.2018,5,1–19.[CrossRef]
+[PubMed]
+169. Siddiqui,M.K.;Morales-Menendez,R.;Huang,X.;Hussain,N.Areviewofepilepticseizuredetectionusingmachinelearning
+classifiers.BrainInform.2020,7,1–18.[CrossRef][PubMed]
+170. Boonyakitanont,P.;Lek-Uthai,A.;Chomtho,K.;Songsiri,J.Areviewoffeatureextractionandperformanceevaluationinepileptic
+seizuredetectionusingEEG.Biomed.SignalProcess.Control2020,57,101702.[CrossRef]
+171. Chakrabarti,S.;Swetapadma,A.;Pattnaik,P.K.Areviewonepilepticseizuredetectionandpredictionusingsoftcomputing
+techniques.InSmartTechniquesforaSmarterPlanet;Springer:Cham,Switzerland,2019;pp.37–51.
+172. Rajendran,T.;Sridhar,K.P.AnoverviewofEEGseizuredetectionunitsandidentifyingtheircomplexity-Areview.Curr.Signal
+Transduct.Ther.2020,15,234–242.[CrossRef]
+173. Rasheed,K.;Qayyum,A.;Qadir,J.;Sivathamboo,S.;Kwan,P.;Kuhlmann,L.;O’Brien,T.;Razi,A.Machinelearningforpredicting
+epilepticseizuresusingeegsignals:Areview.IEEERev.Biomed.Eng.2020,14,139–155.[CrossRef]
+174. Abbasi,B.;Goldenholz,D.M.Machinelearningapplicationsinepilepsy.Epilepsia2019,60,2037–2047.[CrossRef]
+175. Acharya,U.R.;Hagiwara,Y.;Adeli,H.Automatedseizureprediction.EpilepsyBehav.2018,88,251–261.[CrossRef]

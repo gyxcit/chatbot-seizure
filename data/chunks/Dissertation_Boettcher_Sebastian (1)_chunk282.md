@@ -1,0 +1,8 @@
+Thisincludesthesharingofrawdatacollectedduringstudies,aswellasanyscriptsandsoft-
+ware used in the processing and scientific analysis of the data, especially concerning seizure
+detection. Tofacilitatedatasharing,astandardizeddataformatandschemashouldbeadopted
+topreventtheuseofdifferentandpotentiallynotcompatibleformats. Thiswouldpromotethe
+replicationandvalidationofresultsinacollaborativemannerandencouragetheaggregation
+of data across research groups. In the long run, giving valuable and constructive feedback on
+deviceperformanceandusabilitytomanufacturers,andsharingtheseexperienceswithother
+organizations, could be a huge boon to possibilities in the treatment of epilepsy, and patients

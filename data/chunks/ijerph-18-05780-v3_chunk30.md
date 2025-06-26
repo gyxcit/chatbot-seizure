@@ -1,0 +1,11 @@
+variousstudies.
+2.2. Preprocessing
+IndevelopingCADSusingDLmodelswithEEGsignals,thepreprocessinginvolves
+threesteps: noiseremoval,normalization,andsignalpreparationforDLnetworkapplica-
+tions[29,40]. Inthenoiseremovalstep,finiteimpulseresponse(FIR)orinfiniteimpulse
+response(IIR)filtersareusuallyusedtoeliminateextrasignalnoise. Normalizationisthen
+performedusingvariousschemessuchasthez-scoretechnique. Finally, differenttime
+domain,frequency,andtime–frequencymethodsareemployedtopreparethesignalsfor
+thedeploymentofdeepnetworks.
+2.3. ReviewofDeepLearningTechniques
+In contrast to conventional neural networks, or so-called shallow networks, deep

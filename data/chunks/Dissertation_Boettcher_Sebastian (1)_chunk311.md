@@ -1,0 +1,8 @@
+Hardwareandfirmwareconstraintsofthewearabledevice,alongwiththedatastreamingcol-
+lection mode, resulted in a substantial loss of data samples for most study participants. Fur-
+thermore,thesignalqualityofespeciallytheBVPdataisheavilyimpactedbymotionartifacts,
+whichneedstobekeptinmindforthoseanalysesutilizingthissignal.
+To evaluate seizure detection methodologies, several established metrics were introduced
+enablinggaugingoftheperformanceofadetector,aswellascomparingittootherdetectors.
+Thesensitivityofadetectormeasureshowmanyeventswerecorrectlyclassifiedoutofalltrue
+events. The false alarm rate gives an estimate of how many false detections a model would

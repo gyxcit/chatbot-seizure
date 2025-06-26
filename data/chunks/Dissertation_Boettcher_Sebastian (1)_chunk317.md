@@ -1,0 +1,13 @@
+compatible, it could potentially be adapted for this purpose, which is further explored and
+discussedinthesummaryofthischapter.4.1. DETECTIONOFTONIC-CLONICSEIZURES 65
+4.1 Detection of Tonic-Clonic Seizures
+[104]⇒Böttcher,Sebastian,etal.
+DetectingTonic-ClonicSeizuresinMultimodalBiosignalDataFromWearables:
+MethodologyDesignandValidation
+2021,JMIRMHealthandUHealth,doi:10.2196/27674
+Partsofthispublicationwereremovedoreditedtofitintothecompositionofthiscomplete
+thesis. Nosubstantialchangesalteringtheresultsweremade.
+OwnContributions:
+• All,exceptclinicalexpertiseandthedatacollectionattheKCLsite
+4.1.1 Introduction
+Background

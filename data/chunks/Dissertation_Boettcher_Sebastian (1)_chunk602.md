@@ -1,0 +1,8 @@
+room,suchthatthepatientwasabletomoveroamaroundtheroom,therewerefrequentand
+unprompteddisconnectsevenifthewearablewaswellwithinrangeofthecompaniondevice.
+Better,morerobustwirelesshardwareislikelyneededtomitigatethesedisconnects. Alterna-
+tively,thedevicecouldimplementadatabufferthattemporarilycapturesbiosignalsinternally
+whenever it loses the connection, transferring the data only if it is reestablished. Moreover,
+thebatterylifeofthedevicewasanissue,especiallysincethebatteriestendedtodegradeover
+time, with each new participant. However, this is a general problem in wearable devices and
+not specific to this one, and new technologies and approaches are forthcoming. Lastly, the

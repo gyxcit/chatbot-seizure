@@ -1,0 +1,9 @@
+from wearables. Thus, including at least a binary movement or no movement categorization
+duringseizuresisfundamentallyrelevantfortheinterpretationofwearableseizuredetection
+results.
+2.3.4 Relation to Own Work
+Theresearchpresentedinthisthesisspecificallytargetsthedetectionofepilepticseizureswith
+motor manifestations of the limbs, both with convulsive TCSs (Section 2.3.1) and FSs (Sec-
+tion2.3.2)withtonicorclonicsemiology. ForthedetectionconvulsiveTCS,bothmonomodal
+andmultimodalmethodologieshavebeenshowntobesuccessful. Figure2.5actuallyseemsto
+indicateapreferenceformonomodaldetectionwithACCsignalswhich,onaverage,trendsto-

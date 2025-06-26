@@ -1,0 +1,34 @@
+AIde GPT
+Pour Le projet sur la détection des crises d'épilepsie à partir de signaux physiologiques et de
+mouvement (sans EEG), voici quelques datasets intéressants :
+🔹 Datasets de Détection de Crises d'Épilepsie (Non-EEG)
+1. CHB-MIT Scalp EEG Database (⚠ EEG-based)
+○ Contient des enregistrements EEG de patients épileptiques.
+○ Même si ce dataset est basé sur l’EEG, il peut servir de référence pour
+comprendre comment les crises sont détectées.
+2. EPILEPSIAE Dataset (Accès restreint)
+○ Contient des données multimodales, y compris ECG, mouvement, et activité
+cardiaque.
+○ Doit être demandé via un protocole d’accès.
+3. mPower (Parkinson & Seizures)
+○ Données de capteurs de smartphones (accéléromètre, gyroscope).
+○ Utile pour l’analyse du mouvement et les crises associées.
+4. UPenn & Mayo Clinic Seizure Detection Challenge
+○ Contient des signaux biologiques pour prédire les crises.
+○ Peut inclure des biosignaux pertinents.
+5. MIT-BIH Arrhythmia Dataset
+○ Contient des signaux ECG qui peuvent être utilisés pour détecter des
+anomalies cardiaques liées aux crises.
+6. Wearable Stress and Affect Detection Dataset
+○ Données de capteurs PPG, GSR (conductance de la peau), accéléromètre.
+○ Peut être exploité pour la détection des crises via l’analyse de stress et des
+réactions physiologiques.
+7. REAL-LIFE Human Activity Recognition Dataset○ Données d’accéléromètres et de gyroscopes pour le suivi des mouvements.
+○ Peut être utilisé pour identifier des modèles de mouvements anormaux lors
+d’une crise.
+📌 Comment Choisir ?
+● Si tu cherches un dataset prêt à l’emploi ➝ WESAD ou MIT-BIH Arrhythmia.
+● Si tu veux des signaux multimodaux (PPG, ECG, GSR, Accéléromètre) ➝
+mPower ou EPILEPSIAE.
+● Si tu es prêt à traiter des données complexes ➝ CHB-MIT ou UPenn & Mayo
+Clinic.

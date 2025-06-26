@@ -1,0 +1,10 @@
+thefeatureextractionapproachandeventuallyappliedtheSoftmaxlayerforclassifica-
+tionpurposesandachieved100%accuracy. Inanotherstudy,theAlexNetnetworkwas
+employed[58]. Theytransformedthe1Dsignalto2DimagebypassingthroughtheSig-
+nal2Image(S2I)module.Theseveralmethodsusedinthisaresignalasimage,spectrogram,
+one-layer1D-CNN,andtwo-layer1D-CNN.
+C.VGG
+A research team at Oxford proposed the visual geometry group (VGG) model in
+2014[59]. Theyconfiguredvariousmodels,andonesuchmodelwasVGG-16,whichwas
+submittedtotheILSVRC2014competition. TheVCG-16comprises16layersanddelivered
+anexcellentperformanceforimageclassificationproblems. Ahmedt-Aristizabaletal.[60]

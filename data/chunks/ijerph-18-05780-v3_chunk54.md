@@ -1,0 +1,10 @@
+three and four layers together with the Softmax classifier in their investigation and ob-
+tainedsatisfactoryresults. In[92],three-layerLSTMsareusedforfeatureextractionand
+classification. Thesigmoidactivefunctionisusedinthelastfullyconnected(FC)layerfor
+classification. Accordingtodirectedexperimentsin[98],theyemployedtwoarchitectures:
+LSTMandGRU.TheLSTMGRUmodelarchitectureiscomposedofalayerofReshape,
+fourlayersofLSTM/GRUwiththeactivator,andonelayerofFCwithsigmoidactivator.
+Inanotherwork,Yaoetal.[102]practicedtendifferentandindependentlyameliorated
+RNN(IndRNN)architecturesandachievedthebestaccuracyusingDenseIndRNNwith
+attention(DIndRNN)with31layers.
+B.GatedRecurrentUnit(GRU)

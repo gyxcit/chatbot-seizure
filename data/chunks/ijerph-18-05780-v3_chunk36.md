@@ -1,0 +1,8 @@
+ofa2D-CNNusedforepilepticseizuredetection. Theapplicationof2D-CNNarchitectures
+is arguably the most important architecture in the deep neural nets. More information
+aboutvisualizationandpreprocessingmethodcanbefoundinAppendixA.
+Figure6.Atypical2D-CNNforepilepticseizuredetection.Int.J.Environ.Res.PublicHealth2021,18,5780 9of33
+In one study [50], the SeizNet 16-layer convolutional network is introduced, with
+additionaldropoutlayersandbatchnormalization(BN)behindeachconvolutionallayer
+havingastructuresimilartothatofVGG-Net.Theauthorsin[51]presentedanew2D-CNN
+modelthatcanextractthespectralandtemporalcharacteristicsofEEGsignalsandused

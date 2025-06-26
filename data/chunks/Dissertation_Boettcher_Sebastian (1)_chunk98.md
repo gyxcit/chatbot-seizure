@@ -1,0 +1,9 @@
+loss function, such that new learners target training samples with worse performance.
+Ineachiterationmultiplepotentialnewlearnersaretrained,andtheonewiththeleast
+amountoftotalweightederrorischosentobeaddedtotheensemble[95,96].16 CHAPTER1. INTRODUCTION
+In the main analysis work compiled in this thesis gradient boosted decision trees (GBT)
+modelsareemployedastheclassificationmodeltoimplementthebinarydetectionofepileptic
+seizures.
+1.3.3 Seizure Detection Pipeline
+Aside from the classification model itself, supervised seizure detection requires a number of
+differentdataanalysissteps,whichcanbeintegratedintoacompleteseizuredetectionpipeline

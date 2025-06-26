@@ -1,0 +1,11 @@
+BenjaminH.Brinkmann
+may allow direct measurement of seizure activity. However, significant network and
+brinkmann.benjamin@mayo.edu
+computationalinfrastructureisneededforcontinuous,securetransmissionofdata.The
+†Theseauthorssharefirstauthorship
+large volume of data acquired by these devices necessitates computer-assisted review
+anddetectiontoreducetheburdenonhumanreviewers.Furthermore,useracceptability
+Specialtysection:
+Thisarticlewassubmittedto ofsuchdevicesmustbeaparamountconsiderationtoensureadherencewithlong-term
+Epilepsy, device use. Such devices can identify tonic–clonic seizures, but identification of other
+asectionofthejournal

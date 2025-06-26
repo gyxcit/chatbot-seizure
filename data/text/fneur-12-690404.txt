@@ -1,0 +1,751 @@
+REVIEW
+published:13July2021
+doi:10.3389/fneur.2021.690404
+Seizure Diaries and Forecasting With
+Wearables: Epilepsy Monitoring
+Outside the Clinic
+BenjaminH.Brinkmann1*†,PhilippaJ.Karoly2†,EwanS.Nurse2,3†,SonyaB.Dumanis4,
+MonaNasseri1,5,PedroF.Viana6,7,AndreasSchulze-Bonhage8,DeanR.Freestone3,
+GregWorrell1,MarkP.Richardson6andMarkJ.Cook2
+1DepartmentofNeurology,MayoFoundation,Rochester,MN,UnitedStates,2DepartmentofMedicine,GraemeClark
+InstituteandStVincent’sHospital,TheUniversityofMelbourne,Fitzroy,VIC,Australia,3SeerMedical,Melbourne,
+VIC,Australia,4EpilepsyFoundation,Landover,MD,UnitedStates,5SchoolofEngineering,UniversityofNorthFlorida,
+Jacksonville,FL,UnitedStates,6InstituteofPsychiatry,PsychologyandNeuroscience,King’sCollegeLondon,London,
+UnitedKingdom,7FacultyofMedicine,UniversityofLisbon,Lisboa,Portugal,8FacultyofMedicine,EpilepsyCenter,Medical
+Center,UniversityofFreiburg,Freiburg,Germany
+It is a major challenge in clinicalepilepsy to diagnose and treata disease characterized
+by infrequent seizures based on patient or caregiver reports and limited duration
+Editedby: clinical testing. The poor reliability of self-reported seizure diaries for many people with
+DavidM.Labiner,
+epilepsy is well-established, but these records remain necessary in clinical care and
+UniversityofArizona,UnitedStates
+therapeuticstudies.Anumberofwearabledeviceshaveemerged,whichmaybecapable
+Reviewedby:
+ClaudioM.T.Queiroz, of detecting seizures, recording seizure data, and alerting caregivers. Developments
+FederalUniversityofRioGrandedo in non-invasive wearable sensors to measure accelerometry, photoplethysmography
+Norte,Brazil
+(PPG),electrodermalactivity(EDA),electromyography(EMG),andothersignalsoutside
+EnesAkyuz,
+UniversityofHealthSciences,Turkey of the traditional clinical environment may be able to identify seizure-related changes.
+*Correspondence: Non-invasivescalpelectroencephalography(EEG)andminimallyinvasivesubscalpEEG
+BenjaminH.Brinkmann
+may allow direct measurement of seizure activity. However, significant network and
+brinkmann.benjamin@mayo.edu
+computationalinfrastructureisneededforcontinuous,securetransmissionofdata.The
+†Theseauthorssharefirstauthorship
+large volume of data acquired by these devices necessitates computer-assisted review
+anddetectiontoreducetheburdenonhumanreviewers.Furthermore,useracceptability
+Specialtysection:
+Thisarticlewassubmittedto ofsuchdevicesmustbeaparamountconsiderationtoensureadherencewithlong-term
+Epilepsy, device use. Such devices can identify tonic–clonic seizures, but identification of other
+asectionofthejournal
+seizure semiologies with non-EEG wearables is an ongoing challenge. Identification of
+FrontiersinNeurology
+electrographic seizures with subscalp EEG systems has recently been demonstrated
+Received:02April2021
+Accepted:10June2021 overlong(>6month)durations,andthisshowspromiseforaccurate,objectiveseizure
+Published:13July2021
+records. While the ability to detect and forecast seizures from ambulatory intracranial
+Citation:
+EEG is established, invasive devices may not be acceptable for many individuals with
+BrinkmannBH,KarolyPJ,NurseES,
+DumanisSB,NasseriM,VianaPF, epilepsy.Recentstudiesshowpromisingresultsforprobabilisticforecastsofseizurerisk
+Schulze-BonhageA,FreestoneDR, from long-term wearable devices and electronic diaries of self-reported seizures. There
+WorrellG,RichardsonMPand
+mayalsobepredictivevalueinindividuals’symptoms,mood,andcognitiveperformance.
+CookMJ(2021)SeizureDiariesand
+ForecastingWithWearables:Epilepsy However,seizureforecastingrequiresperpetualuseofadeviceformonitoring,increasing
+MonitoringOutsidetheClinic.
+the importance of the system’s acceptability to users. Furthermore, long-term studies
+Front.Neurol.12:690404.
+doi:10.3389/fneur.2021.690404 withconcurrentEEGconfirmationarelackingcurrently.Thisreviewdescribesthecurrent
+FrontiersinNeurology|www.frontiersin.org 1 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+evidenceandchallengesintheuseofminimallyandnon-invasivedevicesforlong-term
+epilepsy monitoring, the essential components in remote monitoring systems, and
+explores the feasibility to detect and forecast impending seizures via long-term use of
+thesesystems.
+Keywords:wearabledevices,seizuredetection,seizureforecasting,multidiancycles,machinelearning,epilepsy
+INTRODUCTION physician when diagnosing a seizure disorder and identifying
+therapeutic options. Because seizure events are infrequent, the
+Ithaslongbeenrecognizedthatseizuresoccurmorefrequently physician may not be able to directly observe events, and
+thanself-reported,thoughthescaleofthisunderestimationhas must rely on the individual, caregivers, and other witnesses
+onlyrecentlybeenappreciated(1–4).Thishascomplicatedour to describe events, identify potential precipitants, report their
+ability to provide optimal care and safety strategies (5, 6), and frequency, and discuss the impact on the person’s daily life
+casts uncertainty on the validity of therapeutic strategies and (20).In-hospitaldiagnostictestsareexpensiveandmayproduce
+clinicaltrialsresults(4). a diagnosis of epilepsy, psychogenic non-epileptic events, or
+Wearablesensingdevicesareincreasinginpopularitybothin syncope, or may be diagnostically inconclusive. Even when a
+the general community and through medical applications such cleardiagnosisofepilepsyisestablished,thelimitedavailability
+as seizure detection. However, there is insufficient data relating ofaccurateinformationhinderseffectivetherapy(1).Peoplewith
+totheclinicalutilityandreliabilityofthesesystems(7).Thereare epilepsy may be partly or fully amnestic to seizures (21, 22),
+alsosignificantconcernsarounddatasecurity,privacy,anddata individuals may be unable to provide an accurate account of
+ownership (8), and questions relating to the optimal software, seizure occurrence and severity (23–25), and witness accounts
+hardware, and data transmission systems. Additionally, there of epileptic and behavioral events are often unreliable (26–28).
+are several separate issues to consider with wearable devices: Changes in seizure frequency and severity, sometimes due to
+how the data is acquired, what systems can be used to achieve poor medication adherence (29), may increase a person’s risk
+this acquisition, and how the data may be used to provide of SUDEP (30), status epilepticus (31), or injury during daily
+moresophisticatedfeedbacktoindividualsandtheircaregivers. activities. Currently, physicians and caregivers have no way to
+Wearabledevicesmayalsofacilitatereliableforecastsofseizure identify increases in seizure frequency and/or severity between
+likelihood, providing the potential for people with epilepsy to officevisits.Manystudiesconfirmthatpeopleunder-reporttheir
+takefast-actingmedicationsormodifyactivitiesinanticipation seizures for a variety of reasons [summarized by Elger and
+ofanimpendingseizure(9–11). Hoppe (3)]. A study of an implanted EEG monitoring device
+Chronically implanted intracranial electroencephalography for seizure forecasting (2), compared to monthly self-reported
+(EEG) systems have resulted in dramatic insights into the seizure diaries to ambulatory intracranial EEG, found vast
+dynamics and underlying rhythms of epileptic activity and discrepancies in seizure reports, with some subjects reporting
+seizures (2, 12–19) but are not suitable for widespread use no seizures in months where the device recorded hundreds
+because of issues relating to cost and risk, and are limited in of clinical and electrographic seizures. Compared to long-
+spatialsampling.Inadditiontounreportedseizures,thesedevices term ambulatory EEG monitoring, individuals were found to
+also detect a large number of electrographic seizure patterns report less than half of measured seizures (3), and people
+withoutclearbehavioralcorrelates.However,thiselectrographic with epilepsy enrolled in clinical medication trials were aware
+epileptic activity is highly relevant to epilepsy management of their own seizure underreporting in post-study telephone
+and seizure forecasting, and chronic EEG remains vital to interviews(4).
+developandvalidatestandalonewearablesystems.Theserecent Objectivedatacharacterizingseizurecounts(32)andseverity
+studies suggest that the aims of seizure forecasting might be (33) could be obtained using devices capable of capturing and
+achieved through capturing data, which represent trends and storingEEGorotherbiosignalsthatindicateseizureoccurrence.
+associations in individuals and populations, harnessing the Invasive, implanted EEG (33) devices with limited capabilities
+strength of multiple sources, and applying recently developed are available currently. The NeuroPace RNS device (16, 34)
+strategiesinmachine-learningtocombinethisinformationand is clinically available and provides responsive neurostimulation
+generatemeasuresofseizurerisk.Seizureforecastingusingthese to suppress seizures in focal epilepsy, but also has the ability
+techniquesmightultimatelybecomeausefulwayforindividuals to record and store limited data segments on the device.
+tomanagedailyactivities,andforclinicianstoaccuratelyjudge Investigational devices like the Medtronic PC+S have a similar
+theefficacyoftherapies. capabilities (35, 36) but are used only in limited research
+applications. The limited data capacity of such devices makes
+SEIZURE REPORTING AND DETECTION it difficult to evaluate detection sensitivity because there is no
+way to confirm that all seizures have been identified, although
+An obstacle currently to clinical management of epilepsy is identifiedandstoredeventscanbeconfirmedaselectrographic
+the scarcity of accurate, reliable information available to the seizures (specificity). Finally, minimally invasive subscalp EEG
+FrontiersinNeurology|www.frontiersin.org 2 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+devices are emerging as potential alternatives for continuous become an adjunct measure of seizure activity for anti-seizure
+EEG recording, providing a balance between signal quality and medicationtrials.Thesewouldlikelyinitiallybeusedexclusively
+user acceptability. One subscalp system (24/7 EEGTM SubQ) forthedetectionoftonic–clonicseizures,aswearablesensorsare
+has been CE-marked for epilepsy monitoring and diagnosis, mostperformantforthisseizuretype.
+following a cumulative 490 day trial (nine patients, up to Most commercially available sensors do not have regulatory
+90 days each) demonstrating its safety and feasibility (37). approval for use in epilepsy, and these sensors span an array
+Automatically assisted, visual identification of electrographic of form factors and capabilities. The majority of commercial
+seizureshasalsobeendemonstratedintheultralong-termsetting smartwatchesnowcarryaccelerometricandPPGsensors,which
+(>6months)withthissystem,withexcellentsensitivitybutlow could be useful in tracking seizures (53), and smartwatch
+specificity(38). and smartphone applications have been developed for this
+purpose. Rigorous testing data is needed, however, and until
+Non-invasive Seizure Monitoring clear estimates of sensitivity and specificity under a range of
+Non-invasive, wearable biosensors have the greatest immediate conditions are established, wearable systems should not be
+potential to meet the needs of the majority of people with considered reliable sources of clinically actionable information
+epilepsy.Theavailabilityofinexpensiveminiaturizedelectronic (54).AppleandFitBit’sconsumergradewearableshaveFDAand
+components, wireless data telemetry, and rechargeable CEapprovalforcardiovascularmonitoringcurrently,andasdata
+battery technology has given rise to a large number accumulates,regulatoryapprovalsforepilepsycouldbepossible.
+of lightweight, wearable sensors. Currently, sensors are Devices aimed at the clinical research market are available in a
+commercially available to measure continuous, non-invasive wrist-watchformfactor(EmpaticaE4,Geneactiv),andthisform
+photoplethysmography (PPG, to measure the blood volume factorisoftenratedwellbypeoplewithepilepsyforcomfortand
+pulse signal), electromyography (EMG), accelerometry, EEG, easeofuse(55).Smartdevicesinaringformfactor(e.g.,Oura
+electrocardiography (EKG), electrodermal activity (EDA), andMotiv)cancollectaccelerometryandfingerPPG.Thesmall
+and skin temperature in a range of form factors. A summary size of these devices severely limits their battery capacity, and
+of available sensors is given in Figure1 (see also Panels in mostdevicesdonotincorporatereal-timeBluetoothdatalinkage.
+Appendix).Mostindividualsarefamiliarwiththeaccelerometers Ring devices may be useful for seizure diary applications, or to
+and optical PPG sensors included in consumer electronics like provideestimatesofsleepqualityandotherfactorstoforecasting
+smart watches and fitness monitors. These inexpensive sensors algorithms, but currently are not able to provide physiological
+with sophisticated data processing algorithms on cloud-based datainrealtime.PPGdataqualityisadverselyaffectedbysubject
+data management systems are capable of tracking sleep and movement,andwristandhand-wornPPGsensorsmaysufferdue
+exercise rates based on accelerometry (39–41), although the tolimbmovements.Recentlypublishedresultsofcommercially
+accuracyofsleepstagingwiththesedevicesisunclear.Variable available wearable sensors in seizure detection are summarized
+accuracy has been found as well in tracking heart rates from inTable1.
+wrist-wornPPGsensors(42).Nevertheless,wearablebiosensors Arm-bandstylewearablebiosensorsareavailable(Biofourmis,
+remainofinterestforepilepsymanagement,aschangesinsleep BrainSentinel), and many adhesive wearable sensors can be
+quality(43),exercise(i.e.,heartrateandmotiontracking)(44), placed on the arm (Byteflies). This is a prime location for
+and stress (i.e., heart rate variability, EDA) (45, 46) may all measuring EMG, and muscle activity can be used as a proxy
+triggerseizureonsetforsomepeople. forconvulsiveseizureactivity.Thisplacementmayalsofacilitate
+Currently, there are two wearable sensors approved by the simultaneous EKG measurement if wires are run through the
+FDA and EU for detecting convulsive seizures: the first, a sleevetothesubject’schest,althoughthismaycreatemaintenance
+wrist-worn smartwatch (Empatica Embrace, Boston MA), uses challenges for long-term use. Arm band sensors can be rated
+accelerometry and EDA to detect the subject’s movements and lower in comfort and acceptability by subjects (62), and data
+maintainsaBluetoothlinktothesubject’ssmartphone,wherean quality may suffer due to movement or the sensor sliding
+application telemeters data and detections to cloud servers and slightly during wear. Small sensors affixed by adhesive patches
+issues caregiver alerts for seizures (47). The Empatica Embrace (ByteFlies, EpiLog) can conceivably be placed anywhere on
+wasCEMarkedin2016andFDAapprovedin2018.Thesecond the body, although hair and perspiration may interfere with
+device is attached by an adhesive patch affixed to the subject’s adhesives. Adhesive failure and skin irritation are a barrier
+bicep and identifies changes in EMG to detect convulsions to long-term (multiple weeks) and ultra long-term (months
+(BrainSentinel SPEAC, San Antonio TX). This device also has to years) use of these devices, although these devices may
+a cloud-based data platform and can send caregiver alerts and be suitable for prolonged (up to 7 days) monitoring (e.g.,
+wasCEMarkedin2013andFDAapprovedin2017(48).Other baselineseizurediaries).Thiscategorymaybethemostflexible
+CE-Marked devices are available (Biovotion Everion, ByteFlies sensor type, and there are commercially available research-
+SensorDots,LivassuredNightWatch,Epi-CareFree),andstudies quality sensors for EEG, EMG, EKG, PPG, accelerometry,
+of performance at detecting seizures are ongoing. Detection of and EDA (ByteFlies, Epilog). Continuous glucose monitor
+convulsiveormotorseizuresisrelativelyeasierthanotherseizure (CGM) and flash glucose devices, FDA and EU approved
+types(49),andstudiesarebeginningtoaddresstheseothermore for diabetes monitoring, fall in this category of body-worn
+difficultsemiologies,butonlywithmodestsuccesstodate(50– sensorsandhavereachedahighleveloftechnicalmaturityand
+52).Asdetectionperformanceimproves,approveddevicesmay reliability(63,64).
+FrontiersinNeurology|www.frontiersin.org 3 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+duration and quality, and behavioral indicators of mood,
+for example, based on analyses of movement speed, social
+connectivity,oraffectivetoneofspeech(75–77).Thisopensup
+a window to analyzing behavioral changes occurring over days
+or weeks, which may correlate with seizure risk as suggested
+by studies on prodromes and on seizure precipitating factors
+(78,79).Beyondpassivemonitoring,smartphonescanbeusedto
+trackmoodchangesandcognitivefunctionbyactivelyquerying
+the user (80). Assessments can include pop-up questionnaires
+at predefined times, as well as specific test batteries assessing
+generalcognitivecapabilitieslikeattentionorworkingmemory,
+thus capturing high level dynamic brain states. The use of a
+smartphones also allows for behavioral intervention, which is
+becomingaprominentadjuncttherapy(81).
+DESIGNING AND CONNECTING SEIZURE
+MANAGEMENT SYSTEMS: DECREASING
+BARRIERS TO USE
+FIGURE1|Availablewearabledevicesforseizuremanagement.Approved
+Despiteageneralwillingnessofpeoplewithepilepsy,caregivers,
+devicesincludesensorsystemsCEMarkedand/orFDAapprovedforepilepsy.
+Researchgradedevicesarecommerciallyavailableandprovideaccurate, and healthcare professionals to use seizure monitoring devices
+high-qualitydata.Consumergradedevicesarecommerciallyavailablesensors (55), there are significant user requirements that impede long-
+designedaroundapplicationswheredataaccuracyisnotcrucialandmay term use. Johansson et al. concluded that on average 19%
+utilizeinterpolationorestimationmethodstoprovideinformationtotheuser.
+(range 6–24%) of data recorded from wearables in free-living
+Benchtopdevicesareinnovativesensorsunderdevelopmentandnotavailable
+environmentsmaybemissingduetoacombinationoftechnical
+commercially.EEG,electroencephalography;ACC,accelerometry;PPG,
+photoplethysmography;EKG,electrocardiography;EMG,electromyography; and human factors (82). Cohen et al. found in a long-term
+EDA,electrodermalactivity;T,temperature. studyofwearablesinParkinson’sandHuntington’sdiseasethat
+app-based reminders (“push notifications”) are useful tools in
+increasingcontinueddeviceadherence(83),whichcouldprovide
+similaroutcomesinseizuremonitoring.
+In addition to mature, commercially available wearable
+The aesthetics and comfort of devices are significant
+biosensors, numerous early-stage sensors are under
+considerationsinimprovinglong-termadherencewithwearable
+development, which may find application in epilepsy. Sweat
+devices. Bruno et al. found that smartphone and watch-based
+sampling sensors are being developed for exercise applications
+devices were acceptable to over 70% of people with epilepsy;
+and can non-invasively measure glucose, lactate, sodium, and
+however, leg, upper-arm, chest, and head-based systems had
+other metabolites as well as drug or medication levels excreted <50% acceptance. Ring-style wearables had over 60% approval
+in sweat. Fluidic sensors with similar technology have been
+(84). Interestingly, there is a strong discrepancy between the
+integrated into mouth guards (65) and fabrics (66) to sample
+views of people with epilepsy and caregivers for wristband and
+saliva and other bodily fluids. Google subsidiary Verily Inc.
+ring-style wearables, although why this is so is unclear (55).
+developed a contact lens with integrated glucose sensors, but
+Performancecharacteristicsaresignificantaswell,andPateletal.
+abandoned the project in 2018 citing inconsistent monitoring
+(85)showedastrongpreferenceamongpeoplewithepilepsyand
+results (67). Known hormonal and metabolic factors that may
+caregivers for excellent sensitivity and text message alerts over
+be altered prior to or immediately following seizures include
+comfort,batterylife,andotherfeatures.Unfortunately,Patelet
+melatonin (68), cortisol (69), reproductive hormones (70),
+al.donotseparatetheirresponsesbetweenpeoplewithepilepsy
+prolactinandgrowthhormone(71),lactate,glucose(72),tRNA
+and their caregivers, making it unclear if there are differences
+fragments (73), and others (74), thus providing a range of
+in view between these two groups. Furthermore, it is not clear
+possible biomarkers for seizure detection. The field is evolving
+that device users’ reported preferences are truly predictive of
+rapidly, and many innovative new sensors will likely become
+theirbehavior.Janseetal.showedsignificantdifferencesbetween
+available. Hopefully, new sensor technologies will allow for
+thepreferencesofpeoplewithepilepsyandcaregiversindevice
+the detection of a broader range of seizure types, beyond
+form factors, device accuracy, and seizure forecast range (10).
+convulsiveevents.
+Chargingthebatteriesofwearabledevicespresentsaconsiderable
+adherence challenge, as devices are ideally worn continuously
+Behavioral Monitoring throughbothsleepandwakefulness(55).Itisestimatedthat38–
+Beyond sensing of basic biosignals, wearable devices and 60% of users claim to be satisfied with recharging a device at
+smartphones can be used to track behavior at more complex leastdaily(55,85).Batterychargingdependsonfrequencyofdata
+levels, including activity patterns, movement range, sleep samplingandtelemetry.Manycommercialfitnesstrackerdevices
+FrontiersinNeurology|www.frontiersin.org 4 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+TABLE1|Sensitivityandfalsealarmratesfordetectionofseizureswithwearablebiosensors.
+Study Device Signal(s) Environment Seizuretype Patients(seizures) Sensitivity(%) Falsealarmsper
+day
+Beniczky(56) IctalCareEDDI EMG EMU GTCS 71(32) 93.8 0.67
+Halford(57) BrainSentinelSPEAC EMG EMU GTCS 199(46) 76 2.52
+149(29)a 100a 1.44a
+Onorati(49) EmpaticaE4 ACC,EDA EMU GTCS 69(22) 94.5b 0.2b
+Vandencasteele(58) 180◦eMotionFaros EKG EMU CP(FT) 11(47) 70 51.6
+EmpaticaE4 PPG 32 43.2
+Johansson(59) Shimmer3,customdevice ACC EMU TCS 8(10)c 100b 1.2b
+Heidberg(51) EmpaticaE3 ACC,EDA EMU Multiple 8(55) 89.1d 18.1e
+Jeppesen(60) ePatch EKG EMU Focal,GTCS 43(125)f 93.1f 1.1f
+Vandenncasteele(61) ByteFlies EEG(behindear) EMU Multiple 54(182) 69.1 0.49g
+Studiesbefore2015orreportingearlierresultsforadeviceinanidenticalsettingwereexcluded.GTCS,generalizedtonicclonicseizure;CP,complexpartial;FT,fronto-temporal;TCS,
+tonicclonicseizure;FIA,focalimpairedawareness.
+aWithoptimalplacementofdeviceoverthebellyofthebicep.
+bBestperformingofthreecandidatealgorithms.
+cThreeadditionalpatientsand27additionalseizuresreservedfortraining.
+dResultsreportedareforthebestperformingoftwoalgorithmsconsideredusingapatient-wisecrossvalidation.
+eEstimatedfromreported93.7%specificity,assumingindependent5-mindetectionwindows.
+fResultsreportedarefromthe53%ofthecohortwhoexhibitedadequateHRresponsetoseizures.
+gResultsreportedarefromapatient-specificdetectionalgorithm,whichperformedbetterthanacross-patientalgorithm.
+upload a limited data stream to cloud platforms in near-real adaptively learn patterns in data, which may not be apparent
+timeusingsmartphonesconnectedtotheinternet,eitherthrough to the human observer. Traditional machine learning requires
+broadband WiFi or mobile 4G. This approach is attractive for preprocessing raw data to extract features or characteristics of
+immediate feedback to people with epilepsy and caregivers but interest,whicharethennormalizedandpassedtoaclassification
+would pose a considerable burden on the battery of both the algorithmforanalysis.However,deeplearning,orconvolutional
+wearabledeviceandsmartphoneforclinicalqualitysensordata neural network approaches, provides “end to end” learning,
+ontheorderof100sofsamplespersecond. whereextractionofsalientfeaturesishandledbytheinitiallayers
+oftheneuralnetworkafterrepeatedpresentationoftrainingdata
+Computation and Connectivity (91).Automaticfeatureextractionisconsideredakeyadvantage
+Connecting data sources through cloud technologies has the of deep learning for seizure prediction, because it enables an
+potential to create insights into seizure patterns (86) and even algorithm to be tailored to particular seizure types or even an
+forecast seizure events (9, 87). Measurements of a person’s individual seizure semiology (or semiologies) (92, 93). Despite
+environment, physiology, and behavior through smartphones thisabilityforautomatedfeatureextraction,thesignalsrecorded
+andwearablescanbeusedtomakepatient-specificmodelsthat mustcontainsomefundamentalinformationrelatingtoseizure
+help clinicians understand individuals’ risk factors (88). The events, and hence, appropriate device and sensor selection is
+following sections outline common methods for accessing data still required for utility. For a discussion on factors that may
+sources (such as seizure diaries or wearables) through cloud contributetoseizurelikelihood,seeSectionFactorscontributing
+technologies. Figure2 presents an overview of how various to seizure likelihood. A hurdle for machine learning, and deep
+softwareinterfacesmayinteractwithdevicedata. learninginparticular,isthatalgorithmstypicallyrequireavery
+Modernon-demandcomputingservicesmakethecollection largenumberoftrainingseizuresinordertolearnageneralized
+and distribution of large datasets of potentially unknown size, representation of the data. Epilepsy databases have facilitated
+expandinginresponsetotheusers’needs(14,89).Importantly, developmentofmachinelearninganddeeplearningmethodsfor
+datasourcesshouldusecommonformatsanddefinitionsfordata seizure detection (94) and forecasting (95–99). This “big-data”
+storage, particularly for imperative entries such as timestamps, approach may improve accuracy in detecting more challenging
+seizure type descriptions, and definitions of seizure durations seizuretypes.
+(90). Without accurate timing information, errors can occur
+betweendatasources,creatingnoisyrepositories,andinaccurate FORECASTING SEIZURE LIKELIHOOD
+forecasts.Removingdifferencesbetweendatasourcesminimizes
+barrierstointegratingheterogeneousdatastreamsandgivesthe People with epilepsy consistently rate the apparent
+bestopportunityforimprovedcare. unpredictability of their seizures to be the most disabling
+Machine learning and artificial intelligence methods are aspect of their condition (10, 11), and a reliable system to
+integral to seizure detection and forecasting with wearable forewarn individuals or caregivers of impending seizures could
+biosensors. Machine learning approaches allow algorithms to allowfast-actingmedicationstobeadministered,orsimplyallow
+FrontiersinNeurology|www.frontiersin.org 5 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+FIGURE2|Integratingdevicedataintoonlineaccessibledatabases.Anabundanceofdatarelatingtophysiology,behavior,andenvironmentcanbecollectedwith
+wearabledevicesandsmartwatches.Thesecanthenbecollectedintoasinglerepositoryincloud-baseddatastorage.Thesedatacanthenbeaccessedbyrelevant
+cliniciansandresearchersthroughawebinterfaceorprogrammaticaccess.Informedpermissionisnecessaryforeachstepofdatatransfer:fromusertothe
+database,andfromthedatabasetotheclinicalenvironment.
+FIGURE3|Forecastingseizurelikelihood.Theschematicshowshowdatafromclinicalnotes,wearabledevices,andmobileappscanbecombinedtoobtaina
+deeperunderstandingofpatient-specificriskfactors.Utilizingcloudcomputing,thesefactorscanbeintegratedintoanindividualizedmodelofseizurelikelihoodand
+displayedasareal-timeforecasttoauser.
+FrontiersinNeurology|www.frontiersin.org 6 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+FIGURE4|Overviewofwearabledevicesinepilepsy.
+a person to take preparatory measures. To date, most devices people with epilepsy to plan daily activities and take measures
+for use in epilepsy monitoring have been focused on seizure forseizurecontrol.Oneretrospectivevalidationstudyofseizure
+detection,wherethemainutilityfromtheperspectiveofpeople forecastingwithwearablesrecentlyreportedbetterthanchance
+with epilepsy is providing a seizure alert to their clinicians or results in 30 of 69 (43.5%) in-hospital patients studied (102),
+caregivers. In this context, false alarms have the potential to be confirmingthatforecastingwithnon-invasivedevicesispossible
+disruptivetothelifeofsomeonewithepilepsy,theirfamilies,and for many patients. The ability to record continuous, outpatient
+caregivers,andcancausepeopletostopusingseizuredetection datafromwearableswillenablelong-termtrackingofriskfactors
+devices (100). However, in seizure forecasting applications, the andshouldimproveforecastingperformance.
+primary end goal is to inform the individual of their current Instead of trying to predict the exact time of an upcoming
+seizure likelihood. This context reduces the impact of “false seizure, it may be more feasible to estimate the probability
+alarms,”asnoteveryhighlikelihoodalertwouldbeexpectedto of someone having a seizure and communicate this risk in a
+resultinaseizure(92).Whenevaluatingforecasts,probabilistic clinically useful manner (12, 92, 103, 104). Accordingly, there
+measures can be used instead of only counting “hits” and is increasing interest within the clinical epilepsy community
+“misses.”Therefore,althoughtheproblemofseizureforecasting to develop seizure forecasting devices and applications (9) and
+is more complex than seizure detection from a signal analysis understanduserrequirements(10,105).Inasurvey-basedstudy,
+perspective(101),wearabledevicesmayhavebroaderapplication Schulze-Bonhageetal.reportedthatprobabilisticforecastswere
+and wider acceptance in seizure forecasting, which will allow generallyconsideredequallyusefultopredictingexactlywhena
+FrontiersinNeurology|www.frontiersin.org 7 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+seizurewouldoccur(105).Theyalsofoundthatmissedseizures seizure reporting, long-term patterns and cycles may still be
+were considered worse than false alarms, and perfect accuracy accurately inferred for many individuals (116, 117). Due to
+wasnotconsideredarequirementforaforecastingdevice(105). the indications for use of who can have implanted EEG for
+This survey agrees with reports from individuals enrolled in long-term recording, the existence of cycles has largely been
+the human study of a long-term seizure forecasting device (the validated electrographically in individuals with focal epilepsies.
+NeuroVistatrial)(2).SubjectsintheNeuroVistatrialreportedon Continuously recorded biomarkers remain important to truly
+theusefulnessofthedevice(106,107),despitelessthanperfect characterizeunderlyingepilepticrhythms,withouttheinherent
+sensitivityandtime-in-warningofupto30%(2).Morerecently, limitationsandbiasesofself-reportedseizurediaryrecords(120).
+Janse et al. also showed that seizure forecasting devices were Wearable devices and subscalp EEG have the potential
+deemed broadly acceptable despite the potential for inaccuracy to improve seizure diaries by providing objective data and
+(upto“inaccurate30%ofthetime”)(10).Externallyworndevices complementary information to help eliminate noise. Objective
+were ranked more highly than subcutaneous or implantable seizure measures may capture more seizures, enabling cyclic
+devices (10), reinforcing the potential for development of patternstobedetectedearlierandcharacterizedmoreaccurately
+wearabledevicesforseizureforecastingapplications. (38).Ontheotherhand,seizuredetectionwithwearabledevices
+The development of qualitative and clinically useful metrics currently has a high error rate, and has only been established
+toevaluateseizureforecastshasbeenakeypriority.Probabilistic forconvulsiveormotorseizures(48–50,121),althoughprogress
+measures can be used to evaluate performance (86, 108, 109), is ongoing for other seizure types (51, 52, 93, 122, 123). The
+but defining an alarm threshold is often deemed necessary to distributionoferrorswithwearablesislikelytobedifferenttothe
+determineclinicalutilityandthesystembecomesparameterized errordistributionofself-reportedseizurediaries.Theremayalso
+by the alarm duration, or “seizure prediction horizon” (110). begapsorpoorqualitydataduetonon-adherenceorcharging
+Nevertheless, evaluation of false alarms is challenging because issues (124). Wearable seizure detectors may perform better
+there is significant individual variability between seizure at night, when there are fewer movement artifacts, and when
+predictionhorizons(2),andthe“time-in-warning”isfrequently individuals are less likely to self-report seizures (3). Wearable
+reportedasaproxyforafalsealarmrate(2,95,111).Inaddition devices also do not suffer from diary fatigue, or other uniquely
+to benchmarking performance, it is important to understand humanbiases.Therefore,wearabledevicesmayhavethepotential
+user requirements for a forecasting interface (112). A recent toimprovetheaccuracyandcompletenessofthehistoricrecord
+study surveyed people with epilepsy and caregivers about the ofindividuals’seizuretimeswhenusedalongwithaseizurediary.
+visualdesignofseizureforecasts,findingarangeofpreferences, A more accurate seizure count, or a combined forecast from
+although graphs that provided some temporal context (i.e., the two data streams (86), may provide a higher performing
+seizureriskplottedoverthecourseofadayormonthasopposed forecaster for users. A better record of seizure times enables
+to a “gauge”) were rated more highly (113). Ultimately, post- personalizedforecastingmodelstobetrainedandvalidatedmore
+hocstudiesandsurveyscanonlyprovideanindicativemeasure rapidlyandwithgreaterreliability.
+of the utility and benefits of a seizure forecasting device. In
+a prospective setting, some people initially with interest in Factors Contributing to Seizure Likelihood
+forecasting devices may find false alarms to be debilitating, Combining multiple sources of information, including cyclic
+whereasotherswhowereinitiallyskepticalaboutthebenefitsmay patterns, EEG features, and other environmental factors, may
+findaforecastingdeviceveryhelpful(107). contribute to a stronger forecast of seizure likelihood than any
+individual signal. There are many data sources that are readily
+available and have been shown to be associated with seizure
+Patterns and Rhythms in Seizure
+likelihood. For example, sleep quality (68), weather (125, 126),
+Probability mood(78),andstress(45,46)mayallmakeseizuresmorelikely.
+It is now understood that most people with epilepsy exhibit Theseenvironmentalfactorscanbecombinedwithinformation
+circadian and slower, multiday temporal cycles that modulate from seizure times that capture individuals’ daily, weekly, or
+their seizure likelihood [see (17) for a recent review]. Recent monthly cycles to deliver an individualized forecast of seizure
+studies have demonstrated impressive seizure forecasting likelihood(12,92,104).
+performance using multiday cycles measured from implantable Wearabledevicesprovideanopportunitytoaugmentseizure
+EEG (114, 115), although prospective validation is needed. forecastswithagrowingnumberofphysiologicalsignalsrelevant
+Cycles of seizure likelihood can also be measured from self- to seizure likelihood. For instance, changes in heart rate have
+reported seizure times (116), and for a subset of people, cycles been often found to precede seizure onset by several minutes
+measured from seizure diaries are predictive of the likelihood (127). Billeci et al. found that heart rate variability could be
+of electrographic seizures and epileptic activity (116, 117). used to predict seizures up to 15min before onset with >80%
+Machine learning can also be used with historic trends from sensitivity, albeit with a relatively high average false positive
+self-reported seizure diaries, which may be useful to forecast rate of 0.41 per hour (almost 10 per day) (128). Signals that
+future reported seizures (118, 119). Both cyclic and machine- show some well-defined ictal changes, such as EDA (129–131),
+learning approaches have been shown to accurately forecast heartrate,orEMG(121),alsoshowpredictivechangespriorto
+seizures(or,morespecifically,seizurediaryevents)inbothfocal seizureonset(32).Forinstance,arecentstudyfoundpredictive
+and generalized epilepsies. Despite inaccuracy in individual value in wearable sensor recordings EDA, blood volume pulse,
+FrontiersinNeurology|www.frontiersin.org 8 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+accelerometry, and skin temperature (102). Average heart rate remain around issues related to usability of the systems, and
+has also been found to show similar circadian and multiday certainlytheirchronicuse.Developingconceptsthoughrelating
+cycles to epileptic activity, which are comodulated with seizure to utilization of multiple modality streams and integrating this
+risk (132). Long-term datasets that record large numbers of information will serve to provide accurate data on which to
+individual seizures over long periods of time in conjunction more effectively manage epilepsy in the clinic and evaluate
+withcontinuouswearablemonitoringdatapromisetoshednew new therapies. Ultimately, data from a variety of systems will
+light on these patterns governing autonomic nervous system contribute to seizure forecasts and enable people with epilepsy
+andmetabolicactivitythatareco-modulatedwithseizureonset. toachieveagreaterdegreeofsafety,freedom,anddignity.
+Thepotentialofwearablemonitoringtotrackindividualseizure
+triggers may be more powerful when coupled with behavioral AUTHOR CONTRIBUTIONS
+andmooddata.Figure3illustratestheconceptofamulti-modal
+seizureforecastingsystem. BB, EN, and PK performed the literature search and literature
+There is some early promise that physiological signals revision, drafted the manuscript, reviewed, and edited for
+derived from peripheral or autonomic systems (i.e., cardiac important intellectual content. MR, AS-B, GW, DF, MN, and
+activity) contain relevant information for predicting seizure SD participated in the interpretation of data in the literature,
+onset.Figure4illustratesanumberofthesesystems.Currently, reviewed, and edited the manuscript for important intellectual
+insufficientevidenceexiststhatanystand-aloneperipheralsignal content. MC developed the original concept and design of the
+couldbeusedasaseizureforecastwithadequatesensitivityand manuscript,performedtheliteraturesearchandanalysisofdata
+specificity(105).However,withmoredatatodeterminepatient- in the literature, drafted, reviewed, and edited the manuscript.
+specifictrends,andincombinationwithotherpredictivesignals, All authors contributed to the article and approved the
+wearable monitoring may contribute to an integrated forecast submittedversion.
+of seizure likelihood. As more prospective, clinical studies of
+forecastingsystemsareundertaken,abetterunderstandingofthe FUNDING
+idealsignals,devicespecifications,userneeds,andperformance
+benchmarks will be elucidated, and forecasting systems may This work was supported by the Epilepsy Foundation
+begintoreducetheburdenofseizureunpredictabilityonpeople of America’s Epilepsy Innovation Institute My Seizure
+livingwithepilepsy. Gaugeaward.
+CONCLUSION ACKNOWLEDGMENTS
+We are at the edge of a transition in the way that we identify, TheauthorsthanktheMySeizureGaugeteamfortechnicaland
+analyze, and manage seizures and epilepsy. At the moment, administrative support. Specifically the authors thank at Mayo
+however, there is still relatively limited data on which to base Clinic Sherry Klingerman, Tal Pal Attia MS, Daniel Crepeau,
+decisions about the suitability of various devices currently and Erin Jagodzinski; at Seer Medical Will Hart, Dominique
+available,andthetypesof seizuresin whichtheymightbe best Eden, and Rob Kerr; at King’s College London Andrea Biondi
+deployed,particularlyfornon-motorevents.Therearechallenges MD and Elisa Bruno MD, Ph.D.; at Freiburg University
+ahead regarding the hardware, power, data, and security of the Sebastian Bottcher and Martin Glasstetter; and at the Epilepsy
+variousdevicesavailable,thoughtheseproblemsarebeingsolved Foundation of America Caitlin Grazkowski Ph.D. and Jackie
+in numerous mobile device applications. Significant challenges FrenchMD.
+REFERENCES
+and hypoventilation before probable SUDEP. Neurology. (2017)
+89:633–5.doi:10.1212/WNL.0000000000004208
+1. FisherRS.Badinformationinepilepsycare.EpilepsyBehav.(2017)67:133– 7. Beniczky S, Wiebe S, Jeppesen J, Tatum WO, Brazdil M, Wang Y,
+4.doi:10.1016/j.yebeh.2016.10.022 et al. Automated seizure detection using wearable devices: a clinical
+2. CookMJ,O’BrienTJ,BerkovicSF,MurphyM,MorokoffA,FabinyiG,etal. practice guideline of the International League Against Epilepsy and the
+Predictionofseizurelikelihoodwithalong-term,implantedseizureadvisory International Federation of Clinical Neurophysiology. Clin Neurophysiol.
+systeminpatientswithdrug-resistantepilepsy:afirst-in-manstudy.Lancet (2021)132:1173–84.doi:10.1016/j.clinph.2020.12.009
+Neurol.(2013)12:563–71.doi:10.1016/S1474-4422(13)70075-9 8. MikkKA,SleeperHA,TopolEJ.Thepathwaytopatientdataownership
+3. Elger CE, Hoppe C. Diagnostic challenges in epilepsy: seizure and better health. JAMA. (2017) 318:1433–4. doi: 10.1001/jama.
+under-reporting and seizure detection. Lancet Neurol. (2018) 2017.12145
+17:279–88.doi:10.1016/S1474-4422(18)30038-3 9. Dumanis SB, French JA, Bernard C, Worrell GA, Fureman BE. Seizure
+4. BlachutB,HoppeC,SurgesR,ElgerC,HelmstaedterC.Subjectiveseizure forecasting from idea to reality. Outcomes of the my seizure gauge
+countsbyepilepsyclinicaldrugtrialparticipantsarenotreliable.Epilepsy epilepsyinnovation instituteworkshop.eNeuro.(2017)4:ENEURO.0349-
+Behav.(2017)67:122–7.doi:10.1016/j.yebeh.2016.10.036 17.2017.doi:10.1523/ENEURO.0349-17.2017
+5. LanganY,NashefL,SanderJW.Case-controlstudyofSUDEP.Neurology. 10. Janse SA, Dumanis SB, Huwig T, Hyman S, Fureman BE, Bridges JFP.
+(2005)64:1131–3.doi:10.1212/01.WNL.0000156352.61328.CB Patient and caregiver preferences for the potential benefits and risks of
+6. Picard RW, Migliorini M, Caborni C, Onorati F, Regalia G, a seizure forecasting device: a best–worst scaling. Epilepsy Behav. (2019)
+Friedman D, et al. Wrist sensor reveals sympathetic hyperactivity 96:183–91.doi:10.1016/j.yebeh.2019.04.018
+FrontiersinNeurology|www.frontiersin.org 9 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+11. Schulze-BonhageA,KuhnA.Unpredictabilityofseizuresandtheburden 32. RamgopalS,Thome-SouzaS,JacksonM,KadishNE,SánchezFernández
+ofepilepsy.In:SchelterB,TimmerJ,Schulze-BonhageA,editors.Seizure I, Klehm J, et al. Seizure detection, seizure prediction, and closed-
+Prediction in Epilepsy: From Basic Mechanisms to Clinical Applications. loop warning systems in epilepsy. Epilepsy Behav. (2014) 37:291–
+Weinheim:Wiley-VCHVerlag(2008).pp.1–10. 307.doi:10.1016/j.yebeh.2014.06.023
+12. Baud MO, Rao VR. Gauging seizure risk. Neurology. (2018) 91:967– 33. Beniczky S, Arbune AA, Jeppesen J, Ryvlin P. Biomarkers of
+73.doi:10.1212/WNL.0000000000006548 seizure severity derived from wearable devices. Epilepsia. (2020)
+13. Karoly PJ, Goldenholz DM, Freestone DR, Moss RE, Grayden DB, 61:S61–6.doi:10.1111/epi.16492
+Theodore WH, et al. Circadian and circaseptan rhythms in human 34. Morrell M. Brain stimulation for epilepsy: can scheduled or responsive
+epilepsy: a retrospective cohort study. Lancet Neurol. (2018) 17:977– neurostimulation stop seizures? Curr Opin Neurol. (2006) 19:164–
+85.doi:10.1016/S1474-4422(18)30274-6 8.doi:10.1097/01.wco.0000218233.60217.84
+14. BrinkmannBH,WagenaarJ,AbbotD,AdkinsP,BosshardSC,ChenM,et 35. Van Gompel JJ, Klassen BT, Worrell GA, Lee KH, Shin C, Zhao CZ,
+al.Crowdsourcingreproducibleseizureforecastinginhumanandcanine et al. Anterior nuclear deep brain stimulation guided by concordant
+epilepsy.Brain.(2016)139:1713–22.doi:10.1093/brain/aww045 hippocampalrecording.NeurosurgFocus.(2015)38:E9.doi:10.3171/2015.3.
+15. KremenV,BrinkmannBH,KimI,GuragainH,NasseriM,MageeAL,etal. FOCUS1541
+Integratingbrainimplantswithlocalanddistributedcomputingdevices:a 36. Herron JA, Thompson MC, Brown T, Chizeck HJ, Ojemann JG, Ko AL.
+nextgenerationepilepsymanagementsystem.IEEEJTranslEngHealthMed. Chronicelectrocorticographyforsensingmovementintentionandclosed-
+(2018)6:1–12.doi:10.1109/JTEHM.2018.2869398 loopdeepbrainstimulationwithwearablesensorsinanessentialtremor
+16. Bergey GK, Morrell MJ, Mizrahi EM, Goldman A, King-Stephens D, patient.JNeurosurg.(2017)127:580–7.doi:10.3171/2016.8.JNS16536
+Nair D, et al. Long-term treatment with responsive brain stimulation 37. Weisdorf S, Duun-Henriksen J, Kjeldsen MJ, Poulsen FR, Gangstad SW,
+in adults with refractory partial seizures. Neurology. (2015) 84:810– Kjær TW. Ultra-long-term subcutaneous home monitoring of epilepsy-
+7.doi:10.1212/WNL.0000000000001280 −490 days of EEG from nine patients. Epilepsia. (2019) 60:2204–
+17. Karoly PJ, Rao VR, Gregg NM, Worrell GA, Bernard C, Cook 14.doi:10.1111/epi.16360
+MJ, Baud MO. Cycles in epilepsy. Nat Rev Neurol. (2021) 17:267– 38. Viana PF, Duun-Henriksen J, Glasstëter M, Dümpelmann M, Nurse ES,
+84.doi:10.1038/s41582-021-00464-1 MartinsIP,etal.230daysofultralong-termsubcutaneousEEG:seizurecycle
+18. BaudMO,KleenJK,MirroEA,AndrechakJC,King-StephansD,ChangEF, analysisandcomparisontopatientdiary.AnnClinTranslNeurol.(2021)
+etal.Multi-dayrhythmsmodulateseizureriskinepilepsy.NatCommun. 8:288–93.doi:10.1002/acn3.51261
+(2018)9:88.doi:10.1038/s41467-017-02577-y 39. GruwezA,BruyneelA-V,BruyneelM.Thevalidityoftwocommercially-
+19. Rao VR, G Leguia M, Tcheng TK, Baud MO. Cues for seizure timing. available sleep trackers and actigraphy for assessment of sleep
+Epilepsia.(2020)62:S15–31.doi:10.1111/epi.16611 parameters in obstructive sleep apnea patients. PLoS ONE. (2019)
+20. LeesAJ.ThestrangecaseofDrWilliamGowersandMrSherlockHolmes. 14:e0210569.doi:10.1371/journal.pone.0210569
+Brain.(2015)138:2103–8.doi:10.1093/brain/awv144 40. Toth LP, Park S, Pittman WL, Sarisaltik D, Hibbing PR, Morton AL,
+21. Tatum IV WO, Winters L, Gieron M, Passaro EA, Benbadis S, Ferreira et al. Validity of activity tracker step counts during walking, running,
+J, et al. Outpatient seizure identification: results of 502 patients using and activities of daily living. Transl J Am Coll Sports Med. (2018) 3:52–
+computer-assisted ambulatory EEG. J Clin Neurophysiol. (2001) 18:14– 9.doi:10.1249/TJX.0000000000000057
+9.doi:10.1097/00004691-200101000-00004 41. AnH-S,JonesGC,KangS-K,WelkGJ,LeeJ-M.Howvalidarewearable
+22. LanzoneJ,RicciL,AssenzaG,UliviM,DiLazzaroV,TombiniM.Transient physicalactivitytrackersformeasuringsteps?EurJSportSci.(2017)17:360–
+epilepticandglobalamnesia:real-lifedifferentialdiagnosis.EpilepsyBehav. 8.doi:10.1080/17461391.2016.1255261
+(2018)88:205–11.doi:10.1016/j.yebeh.2018.07.015 42. Wang R, Blackburn G, Desai M, Phelan D, Gillinov L, Houghtaling
+23. Nickels KC, Zaccariello MJ, Hamiwka LD, Wirrell EC. Cognitive and P, et al. Accuracy of wrist-worn heart rate monitors accuracy of
+neurodevelopmentalcomorbiditiesinpaediatricepilepsy.NatRevNeurol. wrist-worn heart rate monitors letters. JAMA Cardiol. (2017) 2:104–
+(2016)12:465.doi:10.1038/nrneurol.2016.98 6.doi:10.1001/jamacardio.2016.3340
+24. Samarasekera SR, Helmstaedter C, Reuber M. Cognitive impairment 43. Shouse MN, da Silva AM, Sammaritano M. Circadian
+in adults with epilepsy: the relationship between subjective rhythm, sleep, and epilepsy. J Clin Neurophysiol. (1996)
+and objective assessments of cognition. Epilepsy Behav. (2015) 13:32–50.doi:10.1097/00004691-199601000-00004
+52:9–13.doi:10.1016/j.yebeh.2015.08.013 44. Sevcencu C, Struijk JJ. Autonomic alterations and cardiac changes in
+25. Andrade R, Garcia-Espinosa A, Machado-Rojas A, Arteche-Prior M, epilepsy.Epilepsia.(2010)51:725–37.doi:10.1111/j.1528-1167.2009.02479.x
+Díaz-Pedraza A. Unilateral neglect, transient cognitive impairment and 45. Temkin NR, Davis GR. Stress as a risk factor for seizures
+intercritical activity in rolandic epilepsy. Rev Neurol. (2007) 44:537– among adults with epilepsy. Epilepsia. (1984) 25:450–
+40.doi:10.33588/rn.4409.2005179 6.doi:10.1111/j.1528-1157.1984.tb03442.x
+26. ErbaG,BianchiE,GiussaniG,LangfittJ,JuersivichA,BeghiE.Patients’ 46. HautSR,VouyiouklisM,ShinnarS.Stressandepilepsy:apatientperception
+andcaregivers’contributionsfordifferentiatingepilepticfrompsychogenic survey.EpilepsyBehav.(2003)4:511–4.doi:10.1016/S1525-5050(03)00182-3
+nonepilepticseizures.Valueandlimitationsofself-reportingquestionnaires: 47. Regalia G, Onorati F, Lai M, Caborni C, Picard RW. Multimodal
+apilotstudy.Seizure.(2017)53:66–71.doi:10.1016/j.seizure.2017.11.001 wrist-worn devices for seizure detection and advancing research:
+27. Besocke AG, Rojas JI, Valiensi SM, Cristiano E. del Carmen Garcia M. focus on the Empatica wristbands. Epilepsy Res. (2019) 153:79–
+Interview accuracy in partial epilepsy. Epilepsy Behav. (2009) 16:551– 82.doi:10.1016/j.eplepsyres.2019.02.007
+4.doi:10.1016/j.yebeh.2009.09.015 48. Whitmire L, Voyles S, Cardenas D, Cavazos J. Diagnostic utility of
+28. Thijs RD, Wagenaar WA, Middelkoop HA, Wieling W, van Dijk JG. continuous sEMG monitoring in a home setting-real-world use of the
+Transientlossofconsciousnessthroughtheeyesofawitness.Neurology. SPEAC(cid:13)R system.Neurology.(2019)92(15Suppl.):5–12.Availableonlineat:
+(2008)71:1713–8.doi:10.1212/01.wnl.0000335165.68893.b0 https://n.neurology.org/content/92/15_Supplement/P4.5-012
+29. MalekN,HeathC,GreeneJ,A.reviewofmedicationadherenceinpeople 49. OnoratiF,RegaliaG,CaborniC,MiglioriniM,BenderD,PohM-Z,etal.
+withepilepsy.ActaNeurolScand.(2017)135:507–15.doi:10.1111/ane.12703 Multicenterclinicalassessmentofimprovedwearablemultimodalconvulsive
+30. Williams J, Lawthom C, Dunstan FD, Dawson TP, Kerr MP, Wilson JF, seizuredetectors.Epilepsia.(2017)58:1870–9.doi:10.1111/epi.13899
+et al. Variability of antiepileptic medication taking behaviour in sudden 50. Ulate-Campos A, Coughlin F, Gaínza-Lein M, Fernández IS,
+unexplaineddeathinepilepsy:hairanalysisatautopsy.JNeurolNeurosurg Pearl PL, Loddenkemper T. Automated seizure detection systems
+Psychiatry.(2006)77:481–4.doi:10.1136/jnnp.2005.067777 and their effectiveness for each type of seizure. Seizure. (2016)
+31. HollingerA,SemmlackS,DeMarchisGM,SpiegelR,HunzikerS,RüeggS, 40:88–101.doi:10.1016/j.seizure.2016.06.008
+etal.Associationsbetweenperiodicsocialeventsandstatusepilepticus-An 51. HeldbergBE,KautzT,LeutheuserH,HopfengärtnerR,KasperBS,Eskofier
+11-yearcohortstudy.Epilepsia.(2018)59:1381–91.doi:10.1111/epi.14431 BM.Usingwearablesensorsforsemiology-independentseizuredetection
+FrontiersinNeurology|www.frontiersin.org 10 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+- towards ambulatory monitoring of epilepsy. In: 2015 37th Annual 70. Herzog AG, Klein P, Ransil BJ. Three patterns of catamenial epilepsy.
+InternationalConferenceoftheIEEEEngineeringinMedicineandBiology Epilepsia.(1997)38:1082–8.doi:10.1111/j.1528-1157.1997.tb01197.x
+Society(EMBC).Milano(2015).5593–6.doi:10.1109/EMBC.2015.7319660 71. PritchardPB.Theeffectofseizuresonhormones.Epilepsia.(1991)32:S46–
+52. Patterson AL, Mudigoudar B, Fulton S, McGregor A, Poppel KV, 50.doi:10.1111/j.1528-1157.1991.tb05892.x
+Wheless MC, et al. SmartWatch by SmartMonitor: assessment of 72. Schauwecker PE. The effects of glycemic control on seizures
+seizure detection efficacy for various seizure types in children, a and seizure-induced excitotoxic cell death. BMC Neurosci. (2012)
+large prospective single-center study. Pediatr Neurol. (2015) 53:309– 13:94.doi:10.1186/1471-2202-13-94
+11.doi:10.1016/j.pediatrneurol.2015.07.002 73. HoggMC,RaoofR,ElNaggarH,MonsefiN,DelantyN,O’BrienDF,etal.
+53. Andel J. van, Ungureanu C, Aarts R, Leijten F, Arends J. Using ElevationinplasmatRNAfragmentsprecedeseizuresinhumanepilepsy.J
+photoplethysmographyinheartratemonitoringofpatientswithepilepsy. ClinInvest.(2019)129:2946–51.doi:10.1172/JCI126346
+EpilepsyBehav.(2015)45:142–5.doi:10.1016/j.yebeh.2015.02.018 74. Aminoff MJ, Simon RP, Wiedemann E. The hormonal responses
+54. BeniczkyS,RyvlinP.Standardsfortestingandclinicalvalidationofseizure to generalized tonic-clonic seizures. Brain. (1984) 107:569–
+detectiondevices.Epilepsia.(2018)59:9–13.doi:10.1111/epi.14049 78.doi:10.1093/brain/107.2.569
+55. Bruno E, Simblett S, Lang A, Biondi A, Odoi C, Schulze-Bonhage 75. CanzianL,MusolesiM.Trajectoriesofdepression:unobtrusivemonitoring
+A, et al. Wearable technology in epilepsy: the views of patients, ofdepressivestatesbymeansofsmartphonemobilitytracesanalysis.In:
+caregivers, and healthcare professionals. Epilepsy Behav. (2018) 85:141– UbiComp’15:The2015ACMInternationalJointConferenceonPervasiveand
+9.doi:10.1016/j.yebeh.2018.05.044 UbiquitousComputing.Osaka(2015).
+56. Beniczky S, Conradsen I, Henning O, Fabricius M, Wolf P. Automated 76. StewartCL,RashidZ,RanjanY,SunS,DobsonRJ,FolarinAA.RADAR-base:
+real-timedetectionoftonic-clonicseizuresusingawearableEMGdevice. majordepressivedisorderandepilepsycasestudies.In:Proceedingsofthe
+Neurology.(2018)90:e428–34.doi:10.1212/WNL.0000000000004893 2018ACMInternationalJointConferenceand2018InternationalSymposium
+57. Halford JJ, Sperling MR, Nair DR, Dlugos DJ, Tatum WO, onPervasiveandUbiquitousComputingandWearableComputers(ACM).
+Harvey J. Detection of generalized tonic–clonic seizures Singapore(2018).p.1735–43.doi:10.1145/3267305.3267540
+using surface electromyographic monitoring. Epilepsia. (2017) 77. Harari GM, Lane ND, Wang R, Crosier BS, Campbell AT, Gosling
+58:1861–9.doi:10.1111/epi.13897 SD. Using smartphones to collect behavioral data in psychological
+58. VandecasteeleK,DeCoomanT,GuY,CleerenE,ClaesK,PaesschenWV,et science: opportunities, practical considerations, and challenges. Perspect
+al.AutomatedepilepticseizuredetectionbasedonwearableECGandPPG Psychol Sci J Assoc Psychol Sci. (2016) 11:838–54. doi: 10.1177/17456916
+inahospitalenvironment.Sensors.(2017)17:2338.doi:10.3390/s17102338 16650285
+59. JohanssonD,OhlssonF,KrýslD,RydenhagB,CzarneckiM,Gustafsson 78. HautSR,HallCB,BorkowskiT,TennenH,LiptonRB.Clinicalfeaturesofthe
+N,etal.Tonic-clonicseizuredetectionusingaccelerometry-basedwearable pre-ictalstate:moodchangesandpremonitorysymptoms.EpilepsyBehav.
+sensors:aprospective,video-EEGcontrolledstudy.Seizure.(2019)65:48– (2012)23:415–21.doi:10.1016/j.yebeh.2012.02.007
+54.doi:10.1016/j.seizure.2018.12.024 79. Schulze-Bonhage A, Haut S. Premonitory features and seizure
+60. Jeppesen J, Fuglsang-Frederiksen A, Johansen P, Christensen J, self-prediction: artifact or real? Epilepsy Res. (2011) 97:231–
+Wüstenhagen S, Tankisi H, et al. O-45 automated seizure detection for 5.doi:10.1016/j.eplepsyres.2011.09.026
+epilepsy patients using wearable ECG-device. Clin Neurophysiol. (2019) 80. Haut SR, Hall CB, Borkowski T, Tennen H, Lipton RB. Modeling
+130:e36.doi:10.1016/j.clinph.2019.04.360 seizure self-prediction: an e-diary study. Epilepsia. (2013) 54:1960–
+61. VandecasteeleK,DeCoomanT,DanJ,CleerenE,VanHuffelS,Hunyadi 7.doi:10.1111/epi.12355
+B,etal.Visualseizureannotationandautomatedseizuredetectionusing 81. HautSR,GurskyJM.PriviteraM.Behavioralinterventionsinepilepsy.Curr
+behind-the-earelectroencephalographicchannels.Epilepsia.(2020)61:766– OpinNeurol.(2019)32:227–36.doi:10.1097/WCO.0000000000000661
+75.doi:10.1111/epi.16470 82. Johansson D, Malmgren K, Murphy MA. Wearable sensors
+62. Beeler N, Roos L, Delves SK, Veenstra BJ, Friedl K, Buller MJ, et al. for clinical applications in epilepsy, Parkinson’s disease, and
+The wearing comfort and acceptability of ambulatory physical activity stroke: a mixed-methods systematic review. J Neurol. (2018)
+monitoringdevicesinsoldiers.IISETransOccupErgonHumFactors.(2018) 265:1740–52.doi:10.1007/s00415-018-8786-y
+6:1–10.doi:10.1080/24725838.2018.1435431 83. CohenS,WaksZ,ElmJJ,GordonMF,GrachevID,Navon-PerryL,etal.
+63. ChristiansenMP,GargSK,BrazgR,BodeBW,BaileyTS,SloverRH,etal. Characterizingpatientcomplianceoversixmonthsinremotedigitaltrials
+Accuracyofafourth-generationsubcutaneouscontinuousglucosesensor. ofParkinson’sandHuntingtondisease.BMCMedInformDecisMak.(2018)
+DiabetesTechnolTher.(2017)19:446–56.doi:10.1089/dia.2017.0087 18:138.doi:10.1186/s12911-018-0714-7
+64. KropffJ,ChoudharyP,NeupaneS,BarnardK,BainSC,KapitzaC,etal. 84. Koskimäki H, Kinnunen H, Kurppa T, Röning J. How do we sleep:
+Accuracyandlongevityofanimplantablecontinuousglucosesensorinthe a case study of sleep duration and quality using data from oura
+PRECISEstudy:a180-day,prospective,multicenter,pivotaltrial.Diabetes ring. In: Proceedings of the 2018 ACM International Joint Conference
+Care.(2017)40:63–8.doi:10.2337/dc16-1525 and 2018 International Symposium on Pervasive and Ubiquitous
+65. Kim J, Imani S, de Araujo WR, Warchall J, Valdés-Ramírez G, Computing and Wearable Computers (ACM). Singapore (2018). p.
+Paixão TR, et al. Wearable salivary uric acid mouthguard biosensor 714–7.doi:10.1145/3267305.3267697
+with integrated wireless electronics. Biosens Bioelectron. (2015) 74:1061– 85. PatelAD,MossR,RustSW,PattersonJ,StrouseR,GedelaS,etal.Patient-
+8.doi:10.1016/j.bios.2015.07.039 centered design criteria for wearable seizure detection devices. Epilepsy
+66. Gualandi I, Marzocchi M, Achilli A, Cavedale D, Bonfiglio A, Fraboni Behav.(2016)64:116–21.doi:10.1016/j.yebeh.2016.09.012
+B. Textile organic electrochemical transistors as a platform for wearable 86. Karoly PJ, Ung H, Grayden DB, Kuhlmann L, Leyde K, Cook MJ, et al.
+biosensors.SciRep.(2016)6:33637.doi:10.1038/srep33637 Thecircadianprofileofepilepsyimprovesseizureforecasting.Brain.(2017)
+67. Brown,KristenV.Alphabet’sVerilyHaltsDiabetes-DetectingContactLens 140:2169–82.doi:10.1093/brain/awx173
+Project. Bloomberg (2018). Available online at: https://www.bloomberg. 87. Ranjan Y, Rashid Z, Stewart C, Kerz M, Begale M, Verbeeck D, et al.
+com/news/articles/2018-11-16/alphabet-s-verily-halts-diabetes-detecting- RADAR-base:anopensourcemhealthplatformforcollecting,monitoring
+contact-lens-project(accessedMay15,2019). and analyzing data using sensors, wearables, and mobile devices. JMIR
+68. Hofstra WA. The circadian rhythm and its interaction with mHealthuHealth.(2018)7:e11734.doi:10.2196/preprints.11734
+human epilepsy: a review of literature. Sleep Med Rev. (2009) 88. Muse ED, Barrett PM, Steinhubl SR, Topol EJ. Towards
+13:413–20.doi:10.1016/j.smrv.2009.01.002 a smart medical home. Lancet Lond Engl. (2017)
+69. Van Campen JS, Hompe EL, Jansen FE, Velis DN, Otte WM, Van De 389:358.doi:10.1016/S0140-6736(17)30154-X
+BergF,etal.Cortisolfluctuationsrelatetointerictalepileptiformdischarges 89. DavisKA,UngH,WulsinD,WagenaarJ,FoxE,PattersonN,etal.Mining
+in stress sensitive epilepsy. Brain. (2016) 139:1673–9. doi: 10.1093/brain/ continuous intracranial EEG in focal canine epilepsy: relating interictal
+aww071 burststoseizureonsets.Epilepsia.(2016)57:89–98.doi:10.1111/epi.13249
+FrontiersinNeurology|www.frontiersin.org 11 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+90. GoldenholzDM,MossR,JostDA,CroneNE,KraussG,PicardR,etal. 110. WinterhalderM,MaiwaldT,VossHU,Aschenbrenner-ScheibeR,Timmer
+Commondataelementsforepilepsymobilehealthsystems.Epilepsia.(2018) J, Schulze-Bonhage A. The seizure prediction characteristic: a general
+59:1020–6.doi:10.1111/epi.14066 framework to assess and compare seizure prediction methods. Epilepsy
+91. LeCun Y, Bengio Y, Hinton G. Deep learning. Nature. (2015) 521:436– Behav.(2003)4:318–25.doi:10.1016/S1525-5050(03)00105-7
+44.doi:10.1038/nature14539 111. SnyderDE,EchauzJ,GrimesDB,LittB.Thestatisticsofapracticalseizure
+92. Freestone DR, Karoly PJ, Cook MJ, A. forward-looking review warningsystem.JNeuralEng.(2008)5:392.doi:10.1088/1741-2560/5/4/004
+of seizure prediction. Curr Opin Neurol. (2017) 30:167– 112. StirlingRE,CookMJ,GraydenDB,KarolyPJ.Seizureforecastingandcyclic
+73.doi:10.1097/WCO.0000000000000429 controlofseizures.Epilepsia.(2020)62:S2–14.doi:10.1111/epi.16541
+93. Nasseri M, Attia TP, Joseph B, Gregg NM, Nurse ES, Viana PF, 113. Chiang S, Moss R, Black AP, Jackson M, Moss C, Bidwell
+et al. Non-invasive wearable seizure detection using long–short- J, et al. Evaluation and recommendations for effective data
+term memory networks with transfer learning. J Neural Eng. (2021) visualization for seizure forecasting algorithms. JAMIA Open. (2021)
+18:056017.doi:10.1088/1741-2552/abef8a 4:ooab009.doi:10.1093/jamiaopen/ooab009
+94. Baldassano SN, Brinkmann BH, Ung H, Blevins T, Conrad EC, Leyde 114. Proix T, Truccolo W, Leguia MG, Tcheng TK, King-Stephens D,
+K, et al. Crowdsourcing seizure detection: algorithm development and Rao VR, et al. Forecasting seizure risk in adults with focal epilepsy:
+validationonhumanimplanteddevicerecordings.Brain.(2017)140:1680– a development and validation study. Lancet Neurol. (2021) 20:127–
+91.doi:10.1093/brain/awx098 35.doi:10.1016/S1474-4422(20)30396-3
+95. KuhlmannL,KarolyP,FreestoneDR,BrinkmannBH,TemkoA,Barachant 115. Maturana MI, Meisel C, Dell K, Karoly PJ, D’Souza W, Grayden DB, et
+A, et al. Epilepsyecosystem.org: crowd-sourcing reproducible seizure al.Criticalslowingasabiomarkerforseizuresusceptibility.NatCommun.
+predictionwithlong-termhumanintracranialEEG.Brain.(2018)141:2619– (2020)11:2172.doi:10.1101/689893
+30.doi:10.1093/brain/awy210 116. Karoly PJ, Cook MJ, Maturana M, Nurse ES, Payne D, Brinkmann BH,
+96. Kiral-Kornek I, Roy S, Nurse E, Mashford B, Karoly P, Carroll et al. Forecasting cycles of seizure likelihood. Epilepsia. (2020) 61:776–
+T, et al. Epileptic seizure prediction using big data and 6.doi:10.1101/2019.12.19.19015453
+deep learning: toward a mobile system. EBioMedicine. (2018) 117. KarolyPJ,EdenD,NurseES,CookMJ,TaylorJ,DumanisS,etal.Cycles
+27:103–11.doi:10.1016/j.ebiom.2017.11.032 ofself-reportedseizurelikelihoodcorrespondtoyieldofdiagnosticepilepsy
+97. NejedlyP,KremenV,SladkyV,NasseriM,GuragainH,KlimesP,etal.Deep- monitoring.medRxiv.(2020).doi:10.1101/2020.10.05.20207407
+learningforseizureforecastingincanineswithepilepsy.JNeuralEng.(2019) 118. Goldenholz DM, Goldenholz SR, Romero J, Moss R, Sun H, Westover
+16:036031.doi:10.1088/1741-2552/ab172d B.Developmentandvalidationofforecastingnextreportedseizureusing
+98. EberleinM,HildebrandR,TetzlaffR,HoffmannN,KuhlmannL,Brinkmann e-diaries.AnnNeurol.(2020)88:588–95.doi:10.1002/ana.25812
+B, et al. Convolutional neural networks for epileptic seizure prediction. 119. ChiangS,GoldenholzDM,MossR,RaoVR,HaneefZ,TheodoreWH,etal.
+In:2018IEEEInternationalConferenceonBioinformaticsandBiomedicine Prospectivevalidationstudyofanepilepsyseizurerisksystemforoutpatient
+(BIBM).Madrid(2018).2577–82. evaluation.Epilepsia.(2020)61:29–38.doi:10.1111/epi.16397
+99. Korshunova I, Kindermans P-J, Degrave J, Verhoeven T, Brinkmann 120. Leguia MG, Rao VR, Kleen JK, Baud MO. Measuring synchrony
+BH, Dambre J. Towards improved design and evaluation of in bio-medical timeseries. Chaos Interdiscip J Nonlinear Sci. (2021)
+epileptic seizure predictors. IEEE Trans Biomed Eng. (2017) 31:013138.doi:10.1063/5.0026733
+65:502–10.doi:10.1109/TBME.2017.2700086 121. Beniczky S, Conradsen I, Wolf P. Detection of convulsive seizures using
+100. VanNessPC.Areseizuredetectiondevicesreadyforprimetime?Epilepsy surfaceelectromyography.Epilepsia.(2018)59:23–9.doi:10.1111/epi.14048
+Curr.(2019)19:36–7.doi:10.1177/1535759719827430 122. GuY,CleerenE,DanJ,ClaesK,VanPaesschenW,VanHuffelS,etal.
+101. Mormann F, Andrzejak RG, Elger CE, Lehnertz K. Seizure prediction: ComparisonbetweenscalpEEGandbehind-the-earEEGfordevelopmentof
+the long and winding road. Brain. (2007) 130:314–33. doi: 10.1093/ awearableseizuredetectionsystemforpatientswithfocalepilepsy.Sensors.
+brain/awl241 (2018)18:29.doi:10.3390/s18010029
+102. MeiselC,ElAtracheR,JacksonM,SchubachS,UfongeneC,Loddenkemper 123. Van de Vel A, Cuppens K, Bonroy B, Milosevic M, Jansen K, Van
+T.Machinelearningfromwristbandsensordataforwearable,noninvasive HuffelS,etal.Non-EEGseizuredetectionsystemsandpotentialSUDEP
+seizureforecasting.Epilepsia.(2020)61:2653–66.doi:10.1111/epi.16719 prevention: state of the art: review and update. Seizure. (2016) 41:141–
+103. Stacey WC. Seizure prediction is possible–now let’s make it practical. 53.doi:10.1016/j.seizure.2016.07.012
+EBioMedicine.(2018)27:3–4.doi:10.1016/j.ebiom.2018.01.006 124. Simblett SK, Biondi A, Bruno E, Ballard D, Stoneman A, Lees S, et
+104. Kuhlmann L, Lehnertz K, Richardson MP, Schelter B, Zaveri HP. al. Patients’ experience of wearing multimodal sensor devices intended
+Seizure prediction—ready for a new era. Nat Rev Neurol. (2018) 1:618– to detect epileptic seizures: a qualitative analysis. Epilepsy Behav. (2020)
+30.doi:10.1038/s41582-018-0055-2 102:106717.doi:10.1016/j.yebeh.2019.106717
+105. Schulze-BonhageA,SalesF,WagnerK,TeotonioR,CariusA,SchelleA,etal. 125. RakersF,WaltherM,SchiffnerR,RupprechtS,RascheM,KocklerM,et
+Viewsofpatientswithepilepsyonseizurepredictiondevices.EpilepsyBehav. al.Weatherasariskfactorforepilepticseizures:acase-crossoverstudy.
+(2010)18:388–96.doi:10.1016/j.yebeh.2010.05.008 Epilepsia.(2017)58:1287–95.doi:10.1111/epi.13776
+106. Gilbert F, Cook M, O’Brien T, Illes J. Embodiment and estrangement: 126. Payne DE, Dell KL, Karoly PJ, Kremen V, Gerla V, Kuhlmann L, et
+resultsfromafirst-in-human“intelligentBCI”trial.SciEngEthics.(2019) al. Identifying seizure risk factors: a comparison of sleep, weather, and
+25:83–96.doi:10.1007/s11948-017-0001-5 temporal features using a Bayesian forecast. Epilepsia. (2021) 62:371–
+107. GilbertF.O’brienT,CookM.Theeffectsofclosed-loopbrainimplantson 82.doi:10.1111/epi.16785
+autonomyanddeliberation:whataretherisksofbeingkeptintheloop? 127. Zijlmans M, Flanagan D, Gotman J. Heart rate changes
+CambQHealthcEthics.(2018)27:316–25.doi:10.1017/S0963180117000640 and ECG abnormalities during epileptic seizures: prevalence
+108. JachanM,DrentrupHFG,PosdziechF,BrandtA,AltenmüllerDM,Schulze- and definition of an objective clinical sign. Epilepsia. (2002)
+BonhageA,etal.Probabilisticforecastsofepilepticseizuresandevaluation 43:847–54.doi:10.1046/j.1528-1157.2002.37801.x
+bythebrierscore.In:VanderSlotenJ,VerdonckP,NyssenM,HaueisenJ, 128. BilleciL,MarinoD,InsanaL,VattiG,VaraniniM.Patient-specificseizure
+editors.4thEuropeanConferenceoftheInternationalFederationforMedical prediction based on heart rate variability and recurrence quantification
+andBiologicalEngineeringIFMBEProceedings.Berlin;Heidelberg:Springer. analysis. PLoS ONE. (2018) 13:e0204339. doi: 10.1371/journal.pone.
+(2009).p.1701–5.doi:10.1007/978-3-540-89208-3_405 0204339
+109. Schelter B, Feldwisch-Drentrup H, Ihle M, Schulze-Bonhage A, Timmer 129. Poh M-Z, Loddenkemper T, Reinsberger C, Swenson NC, Goyal S,
+J.Seizurepredictioninepilepsy:fromcircadianconceptsviaprobabilistic Sabtala MC, et al. Convulsive seizure detection using a wrist-worn
+forecastingtostatisticalevaluation.AnnuIntConfIEEEEngMedBiolSoc. electrodermalactivityandaccelerometrybiosensor.Epilepsia.(2012)53:93–
+(2011)2011:1624–7.doi:10.1109/IEMBS.2011.6090469 7.doi:10.1111/j.1528-1167.2012.03444.x
+FrontiersinNeurology|www.frontiersin.org 12 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+130. Poh M-Z, Loddenkemper T, Reinsberger C, Swenson NC, Neuroscience Inc., and have received research devices at no charge from
+Goyal S, Madsen JR, et al. Autonomic changes with seizures MedtronicInc.forastudy.
+correlate with postictal EEG suppression. Neurology. (2012)
+78:1868–76.doi:10.1212/WNL.0b013e318258f7f1 Theremainingauthorsdeclarethattheresearchwasconductedintheabsenceof
+131. VielufS,Amengual-GualM,ZhangB,ElAtracheR,UfongeneC,Jackson anycommercialorfinancialrelationshipsthatcouldbeconstruedasapotential
+MC,etal.Twenty-four-hourpatternsinelectrodermalactivityrecordings conflictofinterest.
+of patients with and without epileptic seizures. Epilepsia. (2021) 62:960–
+72.doi:10.1111/epi.16843 Copyright©2021 Brinkmann,Karoly,Nurse,Dumanis,Nasseri,Viana,Schulze-
+132. Karoly PJ, Stirling RE, Freestone DR, Nurse ES, Doyle B, Halliday A, Bonhage,Freestone,Worrell,RichardsonandCook.Thisisanopen-accessarticle
+et al. Multiday cycles of heart rate modulate seizure likelihood at daily, distributedunderthetermsoftheCreativeCommonsAttributionLicense(CCBY).
+weekly and monthly timescales: an observational cohort study. medRxiv. Theuse,distributionorreproductioninotherforumsispermitted,providedthe
+(2020).doi:10.1101/2020.11.24.20237990 original author(s) and the copyright owner(s) are credited and that the original
+publicationinthisjournaliscited,inaccordancewithacceptedacademicpractice.
+ConflictofInterest:PK,EN,DF,andMCareemployeesofSeerMedical,which Nouse,distributionorreproductionispermittedwhichdoesnotcomplywiththese
+provides diagnostic EEG services. BB and GW have licensed IP to Cadence terms.
+FrontiersinNeurology|www.frontiersin.org 13 July2021|Volume12|Article690404Brinkmannetal. SeizureMonitoringOutsidetheClinic
+APPENDIX: PANELS PANEL 2: KEY CONSIDERATIONS IN
+WEARABLE DEVICE DESIGN
+Panel 1: What Is Wearable?
+This review focuses on how wearable devices can be used to
+• Comfort:devicesshouldbeabletobewornwithoutdiscomfort
+aidchronic,lifetimeepilepsymanagement.Devicesthatmaybe
+for extended periods of time, including during sleep and
+comfortable for a few hours, or even a day may not be classed
+activitiessuchasexerciseandbathing.
+as wearable for life. Furthermore, the term “wearable” implies
+• Battery life: wearables should be able to record at least 24h
+a degree of accessibility that assumes no specialized medical
+ofactivitywithoutneedingtorechargethedevice.Recharging
+knowledgeisrequiredforuse.
+timeshouldbelimitedtoafewhours.Connectorsshouldbe
+standardtypessuchasmicro-USBorUSB-C.
+Smartwatches • Accessibility: design of devices and associated phone apps
+shouldaccountfordifferencesinagegroups,genders,vision
+Highlypopularlifestyletechdevice.
+Signals: photoplethysmography, O2 saturation, skin capabilities,andbodysizes.Particularcareshouldbegivento
+testingPPGsensorsonavarietyofskinpigments.
+temperature, skin conductance, accelerometry, location (GPS),
+• Appearance: devices should be inconspicuous, or otherwise
+EKG(indevelopment).
+notimmediatelyidentifiableasmedicaldevices.
+• Security: data security and individual anonymity are of high
+Smart Rings concerntousers,caregivers,andclinicians.Differentregions
+Similartosmartwatchesbutwithdifferentmovementartifacts. and jurisdictions will have unique requirements for security
+Signals: photoplethysmography, O2 saturation, compliance,andlawsregardingdataaccessandownership.
+skintemperature. • Internet connectivity: Broadband or 4G internet is required
+to transmit data efficiently. Devices can only store a limited
+amount of data internally before requiring upload to an
+Arm Bands associateddevice(e.g.,viaBluetooth)orthecloud.
+Sensorsmountedonabandaroundtheupperarm.Somedevices • Integration: interfacing with other devices is essential.
+maybeplacedwithadhesivestickers. Connection with resources such as diaries, smartphone
+Signals: Heart rate, muscle activity, oxygen saturation, skin sensors,andlocationisbecomingubiquitous.
+temperature,skinconductance,accelerometry.
+PANEL 3: CASE STUDY: A BUMP IN THE
+DARK
+Stick-On Sensor Patches
+Subtle patches stuck anywhere on the body that are either
+A 30-year-old man presented with a generalized tonic–clonic
+re-useable or easily replaced at regular intervals, such as
+seizure after over 12 months of seizure freedom on 500mg
+EEG electrodes placed behind the ear, or blood-glucose
+SodiumValproateoncedaily.Hecomplainedof6monthhistory
+armpatches.
+ofoccasionallyfeelingpoorlyrested.AnMRIappearednormal,
+Signals: EEG/EKG/EMG, accelerometry, glucose, cortisol
+andhewasotherwisegenerallyhealthy.Aftertwo7-dayvideo-
+(indevelopment).
+EEGstudies(firstnon-diagnostic),aGTCSwascapturedlasting
+2minoccurring during sleep,ofwhichhehadno memory. An
+Smart Phones additional 500mg Sodium Valproate was given in the evening
+andbeganwearingawrist-wornaccelerometrydevicetodetect
+Smart phones are not strictly wearable but most wearable
+nocturnal seizures in the home. Three events were detected
+devices integrate and present information to users
+within a 2-month period, none of which could be recalled.
+via smartphone. Furthermore, more and more people
+Carbamazepine was commenced, and he has since been free of
+now carry their smart phone at all times, in a pocket
+seizuresforover6months.
+orhandbag.
+This case presents a common problem—a seizure diary
+Signals:Location,accelerometry,microphone,usagepatterns,
+that provides little information to guide treatment, and non-
+manyaspectsofexternalenvironment.
+diagnostic, time-consuming video-EEG studies. Monitoring
+within the home can provide longitudinal seizure counts
+Excluded Devices with reasonable sensitivity for GTCS events (from both
+This review does not consider most scalp EEG electrode caps wakefulness and sleep) and provide near real-time alerts to
+or headbands to be wearable. Similarly, implantable devices caregivers. Without a wearable device, multiple video-EEG
+may be eminently suitable for long-term use, but they are not studies may be required to measure the effect of each of the
+considered“wearable.” additionalmedications.
+FrontiersinNeurology|www.frontiersin.org 14 July2021|Volume12|Article690404

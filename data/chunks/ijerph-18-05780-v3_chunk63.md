@@ -1,0 +1,9 @@
+whichisnamedWave2Vec. Inthepreprocessingstage,thesignalswerefirstframed,and
+inthedeepnetworksegment,theSAEwithSoftmaxwasappliedandachieved93.92%
+accuracy. FollowingtheexperimentsofYuanetal.,in[119],differentstackedsparsede-Int.J.Environ.Res.PublicHealth2021,18,5780 17of33
+noisingAE(SSpDAE)architectureshavebeentestedandcompared. Inthiswork,feature
+extractionisaccomplishedbytheSSpDAEnetworkandfinallyclassificationbySoftmax.
+Theyobtainedanaccuracyof93.64%. Table5providesthesummaryofrelatedworksdone
+using AEs. In addition, Figure 13 shows the comparison of the accuracies obtained by
+differentresearchers.
+Table5.SummaryofrelatedworksdoneusingAEs.

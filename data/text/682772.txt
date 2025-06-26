@@ -1,0 +1,741 @@
+...btondluohsyehT.deweiverreeptoneratahtstroperyranimilerperavixRhceTnodetsopstnirP-e—1v.52675932.vixrhcet/72263.01/gro.iod//:sptth—0.4YB-CC—3202guA61nodetsoP
+The Open Seizure Database Facilitating Research Into Non-EEG
+Seizure Detection
+Jamie Pordoy 1, Graham Jones 2, Nasser Matoorian 2, Nassim Dadashiserej 2, and
+Massoud Zolgharni 2
+1university of West London
+2Affiliation not available
+August 16, 2023
+Abstract
+ThisresearchintroducestheOpenSeizureDatabaseandToolkitasanovel,publiclyaccessibleresourcedesignedtoadvancenon-
+electroencephalogramseizuredetectionresearch. Thispaperhighlightsthescarcityofresourcesinthenon-electroencephalogram
+domain and establishes the Open Seizure Database as the first openly accessible database containing multimodal sensor data
+from49participantsinreal-world,in-homeenvironments. Thedatabaseiscomprisedof494events,encompassing146epileptic
+seizures,collectedoveradurationof453days,presentingthemostextensivepubliclyavailablenon-electroencephalogramseizure
+datatodate. Additionally,thedatabasehas348labelledfalsealarms,including302commonhumanmovementsandactivities.
+The Open Seizure Toolkit is designed to facilitate machine and deep learning practices by streamlining data from the Open
+SeizureDatabase. Utilisingtheseresources,researcherscanrapidlydevelopandtrainseizuredetectionmodelsbeforedeploying
+them to the Open Seizure Detector Android application. Access to these resources is expected to foster collaborative efforts,
+ultimately contributing to the establishment of a non-electroencephalogram gold standard and advancing the field of seizure
+detection.
+PleaseviewtheOSDBathttps://ieee-dataport.org/documents/open-seizure-database-v100
+1GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017 1
+The Open Seizure Database
+Facilitating Research Into Non-EEG Seizure Detection
+J. Pordoy, G. Jones, N. Matoorian, N. Dadashiserej and M. Zolgharni
+Abstract—ThisresearchintroducestheOpenSeizureDatabase findingscanbefoundinbroaderliterature,closerexaminationreveals
+and Toolkit as a novel, publicly accessible resource designed that predisposed factors for SUDEP are primarily triggered when
+toadvancenon-electroencephalogramseizuredetectionresearch.
+the individual with epilepsy is at home. These findings indicate
+This paper highlights the scarcity of resources in the non-
+that such factors significantly increase the likelihood of SUDEP,
+electroencephalogram domain and establishes the Open Seizure
+Database as the first openly accessible database containing with studies concluding that up to 69% of cases could have been
+multimodal sensor data from 49 participants in real-world, in- prevented if patients were not left unattended at night. Despite
+home environments. The database is comprised of 494 events, an increase in clinical studies, little progress has been made in
+encompassing 146 epileptic seizures, collected over a duration
+characterising SUDEP risk factors and the underlying mechanisms
+of 453 days, presenting the most extensive publicly available
+non-electroencephalogram seizure data to date. Additionally, the leadingtoprematuredeathinepilepsy[7][8].Thishaslednumerous
+database has 348 labelled false alarms, including 302 common studies to postulate that seizure detection could serve as a means to
+human movements and activities. The Open Seizure Toolkit is deterterminalseizurespre-ictal,andreducetheincidenceofSUDEP
+designed to facilitate machine and deep learning practices by
+cases through early intervention and prevention.
+streamliningdatafromtheOpenSeizureDatabase.Utilisingthese
+resources,researcherscanrapidlydevelopandtrainseizuredetec-
+tion models before deploying them to the Open Seizure Detector
+II. RELATED WORK
+Android Application. Access to these resources is expected to
+fostercollaborativeefforts,ultimatelycontributingtotheestablish- The electroencephalogram (EEG) represents the diagnostic gold
+mentofanon-electroencephalogramgoldstandardandadvancing
+standard modality for capturing seizures within hospital settings,
+thefieldofseizuredetection.
+employing continuous electrical brain wave monitoring over an
+Index Terms—Seizure Detection, Epilepsy, Multimodal, extendedperiod.However,theEEG’sutilityasanassistivediagnostic
+OpenSeizureDetector,DeepLearning,Accelerometer,PPG tool is unsuitable outside of a hospital or epilepsy monitoring unit
+(EMU) due to the need for a PWE to remain in a stationary
+position with multiple scalp-based electrodes attached, and a full-
+time neurodiagnostic technician to interpret real-time neurological
+I. INTRODUCTION
+activity. To overcome the limitations associated with EEG, a new
+Epilepsyisachronicneurologicaldisorderthataffectsanestimated sub-field of research has emerged known as non-EEG detection.
+65millionpeopleworldwide,characterisedbyrecurringunprovoked This approach utilises non-invasive methods to detect seizures in
+seizures due to an abnormal, hypersynchronous discharge between real-world environments. These methods include wearable devices
+communicating neurons [1]. Epidemiological studies suggest that thatmeasurephysiologicalsignalssuchasheartrate,movementand
+approximately30%ofpatientswithepilepsy(PWE)arerefractoryto electrodermal activity.
+commontherapeutictreatments,whichincreasestheriskofasudden The accelerometer (ACM) has emerged as the most promising
+unexpecteddeathinepilepsy(SUDEP).SUDEPistheleadingcause non-EEG sensing modality, having been extensively explored in
+of premature death observed in patients diagnosed with refractory non-EEG research for capturing changes in motion and velocity
+epilepsy and is defined as a death in epilepsy that is not attributable displayed by PWE. Notably, these investigations have showcased
+to trauma, drowning or status epilepticus [2]. the ACMs potential for detecting rhythmic movements, particularly
+Although the underlying etiology behind SUDEP remains un- those associated with a generalised tonic-clonic (GTC) seizures. By
+known,studiesshowthatin67%ofcases,therewereindicationsofa leveraging ACM data, sophisticated algorithms have been developed
+generalisedseizureprecedingtheterminalevent[3][4].Additionally, to identify the convulsive movements characteristic of a seizure’s
+there is evidence to indicate that seizure-induced perturbations in clonic phase. Seminal studies conducted by Conradsen et al. and
+respiratory,cardiac,andelectrocerebralfunctions,alongwithseveral Lockmanetal,serveasnotableexamples,demonstratingthepractical
+potential predisposing risk factors, could contribute to SUDEP [5]. application of ACM-based detection with remarkable accuracies of
+Lamberts et al found that 58% of SUDEP cases were associated 90% and 91% respectively [9] [10].
+with sleep, and that 86% of instances occurred when the PWE was However, it is important to note that the ACM data utilised in
+aloneandunsupervised[6].Sveinssonetal’sanalysisof321SUDEP thesestudiesdidnotoriginatefrompatientsdiagnosedwithepilepsy;
+casesyieldedsimilarfindings,withmostinstancesoccurringatnight rather, it was simulated by healthy participants in controlled short-
+in the patient’s home whilst living alone (71%) [6]. While similar termstudies.Thisprevailingtrendiswidespreadinthefieldofnon-
+EEGseizuredetection,asasignificantportionofstudieshaverelied
+J.Pordoy,DepartmentofComputing,UniversityofWestLondon,St onsmall-scale,simulated,orsyntheticdatasets[16].Twopredominate
+Mary’sRd,LondonW55RF,(e-mail:jamie.pordoy@uwl.ac.uk).
+factors contribute to this observation. Firstly, the field of research
+G. Jones, Open Seizure Detector, Hartlepool, UK, TS26 (e-
+mail:graham@openseizuredetector.org.uk). in non-EEG detection is relatively new, and as such, there are no
+N. Matoorian, Dept of Computing, University of West London, St established, publicly available datasets, which are more common in
+Mary’sRd,LondonW55RF,(e-mail:Nasser.matoorian@uwl.ac.uk). other domains of healthcare research. Secondly, epileptic seizures
+N.Dadashiserej,DeptofComputing,UniversityofWestLondon,St
+are infrequent, rare events, which makes it challenging to record
+Mary’sRd,LondonW55RF(e-mail:nassim.dadashiserej@uwl.ac.uk).
+M. Zolgharni, Dept of Computing, University of West London, St an extensive dataset of generalised seizure recordings from multiple
+Mary’sRd,LondonW55RF(e-mail:massoud.Zolgharni@uwl.ac.uk). PWE.2 GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017
+TABLEI: Summary of the publicly available datasets used for non- electroencephalogram seizure detection where the # symbol represents
+the “number of”, Ref = Reference, Prt = Participants, Sz = Seizure, Ps = Per Sample, SR = Sample Rate and p/e = per event
+Ref Dataset Sensors Type #Prt #Sz Dur SR
+[11] MyNeuroHealth Smartphonetri-axialaccelerometer Real 23 3 30sp/e 15Hz
+[12] EpilepsyConvulsionRecognition Tri-axialaccelerometer Simulated 6 10 30sp/e 16Hz
+[13] Patient-SpecificDataset Electrocardiogram&electroencephalogram Real 15 38 - 512Hz
+[14] Post-IctalHeartRateOscillations Single-leadECG Simulated 5 11 15-110sp/e 200Hz
+[15] Gestures:MICCAI2021 VideoCapture&ImageCapture Real 68 183 approx0.5sp/e -
+Total 5 7 2 210
+Table I provides a comprehensive overview of the non-EEG Large-scale data repositories and collaborative data sharing have
+datasets currently accessible in the public domain, intended to drive become integral to clinical progress. In epilepsy research, the Euro-
+progress in the field. However, upon closer examination, it becomes peanEpilepsyDatabase(EED)isthelargestandmostcomprehensive
+evident that a significant portion of the data is either simulated or database for human surface and intracranial EEG recordings. It
+recorded using sub-optimal sensing modalities, such as smartphones contains clinically annotated pre-ictal, ictal, and post-ictal EEG data
+with embedded ACMs. Additionally, the existing data lacks the from 278 patients suffering from pharmaco-resistant partial epilepsy
+necessarydepthtocapturethecomplexitiesinherentindifferenttypes [25][26].Throughcollaborativesharingandcentraliseddataaccess,
+of epilepsy. To address this, non-EEG data should be recorded from theEEDhasbeencitedinover138publications,facilitatingresearch
+real-world, in-home environments, as this is where most seizures progressinthefieldofEEGdetection[25].However,theEEDstores
+and SUDEP cases occur. By utilising real-world data, non-EEG datastrictlyforneurologicalresearchanddoesnotstoreanynon-EEG
+detectionsystemscanbemodelledtoaccuratelyreflectthereal-world resources.
+complexities encountered by PWE in their day to day lives. Apubliclyavailablenon-EEGdatabasededicatedtostoringsensor
+While publicly available non-EEG data remains limited, com- datafrompatientswithepilepsyinreal-worldconditionsholdsgreat
+mercial organisations and international consortiums have conducted potential for transforming the field of seizure detection research.
+studies using several non-EEG detection techniques. Empatica’s This approach would enable benchmark testing and comparative
+Embrace has been used in several studies to detect convulsive analysisunderreproducibleconditions,facilitatingtheevaluationand
+seizures, demonstrating an average sensitivity of 92-100% and a advancement of novel seizure detection techniques. Moreover, such
+false alarm rate (FAR) between 0.2-1 per day [17] [18] [19] [20]. a database could advance epilepsy research through data sharing
+Another commercially available device, Seer Medical’s smartwatch andcollaboration[27],enablingresearcherstoinvestigateinnovative
+has yielded a mean area under curve (AUC), a sensitivity, and a concepts such as patient-specific and seizure-specific detection.
+FAR per day of 0.98, 0.93, and 2.3, respectively for 19 motor This paper is organised into the following sections: Section III
+seizures from 10 in-hospital patients [21]. However, it should be details the development of the Open Seizure Database. Section
+noted that the data used in these studies is not accessible to the IV outlines the Open Seizure Toolkit, highlighting its capacity to
+wider academic community, limiting the ability to replicate these rapidly develop algorithms compatible with Open Seizure Detector.
+findings. Additionally, consideration should be given to the fact that Section V presents the experimental results achieved using the the
+the data used in these commercial studies predominantly originates Open Seizure Database and Toolkit. In Section VI, a comprehensive
+from clinical trials conducted in EMUs, where the environmental discussionofthispaper’sfindingsandfinally,SectionVIIconcludes
+dynamics are closely regulated [22] . by highlighting the studies impact on the field of non-EEG seizure
+detection.
+The progress in non-EEG research is currently hindered by the
+lack of publicly available data, impeding scientific advancements
+III. METHODOLOGY
+and leading to slower progress compared to other fields utilising
+MachineLearning/DeepLearningtechniquesinclinicalpractice[23]. This study introduces the Open Seizure Database (OSDB) and
+Additionally, non-EEG literature often demonstrates high accuracy Open Seizure Toolkit (OSTK) as novel contributions to the field of
+scores but is accompanied by a significant occurrence of false non-EEGseizuredetection[28].Developedincollaborationbetween
+positives. The presence of false alarms poses challenges in real- Open Seizure Detector (OSD) [29] and the University of West Lon-
+world seizure detection applications, as it can result in unnecessary don [30], the OSDB serves as the first publicly accessible database
+alerts,incorrectlyindicatingthepresenceofaseizure[24].Reducing containingnon-EEGepilepticseizurerecordingsfromreal-world,in-
+false alarms is crucial to enhancing the reliability and effectiveness home environments. OSD, established in 2013, is the largest open-
+of seizure detection models. The use of multimodal sensors shows sourceseizuredetectionsoftwarepackage,distributedundertheopen-
+promise in achieving this goal. By combining data from different source, GNU General Public License (GPL), boasting over 5000
+sensors, a more accurate and robust dataset can be constructed for downloads [31], and an estimated 300 daily users [29].
+thedevelopmentofintelligentdetectionmodels.Severalstudieshave A comprehensive beta trial was conducted, utilising non-invasive
+suggested that multimodal sensing could decrease the false positive wearable sensing devices to capture non-EEG data from a diverse
+rateobservedinliteratureandimprovetheaccuracyandperformance cohort of participants diagnosed with various forms of epilepsy.
+of existing seizure detection models. To achieve these goals there is This beta trial, closely supervised by OSD, spanned from January
+apressingneedforalarge-scalein-homestudytorecordmultimodal to June 2022. In adherence to ethical standards, all participants
+sensordata.Byrecordingindividualswithepilepsyintheirreal-world provided informed consent [33], and voluntarily enrolled in the beta
+home environments using multiple sensors, a comprehensive dataset trial through the Google Play Services Public Beta Program [32].
+could be created, offering sufficient depth and breadth to tackle the Furthermore, this research study obtained approval from the ethics
+current challenges in non-EEG seizure detection research. committee at the University of West London.JPORDOYetal.:PREPARATIONOFBRIEFPAPERSFORIEEETRANSACTIONSANDJOURNALS(FEBRUARY2017) 3
+Fig. 1: An illustration of the Open Seizure Detector architecture used to record participant data. The architecture consists of four main
+components, Open Seizure Detector Android Application, Open Seizure Web Server, Open Seizure Database and the Open Seizure Toolkit
+To uphold strict confidentiality during the data collection process,
+stringent measures were implemented, encompassing the removal
+of personal identifiers to ensure anonymity. Subsequent to the beta
+trial period, the opportunity to contribute data to the database was
+extendedtoallOSDuserswhoconsentedtothedatasafetystatement.
+Notably, data collection remains ongoing to the present day.
+For the beta trial, individuals with partial-onset epilepsy, partic-
+ularly those susceptible to absence or complex focal seizures, were
+intentionallyexcludedduringtheinitialphaseofdatacollection.This
+decision was predicated on the absence of tonic, atonic, myoclonic,
+or clonic movements typically associated with generalised epilepsy.
+Consequently,amongtheparticipantswhosigneduptothebetatrial,
+49individualsmettherequiredcriteriaconcerningbothtechnological
+aspects, such as device and sensor compatibility, as well as physio-
+logical requirements pertaining to the type of epilepsy.
+ParticipantswereinstructedtoinstalltheOSDAndroidapplication Fig. 2: Summary of the different events recorded. Epileptic-related
+[31]andcontinuallywearawrist-wornsensordevice(Fig.3),except events are highlighted in orange, while common human activities
+when charging was required. Several Garmin devices (TABLE III) responsible for triggering false alarms are indicated in blue.
+wereemployedfordatacollection,inwhichsensordatawastransmit-
+tedtotheparticipantsAndroiddeviceusingaBluetoothconnection.
+Sensor data is then stored temporally on the end users device where B. SensingModalities
+itisanalysedtodetectseizure-likemovementasdescribedinSection Recording epileptic seizures from a large group of participants
+III-F.Whenseizure-likemovementisdetected,theassociateddatais usingmultiplesensorsisasignificantchallenge.Toovercomethis,we
+stored long term using the OSD web server (Fig. 1). employedGarminwearabledevices,capableofmeasuringaccelerom-
+etry, photoplethysmography (PPG), and pulse-oximetry (Sp02) sig-
+nals. The use of Garmin devices proved to be a cost-effective and
+A. Dataset
+easily accessible solution to record sensor data (Fig. 4) from a
+During the 453 day data collection period, a total of 494 events large cohort of participants with epilepsy in their real-world, home
+were recorded from 49 participants. 146 events were recorded as environments.Thissectiondetailsthesensorsusedduringthestudy.
+epileptic seizures, while the remaining 348 were classified as false Garmin wrist-worn devices are equipped with tri-axis ACM and
+alarms. Among the false alarms, 302 were associated with human/- have a sensing range of ±2g up to ±16g, where ’g’ quantifies
+physical activities and were appropriately labelled as such (Fig. 2). the gravitational forces along different device axes [34]. This range
+The remaining 46 events were categorised as false alarms where signifiesthemaximumaccelerationvalueaccuratelymeasurablebya
+the activity is unknown. Epileptic seizures were recorded from 18 Garmindevice.The±2grangeaccommodatesthebroadspectrumof
+participants, amounting to a cumulative duration of 5 hours and humanmovementsandactivities,whilethe±16grangecanfacilitate
+51 minutes (TABLE II). A diverse range of epileptic seizures were the detection of high intensity movements.
+recorded with 50 GTC seizures, 27 aura/focal seizures, 22 atonic For heart rate monitoring, Garmin devices are equipped with an
+seizures/falls and 47 seizures labelled as ”Other Seizure”. It is embedded optical PPG sensor, located on the back, which utilises a
+importanttonotethat,forthepurposesofthisstudy,”Otherseizure” green light-emitting diode to emit light onto the skin, thereby mea-
+are defined as seizures that were labelled only by type (e.g. seizure suring volumetric variations in blood circulation [35]. The reflected
+orfalsealarm).Participantsdidnotprovidefurthercategorisationof lightfromtheredbloodcellsintheskinfacilitatesthemeasurement
+the events specific sub-types (e.g. atonic, aura, tonic-clonic). of the participant’s heart rate in beats per minute (bpm).4 GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017
+Fig. 3: The architecture of Open Seizure Detector, detailing the components utilised by each participant. (a) and (e) depict a participant
+wearing a Garmin device on their dominant hand from front and side angles. (b) illustrates the Bluetooth inter-connectivity between the
+Garminwearabledeviceandtheparticipant’sAndroiddevice.(c)isanexampleofaGarmin(GarminVenuSQ)deviceusedduringthetrial
+and (d) illustrates the Open Seizure Detector application Interface.
+TABLEII:Summaryoftheseizureeventsthatwererecordedduring
+the beta trial where data is distributed by participant Id, seizure
+type and duration. Epileptic seizures were recorded from 18/49
+participantsinwhichTC=Tonic-clonicandOthSz=OtherSeizure
+ParticipantId #TC #Aura #Atonic/Fall #OthSz RecordedDuration
+P45 25 22 0 10 02:21:35
+P39 11 0 0 33 01:48:20
+P53 0 0 16 0 00:41:45
+P83 5 0 0 1 00:16:05
+P8 3 3 0 0 00:05:00
+P421 2 0 0 0 00:04:40
+P236 0 2 0 0 00:04:20
+P55 0 0 0 2 00:04:15
+P470 0 0 2 0 00:02:45
+P62 0 0 0 1 00:02:45
+P389 1 0 0 0 00:02:30
+P157 1 0 0 0 00:02:30
+P465 1 0 0 0 00:02:30
+P483 1 0 0 0 00:02:15
+P80 0 0 1 0 00:02:35
+P59 0 0 1 0 00:02:25
+P132 0 0 1 0 00:02:20
+P138 0 0 1 0 00:02:35
+18 50 27 22 47 05:51:00
+Newer Garmin devices are equipped with oxygen saturation sen-
+Fig.4: Graphical plots detailing sensor data recorded for events in sors (SpO2) to non-invasively measure blood oxygen levels. These
+the Open Seizure Database. In plot (a), acceleration is measured as devices utilise two wavelengths of light, red and infrared, with
+vector magnitude. Plot (b) visualises the acceleration data for the red light being absorbed by oxygenated blood and infrared light
+eventalongthex,y,z axis.Plot(c)visualisesheartrateandoxygen by deoxygenated blood. By analysing the absorption ratio of these
+saturationlevelsobtainedfromthephotoplethysmographysensorand wavelengths, oxygen saturation levels can be calculated [36].
+oxygen saturation sensors. Plot (d) depicts the R roi and sensitivity
+threshold measurements that represents the sequence in which the
+C. DataStorage
+event was detected by Open Seizure Detector algorithm.
+To address the long-term data storage requirements, a mobile-
+client, client-server architecture was implemented. Short-term dataJPORDOYetal.:PREPARATIONOFBRIEFPAPERSFORIEEETRANSACTIONSANDJOURNALS(FEBRUARY2017) 5
+storage utilised an SQLite database on each participants Android OSD performed a second stage of annotation, involving expert
+device, leveraging local storage capabilities. Mobile Sync ensured labellingthestartandendofeachseizuresconvulsiveorseizure-like
+efficient and reliable data synchronisation between the mobile client movement.Thedurationofeachseizureisstoredasanarraylabelled
+and the OSD web server. ”seizureTimes”, denoting the start and end time of the seizure-like
+SensordatawastransmittedusingBluetoothin5secondtimesteps movement. By leveraging self-annotation during the trial and expert
+(intervals) to the on-device database, striking a balance between labellingafterwards,theresultingOSDBpresentsthemostaccurate,
+capturing sufficient information for seizure detection and minimis- publicly available set of fully annotated non-EEG recordings.
+ing energy consumption. Furthermore, the periodic transmission of
+locally stored data to the OSD Web Server was designed to prevent
+{
+potential bottlenecks during the upload. "eventId": 47000,
+The OSDB was designed to be flexible and maintain backward "type": "Seizure",
+"subType": "Other",
+compatibility. Initially, it stored one-dimensional ACM data in the
+"desc": "partial. arm flapping",
+form of vector magnitude and heart rate data. However, during the
+"userId": 39,
+beta trial, adjustments were made to accommodate the storage of "dataSourceName": "Garmin",
+SpO2 and three-dimensional ACM data. By utilising an SQLite "alarmFreqMax": 8,
+database on the Android platform and integrating additional fea- "alarmFreqMin": 3,
+"datapoints": [{
+tures and sensors, the OSD project achieved scalability and ensured
+"alarmPhrase": "OK",
+compatibility. Design choices were driven by the goal of optimising "alarmState": 0,
+data storage, capturing relevant sensor data, and improving overall "dataTime": "2023-05-15T06:45:56Z",
+performance. "hr": 87,
+"o2Sat": 0,
+"rawData": [x1, x2, x2, ... ,x125],
+D. DatabaseSchema "rawData3D": [x1, y1, z1, ... ,z375],
+"roiPower": 4,
+The database schema for the OSDB was carefully anonymized "roiRatio": 40,
+and preprocessed, and the data was converted into a series of JSON "simpleSpec": [s1, s2, ... , s10],
+scripts. The utilisation of JSON provided a structured representation "specPower": 1
+},
+of the data, ensuring accessibility across different platforms and
+{...}, {...}],
+programming languages. Version 1 of the OSDB is available upon "seizureTimes":[-20, 60],
+request through the OSDB GitHub repository. It can be accessed "has3dData": true,
+either as a single JSON script containing data for all labelled events "hasHrData": true,
+"hasO2SatData": false,
+or as a subset focusing on specific event types such as tonic-clonic
+"hrThreshMax": 150,
+or false alarms. The datasets are organised hierarchically using a
+"hrThreshMin": 40,
+one-to-many relationship, where each event has multiple sub-events. "hrAlarmActive": false,
+Each sub-event corresponds to a 5-second timestep, and sensor data "phoneAppVersion": "4.1.2",
+for that timestep is stored as a JSON array called ”Datapoints.” The "sampleFreq": 25,
+"watchFwVersion": "2.4.9",
+complete JSON schema of the OSDB, including accurate attribute
+"watchPartNo": "006-B2337-00",
+names, arrays, and data types, is provided in Fig. 5 and TABLE IV. "watchSdName": "GarminSD"
+}
+E. AnnotatingEventLabels
+Fig.5: Open Seizure Database JSON schema. Events are stored by
+Asthebetatrialhadadiversecohortofparticipantsspreadacross eventID and sensor data is stored using the ”datapoints” array
+theglobe,aself-annotationsystemwasdevelopedwhereparticipants
+were able to label an event as it occurred using the OSD Android
+application.Whenaneventwasdetected,participantswereinstructed
+TABLEIV:Summaryofdatapointsarray.Datapointsarerecordedfor
+tolabeltheeventbytype(e.g.,Seizure,falsealarm)andthensub-type
+each timestep and can be accessed using the following attributes
+(e.g.,aura,tonic-clonic).Participantshadtheflexibilitytoaddcustom
+classlabelsformoreaccurateannotationorchoosefromapredefined
+Id Attribute #DP Description
+set of labels commonly associated with false alarms. Additionally,
+participantshadtheoptiontomanuallytriggeranalarmandlabelan 1 RawData 125 1DVectormagnitudesignalinmilli-g
+event in cases where the algorithm failed to detect a seizure. 2 3dRawData375 3D(xyz)accelerometersignalinmilli-g
+3 Hr 1 Heartratesignalinbpm
+4 O2Sat 1 OxygenSaturation(Sp02%)
+TABLE III: Summary of the different Garmin devices and sensor
+5 SimpleSpec 10 Spectralpowerin1secondwidefrequencybins(0-10Hz)
+configurations employed for this study. Grouped by Device
+6 RoiRatio 1 RegionofInterestRatioforOSDalgorithm
+7 RoiPower 1 RegionofInterestpower
+Device Code Sensors Participants
+8 SpecPower 1 PowerofFrequencySpectrum
+Venu 006-B3226-00 ACM,PPG,Sp02 16
+VenuSQ 010-02427-10 ACM,PPG,Sp02 10
+Venu2 010-02430-11 ACM,PPG,Sp02 13
+Forerunner 010-02120-11 ACM,PPG 5
+Vivoactive4 006-B3225-00 ACM,PPG,Sp02 6
+VivoactiveHR 006-B2337-00 ACM,PPG 76 GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017
+F. OpenSeizureDetectorAlgorithm
+For seizure detection during the beta trial, participants were in-
+Algorithm 1 Pseudo code for the OSD algorithm where At =
+structed to use the OSD Android application which runs a deter-
+acceleration (vector magnitude) at timestep t, Ps = spectrum power,
+ministic detection algorithm. Sensor data was transmitted from the
+P
+roi
+=RegionofInterestpower,R
+roi
+=ROIRatio,Th=threshold.
+participants’ Garmin device to the OSD application in five second
+DoAnalysistakesAt asaninputparameteronarepeatingloopevery
+timesteps at a sample frequency of 25Hz, resulting in 125 measure-
+5 seconds. The acceleration values are passed to a FFT to convert
+ments per timestep. To optimise the battery capacity of participants
+valuesintothefrequencydomain.Foreachtimestepttheaverageof
+Android devices, acceleration was in measured as a unit of vector
+Ps andP roi arecalculated tofind the ratioof R roi.If R roi ≥Th,
+magnitude instead of measuring three separate spatial dimensions
+’seizure-like’ movement is detected where SD = Seizure Detected
+(x,y,z), thus reducing the computational requirements by a factor
+and AS = Alarm State. Variables SD and AS are initialised at 0
+of 2.Thisdecisionwasmadetoincreasethedatacollectionduration
+wit 3 hout the need for frequent battery replacement or recharging. At = [x 1 ,x 2 ,x 3 ,...,x 125 ]
+Th= Threshold
+Vector magnitude for the current timestep can be calculated as
+function: DoAnalysis(At)
+(cid:113)
+At = (a2
+x−t
++a2
+y−t
++a2
+z−t
+) (1) 1. FFT ←FastFourierTransform(At)
+2. Ps ←CalculateAveragePower(0−12.5Hz)
+Whereax−t,ax−t andax−t representthemovingaccelerationof
+3. P roi ←CalculateAveragePower(3−8Hz)
+e th a e ch ve o c r t t o h r og m o a n g a n l i a t x u i d s e fo si r g t n i a m l e f s r t o e m p( t t h ) e .T ti h m e e a d lg o o m ri a th in m to th t e h n e tr f a re n q s u fo e r n m cy s 4. R roi ← P P r s oi
+Input: DoAnalysis(At)
+domainbyutilisingaFastFourierTransform(FFT)tocomputethe
+Output: Alarm ’Seizure Detected’
+power in each frequency range. if At = True then
+As stated by the Nyquist Theorem, the maximum frequency that for each 5-second timestep where SD = True do
+can faithfully represent the original signal is half of the sample if SD = True & AS = 0 then
+frequency [37]. Consequently, the OSD algorithm running on a update AS =1
+Garmin device is capable of precisely reconstructing signals with DoAnalysis(At)
+frequencies up to 12.5Hz without experiencing aliasing. If the
+algorithm detects a participant moving at a frequency exceeding else if SD = True & AS = 1 then
+update AS =2
+12.5Hz,theresultingobservationwillmanifestasanaliasfeaturein
+the spectrum. However previous studies have reported that common
+DoAnalysis(At)
+human movement predominantly occur within a frequency range
+else if SD = True & AS = 2 then
+between 0-12.5Hz [38]. Given this observation, we posit that any update AS =3
+high-frequency movement beyond the 12.5Hz threshold will exert Alert ’Seizure Detected’
+minimal influence on algorithmic performance, as it lies outside the DoAnalysis(At)
+typicalrangeofhumanmovement.Furthermore,studieshaveshown
+that during the clonic phase the body’s major muscle groups exhibit else if SD = True & AS = 3 then
+repetitiveconvulsionsatafrequencyrangebetween3-8Hz,whichis AS ==AS
+inside the algorithms detectable frequency range [39] [40]. DoAnalysis(At)
+Thefrequencyresolutionofthespectrumisthendeterminedbydi-
+end
+vidingthesamplefrequency(25Hz)bythenumberofmeasurements
+for each 5-second timestep where SD = False do
+(125) per timestep, resulting in a resolution of 0.2Hz. This resolu-
+if SD = False & AS = 0 then
+tion allows for effective detection and differentiation of frequency
+AS ==AS
+components with a precision of 0.2Hz. These calculations indicate
+DoAnalysis(At)
+thatthealgorithmcanaccuratelyidentifyfrequencycomponentsthat
+are spaced at intervals of 0.2Hz, however any frequency differences else if SD = False & AS = 1 then
+smaller than this value may not be distinguishable [41]. update AS =0
+To detect a ’seizure-like’ movement, the algorithm calculates the DoAnalysis(At)
+average power for the whole spectrum (Ps) and then the average
+else if SD = False & AS = 2 then
+powerofthe3-8HzRegionofInterest(P
+roi
+)foreachtimestep.To
+update AS =1
+reduce the FAR, (Ps) is checked against a threshold to ensure that
+Alert ’Seizure Detected’
+thereisasufficientlevelofmovement,thusavoidingspuriousalarms
+caused by measurement noise when there is minimal movement. If
+DoAnalysis(At)
+the movement detected exceeds the movement threshold, then R roi else if SD = False & AS = 3 then
+is calculated as the ratio between (P roi ) and (Ps) which can be update AS =2
+expressed as DoAnalysis(At)
+R roi = P P r s oi (2) else end
+A seizure is then detected if R roi ≥ the algorithms sensitivity AS ==AS
+threshold.Ifthesensitivitythresholdisexceededforthreeconsecutive Alert ’Input not received’
+timesteps,analarmstateisraised,andthedatasavedtothedatabase. DoAnalysis(At)
+Three consecutive timesteps (15 seconds) were utilised to give bal-
+end
+ance between reducing false alarms and ensuring prompt generation
+ofanalarmwhenagenuineseizurewasdetected.Theaboveprocess
+is detailed in Algorithm 1.JPORDOYetal.:PREPARATIONOFBRIEFPAPERSFORIEEETRANSACTIONSANDJOURNALS(FEBRUARY2017) 7
+TABLEV: Summary of the events recorded during the beta trial. Events are categorised by type and sub-type and ordered by frequency of
+event. The average duration is a calculation of the average duration of events (145s) * number of events for each sub type.
+ClassID Type SubType Participants Events SubEvents AverageDuration(hh:mm:ss)
+c21 Seizure Tonic-Clonic 9 50 1450 02:01:50
+c4 Seizure OtherSeizure 5 47 1363 01:53:35
+c18 FalseAlarm Sorting 5 47 1363 01:53:35
+c23 FalseAlarm Unknown 18 46 1334 01:51:10
+c10 FalseAlarm MotorVehicle 8 44 1276 01:46:20
+c16 FalseAlarm Sleeping 7 39 1092 01:31:00
+c20 FalseAlarm Talking 9 33 957 01:20:30
+c24 FalseAlarm WashingUp 4 28 812 01:07:40
+c7 FalseAlarm Gaming 8 28 784 01:05:35
+c2 Seizure Aura/Focal 3 27 899 01:15:55
+c6 FalseAlarm Fidgeting 3 23 667 00:55:35
+c1 Seizure Atonic/Fall 6 22 464 00:39:40
+c3 FalseAlarm BrushingTeeth 8 18 504 00:42:00
+c19 FalseAlarm Standing 3 16 464 00:37:20
+c13 FalseAlarm Scratching 3 5 145 00:12:05
+c12 FalseAlarm PushingPram 1 5 116 00:09:40
+c5 FalseAlarm Cycling 1 4 116 00:09:40
+c22 FalseAlarm Typing 1 4 116 00:09:40
+c9 FalseAlarm LyingDown 2 2 58 00:05:50
+c8 FalseAlarm Hammock 1 2 48 00:04:50
+c15 FalseAlarm Shopping 1 1 29 00:02:25
+c11 FalseAlarm Other 1 1 28 00:02:20
+c17 FalseAlarm Sneezing 1 1 28 00:02:20
+c14 FalseAlarm Shaving 1 1 24 00:02:00
+# 2 24 49 494 - 19:42:35
+(a)Event:5382-Atonic/Fall (b)Event:6884-Aura/Focal (c)Event:8875-Tonic-Clonic
+(d)Event:5610-OtherSeizure (e)Event:5221-Cycling (f)Event:5470-BrushingTeeth
+(g)Event:8737-Tonic-Clonic (h)Event:5218-Scratching (i)Event:8800-OtherSeizure
+Fig.6:ArepresentativesubsetfromtheOpenSeizureDatabasethatvisualisesaccelerationandheartratesignalsfordifferenttypesofevent8 GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017
+Fig.8:Architecturalschematicof1DConvolutionalNeuralNetwork
+128, 128, and 256, respectively, providing varying levels of recep-
+tivity (Fig.8). Each block contains a convolutional layer with ReLU
+Fig.7:Ahierarchicaloverviewofthefilestructureandcorecompo- activation and batch normalisation to capture spatial dependencies.
+nents of the Open Seizure Database and Open Seizure Toolkit Furthermore,amaxpoolinglayerwasaddedtoeachblocktoreduce
+spatialdimensionality.Theoutputvectorfromb 4 isflattenedandfed
+intothemodelsclassificationblockwhichhasthreedenselayers.The
+IV. THE OPEN SEIZURE TOOLKIT firsttwodenselayerscontain128fullyconnectedneuronswithReLU
+The Open Seizure Toolkit is a software package developed by activationunits,whilethethirdlayerincorporatesasoftmaxactivation
+OSD, serving to facilitate data access to the OSDB, enabling the function to produce an output vector of multiple probabilities. Cate-
+analysis and development of seizure detection models compatible gorical cross-entropy loss was used to optimise the learning process
+with the OSD Android application. Fig.7 depicts the hierarchical in conjunction with the Adam optimisation technique. To enhance
+structureoftheOSTK,whichencompassesthreeprimarycomponents numerical stability, the optimiser’s epsilon score and learning rate
+(NN Trainer, Test Runner, and Data Summariser) located in the were reduced to 1e-05 and 0.0001, respectively. The toolkit can be
+User Tools directory. To access the OSDB, users are required to used to visualise the models learning rate by plotting accuracy and
+clonetheOSTKrepositoryfromtheofficialOSDGitHubRepository. loss scores for training and validation sets (Fig.9-10).
+Additionally, data access requires user registration with OSD and
+TABLEVI: Hyper parameter configuration used for 1D CNN model
+compliance with the guidelines specified in the OSDB licence [43].
+The following section illustrates the functionality of the OSTK by
+Id HyperParameter OptimisationMetric
+conducting a series of experiments to developing a basic seizure
+detection model compatible with the OSD Android application. For 1 Train/Testsplit 75:25
+this experiment a subset of 190 events were selected from 16 2 ValidationSet 0.1
+participants diagnosed with different epilepsy types. 3 TrainingEpochs 50
+5 BatchSize 24
+A. PreprocessingandDataEngineering
+By utilising the OSTK WebApi connector, data was extracted
+as a JSON string and subsequently transformed by flattening the
+hierarchical structure of the data’s nested objects and loaded as
+a dataframe for manipulation. Data cleaning, analysis, and feature
+engineering were conducted to prepare the data for classification.
+To address the issue of imbalanced data, random oversampling was
+applied to the minority class. In order to mitigate the effects of
+data duplication resulting from oversampling, Gaussian noise was
+introducedtotheACMdataasaformofdataaugmentation,thereby
+enhancing the variability among samples. Fig.9: A visual representation of accuracy and validation accuracy
+plotted by the Open Seizure Toolkit”
+B. ClassRelabellingandOneHotEncoding
+In this experiment, one-hot encoding was used to convert 24
+classcategoricalclasslabelsintoabinaryvectorrepresentation.The
+resulting binary vectors contain all zero values except for the index
+corresponding to the class label, which is set to 1. The nnTrainer.py
+and processing pipeline.py scripts were then used to partition the
+subset into a 75:25 split for the training and test sets, respectively.
+C. NeuralNetworkTrainer
+Inthisexperiment,a1-dimensionalConvolutionalNeuralNetwork Fig. 10: A visual representation of loss and validation loss plotted
+(1D CNN) was developed, featuring four convolutional blocks la- by the Open Seizure Toolkit”
+belled as b 1 ,b 2 ,b 3 ,b 4, each with an associated filter size of 64,JPORDOYetal.:PREPARATIONOFBRIEFPAPERSFORIEEETRANSACTIONSANDJOURNALS(FEBRUARY2017) 9
+Fig.11: Multi-class Confusion Matrix: Evaluating the models ground truth and predicted class labels.
+Fig. 12: 1D Convolutional Neural Network detecting a ”tonic-clonic” event: A visualisation plot illustrating how the model classifies a
+tonic-clonicseizure.Theupperx-axisplotsthemodelspredictedlabelsforeachtimestepwhere0=noseizureand1=tonicclonicseizure.
+Fig. 13: 1D Convolutional Neural Network detecting an ”Other Seizure” event: A visualisation plot showcasing the model’s accurate
+classification of convulsive movement. The upper x-axis plots the models predicted labels for each 5 second timestep10 GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017
+TABLE VII: Summary of the overall classification results detailing TABLE VIII: Summary of 1D Convolutional Neural Network clas-
+the performance of the 1D Convolutional Neural Network sification results, measuring precision, recall and f1-scores for each
+class
+Id ClassificationMetric Abbreviation ClassificationResult
+ClassID Type SubType Precision Recall F1Score
+1 TruePositiveRate TPR 0.998
+2 FalsePositiveRate FPR 0.071 c1 Seizure Atonic/Fall 0.84 0.83 0.83
+3 PositivePredictiveValue PPV 0.941 c2 Seizure Aura 0.61 0.83 0.71
+4 MatthewsCorrelationCoefficient MCC 0.933 c3 FalseAlarm BrushTeeth 1.00 0.97 0.98
+5 FalseNegativeRate FNR 0.002 c4 Seizure OtherSeizure 0.85 0.88 0.87
+6 TrueNegativeRate TNR 0.929 c5 FalseAlarm Cycling 0.55 0.84 0.67
+7 FalseDiscoveryRate FDR 0.059 c6 FalseAlarm Fidgeting 1.00 0.96 0.98
+8 Accuracy ACC 0.966 c7 FalseAlarm Gaming 0.98 0.83 0.90
+9 Specificity SPC 0.929 c8 FalseAlarm Hammock 1.00 0.78 0.87
+10 Prevalence PREV 0.532 c9 FalseAlarm LyingDown 1.00 0.81 0.89
+11 F1-Score F1 0.969 c10 FalseAlarm MotorVehicle 0.96 0.94 0.95
+12 FalseOmissionRate FOR 0.003 c11 FalseAlarm Other 0.96 0.97 0.97
+14 Informedness BM 0.927 c12 FalseAlarm PushingPram 0.48 0.71 0.58
+c13 FalseAlarm Scratching 0.98 1.00 0.99
+c14 FalseAlarm Shaving 1.00 1.00 1.00
+c15 FalseAlarm Shopping 1.00 1.00 1.00
+V. EXPERIMENTS & RESULTS c16 FalseAlarm Sleeping 0.76 0.61 0.68
+This section presents the experiments conducted using the OSTK c17 FalseAlarm Sneezing 1.00 1.00 1.00
+andandtheresultsachieved.The1DCNNwastrainedfor50epochs, c18 FalseAlarm Sorting 0.90 0.95 0.92
+andrecordedaccuracyandlossscoresof0.959and0.1412receptivity. c19 FalseAlarm Standing 0.85 0.81 0.83
+The model was then evaluated on an unseen test set, and recorded c20 FalseAlarm Talking 0.95 0.46 0.62
+an accuracy score of 92.75% with 0.298 loss. A full breakdown of c21 Seizure Tonic-Clonic 0.86 0.71 0.78
+the models overall performance is detailed in TABLE VII. c22 FalseAlarm Typing 0.82 0.93 0.88
+The OSTK Data Summariser was utilised to plot a multi-class c23 FalseAlarm Unknown 0.76 0.72 0.74
+confusionmatrix,visualisingthemodel’spredictedandgroundtruth c24 FalseAlarm WashingUp 0.98 1.00 0.99
+labels for the 24 classes used in these experiments. An analysis of
+theconfusionmatrixdemonstratedhowwellthemodeldistinguishes
+between the different classes.
+Forthe”OSeizure”class,810truepositives(TP)wereaccurately Table VIII summarises the classification results for each class.
+detected, however, 48 instances of ”Tonic-Clonic,” 15 ”Aura/focal,” For the purpose of these experiments, the results will be focused
+and 58 ”Atonic/fall” were misclassified. Additionally, 8 instances on the four classes of seizure. For the ”Tonic-Clonic” class denoted
+were labelled as ”Sleeping” and 13 as ”Other”. in the results as c 21, the model achieved a precision score of 0.94
+Further analysis of the ”Tonic-Clonic” class classified 743 TP in- and a recall of 0.77. These metrics signify that 86% of positive
+stances.However,7instancesweremisclassifiedas”OtherSeizure,” predictions were correct, while the recall indicates that 23% of true
+7as”Aura/focal”and18as”Atonic/fall”.Furthermore,14instances instancesofc 21 wereincorrectlyclassified.Forc 2 (Aura),themodel
+were incorrectly labelled as common human movements, with 9 demonstratedaprecisionof0.75,indicatingthat75%oftheinstances
+instances labelled as ”Sleeping” and 5 as ”Other”. predicted were correct. However the recall score of 0.93 highlights
+An analysis of the ”Atonic/fall” class revealed 734 TP instances, the model’s ability to correctly identify 93% of actual instances of
+with only 2 instances inaccurately classified as ”Aura/focal”. More- c 2. An analysis of c 1 (Atonic/fall) recorded a precision score of
+over,asingleinstanceeachof”Tonic-Clonic”and”Unknown”were 0.99, signifying that 99% of the instances predicted as c 1 were true
+misclassified,whilsttherewerenoincorrectclassificationsassociated instances.Nonetheless,arecallscoreof0.76suggeststhatthemodel
+withthe”OtherSeizure”class.Theseresultsdemonstratethemodel’s is overcompensating and classifying to many instances of c 1, which
+ability to differentiate between ”Atonic/fall” and ”Other Seizure” has lead to a trade-off between the precision and recall scores. For
+classes. c 4 (Other Seizure), the model displayed a balanced performance,
+For the ”Aura/focal” class, the model accurately identified 897 recordingaprecision,recall,andF1-scoreof0.84.Aprecisionscore
+TP instances. However, 56 instances were incorrectly labelled as of84%indicatesarelativelylowfalsepositiverateanddemonstrates
+”Atonic/focal”, 25 as ”Other Seizure” and 115 as ”Tonic-Clonic”. ahighlevelofaccuracywhenclassifyingclassifyingTPinstancesof
+A further 13 labels were incorrectly classified as ”Unknown”, 27 as c 4. Furthermore, a recall score of 84% demonstrated the number of
+”sleeping”and60as”Other”.However,thesefindingswereexpected, true instances correctly classified by c 4.
+as a considerable proportion of GTC seizures exhibit an aura (pre-
+Toprovideacomprehensiveassessment,anF1-scorewascomputed
+ictal) phase. A further analysis shows that GTC seizures have an
+foreachclasstype,resultinginvaluesof0.86,0.83,0.84,and0.85for
+average clonic phase lasting 25 to 35 seconds after generalisation. c 1, c 2, c 4 and c 21, respectively. F1-score results indicate a realistic
+Therefore a degree of similarity between these classes is to be
+trade-offbetweencorrectlyidentifyingpositiveinstances(recall)and
+expected and highlights the importance of considering the dynamics
+minimising false positives (precision) for each class. In summary,
+ofeachsub-event.Overallthemodelhasdemonstratedaclearability
+the model’s performance demonstrates a clear ability to accurately
+todifferentiatebetweenthe”OtherSeizure”and”Atonic/fall”classes,
+classify seizure-related classes while maintaining a balance between
+aswellas”Aura/focal”and”Atonic/fall”.However,therewerechal-
+precision and recall.
+lenges distinguishing between the ”Tonic-Clonic” and ”Aura/focal”
+classes.JPORDOYetal.:PREPARATIONOFBRIEFPAPERSFORIEEETRANSACTIONSANDJOURNALS(FEBRUARY2017) 11
+VI. DISCUSSION Open Seizure Database (OSDB):: See https://github.
+com/OpenSeizureDetector/OpenSeizureDatabase for
+This study introduces the Open Seizure Database and Toolkit, a
+instructions on how to access the Open Seizure Database.
+publicly available resource designed to facilitate scientific investi-
+gation into non-EEG seizure detection. The primary objective of
+Open Seizure Database Licence: A summary of the licence under
+this research is to address the scarcity of resources in the field of
+which the Open Seizure Database is released can be accessed
+non-EEG seizure detection by establishing the OSDB as the first
+at https://github.com/OpenSeizureDetector/
+openlyaccessibledatabaseencompassingnon-EEGsensordatafrom
+OpenSeizureDatabase/blob/main/documentation/
+multiple sensing modalities.
+LICENCE.md
+Thisstudydistinguishesitselfbyutilisingreal-worlddata,provid-
+ing an accurate depiction of everyday life compared to controlled
+Informed Consent Statement: The users gave their consent
+EMU-based datasets. The beta trial’s success led to an indefinite
+to publish the developed database by agreeing to the Privacy
+extension of the data collection period, showcasing our commitment
+Policy at https://github.com/OpenSeizureDetector/
+to continually enriching the OSDB and contributing to non-EEG
+OpenSeizureDatabase/blob/main/documentation/
+seizure detection research.
+Privacy_Policy.pdf
+The initial version of the OSDB is comprised of 494 events
+collected over 453 days, with each event labelled and optimised for
+machine/deep learning. Among these events, 146 epileptic seizures Data Collection and Data Sharing: Details of the beta trial,
+were recorded; 50 GTC seizures, 47 Other seizures, 27 aura/focal, data collection and data sharing can be viewed at https:
+//www.openseizuredetector.org.uk/?page_id=1818
+and 22 atonic/falls. The cumulative duration of recorded epileptic
+eventsamountsto5hours,51minutes,makingitthemostextensive
+publicly available cohort of non-EEG seizure data to date. Conflicts of Interest: The authors declare that there is no conflict
+Additionally, 302 common human movements that triggered false of interest regarding the publication of this manuscript.
+alarmsduringthedatacollectionperiodwererecordedandlabelled.A
+further46eventswereclassifiedasfalsealarms,wherethetriggering
+activity remains unidentified. The inclusion of labelled false alarms
+REFERENCES
+in the dataset offers a valuable resource to address the challenge of
+false positives in non-EEG seizure detection. [1] O.Devinskyetal.,Epilepsy,NatureReviewsDiseasePrimers.,vol.4,
+pp.18024,May2018.
+[2] M.Sperling,SuddenUnexplainedDeathinEpilepsy,Epilepsycurrents,
+A. FutureResearch vol.1(1),pp.21-23,Sep2001.
+[3] O. Sveinsson et al., Clinical risk factors in SUDEP: A nationwide
+The introduction of the OSDB sets forth several possibilities for
+population-based case-control study, Neurology, vol. 94(4), pp. e419-
+futureresearch.Asthedatacollectionprocessisextendedindefinitely, e429,Dec2019.
+individuals with epilepsy can continue to participate and contribute [4] T. Manolis et al., Sudden unexpected death in epilepsy: The Neuro
+data. As more data is collected, the exploration of novel techniques CardioRespiratoryConnection,Seizure,vol.64,pp.65-73,Jan2019.
+such as patient-specific and seizure-specific detection becomes a [5] R.Surgesetal.,Suddenunexpecteddeathinepilepsy:riskfactorsand
+potentialpathomechanisms,NatRevNeurol,vol.5(9),pp.492-504,Sep
+possibility. However, due to the dataset’s current size, dedicated
+2009.
+classification models cannot be trained for these concepts yet. Nev- [6] R.J.Lambertsetal.,Suddenunexpecteddeathinepilepsy:Peoplewith
+ertheless, as more data accumulates over time, these concepts will nocturnalseizuresmaybeathighestrisk,Epilepsia,vol.53(2),pp.253-
+become feasible. 257,Feb2012.
+[7] O.Sveinssonetal.,ClinicalriskfactorsinSUDEP,Neurology,vol.94,
+pp.e419-e429,Jan2020.
+VII. CONCLUSION [8] M. Thom et al., Sudden and unexpected death in epilepsy (SUDEP):
+evidenceofacuteneuronalinjuryusingHSP-70andc-Junimmunohis-
+Inconclusion,theintroductionoftheOSDBandOSTKrepresents tochemistry, Neuropathol Appl Neurobiol, vol. 29(2), pp. 132-43, Apr
+a significant milestone in non-EEG seizure detection research, 2003.
+providing a valuable resource to overcome existing scarcity in this [9] I.Conradsenetal.,Detectionofgeneralisedtonic-clonicseizuresbya
+domain. With real-world data collected from in-home environments, wirelesswristaccelerometer:aprospective,multicenterstudy,Epilepsia,
+vol.56,pp.e83-e87,Apr2015.
+researchers can explore diverse multimodal approaches for seizure
+[10] J. Lockman et al., Detection of seizure-like movements using a wrist
+detection. The OSDBs extensive data on epileptic seizures and accelerometer,Epilepsy Behaviour,vol.22,pp.S64-S68,Apr2011.
+labelled false alarms presents a unique opportunity to advance [11] S.Ziaetal.,DetectionofGeneralisedTonicClonicSeizuresandFalls
+the field. With continued data collection and exploration of novel in Unconstraint Environment Using Smartphone Accelerometer, IEEE
+Access,vol.9,pp.39432-39443,Dec2021.
+techniques, the OSDB and OSTK has the promise of establishing a
+[12] J. Villar et al., Generalised Models for the Classification of Abnormal
+non-EEG gold standard and ultimately improving seizure detection
+Movements in Daily Life and its Applicability to Epilepsy Convulsion
+techniques. Researchers investigating non-EEG detection can access Recognition,IntJNeuralSys,vol.26,pp.1650037,Apr2016.
+the dataset, code, and models through the official OSDB GitHub [13] L. Billeci et al., Patient-specific seizure prediction based on heart rate
+repository. variability and recurrence quantification analysis, PLOS ONE, vol. 13,
+pp.e0204339,Sep2018.
+[14] I. Al-Aweel et al., Postictal heart rate oscillations in partial epilepsy,
+Acknowledgements: A heartfelt thank you to all the participants.
+Neurology,vol.53,pp.1590-1592,Oct1999.
+Your invaluable contributions have been instrumental in advancing [15] F. Pe´rez-Garc´ıa et al., Transfer Learning of Deep Spatiotemporal Net-
+non-EEG seizure detection research. Your commitment has paved works to Model Arbitrarily Long Videos of Seizures, Medical Image
+thewayforexploringnewpossibilitiesandmakingapositiveimpact Computing And Computer Assisted Intervention, MICCAI 2021, pp.
+334-344,Jun2021.
+on the lives of those affected by epilepsy. We are deeply grateful
+[16] J.Pordoyetal.,PredictingEpilepticSeizureswithaStackedLongShort-
+for your support and dedication. TermMemoryNetwork,IntJAutoAIMachLearn,vol.1(1),pp.93-108,
+Oct2020.12 GENERICCOLORIZEDJOURNAL,VOL.XX,NO.XX,XXXX2017
+[17] G. Regalia et al., Multimodal wrist-worn devices for seizure detection [43] The Open Seizure Database Licence, Open Seizure Detec-
+andadvancingresearch:FocusontheEmpaticawristbands,EpilepsyRes, tor,Hartlepool,UK,2022.[Online]Available:https://github.
+vol.153,pp.79-82,Feb2019. com/OpenSeizureDetector/OpenSeizureDatabase/
+[18] F. Onorati et al., Performance of a wrist-worn multimodal seizure blob/main/documentation/LICENCE.md
+detectionsystemformorethanayearinreal-lifesettings,13thEuropean
+congressonEpileptology,Aug2018.
+[19] F.Onoratietal.,Multicenterclinicalassessmentofimprovedwearable
+multimodal convulsive seizure detectors, Epilepsia, vol. 58(11), pp.
+1870-1879,Nov2017.
+[20] M.Z.Pohetal.,Autonomicchangeswithseizurescorrelatewithpostictal
+EEGsuppression,Neurology,vol.78(23),pp.1868–1876,2012.
+[21] M. Nasseri et al., Non-invasive wearable seizure detection using
+long–short-termmemorynetworkswithtransferlearning,J.NeuralEng,
+vol.18,pp.056017,Apr2021.
+[22] J. Nielsen et al., Out-of-hospital multimodal seizure detection: a pilot
+study,BMJNeurologyOpen,vol.5,Aug2023.
+[23] A. Van de Velet al.,Non-EEG seizure detection systems and potential
+SUDEP prevention: State of the art: Review and update, Seizure, vol.
+41,pp.141-153,2016,
+[24] D. Friedman and C. Kazl, Seizure Detection and SUDEP Prevention,
+PracticalNeurology.pp.54-58Nov2018.
+[25] M.Ihleetal.,EPILEPSIAE–AEuropeanepilepsydatabase,Computer
+Methods And Programs In Biomedicine, vol. 106(3), pp. 127-138, Sep
+2012.
+[26] A.Douradoetal.,Givinghopetorefractoryepilepticpatients,IST-Africa
+ConferenceProceedings,pp.1-10,May2014.
+[27] P. Thompson et al., Data sharing in epilepsy research, Epilepsia, vol.
+54,pp.576-582,2013.
+[28] The Open Seizure Database (OSDB), Open Seizure Detector, Hartle-
+pool, UK, 2022. [Online] Available: https://github.com/
+OpenSeizureDetector/OpenSeizureDatabase
+[29] Open Seizure Detector, Open Seizure Detector, Hartle-
+pool, UK, 2013. [Online] Available: https://www.
+openseizuredetector.org.uk
+[30] University of West London, University of West London, London,
+UK,2022.[Online]Available:https://www.uwl.ac.uk
+[31] Open Seizure Detector, Open Seizure Detector, Hartlepool, UK,
+2013. [Online]. Available: play.google.com/store/apps/
+details/?id=uk.org.openseizuredetector
+[32] Google Play Open Testing(Google Play Store), 2023. [Online]
+Available: https://play.google.com/console/about/
+opentesting/
+[33] Informed Consent Statement, Open Seizure Detector, Hartlepool,
+UK, 2022. [Online] Available: https://github.com/
+OpenSeizureDetector/OpenSeizureDatabase/blob/
+main/documentation/Privacy_Policy.pdf
+[34] Accelerometer Data, Garmin Ltd, 2022. [Online] Available:
+https://developer.garmin.com/connect-iq/
+core-topics/sensors/
+[35] Heart Rate Monitoring, Garmin Ltd, 2022. [Online] Available:
+https://developer.garmin.com/connect-iq/
+core-topics/sensors/
+[36] Pulse Oximetry, Garmin Ltd, 2022. [Online] Available:
+www.garmin.com/en-GB/garmin-technology/
+health-science/pulse-ox
+[37] A. Oppenheim and R. Schafer, Discrete-time signal processing,
+Pearson,2010.
+[38] R. Khusainov et al., Real-time human ambulation, activity, and
+physiological monitoring: taxonomy of issues, techniques, ap-
+plications, challenges and limitations, Sensors, pp. 13(10), pp.
+12852–12902,2013.
+[39] H.Jooetal.,SpectralAnalysisofAccelerationDataforDetection
+of Generalised Tonic-Clonic Seizures, Sensors, pp. 17(3), pp. 481,
+Feb2017.
+[40] Garmin Seizure Detector Performance, Open Seizure Detec-
+tor, Hartlepool, UK, 2019. [Online] Available: https://www.
+openseizuredetector.org.uk/?pageid=1341
+[41] A. Harvey and M. Cerna, The Fundamentals of FFT-Based Signal
+AnalysisandMeasurementinLabVIEWandLabWindows,1993.
+[42] W. Yuan and K. Gao, EAdam Optimizer: How e Impact Adam,
+ArXiv:Learning,pp.2011.02150,2020.

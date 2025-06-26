@@ -1,0 +1,8 @@
+It can be noted from Figure 2 that various DL models have been exploited in the
+diagnosisofepilepticseizures. ComparedtootherDLtechniques,2D-CNNand1D-CNN
+modelsarethemostwidelyusedinepilepticseizuresdetection. Researchershavemostly
+employed2D-CNNmodelstodiagnoseepilepsy. InthediagnosisofepilepticseizuresInt.J.Environ.Res.PublicHealth2021,18,5780 4of33
+using2D-CNNmodels,EEGsignalsarefirstconvertedintotwo-dimensional(2D)images
+usingpreprocessingmethodssuchasshort-timeFouriertransform(STFT).Next, these
+imagesareappliedto2D-CNNnetworks. Thesecondcategorycomprises1D-CNNmodels,
+whichhaveachievedaspecialplaceamongresearchersforepilepticseizuresdetection. In
