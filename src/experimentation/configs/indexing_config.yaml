@@ -1,5 +1,5 @@
 # current configuration for indexing in the retrieval system without experimentation
-# "_cur": suffix for current configuration 
+# "_cur": suffix for current configuration
 embedding_model_cur: all-mpnet-base-v2
 index_name_cur: epilepsy-chatbot
 metric_cur: cosine

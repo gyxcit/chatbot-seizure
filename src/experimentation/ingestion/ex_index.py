@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 from pinecone import Pinecone, ServerlessSpec
 from sentence_transformers import SentenceTransformer
 
+config_path = os.path.join(os.path.dirname(__file__), '..', 'configs', 'indexing_config.yaml')
+chunks_dir = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'data', 'chunks')
 # Load env
 load_dotenv()
 
@@ -16,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Load config
-with open("../configs/indexing_config.yaml") as f:
+with open(config_path) as f:
     config = yaml.safe_load(f)
 
 EMBEDDING_MODEL = config.get("embedding_model_cur", "all-mpnet-base-v2")
@@ -61,7 +63,6 @@ with mlflow.start_run(run_name="Indexing"):
     index = pc.Index(INDEX_NAME)
 
     # Process and index all chunks
-    chunks_dir = "../../data/chunks"
     files = os.listdir(chunks_dir)
     mlflow.log_param("num_chunks", len(files))
 
