@@ -1,9 +1,0 @@
-diagnoseepilepticseizuresautomaticallyusingEEGandMRImodalitiesaredescribed.Inaddition,
-rehabilitationsystemsdevelopedforepilepticseizuresusingDLhavebeenanalyzed,andasummary
-isprovided. Therehabilitationtoolsincludecloudcomputingtechniquesandhardwarerequired
-Copyright: © 2021 by the authors. forimplementationofDLalgorithms.Theimportantchallengesinaccuratedetectionofautomated
-Licensee MDPI, Basel, Switzerland.
-epileptic seizures using DL with EEG and MRI modalities are discussed. The advantages and
-This article is an open access article
-limitationsinemployingDL-basedtechniquesforepilepticseizuresdiagnosisarepresented.Finally,
-distributed under the terms and

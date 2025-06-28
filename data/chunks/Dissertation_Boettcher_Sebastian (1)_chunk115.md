@@ -1,9 +1,0 @@
-1radar-cns.org20 CHAPTER1. INTRODUCTION
-Figure1.5: Ambulatoryseizurediariessignificantlyunder-reporteventscomparedtoseizures
-discovered from ambulatory intracranial electroencephalography. From Cook et al. [54], Fig-
-ure4,identitylineaddedtoillustratetheoptimalcase.1.5. KEYCONTRIBUTIONSANDOUTLINE 21
-1.5 Key Contributions and Outline
-Thisthesisprovidesaframeworkforseveralpublishedarticlesonseizuredetectionwithwear-
-abledevices. Itfocusesondetectingmotor-onsetseizuresusingmultimodaldatafromawrist-
-worn,smartwatch-likewearable. Afterthisintroduction,thethesiscomprisesfourparts. The
-secondchapterexploresrelevantresearchinepilepsymonitoringwithwearables. Thesubse-

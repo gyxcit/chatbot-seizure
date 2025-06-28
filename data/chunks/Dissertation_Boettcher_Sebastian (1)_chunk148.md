@@ -1,8 +1,0 @@
-orderof0.5to5seconds,whilethetoniccomponentdevelopsaschangesintheEDAlevelover
-multipleminutes[135,151]. ThesechangesinEDAhavealsobeenlinkedtoepilepticseizures,
-predominantlyshowingastonicincreasesinthepost-ictalphase[42,43,152,153].
-Sensors typically record EDA using dry electrodes, which do not necessarily need to be
-adhesive,aslongastheyhavecontinuouscontactwiththeskin[154]. Forinstance,somede-
-vices,integrateelectrodesintoabraceletorthedevicehousingitself. Thesensorcanrecordthe
-biosignalintwodifferentmethods: Thepassiveendosomaticmethod,measuringtheelectrical
-properties of the body without an external electrical source, relying only on changes in elec-

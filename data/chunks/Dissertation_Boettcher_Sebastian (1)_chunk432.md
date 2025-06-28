@@ -1,8 +1,0 @@
-an ensemble machine learning model (gradient boosted decision trees) trained with features
-fromACCandEDAbiosignaldata. Fromadatasetof10participantsfromtwoclinicalcohorts
-withatotalof21recordedTCSs,themethodologycoulddetect91%oftheseizuresinanout-
-of-sample test set. Adding additional data from participants without recorded seizures to the
-testset,thusamountingto78daysofwearabledata,themodelproducedafalsealarmrateof
-0.19/24h. Thestudyaccordinglyshowsthatsupervisedmachinelearningcanachieveahigh
-sensitivityandlowfalsepositiverateindetectingconvulsiveTCSs.
-The second part of the chapter highlights a specific clinical manifestation of convulsive

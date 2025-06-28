@@ -1,8 +1,0 @@
-cidenceofupto100per100,000peopleperyear,affectingover70millionpeople. Several
-differenttypesofepilepsyhavebeenidentified,manifestingindifferentsymptoms,character-
-istically in seizures of varying severity. Seizures are typically involuntary movements of the
-wholebodyorpartsofit,sometimesaccompaniedbyalossofconsciousness. Thecurrentgold
-standardinepilepsydiagnosisandseizuremonitoringisin-hospitalvideo-electroencephalog-
-raphy. Patientswithepilepsyareoftendiagnosedinepilepsymonitoringunitsoverthecourse
-of several days. However, while being accurate and widely used for the diagnosis of epilepsy
-andthedeterminationoftreatment,thismethodologyisonlyfeasibleinrelativelyshort-term

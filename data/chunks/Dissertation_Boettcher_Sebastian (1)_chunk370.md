@@ -1,9 +1,0 @@
-representsthegravitationalcomponentofthemovement,whichisminimalduringconvulsive
-seizures. During these seizures, almost all movements are part of the linear component, rep-
-resentedbythebandpassfilteredsignal,whichisalsoconfirmedbythisfeaturebeingoneof
-themostimportantinthemodel.
-AmongtheEDA-derivedfeatures,thehighestimportancewasconsistentlyassignedtothe
-difference between the highest value in the feature and the baseline windows of the SCL. A
-typicalEDAsignalprogressionintheperi-ictalperiodisasteepincreasefromalowpre-ictal
-baselineduringtheictalphase,followedbyashallowdecreaseinthepost-ictalphase,spanning
-multipleminutes. Thus,thefeaturebasedonthedifferenceofthehighestvaluebetweenpre-

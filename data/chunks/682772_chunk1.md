@@ -1,6 +1,0 @@
-domain and establishes the Open Seizure Database as the first openly accessible database containing multimodal sensor data
-from49participantsinreal-world,in-homeenvironments. Thedatabaseiscomprisedof494events,encompassing146epileptic
-seizures,collectedoveradurationof453days,presentingthemostextensivepubliclyavailablenon-electroencephalogramseizure
-datatodate. Additionally,thedatabasehas348labelledfalsealarms,including302commonhumanmovementsandactivities.
-The Open Seizure Toolkit is designed to facilitate machine and deep learning practices by streamlining data from the Open
-SeizureDatabase. Utilisingtheseresources,researcherscanrapidlydevelopandtrainseizuredetectionmodelsbeforedeploying

@@ -1,9 +1,0 @@
-over,GTCSsareasignificantriskfactorinsuddenunexpecteddeathinepilepsy,raisinginter-
-estintheautomaticdetectionofthistypeofseizures,especiallyinanambulatorysetting[338].
-TherearevariousexamplesofGTCSdetectioninliterature,bothwithmonomodalandmulti-
-modaldata(seealsoChapter4).
-OnebasicapproachisevaluatedbyKusmakaretal.[215]whouseaccelerometrydatafrom
-awrist-wornwearabletodetectshort-lengthGTCSsin12patients. Theirapproachwithasup-
-portvectormethodandstandardtimedomainfeaturesachievesasensitivityof95%andfalse
-alarmrate(FAR)of0.7/24h. Halfordetal.[339]ontheotherhanduseanupperarmwearable
-that records surface EMG signals on 199 patients with epilepsy. Their thresholding method

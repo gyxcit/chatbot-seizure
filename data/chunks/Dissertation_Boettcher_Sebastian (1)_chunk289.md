@@ -1,9 +1,0 @@
-OtherFeatures IP224 drip-resistant;statusLED;eventmarkerbutton
-1Thebloodvolumepulse(BVP)outputdataaregiveninarbitraryunitsandhasnorelevantmeasurementrange.2
-Storagecapacityofupto60h.3Wirelessconnectionrangeofupto10m.4Ingressprotectioncode(International
-ElectrotechnicalCommissionstandard):protectedagainstingressofsolidforeignobjectsof≥12.5mmdiameter
-(e.g.,fingers)anddrippingwateratanglesof≤15◦.
-ThedeviceoutputisBVPdata,computedbyaproprietaryalgorithmfrombothgreenandred
-lightreflectancevalues,andgivenatthesamesamplerate. Finally,theTMPdataaresampled
-at4Hzwithameasurementrangeof−40◦Cto115◦C.
-The Empatica E4 supports two data acquisition modes: a local storage recording mode

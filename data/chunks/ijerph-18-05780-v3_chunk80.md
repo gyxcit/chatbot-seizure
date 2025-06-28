@@ -1,8 +1,0 @@
-using AI techniques. The objective of these studies is to assist physicians in accurate
-epilepticseizuresdiagnosis. AIresearchinvolvesconventionalmachinelearning[151]and
-DL[152–156]scopes. Untilrecently,manymachinelearningmethodsthatwereadopted
-to automatically detect seizures could not be seriously used for a variety of real-time
-diagnosticaidtoolsforepilepticseizuresduetotheirdisadvantages. DLisoneofthestate-
-of-the-artfieldsofepilepticseizuredetectionthathasbeenemployedforepilepticseizure
-detectionsince2016. Inrecentyears,theresearchgrowthinepilepticseizurediagnosis
-usingDLisproceedingrapidlyduetothesimultaneousdevelopmentofDLtoolboxesas

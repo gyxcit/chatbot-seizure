@@ -1,8 +1,0 @@
-the ultra-long-term monitoring of patients with epilepsy, potentially improving their quality
-oflifebyenablinganautomatedwayofkeepingseizurediaries,andthusfacilitatingnewand
-bettertreatmentsandlesseningtheburdenofuncontrollableseizureevents.
-Wearable devices like smartwatches or activity trackers will often record a variety of
-biosignalsthatarerelevanttothehealthandsafetyoftheirusers. Amongthepotentialmodal-
-itiesrecordedaremovementbyaccelerometry(ACC),changesintheautonomicnervoussys-
-tem by electrodermal activity (EDA), and the heart rate by photoplethysmography measure-
-ments. Itisconceivablethatepilepticseizures,especiallymajorconvulsiveseizuresandthose

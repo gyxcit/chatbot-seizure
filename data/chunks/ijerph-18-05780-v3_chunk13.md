@@ -1,9 +1,0 @@
-anddataminingtechniquestodevelopanaccuratemodel. Suchmodelsperformwellfor
-limiteddata. Nowadays,withtheincreaseintheavailabilityofdata,machinelearning
-techniquesmaynotperformverywell. Hence,theDLtechniques,whicharethestate-of-art
-methods,havebeenemployed[27,28]. DLmodels,unlikeconventionalmachinelearning
-techniques, require huge data in the training phase [29]. This is because these models
-havealargenumberoffeaturespaces,andincaseoflackofdata,theyfacetheproblemof
-overfitting[29].
-Inconventionalmachinelearningalgorithms,mostsimulationswereexecutedinthe
-Matlab software environment, but the DL models are usually developed using Python

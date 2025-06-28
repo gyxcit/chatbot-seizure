@@ -1,8 +1,0 @@
-FSs with impaired awareness using ECG and behind-the-ear EEG. While the authors give no
-furtherinformationontheseizurepathologyorpotentialictalmovements,theapplicationof
-wearableEEGsuggeststhatmostseizureswouldnothavehadprevalentmotorfeaturesdueto
-the motion artifacts they would have caused in the signal. They report an average sensitivity
-of89%withFARsoflessthantwoperhouroverthreedifferentcohortdatasets.
-OfnoteconcerningthegeneralbodyofrelatedworkonFSdetectionisthatmanystudies
-donotfurtherspecifyifmovementsduringorintheperi-ictalproximityoftheseizureswere
-included in their analysis [74, 227, 237, 238]. Studies will usually categorize seizures by one

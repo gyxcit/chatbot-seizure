@@ -1,8 +1,0 @@
-Electroencephalography (EEG) captures changes in the brain’s electrical activity by elec-
-trodesplacedonthescalp. Likewise,surface-electromyography(EMG)recordsmuscleactivity
-viaelectrodesplacedabovethemuscletocapturetheelectricpotentialsinducedbyitsactivity.
-Acommontechniquetorecordcardiacactivityiselectrocardiography(ECG)which,likeEEG
-andEMG,alsorequireselectrodestobeplacedontheskin. Althoughsomenotableexceptions
-exist[72–74],theneedforelectrodestomeasuretheseelectricalsignalsisanimportantfactor
-in why wearable systems rarely measure them, especially in a long-term context. Electrodes
-are challenging to apply correctly by oneself, they can be very obtrusive and stigmatizing,

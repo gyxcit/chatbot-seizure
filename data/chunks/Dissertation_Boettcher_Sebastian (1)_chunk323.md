@@ -1,9 +1,0 @@
-evaluated on a newly recorded data set from a multicenter clinical study with wearable non-
-EEG devices. Finally, the detection system, its performance, and its limitations are discussed
-andanoutlookofpossiblefurtherapplicationsforthisdetectionapproachareconcluded.
-4.1.2 Methods
-DataSet
-Duringthecourseofthestudy,betweenJuly2017andFebruary2020,studiescollectedwear-
-abledevicedatafrom243patientsdiagnosedwithepilepsy: 70.7%(172/243)ofpatientswere
-recruitedattheepilepsymonitoringunit(EMU)oftheUniversityMedicalCenterFreiburg,and
-29.2%(71/243)ofpatientswererecruitedattheEMUintheneurophysiologicaldepartmentof

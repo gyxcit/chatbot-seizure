@@ -1,8 +1,0 @@
-Alldatarecordedforthestudiesinthisthesiswererecordedfrompatientsvisitinganepilepsy
-monitoringunit(EMU)atahospital,wheretheyareusuallyconstrainedtoaroomwithelec-
-troencephalography(EEG)electrodesattachedtotheirscalp. Thus,theyareheavilyrestricted
-in terms of the movements they can or will do, impacting the nature of the biosignal data
-recorded. Forexample,patientswillrarelydophysicalexercisewhileattheEMU,eventhough
-they would regularly do so in their daily lives. Accordingly, seizure detection methodologies
-mustbevalidatedinreal-worlddataatsomepoint. Groundtruthinformation,however,isdif-
-ficulttorecordinultra-long-termambulatorystudies. Currentoptionsincludeat-homevideo

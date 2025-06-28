@@ -1,8 +1,0 @@
-Furthermore,IwouldliketothankProf.Dr. AndreasSchulze-Bonhageforenablingmeto
-workinthisfieldofresearchandontheresultingthesis,employingandsupportingmeforthe
-pastsixyears,andgivingmetheopportunitiestotraveltoamultitudeofdifferentinternational
-conferences and meetings. Moreover, I want to thank PD Dr. Matthias Dümpelmann for his
-mentorship and constant advice and for always being my first place to go to in all things
-epilepsyandUKF.Speakingofwhich,IwouldalsoliketothankallmycolleaguesatUKFwho
-Ihavemetandworkedwithovertheyears,ofwhichtherearetoomanytonameindividually.
-Specifically,however,IwouldliketothankNinoEpitashvili,LorenzaPuma,ArminBrandt,the

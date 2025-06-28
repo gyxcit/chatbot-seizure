@@ -1,9 +1,0 @@
-technologies.
-Thecornerstoneofwearablemonitoringarebiosignalsensors,technologythathasexisted
-andhasbeendevelopedformuchlongerthanwearableepilepsymonitoringitself(Section2.2).
-A multitude of different biosignal modalities are available in modern sensor systems, each
-with their own opportunities and pitfalls. Here, relevant sensor technology in the context of
-epilepsymonitoringisintroducedanddiscussed.
-Seizuredetectionwithwearables,whilestillarelativelynewfieldofresearch,hasalready
-undergone meaningful development since its inception (Section 2.3). Especially with regard
-toconvulsivemotorseizures,detectionisalreadyatastageallowingforfirstprospectiveam-

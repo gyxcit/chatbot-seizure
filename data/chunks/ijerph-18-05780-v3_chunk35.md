@@ -1,9 +1,0 @@
-seizuresdetection,theyareinvestigatedseparately.
-A.2DConvolutionalNeuralNetworks(2D-CNNs)
-Nowadays, deep 2D networks are used for various medical applications such as
-diagnosisofCOVID-19inCTandX-ray[46,47],andautismspectrumdisordersfromMRI
-modalities[48]. First,in2012,Krizovskyetal.[49]suggestedthisnetworktosolveimage
-classificationproblems,andthenquicklyusedsimilarnetworksfordifferenttaskssuchas
-medicalimageclassification,inanefforttoobviatethedifficultiesofpreviousnetworks
-andsolvemoreintricateproblemswithbetterperformance. Figure6showsageneralform
-ofa2D-CNNusedforepilepticseizuredetection. Theapplicationof2D-CNNarchitectures

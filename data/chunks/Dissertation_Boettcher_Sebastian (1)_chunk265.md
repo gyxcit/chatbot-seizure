@@ -1,8 +1,0 @@
-device is usually 10m within the same room. Whenever a wearable device is disconnected, it
-needstoautomaticallyreconnectandtransferanybuffereddata,otherwise,anydatacollected
-while the device is disconnected will be lost. The Empatica E4 device used in the studies
-includedheredoesnotimplementsuchfunctionalityinBluetoothstreamingmode. Whenthis
-devicelosesitsBluetoothconnectionitpowersoffcompletelyandmustbemanuallyrestarted
-fortheconnectiontobere-established,leadingtosignificantdataloss.
-Finally, data gaps can be introduced by human interaction. Taking the device off for a
-shorttime,forexample,duringashowerorneuroimagingcausesseveralminutesofdataloss.

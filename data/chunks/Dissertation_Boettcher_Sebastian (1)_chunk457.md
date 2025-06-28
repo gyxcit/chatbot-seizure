@@ -1,9 +1,0 @@
-often made, but subtypes within FSs are rarely investigated or separated in the annotation.
-The work presented here illustrates the breadth of FSs by focusing specifically on the multi-
-modaldetectionofthreedistincttypesoffocalmotorseizuresinthreeindividualpatientsand
-thereinidentifiesdifficultiesthatmayarisewhenanalyzingalargerdatasetoffocalseizures.
-Furthermore, this work explores a way of feature extraction that enables using multimodal
-datawithmultipledifferentwindowsizespermodality. Inotherstudiesonlyasinglewindow
-sizewithafixedoverlappermodalityiscommonlyused.
-5.1.3 Data Set
-Theevaluationpresentedhereusesselecteddatathataretakenfromadatacollectionclinical

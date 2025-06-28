@@ -1,8 +1,0 @@
-Seizureswererecordedwithtwodifferentdevices. Althoughthismayhaveinfluencedthe
-datarecordedandinparticulartheEDAresponse,whichismoreeasilydetectedatthewristas
-comparedtothearm,theACCbiosensorshadsimilarcharacteristicsandthesignalsobtained
-during periods of movement and immobility were comparable despite the different position
-of the device on the upper limb. False detection is a potential major weakness of wearable
-technology applied to both seizure and seizure-related phenomena detection. The trade-off
-betweendetectionbenefitsandpotentialfalsedetectionshouldalwaysbeaccountedforwhen
-dealingwithdigitaltechnologies. Scenarioswhereadevicehasfallenfromthepatientduringa

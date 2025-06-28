@@ -1,8 +1,0 @@
-comes of the given study. Multimodal devices are generally regarded as more effective
-andversatile[293–295],whereasadevicerecordingonlyonemodalitymaybesufficient
-foraveryspecifictask. Epitel’sEpilog,forexample,providesonlyasingle-channelEEG
-signal,whereastheEmpaticaE4recordsfourdifferenttypesofrawbiosignaldata.
-Datamode: Generally,therearetwomodesindatacollection,onlineoroffline,asdescribed
-furtherinSection3.1.2. Inmostcasesagivendevicesupportsonlyonemodeforrecord-
-ing data, so either the study protocol needs to be adjusted to support the device, or an
-appropriatedeviceneedstobechosenforanalreadyestablishedstudyprotocol. Theon-

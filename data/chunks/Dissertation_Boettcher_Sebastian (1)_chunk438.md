@@ -1,9 +1,0 @@
-therealmofpossibilities,butultimatelywasnotpartoftheresearchincludedinthisthesis.
-Overall, the research presented here shows that multimodal detection of convulsive TCSs
-isnotonlypossible,butusefulandnecessarytotackleultra-long-termmonitoringofpatients
-withepilepsy. Thestudiesfurthermoredemonstratethatevenverylimiteddatasetscanenable
-simpleclassicalsupervisedmachinelearningalgorithmstorobustlydetectconvulsiveseizures
-with high sensitivities and low false alarm rates. Yet, the automatic detection of focal onset
-seizuresisanothermatterandrequiresseparateanalysis,introducedinthenextchapter.5
-CHAPTER
-Detection of Focal Onset Seizures

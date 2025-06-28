@@ -1,8 +1,0 @@
-wendet,aufgezeichnetinzweieuropäischenEpilepsiezentrenimRahmeneineseuropäischen
-Forschungsprojekts. Mehr als 200 Epilepsiepatienten wurden in den beiden Einrichtungen
-rekrutiert,undmehrals300epileptischeAnfälleunterschiedlicherArtwurdenmiteinemtrag-
-baren Gerät aufgezeichnet. Dabei wurde das Empatica E4 verwendet, ein für die Forschung
-geeignetes, am Handgelenk getragenes Wearable das Biosignale der Bewegung, der elektri-
-schenHautleitfähigkeitunddesBlutvolumenpulseserfasst. DieseDatenbildetenfürmehrere
-Studien,diesichmitderBewertungvonMethodenzurErkennungvonepileptischenAnfällen
-befassten,dieGrundlagezurDatenanalyse.

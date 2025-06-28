@@ -1,8 +1,0 @@
-usingDLisproceedingrapidlyduetothesimultaneousdevelopmentofDLtoolboxesas
-wellasgraphicsprocessingunits(GPUs). ApplyingDLtechniquestodiagnoseepileptic
-seizuresgivesdoctorshopethatinthenot-too-distantfutureavarietyofrehabilitation
-tools will be developed for patients with epileptic seizures. Table A1 in the Appendix
-shows the overview of works done in this area. It also shows the type of dataset used,
-implementationtool,preprocessing,DLnetwork,andevaluationmethodsutilized.
-Asshowninthisstudy,variousDLstructuresareappliedforepilepticseizuredetec-
-tion,yetnoneofthemhassuperiorityoverothers. Thebeststructureshouldbechosen

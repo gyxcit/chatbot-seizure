@@ -1,9 +1,0 @@
-related to GTCSs are focal to bilateral tonic-clonic seizures (FBTCSs), which have a focal onset
-andtypicallyprogresstogeneralizationduringthetonicphasebutareoftenindistinguishable
-1FromAncientGreektónos:tension
-2FromAncientGreekklónos:confusedmotion,trembling
-3Heartrateexceedingthenormalrestingbaseline6 CHAPTER1. INTRODUCTION
-fromGTCSs[30]. Assuch,GTCSsandFBTCSsaremajorriskfactorsconcerningSUDEP[19].
-While there are other types of generalized seizures like generalized absences, they are much
-lessfrequentinthedatasetsincludedforthisthesisandarenotfurtherdetailedhere.
-ContrarytoGTCSsandFBTCSs,focalseizures(FSs)havealocalizedonsetinthebrainand

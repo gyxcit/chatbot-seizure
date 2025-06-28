@@ -1,9 +1,0 @@
-(cit.onp.131).Acknowledgments
-Firstandforemost,IwouldliketoexpressmysincerestgratitudetomythesisadvisorProf.Dr.
-KristofVanLaerhoven,fortheextensive,essential,andenduringsupporthehasgivenmeover
-thepastfewyears. Hisguidance,inspiration,andreassurancewerefundamentaltomybeing
-abletocompletethisthesis,andIamprofoundlygratefulforhismentorship.
-I would also like to thank Prof. Dr. Björn Eskofier for being the second examiner for my
-thesis,aswellasthechairandassociatechairoftheboardofexaminers,Prof.Dr. MalteLochau
-andProf.Dr. RomanObermaisser,forconsideringmywork.
-Furthermore,IwouldliketothankProf.Dr. AndreasSchulze-Bonhageforenablingmeto

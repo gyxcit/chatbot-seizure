@@ -1,8 +1,0 @@
-ReiheunterschiedlicherSymptome,inwechselndenAbständenundmitvariablerAusprägung.
-Der Goldstandard zur Diagnose und Beobachtung von Epilepsie ist die Video-Elektroenze-
-phalografie. DabeiwerdenEpilepsiepatienteneinigeTagelangüberwachtwährendÄrztemit
-verschiedenen Mitteln Anfälle auslösen, in der Hoffnung, genügend Informationen für eine
-präziseDiagnoseundBehandlungzuerhalten. DiesesVerfahrenistjedochimtäglichenLeben
-der Patienten und über längere Zeiträume hinweg nicht sinnvoll. Darüber hinaus haben sich
-die handschriftlichen Tagebücher, die manche Patienten führen, als unzuverlässig erwiesen,
-dasiedieZahlderAnfälleinderRegelstarkunterbewerten. EswirdalsoeineAlternativefür

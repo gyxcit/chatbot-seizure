@@ -1,8 +1,0 @@
-hardware could help in developing a wearable, real-time, always-on, patient-specific
-seizurewarningsystemwithlowpowerconsumptionandreliablelong-termperformance.Int.J.Environ.Res.PublicHealth2021,18,5780 22of33
-5. Discussion
-Nowadays,manypeopleworldwidehaveepilepticseizuresandsufferfromthese
-neurologicaldisorders. Earlydetectionofepilepticseizuresisofsubstantialimportance
-becauseitdirectlyaffectsthepatients’qualityoflifeandcanenhancetheirself-confidenceat
-allstagesoflife.Sofar,muchresearchhasbeenaccomplishedtodiagnoseepilepticseizures
-using AI techniques. The objective of these studies is to assist physicians in accurate

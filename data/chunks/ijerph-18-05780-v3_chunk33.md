@@ -1,9 +1,0 @@
-dependenciesofdatasamples.
-2.3.1. ConvolutionalNeuralNetworks(CNNs)
-CNNsareoneclassofthemostpopularDLnetworkstowhichmostoftheresearches
-in machine learning have been devoted [30]. They were initially presented for image-
-processing applications, but have recently been adopted to one- and two-dimensional
-architecturesfordiagnosisandpredictionofdiseasesusingbiologicalsignals[42]. This
-classofDLnetworksiswidelyusedforthedetectionofepilepticseizuresusingEEGsignals.
-Intwo-dimensionalconvolutionalneuralnetworks(2D-CNN),theone-dimensional(1D)
-EEGsignalsarefirsttransformedintotwo-dimensionalplotsbyemployingvisualization

@@ -1,8 +1,0 @@
-indicationforadmissiontoamonitoringunitispresurgicalevaluation,thatis,determiningif
-a patient is a candidate for a resective brain surgery [61]. However, the informational yield
-ofin-hospitalvideo-electroencephalography(vEEG)monitoringisreducedsignificantlyafter26 CHAPTER2. RELATEDWORK
-onlyafewdays[50],suchthatmonitoringoutsidethehospitalenvironmentinanambulatory
-settingisnecessary.
-VEEGmonitoringathomehasbeenusedinseveralstudiestovaryingbutgenerallyposi-
-tiveresults[56,100]. Whilehospitalconditionsensuregoodqualityrecordingsandthehighest
-chancesofcapturingseizureevents,at-homemonitoringisoverallmoreacceptedbypatients

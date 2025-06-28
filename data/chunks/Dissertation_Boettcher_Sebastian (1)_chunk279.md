@@ -1,9 +1,0 @@
-andacceptedtool. Itplotstheprobabilityofdetectionagainsttheprobabilityoffalsealarm(FP
-and TP rates) of a binary classifier at varied discrimination thresholds. Thereby, it visualizes
-thetrade-offamodelmakesbetweendetectingtrueeventsandproducingfalsealarms.
-For all of these measures, there is generally a trade-off between reporting them on a per-
-patientbasisandtakingthemeanacrosspatientsorreportingtheoverallvalueoverthewhole
-applicabledataset. Optimally,bothaggregationsshouldbereportedintheoutcomesofastudy,
-astheyoftenbothprovideslightlydifferentbutequallyworthwhileconclusions.
-3.1.5 Data Sharing
-Freeandopenplatformsforsharingdataandfacilitatingcollaborationareimportantresearch
