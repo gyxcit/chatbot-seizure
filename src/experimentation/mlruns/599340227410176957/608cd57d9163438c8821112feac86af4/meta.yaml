@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/regis/OneDrive/Documents/aiclinique/chatbot-seizure/src/experimentation/mlruns/599340227410176957/608cd57d9163438c8821112feac86af4/artifacts
+end_time: 1751146888722
+entry_point_name: ''
+experiment_id: '599340227410176957'
+lifecycle_stage: active
+run_id: 608cd57d9163438c8821112feac86af4
+run_name: exp_0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751146882172
+status: 4
+tags: []
+user_id: regis
